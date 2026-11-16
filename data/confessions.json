@@ -161,8 +161,8 @@
       },
       {
         "section": "wsc-20",
-        "line": "God did not leave the world in the misery of that first sin. He made a covenant of grace, to save through a redeemer.",
-        "explain": "The question asks if God left humanity to perish. The answer is no. From his own pleasure he made a covenant of grace to save through a redeemer. That is the garden promise described as a plan, not an afterthought. The proofs include Ephesians 1:4-5 and Genesis 3:15.",
+        "line": "God did not leave all mankind to perish. He covenanted to save his elect through a redeemer.",
+        "explain": "The question asks if God left all mankind to perish. The answer is no. From his own pleasure he elected some to everlasting life and made a covenant of grace to save through a redeemer. The proofs include Acts 13:48, Ephesians 1:4-5, Genesis 3:15, and Hebrews 9:15.",
         "relevant_proofs": "Acts 13:48; Ephesians 1:4-5; Genesis 3:15; Hebrews 9:15"
       }
     ],
@@ -230,14 +230,6 @@
         "line": "Isaiah says a child will be born who carries the government on his shoulder. The catechism says Jesus serves us as prophet, priest, and king.",
         "explain": "The child with the government on his shoulder is described here as prophet, priest, and king. Isaiah 9:6-7 is one of the proofs attached to this answer. The names in Isaiah and the offices in the catechism are meant to be read together.",
         "relevant_proofs": "Isaiah 9:6-7; Acts 3:22-23; Luke 1:32-33"
-      }
-    ],
-    "prophecy_bethlehem": [
-      {
-        "section": "wsc-26",
-        "line": "The child from that town is a ruler. The catechism says Jesus is king.",
-        "explain": "A ruler who shepherds Israel is a king. This answer says Christ rules, defends, and conquers. Micah's town and Christ's office belong in one reading.",
-        "relevant_proofs": "Psalm 110:3; Psalm 2:6-9; Psalm 110:1-2; Matthew 28:18-20; 1 Corinthians 15:24-26"
       }
     ],
     "bethlehem": [
@@ -317,8 +309,8 @@
       },
       {
         "section": "wlc-41",
-        "line": "His name means he saves his people from their sins.",
-        "explain": "His personal name says his work. He saves his people from their sins. The proof is only Matthew 1:21.",
+        "line": "Matthew connects Jesus' name with his work: he saves his people from their sins.",
+        "explain": "Matthew 1:21 gives the name and then explains Jesus' saving work. This is the passage's own wordplay, not a complete dictionary definition of the name.",
         "relevant_proofs": "Matthew 1:21"
       }
     ],
@@ -381,8 +373,8 @@
       },
       {
         "section": "wlc-41",
-        "line": "The angel calls him Savior. His name, Jesus, means he saves his people from their sins.",
-        "explain": "Savior in the angel's sentence and the name Jesus say the same work. The proof is Matthew 1:21.",
+        "line": "The angel calls him Savior. Matthew connects the name Jesus with saving his people from their sins.",
+        "explain": "Luke calls him Savior, and Matthew 1:21 gives his name and explains his saving work. The catechism's proof is Matthew 1:21.",
         "relevant_proofs": "Matthew 1:21"
       }
     ]

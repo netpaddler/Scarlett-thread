@@ -125,7 +125,7 @@
 
   function confidenceCopy(flag) {
     if (flag === "explicit") {
-      return "A New Testament text is cited for this line. Read the note for the exact claim.";
+      return "This is a direct textual or narrative connection. Read the cited passages and note for the exact claim.";
     }
     if (flag === "typology") {
       return "This is an interpretive connection. Christians who trust the Bible do not all see it the same way.";
@@ -1353,7 +1353,7 @@
   function typologyHint() {
     document.getElementById("typology-hint").textContent = state.hideTypology
       ? "Interpretive lines are hidden on the map. Open a name and go deeper to read about them."
-      : "A dashed line marks an interpretive connection. Hiding those leaves lines with a cited New Testament text. Read each note for the exact claim.";
+      : "A dashed line marks an interpretive connection. Hiding those leaves direct textual and narrative connections.";
   }
 
   function zoomBy(factor) {
