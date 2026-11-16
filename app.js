@@ -37,6 +37,7 @@
   ];
 
   var data = null;
+  var sermons = {};
   var nodesById = new Map();
   var exploreCy = null;
   var state = {
@@ -141,6 +142,84 @@
         h("p", { class: "summary", text: node.summary })
       );
     }
+  }
+
+  function sermonsFor(nodeId) {
+    var list = sermons[nodeId];
+    return Array.isArray(list) ? list : [];
+  }
+
+  function youtubeId(url) {
+    try {
+      return new URL(url).searchParams.get("v");
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function renderSermon(sermon) {
+    var article = h("article", { class: "sermon" });
+    var titleLink = h("a", {
+      href: sermon.url,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      text: sermon.title || "Sermon"
+    });
+    var title = h("h5", { class: "sermon-title" });
+    title.append(titleLink);
+    article.append(title);
+    var meta = [sermon.preacher, sermon.date ? formatDate(sermon.date) : ""].filter(Boolean).join(", ");
+    if (meta) article.append(h("p", { class: "sermon-meta", text: meta }));
+    if (sermon.text) article.append(h("p", { class: "sermon-text", text: "Scripture: " + sermon.text }));
+    if (sermon.match === "thematic") {
+      article.append(h("p", { class: "sermon-note", text: "Touches on this passage" }));
+    }
+    var actions = h("div", { class: "sermon-actions" });
+    actions.append(h("a", {
+      class: "sermon-watch",
+      href: sermon.url,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      text: "Watch on YouTube"
+    }));
+    var player = h("div", { class: "sermon-player", hidden: true });
+    var videoId = youtubeId(sermon.url);
+    if (videoId) {
+      var play = h("button", {
+        type: "button",
+        class: "sermon-play",
+        text: "Play here",
+        onClick: function () {
+          if (player.childElementCount) return;
+          var start = Number(sermon.start_seconds);
+          var src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId) + "?rel=0";
+          if (Number.isFinite(start) && start > 0) src += "&start=" + Math.floor(start);
+          src += "&autoplay=1";
+          var iframe = document.createElement("iframe");
+          iframe.src = src;
+          iframe.title = (sermon.title || "Sermon") + ", Faith Presbyterian";
+          iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+          iframe.setAttribute("allowfullscreen", "");
+          iframe.setAttribute("loading", "lazy");
+          player.append(iframe);
+          player.hidden = false;
+          play.hidden = true;
+        }
+      });
+      actions.append(play);
+    }
+    article.append(actions, player);
+    return article;
+  }
+
+  function appendSermons(parent, nodeId) {
+    var list = sermonsFor(nodeId);
+    if (!list.length) return;
+    var section = h("section", { class: "sermons" });
+    section.setAttribute("aria-label", "Hear a sermon on this from Faith Presbyterian");
+    section.append(h("h4", { class: "section-label", text: "Hear a sermon on this from Faith Presbyterian" }));
+    list.forEach(function (sermon) { section.append(renderSermon(sermon)); });
+    parent.append(section);
   }
 
   function announce(text) {
@@ -313,6 +392,7 @@
     }
     card.append(h("h3", { class: "step-name", text: node.label }));
     appendNodeBody(card, node);
+    appendSermons(card, node.id);
     card.append(h("button", {
       type: "button",
       class: "text-btn",
@@ -698,6 +778,7 @@
     var title = h("h3", { id: "panel-title", class: "step-name", tabindex: "-1", text: node.label });
     panel.append(title);
     appendNodeBody(panel, node);
+    appendSermons(panel, node.id);
     var outgoing = data.edges.filter(function (edge) { return edge.from === node.id; });
     var incoming = data.edges.filter(function (edge) { return edge.to === node.id; });
     if (!outgoing.length && !incoming.length) {
@@ -907,16 +988,24 @@
     showMode();
   }
 
-  fetch("data/advent-graph.json")
-    .then(function (response) {
+  function loadJson(url) {
+    return fetch(url).then(function (response) {
       if (!response.ok) throw new Error("status " + response.status);
       return response.json();
-    })
-    .then(function (json) {
+    });
+  }
+
+  Promise.all([
+    loadJson("data/advent-graph.json"),
+    loadJson("data/sermons.json").catch(function () { return {}; })
+  ])
+    .then(function (files) {
+      var json = files[0];
       if (!json || !Array.isArray(json.nodes) || !Array.isArray(json.edges) || !Array.isArray(json.paths)) {
         throw new Error("The map file is missing nodes, edges, or paths.");
       }
       data = json;
+      sermons = files[1] && typeof files[1] === "object" ? files[1] : {};
       start();
     })
     .catch(function () {

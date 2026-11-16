@@ -1,0 +1,321 @@
+{
+  "_note": "Faith Presbyterian Church Tacoma (PCA) sermons for the Scarlet Thread Advent map, from the church YouTube channel https://www.youtube.com/@faithpresbyterianchurch-ta4701 (channel id UCdS_fZEWwUFzYxgVtVuYxKw). Start times are a few seconds before the Scripture reading or the sermon begins, taken from auto captions. match is exact when the sermon text is the node's passage, or thematic when the sermon is on a closely related text and clearly preaches the node's theme. Titles, preachers, and texts were checked against video descriptions, captions, and the church site faithtacoma.org. Captions were not checked by ear.",
+  "jesus": [
+    {
+      "title": "Realism and Idealism in the Coming of Christ",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-12-25",
+      "service": "am",
+      "text": "Matthew 1:1-17",
+      "url": "https://www.youtube.com/watch?v=48Mlg7MwbBY&t=2551s",
+      "start_seconds": 2551,
+      "match": "exact",
+      "notes": "Christmas morning sermon on the genealogy of Jesus Christ, the son of David, the son of Abraham. The church site title uses an ampersand: Realism & Idealism in the Coming of Christ."
+    },
+    {
+      "title": "Jesus' Family",
+      "preacher": "Rev. Nathaniel Gutierrez",
+      "date": "2021-02-28",
+      "service": "pm",
+      "text": "Matthew 1:1-25",
+      "url": "https://www.youtube.com/watch?v=gCsZP7ziRng&t=1000s",
+      "start_seconds": 1000,
+      "match": "exact",
+      "notes": "First sermon in the Gutierrez Matthew series. The YouTube title is only Faith Presbyterian Church, Tacoma Live Stream. The service date is Sunday, February 28, 2021; the video was uploaded the next morning."
+    }
+  ],
+  "jesus_birth": [
+    {
+      "title": "Treasuring Up and Pondering",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2025-12-21",
+      "service": "am",
+      "text": "Luke 2:1-20",
+      "url": "https://www.youtube.com/watch?v=2dYJJ_lp1z4&t=2757s",
+      "start_seconds": 2757,
+      "match": "exact",
+      "notes": "The video description titles it Treasuring Up & Pondering. The reading is Luke 2:1-20, with special focus on Mary in verse 19."
+    },
+    {
+      "title": "The Unseen Glory in Christ's Story",
+      "preacher": "Rev. Nathaniel Gutierrez",
+      "date": "2025-12-14",
+      "service": "am",
+      "text": "Luke 2:8-16a",
+      "url": "https://www.youtube.com/watch?v=SiNO3GBWj0Y&t=1997s",
+      "start_seconds": 1997,
+      "match": "exact",
+      "notes": "Christmas sermon on the shepherds and the angelic announcement of the birth."
+    }
+  ],
+  "promise_seed": [
+    {
+      "title": "This Woman's Work",
+      "preacher": "Rev. Jason Davidson (guest)",
+      "date": "2021-03-14",
+      "service": "pm",
+      "text": "Revelation 12",
+      "url": "https://www.youtube.com/watch?v=tY3B5ssyAag&t=1244s",
+      "start_seconds": 1244,
+      "match": "thematic",
+      "notes": "Guest pastor from Grace Seattle. The title was announced that morning as This Woman's Work on Revelation 12. The sermon reads Revelation 12 and then opens Genesis 3:15, calling it the protoevangelium, the first announcement of God's rescue plan. No YouTube sermon was found whose main text is Genesis 3:15 itself. The YouTube title is Evening worship on March 14, 2021."
+    }
+  ],
+  "promise_abraham": [
+    {
+      "title": "Trusting in God's Provision",
+      "preacher": "Rev. Nathaniel Gutierrez",
+      "date": "2024-07-14",
+      "service": "am",
+      "text": "Genesis 22:1-24",
+      "url": "https://www.youtube.com/watch?v=2Vtsvs1psOY&t=2063s",
+      "start_seconds": 2063,
+      "match": "exact",
+      "notes": "From the Gleanings in Genesis series. The reading includes Genesis 22:18, in your offspring shall all the nations of the earth be blessed. A later Advent sermon on Genesis 12:1-9, Advent, Abraham, and the Call to Patience (Rev. Steven Nicoletti, December 1, 2024, morning, https://www.youtube.com/watch?v=YdBpZPaA56g), also treats the Abrahamic promise, but that video has no captions, so no start time could be confirmed."
+    }
+  ],
+  "promise_judah": [
+    {
+      "title": "Worshipping the God of Redemption",
+      "preacher": "Rev. David Birnie (guest)",
+      "date": "2022-08-14",
+      "service": "pm",
+      "text": "Revelation 5",
+      "url": "https://www.youtube.com/watch?v=uS-ou94Bb64&t=2122s",
+      "start_seconds": 2122,
+      "match": "thematic",
+      "notes": "Guest, RUF campus pastor at the University of Washington. The sermon is on Revelation 5, including the Lion of the tribe of Judah, the Root of David. The preacher points to Genesis 49 and Isaiah 11 as the Old Testament hope behind those titles. No YouTube sermon was found whose main text is Genesis 49:9-10."
+    }
+  ],
+  "jesse_root": [
+    {
+      "title": "Worshipping the God of Redemption",
+      "preacher": "Rev. David Birnie (guest)",
+      "date": "2022-08-14",
+      "service": "pm",
+      "text": "Revelation 5",
+      "url": "https://www.youtube.com/watch?v=uS-ou94Bb64&t=2122s",
+      "start_seconds": 2122,
+      "match": "thematic",
+      "notes": "Same sermon as the Judah entry. It unpacks the Root of David and names Isaiah 11, together with Genesis 49, as the messianic background. No YouTube sermon was found whose main text is Isaiah 11."
+    }
+  ],
+  "covenant_david": [
+    {
+      "title": "The Unbroken Line and Promise",
+      "preacher": "Rev. Nathaniel Gutierrez",
+      "date": "2025-10-19",
+      "service": "pm",
+      "text": "1 Kings 2:1-12",
+      "url": "https://www.youtube.com/watch?v=w8gzsfGXIhw&t=1205s",
+      "start_seconds": 1205,
+      "match": "thematic",
+      "notes": "Sermon on David's last words to Solomon. It quotes 2 Samuel 7:12-16 at length as the promise of an offspring, a house, and a throne established forever. The church's dedicated 2 Samuel 7 sermon, The Covenant (Rev. Steven Nicoletti, September 6, 2020, evening), is on the church site but predates the YouTube channel."
+    }
+  ],
+  "prophecy_immanuel": [
+    {
+      "title": "Advent as Warfare: Fools for Christ in Spiritual Battle",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2020-12-20",
+      "service": "am",
+      "text": "Matthew 1:18-25",
+      "url": "https://www.youtube.com/watch?v=WAcu9DsU2Oo&t=2377s",
+      "start_seconds": 2377,
+      "match": "thematic",
+      "notes": "Fourth Sunday of Advent, 2020. The sermon text is Matthew 1:18-25, which quotes Isaiah 7:14 and discusses Matthew's use of that prophecy, including the name Immanuel, God with us. The YouTube title is only Faith Presbyterian Church, Tacoma Live Stream. No YouTube sermon was found whose main text is Isaiah 7:14 itself."
+    },
+    {
+      "title": "Jesus' Family",
+      "preacher": "Rev. Nathaniel Gutierrez",
+      "date": "2021-02-28",
+      "service": "pm",
+      "text": "Matthew 1:1-25",
+      "url": "https://www.youtube.com/watch?v=gCsZP7ziRng&t=1000s",
+      "start_seconds": 1000,
+      "match": "thematic",
+      "notes": "Reads and preaches Matthew 1:18-25 as well as the genealogy, including the Immanuel quotation from Isaiah 7:14. Same video as the second jesus entry."
+    }
+  ],
+  "prophecy_child": [
+    {
+      "title": "A Light Has Shone",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2021-12-19",
+      "service": "am",
+      "text": "Isaiah 8:16-9:7",
+      "url": "https://www.youtube.com/watch?v=Sw8wfS8jI68&t=2786s",
+      "start_seconds": 2786,
+      "match": "exact",
+      "notes": "Christmas sermon on Isaiah's promise, including 9:6-7, For to us a child is born, to us a son is given."
+    }
+  ],
+  "prophecy_bethlehem": [
+    {
+      "title": "He Shall Be Their Peace, Part 1",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2021-12-12",
+      "service": "pm",
+      "text": "Micah 4-5",
+      "url": "https://www.youtube.com/watch?v=FSH1UGhzMbw&t=1056s",
+      "start_seconds": 1056,
+      "match": "exact",
+      "notes": "The reading is Micah chapters 4 and 5. Late in the sermon Nicoletti turns to the promise in Micah 5:2, But you, O Bethlehem Ephrathah, and preaches the ruler from Bethlehem, from ancient days, who shepherds his people."
+    },
+    {
+      "title": "Epiphany and the Pattern of True Faith",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2026-01-04",
+      "service": "am",
+      "text": "Matthew 2:1-12",
+      "url": "https://www.youtube.com/watch?v=YmVxFo_a6EY&t=1928s",
+      "start_seconds": 1928,
+      "match": "thematic",
+      "notes": "Epiphany sermon on the Magi. It explains that the scribes answer Herod from Micah 5:2, and that God leads the Magi to Christ through the Scriptures."
+    }
+  ],
+  "bethlehem": [
+    {
+      "title": "Responding to the Heavenly Proclamation",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2020-12-20",
+      "service": "pm",
+      "text": "Luke 2:1-21",
+      "url": "https://www.youtube.com/watch?v=Xn2S7fum_lI&t=899s",
+      "start_seconds": 899,
+      "match": "exact",
+      "notes": "The focus is Luke 2:8-20, but the reading begins at verse 1 and includes 2:4, the city of David, which is called Bethlehem. The YouTube title is only Faith Presbyterian Church, Tacoma Live Stream."
+    },
+    {
+      "title": "He Shall Be Their Peace, Part 1",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2021-12-12",
+      "service": "pm",
+      "text": "Micah 4-5",
+      "url": "https://www.youtube.com/watch?v=FSH1UGhzMbw&t=1056s",
+      "start_seconds": 1056,
+      "match": "exact",
+      "notes": "Same Micah sermon as the first prophecy_bethlehem entry. It preaches Bethlehem Ephrathah as the town from which the ruler comes."
+    }
+  ],
+  "mary": [
+    {
+      "title": "Advent and the Call to Longing",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2024-12-22",
+      "service": "am",
+      "text": "Luke 1:26-38, 46-55",
+      "url": "https://www.youtube.com/watch?v=R7oAjr6c_cU&t=1935s",
+      "start_seconds": 1935,
+      "match": "exact",
+      "notes": "Fourth Sunday of Advent, 2024. The reading is the annunciation and the Magnificat. The video description says Luke chapter 1; the church site gives the verses as Luke 1:26-38, 46-55."
+    },
+    {
+      "title": "Mary's Faith",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2023-12-24",
+      "service": "am",
+      "text": "Luke 1:26-56",
+      "url": "https://www.youtube.com/watch?v=rfla4G2EnYA&t=1867s",
+      "start_seconds": 1867,
+      "match": "exact",
+      "notes": "Christmas Sunday morning sermon on Mary and her response to the annunciation."
+    }
+  ],
+  "joseph": [
+    {
+      "title": "Advent as Warfare: Fools for Christ in Spiritual Battle",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2020-12-20",
+      "service": "am",
+      "text": "Matthew 1:18-25",
+      "url": "https://www.youtube.com/watch?v=WAcu9DsU2Oo&t=2377s",
+      "start_seconds": 2377,
+      "match": "exact",
+      "notes": "The angel addresses Joseph as son of David and tells him to take Mary as his wife. Same video as the first prophecy_immanuel entry."
+    },
+    {
+      "title": "Jesus' Family",
+      "preacher": "Rev. Nathaniel Gutierrez",
+      "date": "2021-02-28",
+      "service": "pm",
+      "text": "Matthew 1:1-25",
+      "url": "https://www.youtube.com/watch?v=gCsZP7ziRng&t=1000s",
+      "start_seconds": 1000,
+      "match": "exact",
+      "notes": "Covers both the genealogy through Joseph, husband of Mary, and the angel's word to Joseph in Matthew 1:18-25. Same video as the second jesus entry."
+    }
+  ],
+  "annunciation": [
+    {
+      "title": "Advent and the Call to Longing",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2024-12-22",
+      "service": "am",
+      "text": "Luke 1:26-38, 46-55",
+      "url": "https://www.youtube.com/watch?v=R7oAjr6c_cU&t=1935s",
+      "start_seconds": 1935,
+      "match": "exact",
+      "notes": "Same sermon as the first mary entry. The reading begins with Gabriel's announcement in Luke 1:26-38."
+    },
+    {
+      "title": "Mary's Faith",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2023-12-24",
+      "service": "am",
+      "text": "Luke 1:26-56",
+      "url": "https://www.youtube.com/watch?v=rfla4G2EnYA&t=1867s",
+      "start_seconds": 1867,
+      "match": "exact",
+      "notes": "Same sermon as the second mary entry. Nicoletti introduces it as a sermon on Mary and how she responds to the annunciation."
+    }
+  ],
+  "magi": [
+    {
+      "title": "Epiphany and the Pattern of True Faith",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2026-01-04",
+      "service": "am",
+      "text": "Matthew 2:1-12",
+      "url": "https://www.youtube.com/watch?v=YmVxFo_a6EY&t=1928s",
+      "start_seconds": 1928,
+      "match": "exact",
+      "notes": "Epiphany sermon on the coming of the wise men, or Magi, to the baby Jesus. Same video as the second prophecy_bethlehem entry."
+    },
+    {
+      "title": "Epiphany and Hope for Evangelism",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2024-01-07",
+      "service": "am",
+      "text": "Matthew 2:1-12",
+      "url": "https://www.youtube.com/watch?v=x-xfEe8ygIk&t=2065s",
+      "start_seconds": 2065,
+      "match": "exact",
+      "notes": "The church site titles it Epiphany & Hope for Evangelism, January 7, 2024. The YouTube title wrongly says January 7, 2023. The upload date is January 8, 2024, and the preacher says Epiphany was yesterday, January 6, which fits Sunday, January 7, 2024, not 2023."
+    }
+  ],
+  "bread_of_life": [
+    {
+      "title": "Whale Fall",
+      "preacher": "Tommy Hannah (guest)",
+      "date": "2022-11-27",
+      "service": "pm",
+      "text": "John 6:35-59",
+      "url": "https://www.youtube.com/watch?v=PwKncrnMVAI&t=1860s",
+      "start_seconds": 1860,
+      "match": "exact",
+      "notes": "Guest, RUF minister at Western Washington University. The announced text is John 6:35-59, I am the bread of life."
+    },
+    {
+      "title": "Whoever Comes to Jesus",
+      "preacher": "Rev. Tomo Ito (guest)",
+      "date": "2022-08-28",
+      "service": "pm",
+      "text": "John 6:35-40",
+      "url": "https://www.youtube.com/watch?v=dPm73GstBso&t=1819s",
+      "start_seconds": 1819,
+      "match": "exact",
+      "notes": "Guest sermon on Jesus' words, I am the bread of life; whoever comes to me shall not hunger."
+    }
+  ]
+}
