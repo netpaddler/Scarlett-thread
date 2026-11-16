@@ -53,6 +53,7 @@
   var data = null;
   var sermons = {};
   var confessions = null;
+  var deeper = null;
   var nodesById = new Map();
   var exploreCy = null;
   var state = {
@@ -295,10 +296,6 @@
 
   function appendStandards(parent, items) {
     if (!items.length) return;
-    parent.append(h("p", {
-      class: "hint",
-      text: "These words are from the Westminster Standards. Reformed churches use them to say, carefully, what the Bible teaches."
-    }));
     items.forEach(function (item) {
       var section = confessions.sections[item.section];
       var work = confessions.meta && confessions.meta.works ? confessions.meta.works[section.work] : null;
@@ -316,14 +313,101 @@
       }
       block.append(cite);
       if (item.line) block.append(h("p", { class: "confession-line", text: item.line }));
+      if (item.explain) block.append(h("p", { text: item.explain }));
       block.append(h("blockquote", { class: "confession-text", text: section.text }));
+      var proofs = item.relevant_proofs || section.proofs;
+      if (proofs) {
+        block.append(h("p", {
+          class: "hint",
+          text: "Scripture proofs printed with this section: " + proofs
+        }));
+      }
       parent.append(block);
     });
   }
 
-  function makeDeepest(items, label) {
-    if (!items.length) return null;
-    return fold(label || "Go deepest", function (body) { appendStandards(body, items); });
+  function makeDeepest(group, id, label) {
+    var items = confessionItems(group, id);
+    var theology = confessions && confessions.theology && confessions.theology[group]
+      ? confessions.theology[group][id]
+      : "";
+    if (!items.length && !theology) return null;
+    return fold(label || "Go deepest", function (body) {
+      body.append(h("p", {
+        class: "hint",
+        text: "These words are from the Westminster Standards. Reformed churches use them to say, carefully, what the Bible teaches. The quotations are the modern spelling text from the Orthodox Presbyterian Church."
+      }));
+      if (theology) {
+        body.append(h("h4", { class: "section-label", text: "In Reformed theology" }));
+        body.append(h("p", { text: theology }));
+      }
+      appendStandards(body, items);
+    });
+  }
+
+  function addParagraphs(parent, list) {
+    (list || []).forEach(function (text) {
+      if (text) parent.append(h("p", { text: text }));
+    });
+  }
+
+  function appendRichDeeper(parent, entry) {
+    if (!entry) return;
+    if (entry.context && entry.context.length) {
+      parent.append(h("h4", { class: "section-label", text: "The story" }));
+      addParagraphs(parent, entry.context);
+    }
+    if (entry.passages && entry.passages.length) {
+      parent.append(h("h4", { class: "section-label", text: "Key passages" }));
+      entry.passages.forEach(function (passage) {
+        var block = h("figure", { class: "deeper-passage" });
+        var quote = h("blockquote", { text: passage.text });
+        quote.setAttribute("translate", "no");
+        block.append(quote);
+        if (passage.ref) block.append(h("figcaption", { text: passage.ref }));
+        parent.append(block);
+      });
+    }
+    if (entry.cross_refs && entry.cross_refs.length) {
+      parent.append(h("p", { class: "hint", text: "Also read: " + entry.cross_refs.join(", ") }));
+    }
+    if (entry.connections && entry.connections.length) {
+      parent.append(h("h4", { class: "section-label", text: "How it connects" }));
+      entry.connections.forEach(function (link) {
+        var other = nodeById(link.other);
+        var name = other ? other.label : link.other;
+        var heading = link.direction === "from" ? "From " + name : "To " + name;
+        var block = h("div", { class: "edge-block" });
+        block.append(h("p", { class: "next-label", text: heading }));
+        if (link.confidence) {
+          block.append(h("p", { class: "badge " + link.confidence, text: confidenceCopy(link.confidence) }));
+        }
+        if (link.text) block.append(h("p", { text: link.text }));
+        parent.append(block);
+      });
+    }
+    if (entry.nt && entry.nt.length) {
+      parent.append(h("h4", { class: "section-label", text: "How the New Testament reads it" }));
+      addParagraphs(parent, entry.nt);
+    }
+    if (entry.word_study && entry.word_study.text) {
+      var title = entry.word_study.term ? "A word: " + entry.word_study.term : "A word to know";
+      parent.append(h("h4", { class: "section-label", text: title }));
+      parent.append(h("p", { text: entry.word_study.text }));
+    }
+    if (entry.questions && entry.questions.length) {
+      parent.append(h("h4", { class: "section-label", text: "Questions to think about" }));
+      var list = h("ol", { class: "deeper-questions" });
+      entry.questions.forEach(function (question) {
+        list.append(h("li", { text: question }));
+      });
+      parent.append(list);
+    }
+  }
+
+  function deeperEntry(group, id) {
+    if (!deeper || !deeper[group]) return null;
+    return deeper[group][id] || null;
   }
 
   function announce(text) {
@@ -497,44 +581,11 @@
     card.append(h("h3", { class: "step-name", text: node.label }));
     appendStart(card, node);
     appendSermons(card, node.id);
-    var deeper = fold("Go deeper", function (body) {
-      body.append(h("h4", { class: "section-label", text: "The passages" }));
-      body.append(h("p", { text: (node.refs || []).join(", ") || "None listed" }));
-      if (state.step >= path.nodes.length - 1) {
-        body.append(h("p", { class: "direction-note", text: "This is the last stop this week. You can step back, or pick another week." }));
-        return;
-      }
-      var nextId = path.nodes[state.step + 1];
-      var next = nodeById(nextId);
-      body.append(h("h4", { class: "section-label", text: "How this connects" }));
-      body.append(h("p", { class: "next-label", text: "Next stop: " + (next ? next.label : nextId) }));
-      var found = edgesBetween(node.id, nextId);
-      if (!found.length) {
-        body.append(h("p", {
-          class: "direction-note",
-          text: "These two stops sit side by side. The map does not draw one line straight from this one to the next."
-        }));
-        return;
-      }
-      found.forEach(function (edge) {
-        if (edge.from !== node.id || edge.to !== nextId) {
-          var from = nodeById(edge.from);
-          var to = nodeById(edge.to);
-          body.append(h("p", {
-            class: "direction-note",
-            text: "On the map this line runs from " + (from ? from.label : edge.from) + " to " + (to ? to.label : edge.to) + "."
-          }));
-        }
-        body.append(h("p", { class: "badge " + edge.confidence, text: confidenceCopy(edge.confidence) }));
-        var facts = h("dl", { class: "facts" });
-        addFact(facts, "Kind of line", edgeLabel(edge.type));
-        addFact(facts, "Scripture", (edge.refs || []).join(", ") || "None listed");
-        if (edge.note) addFact(facts, "In plain words", edge.note);
-        body.append(facts);
-      });
+    var deeperFold = fold("Go deeper", function (body) {
+      appendRichDeeper(body, deeperEntry("nodes", node.id));
     });
-    if (deeper) card.append(deeper);
-    var deepest = makeDeepest(confessionItems("nodes", node.id));
+    if (deeperFold) card.append(deeperFold);
+    var deepest = makeDeepest("nodes", node.id);
     if (deepest) card.append(deepest);
     card.append(h("button", {
       type: "button",
@@ -610,7 +661,11 @@
     var host = document.getElementById("path-deepest");
     if (!host) return;
     host.replaceChildren();
-    var deepest = makeDeepest(confessionItems("paths", path.id), "This week, go deepest");
+    var weekDeeper = fold("This week, go deeper", function (body) {
+      appendRichDeeper(body, deeperEntry("paths", path.id));
+    });
+    if (weekDeeper) host.append(weekDeeper);
+    var deepest = makeDeepest("paths", path.id, "This week, go deepest");
     if (deepest) host.append(deepest);
   }
 
@@ -934,24 +989,11 @@
     appendSermons(panel, node.id);
     var outgoing = data.edges.filter(function (edge) { return edge.from === node.id; });
     var incoming = data.edges.filter(function (edge) { return edge.to === node.id; });
-    var deeper = fold("Go deeper", function (body) {
-      body.append(h("h4", { class: "section-label", text: "The passages" }));
-      body.append(h("p", { text: (node.refs || []).join(", ") || "None listed" }));
-      if (!outgoing.length && !incoming.length) {
-        body.append(h("p", { text: "No lines touch this name on the map." }));
-        return;
-      }
-      if (outgoing.length) {
-        body.append(h("h4", { class: "section-label", text: "Lines from here" }));
-        outgoing.forEach(function (edge) { appendConnection(body, edge, node.id); });
-      }
-      if (incoming.length) {
-        body.append(h("h4", { class: "section-label", text: "Lines to here" }));
-        incoming.forEach(function (edge) { appendConnection(body, edge, node.id); });
-      }
+    var deeperFold = fold("Go deeper", function (body) {
+      appendRichDeeper(body, deeperEntry("nodes", node.id));
     });
-    if (deeper) panel.append(deeper);
-    var deepest = makeDeepest(confessionItems("nodes", node.id));
+    if (deeperFold) panel.append(deeperFold);
+    var deepest = makeDeepest("nodes", node.id);
     if (deepest) panel.append(deepest);
   }
 
@@ -1155,7 +1197,8 @@
   Promise.all([
     loadJson("data/advent-graph.json"),
     loadJson("data/sermons.json").catch(function () { return {}; }),
-    loadJson("data/confessions.json").catch(function () { return null; })
+    loadJson("data/confessions.json").catch(function () { return null; }),
+    loadJson("data/deeper.json").catch(function () { return null; })
   ])
     .then(function (files) {
       var json = files[0];
@@ -1165,6 +1208,7 @@
       data = json;
       sermons = files[1] && typeof files[1] === "object" ? files[1] : {};
       confessions = files[2] && files[2].sections ? files[2] : null;
+      deeper = files[3] && files[3].nodes ? files[3] : null;
       start();
     })
     .catch(function () {

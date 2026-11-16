@@ -1,0 +1,990 @@
+{
+  "nodes": {
+    "promise_seed": {
+      "context": [
+        "This promise is spoken in the garden, just after the first sin. The serpent had lied, the man and the woman had eaten, and God was saying what would come of that rebellion. The woman and the serpent are set against each other, and so are their offspring.",
+        "Offspring means a child, or the family that comes from someone. God does not leave the story in the wreck of that day. He says a child of the woman will crush the serpent's head, and the serpent will wound him. The rest of the Bible is the long search for that child.",
+        "This is still very early. There is no Israel yet, no king, and no Bethlehem. The promise is wide. Later promises will name a family, a tribe, a town, and at last a person."
+      ],
+      "passages": [
+        {
+          "ref": "Genesis 3:15",
+          "text": "I will put enmity between you and the woman, and between your offspring and her offspring; he shall bruise your head, and you shall bruise his heel."
+        }
+      ],
+      "cross_refs": [
+        "Genesis 3:14-15",
+        "Romans 16:20",
+        "Galatians 4:4",
+        "Hebrews 2:14",
+        "Revelation 12:9"
+      ],
+      "connections": [
+        {
+          "other": "jesus_birth",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to the birth of Jesus uses Galatians 4:4. Paul says that when the time was full, God sent his Son, born of a woman. That is a connection the New Testament itself makes: the child is truly born. Genesis 3:15 is not quoted there word for word. The map's note also points to Romans 16:20, where God crushes Satan. Readers have long heard the garden promise in those words. The confession does too. The verse Paul cites for the birth itself is Galatians 4:4."
+        },
+        {
+          "other": "promise_abraham",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "The line to Abraham is marked typology, not a link the New Testament spells out in one sentence. Some faithful readers see one promise getting narrower: the child who crushes the serpent will come through Abraham's family. Others stay cautious, because Genesis never says that Genesis 3:15 and Genesis 22:18 are the same promise. Both readings can honor the text. The map does not pretend the link is a quotation."
+        }
+      ],
+      "nt": [
+        "The New Testament does not quote Genesis 3:15 as a formula. It does say God sent his Son, born of woman (Galatians 4:4). It also says the Son shared our flesh and blood so that he might destroy the one who has the power of death, that is, the devil (Hebrews 2:14). Romans 16:20 says the God of peace will soon crush Satan under the feet of his people. Revelation 12 pictures the ancient serpent at war with the woman and her offspring. Those passages are why Christians read the garden words as the start of the gospel, even when they disagree about how tight the link is."
+      ],
+      "questions": [
+        "What has just happened in the garden when God speaks this promise?",
+        "Who is hurt in the promise, and who is crushed?",
+        "Why might a careful reader say this points to Jesus, and why might another reader want a later verse before saying so?"
+      ]
+    },
+    "promise_abraham": {
+      "context": [
+        "Abraham lives long after the garden. God calls him to leave his country, promises him a family, and later tests him on a mountain. Genesis 22 is the story of Isaac, the son Abraham was told to offer. God provides a ram, and then repeats the promise.",
+        "The promise is no longer only about a child of the woman in general. God names Abraham's offspring. Through that offspring, every nation will be blessed. The story of Israel, the kings, and at last Jesus, grows inside this family promise.",
+        "A covenant is a promise God makes and keeps. The promise to Abraham is one of the great covenants. It does not replace the garden promise. In the reading of this map, it makes that older hope more specific."
+      ],
+      "passages": [
+        {
+          "ref": "Genesis 22:18",
+          "text": "and in your offspring shall all the nations of the earth be blessed, because you have obeyed my voice."
+        }
+      ],
+      "cross_refs": [
+        "Genesis 12:1-3",
+        "Genesis 15:5-6",
+        "Genesis 22:15-18",
+        "John 8:56",
+        "Acts 3:25-26"
+      ],
+      "connections": [
+        {
+          "other": "promise_seed",
+          "direction": "from",
+          "confidence": "typology",
+          "text": "The line back to the first promise is typology. Some readers see Abraham's offspring as the next step of the child promised in the garden. Others note that Genesis itself does not join the two verses. The caution is fair. The hope is also fair, because both promises are about a child through whom God will undo the serpent's work and bless the nations."
+        },
+        {
+          "other": "jesus",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to Jesus is explicit. Paul says the promises were spoken to Abraham and to his offspring, and that the offspring is Christ, not a crowd of descendants (Galatians 3:16). Matthew 1:1 calls Jesus the son of Abraham. The New Testament itself makes this connection."
+        }
+      ],
+      "nt": [
+        "Paul's reading is the clearest New Testament word on this verse. He quotes the promise about offspring and says it points to one person, Christ (Galatians 3:16). He also says that those who trust Christ are Abraham's family by faith (Galatians 3:7-9, 14). Peter tells a crowd that they are the sons of the prophets and of the covenant God made with Abraham, and that God sent his servant to bless them (Acts 3:25-26). Jesus says Abraham rejoiced that he would see his day (John 8:56)."
+      ],
+      "questions": [
+        "What did God promise Abraham's offspring would do for the nations?",
+        "How does Paul decide that the offspring is one person?",
+        "What is the difference between a link the New Testament states and a link we notice by reading two Old Testament promises together?"
+      ]
+    },
+    "promise_judah": {
+      "context": [
+        "Jacob is dying in Egypt. He calls his sons and speaks a word over each one. Judah is the fourth son, not the oldest. Jacob does not give the ruler's place to Reuben, Simeon, or Levi. He gives it to Judah.",
+        "A scepter is a king's staff. Jacob says that staff will not leave Judah's family until the one comes to whom the peoples will obey. The promise of a child is now a promise of a king from one tribe.",
+        "This is still centuries before David. The family is not yet a nation with a throne. The word stands over a tribe, waiting for a son who will hold the rule."
+      ],
+      "passages": [
+        {
+          "ref": "Genesis 49:10",
+          "text": "The scepter shall not depart from Judah, nor the ruler's staff from between his feet, until tribute comes to him; and to him shall be the obedience of the peoples."
+        }
+      ],
+      "cross_refs": [
+        "Genesis 49:8-12",
+        "Ruth 4:18-22",
+        "Matthew 1:2-3",
+        "Hebrews 7:14",
+        "Revelation 5:5"
+      ],
+      "connections": [
+        {
+          "other": "jesus",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to Jesus is explicit. An elder in Revelation calls him the Lion of the tribe of Judah (Revelation 5:5). Hebrews 7:14 says it is clear that our Lord descended from Judah. The New Testament itself places Jesus in that tribe."
+        },
+        {
+          "other": "covenant_david",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to David follows the family. Ruth 4:18-22 lists the names from Perez, Judah's grandson, down to David. Matthew 1:3-6 repeats that family list. The New Testament genealogy states the path from Judah's house to David's throne."
+        }
+      ],
+      "nt": [
+        "Revelation 5:5 is worship language. The Lion of Judah has conquered, and he is also the Root of David. Hebrews uses Judah for a different point, about priests, but it states the family fact plainly: our Lord descended from Judah. Matthew's opening genealogy begins the same story in a list of names, from Abraham to Judah to David to Joseph (Matthew 1:1-16)."
+      ],
+      "questions": [
+        "Why is it striking that the ruler's promise goes to Judah, not the oldest son?",
+        "What does a scepter stand for in this blessing?",
+        "Which New Testament verses say Jesus belongs to Judah, and what do they add besides the family name?"
+      ]
+    },
+    "jesse_root": {
+      "context": [
+        "Isaiah speaks when David's royal tree looks cut down. Kings have failed. Enemies threaten. The prophet does not say God is finished with Jesse's family. Jesse is David's father, from Bethlehem. Isaiah sees a shoot from the stump, and a branch from the roots.",
+        "The picture is a tree cut to the ground that starts to grow again. The new growth is a king. The Spirit of the Lord rests on him. He judges with righteousness. Later in the same chapter, the root of Jesse stands as a signal, and the nations come to him.",
+        "This is prophecy, God telling what he will do. It sits between the old promise to Judah and the later promise that David's throne will last. The family is named again, this time from the father of David."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 11:1",
+          "text": "There shall come forth a shoot from the stump of Jesse, and a branch from his roots shall bear fruit."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 11:1-10",
+        "1 Samuel 16:1-13",
+        "Romans 15:12",
+        "Revelation 5:5",
+        "Revelation 22:16"
+      ],
+      "connections": [
+        {
+          "other": "jesus",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to Jesus is explicit. Paul quotes Isaiah on the root of Jesse and says the Gentiles will hope in him (Romans 15:12). The New Testament itself reads that prophecy as a word about Christ, and about nations hoping in him."
+        }
+      ],
+      "nt": [
+        "Romans 15:12 is a quotation, not a loose hint. Paul is teaching Jewish and Gentile believers to welcome one another, and he piles up Scriptures about the nations. Isaiah's root of Jesse is one of them. Revelation 5:5 and Revelation 22:16 also call Jesus the Root of David. The family name and the nations belong together in the New Testament reading."
+      ],
+      "questions": [
+        "What does a stump suggest about David's family at the time Isaiah speaks?",
+        "What does Paul say the nations will do because of the root of Jesse?",
+        "How is a root both the start of a tree and, in this title, the king the nations look for?"
+      ]
+    },
+    "covenant_david": {
+      "context": [
+        "David is king in Jerusalem. He wants to build a house for God. God answers through the prophet Nathan, and the answer turns around. David will not establish God's house. God will establish David's house.",
+        "God promises an offspring from David's own body. That son will build a house for God's name. His throne will be made sure forever. A covenant is a promise God makes and keeps. This one is about a son and a kingdom that does not end.",
+        "David's own son Solomon does build the temple, and the kingdom later splits and falls. The word forever is larger than Solomon. The promise stays open until a son comes whose reign does not end."
+      ],
+      "passages": [
+        {
+          "ref": "2 Samuel 7:12-13",
+          "text": "When your days are fulfilled and you lie down with your fathers, I will raise up your offspring after you, who shall come from your body, and I will establish his kingdom. He shall build a house for my name, and I will establish the throne of his kingdom forever."
+        },
+        {
+          "ref": "2 Samuel 7:16",
+          "text": "And your house and your kingdom shall be made sure forever before me. Your throne shall be established forever."
+        }
+      ],
+      "cross_refs": [
+        "2 Samuel 7:4-17",
+        "Psalm 89:3-4",
+        "Psalm 132:11",
+        "Luke 1:32-33",
+        "Acts 2:30"
+      ],
+      "connections": [
+        {
+          "other": "promise_judah",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from Judah is the family behind David. Ruth 4:18-22 and Matthew 1:3-6 list the generations. The New Testament genealogy treats David's throne as the throne that grew inside Judah's family."
+        },
+        {
+          "other": "annunciation",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to Gabriel's announcement is explicit. The angel tells Mary that the Lord God will give her son the throne of his father David, and that his kingdom will have no end (Luke 1:32-33). The New Testament itself puts David's forever promise on Jesus."
+        },
+        {
+          "other": "joseph",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to Joseph follows the family record. Matthew 1:6-16 lists the names from David to Joseph, and the angel calls Joseph son of David (Matthew 1:20). The New Testament itself gives Joseph that title and that genealogy."
+        },
+        {
+          "other": "bethlehem",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to Bethlehem is about place. God sends Samuel to Jesse the Bethlehemite to find a king among his sons (1 Samuel 16:1). Luke 2:4 calls Bethlehem the city of David, because Joseph is of David's house. The New Testament itself ties the town to David."
+        }
+      ],
+      "nt": [
+        "Luke 1:32-33 is the plain New Testament reading of this covenant. The son promised to Mary receives David's throne, and the kingdom does not end. Peter, preaching at Pentecost, says David was a prophet and knew God had sworn to set one of his descendants on his throne (Acts 2:30). The apostles do not leave the promise with Solomon."
+      ],
+      "questions": [
+        "What did David want to build, and what did God promise to build instead?",
+        "Why is the word forever too big for Solomon alone?",
+        "Where does the angel use David's promise, almost in David's own words?"
+      ]
+    },
+    "prophecy_immanuel": {
+      "context": [
+        "Isaiah speaks this sign to Ahaz, king of Judah, in a time of war. Two kings are threatening Jerusalem. God tells Ahaz to ask for a sign. Ahaz refuses, and God gives a sign anyway.",
+        "The sign is a child. A virgin will conceive and bear a son, and his name will be Immanuel. In the nearer story, Isaiah also speaks of a child born in that generation as a marker of how soon the threat will pass. The name still says more than a timetable. It says God with us.",
+        "The map does not flatten the history. Ahaz had a crisis. Matthew, centuries later, says the birth of Jesus fulfills what the prophet spoke. Christians read both the moment in Isaiah's day and the fuller fulfillment in Jesus."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 7:14",
+          "text": "Behold, the virgin shall conceive and bear a son, and shall call his name Immanuel."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 7:1-16",
+        "Isaiah 8:8",
+        "Isaiah 8:10",
+        "Matthew 1:18-25"
+      ],
+      "connections": [
+        {
+          "other": "jesus_birth",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to the birth is explicit. Matthew says all this took place to fulfill what the Lord spoke by the prophet, and he quotes Isaiah 7:14 (Matthew 1:22-23). The New Testament itself identifies the virgin's son, Immanuel, with the child born to Mary."
+        }
+      ],
+      "nt": [
+        "Matthew does not merely mention the name. He quotes the sentence and then translates it. Isaiah says the child shall be called Immanuel. Matthew says they shall call his name Immanuel, which means God with us (Matthew 1:23). The quotation is the New Testament's reading of the sign. The child conceived by the Holy Spirit is God come to be with his people."
+      ],
+      "questions": [
+        "What trouble was Ahaz facing when Isaiah spoke of a sign?",
+        "What does Matthew add when he quotes Isaiah, besides the name itself?",
+        "Why does the meaning God with us matter for who Jesus is, not only for what he is called?"
+      ],
+      "word_study": {
+        "term": "Immanuel",
+        "text": "Matthew 1:23 gives the meaning in plain words: God with us. The name is Hebrew. It joins a word for with us to the word El, a word for God. You do not need a hidden code. The Gospel states the meaning, and the story of the conception says how God came to be with us."
+      }
+    },
+    "prophecy_child": {
+      "context": [
+        "Isaiah 9 follows a dark word about the land. People are walking in gloom. Then the prophet says a light has shone. The joy is compared to a harvest and to the day Midian was beaten. The boots of soldiers and the garments rolled in blood are burned.",
+        "The reason for the joy is a child. A child is born, a son is given, and the government rests on his shoulder. His names are Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace. His government and peace do not end. He sits on David's throne.",
+        "This is still prophecy, spoken centuries before Jesus. It gathers the king promise into one child who is called God, and who reigns from David's seat."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 9:6",
+          "text": "For to us a child is born, to us a son is given; and the government shall be upon his shoulder, and his name shall be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 9:1-7",
+        "2 Samuel 7:12-16",
+        "Luke 1:32-33",
+        "Matthew 4:12-17"
+      ],
+      "connections": [
+        {
+          "other": "jesus",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to Jesus is explicit because of Matthew 4:13-16. Matthew quotes Isaiah 9:1-2, the people in darkness seeing a great light, and says this is fulfilled when Jesus begins his work in Galilee. The New Testament itself uses that part of the chapter for him. Isaiah 9:6-7 is the next part of the same prophecy, the child on David's throne. Matthew does not quote those verses in chapter 4. Readers connect them to Jesus because of the quotation he does make, and because Gabriel promised Mary's son the throne of David (Luke 1:32-33)."
+        }
+      ],
+      "nt": [
+        "Be careful and clear. Matthew quotes Isaiah 9:1-2, not Isaiah 9:6, in Matthew 4:15-16. The light in Galilee is the sentence he marks as fulfilled. The child who is born, and the names that follow, belong to the same oracle. Luke 1:32-33 says Jesus will reign on David's throne forever, which is what Isaiah 9:7 says about this child's kingdom. That is how the New Testament gives you the pieces, and how Christians put them together."
+      ],
+      "questions": [
+        "Which verses of Isaiah 9 does Matthew quote, and where?",
+        "What throne does Isaiah give this child, and who else is promised that throne?",
+        "Why is it honest to say Matthew uses Isaiah 9 of Jesus, and also honest to say he does not quote the line about the child in that place?"
+      ]
+    },
+    "prophecy_bethlehem": {
+      "context": [
+        "Micah prophesies when Assyria is a terror and Judah's rulers are failing. He speaks judgment, and he also speaks hope. The hope is not a bigger city. It is a small clan town, Bethlehem Ephrathah.",
+        "God speaks to the town. From you will come a ruler in Israel. The town is too little to be counted among the clans, and yet the ruler comes from there. Micah also says this ruler will stand and shepherd his flock in the strength of the Lord.",
+        "Bethlehem is already known as David's town. The prophecy does not invent a new place. It says the next ruler comes from the old king's hometown."
+      ],
+      "passages": [
+        {
+          "ref": "Micah 5:2",
+          "text": "But you, O Bethlehem Ephrathah, who are too little to be among the clans of Judah, from you shall come forth for me one who is to rule in Israel, whose coming forth is from of old, from ancient days."
+        }
+      ],
+      "cross_refs": [
+        "Micah 5:2-5",
+        "1 Samuel 16:1",
+        "Ruth 4:11",
+        "Matthew 2:1-6",
+        "John 7:42"
+      ],
+      "connections": [
+        {
+          "other": "bethlehem",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to the town is the prophecy's own address. Micah speaks to Bethlehem Ephrathah. The place on the map is that town. The link is the name the prophet uses."
+        },
+        {
+          "other": "jesus_birth",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to the birth is explicit. Matthew 2:4-6 says Herod asked where the Christ was to be born, and the chief priests and scribes answered with Micah's words about Bethlehem. The New Testament itself cites the prophecy for Jesus' birthplace."
+        }
+      ],
+      "nt": [
+        "Matthew 2:6 quotes the sense of Micah 5:2 and even sharpens the town's honor: you are by no means least among the rulers of Judah, for from you shall come a ruler who will shepherd my people Israel. John 7:42 shows that people in Jesus' day already expected the Christ to come from Bethlehem, the village of David. The New Testament both quotes the prophet and shows that Israel knew the expectation."
+      ],
+      "questions": [
+        "Why does Micah stress that Bethlehem is little?",
+        "Who quotes Micah when Herod asks where the king will be born?",
+        "What does the ruler do for the flock, according to Micah 5?"
+      ]
+    },
+    "bethlehem": {
+      "context": [
+        "Bethlehem is a town in Judah, a short walk from Jerusalem, not the capital. Ruth's story opens with a family from Bethlehem who leave during a famine. Ruth returns with Naomi, and her child Obed becomes the grandfather of David.",
+        "Samuel later goes to Bethlehem to anoint a king from Jesse's sons. The youngest, David, is keeping sheep. The town is David's hometown, and Luke calls it the city of David.",
+        "The name is commonly explained from Hebrew as house of bread. That is a real meaning of the words beth and lehem. It is not, by itself, a prophecy. The town matters on this map because of David, Micah, and the birth of Jesus."
+      ],
+      "passages": [
+        {
+          "ref": "Luke 2:4",
+          "text": "And Joseph also went up from Galilee, from the town of Nazareth, to Judea, to the city of David, which is called Bethlehem, because he was of the house and lineage of David."
+        }
+      ],
+      "cross_refs": [
+        "Ruth 1:1",
+        "Ruth 4:11-17",
+        "1 Samuel 16:1-13",
+        "Micah 5:2",
+        "Luke 2:1-7",
+        "Matthew 2:1"
+      ],
+      "connections": [
+        {
+          "other": "prophecy_bethlehem",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from Micah's prophecy is the prophet speaking to this town by name. Micah 5:2 says the ruler comes from Bethlehem Ephrathah."
+        },
+        {
+          "other": "covenant_david",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from David's covenant is the place of his family. Samuel is sent to Jesse the Bethlehemite (1 Samuel 16:1). Luke 2:4 says Joseph must go to Bethlehem because he is of David's house. The New Testament itself calls the town the city of David."
+        },
+        {
+          "other": "jesus_birth",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to the birth is the event in the town. Luke 2:4-7 says they travel to Bethlehem and the child is born there, laid in a manger because there is no place in the inn."
+        },
+        {
+          "other": "bread_of_life",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "The line to Jesus' words, I am the bread of life, is typology. Some readers enjoy a picture, because Bethlehem is commonly understood as house of bread, and Jesus calls himself the bread of life. Others are rightly cautious. John 6 never mentions Bethlehem, and no New Testament writer says the town's name predicts that saying. The Bible does not draw this line. It can be a gentle illustration after you have the real promises. It is not itself a promise."
+        }
+      ],
+      "nt": [
+        "Luke 2:4-7 is the New Testament's account of the town at the birth. Matthew 2:1 says Jesus was born in Bethlehem of Judea. Matthew 2:5-6 adds the scribes' quotation of Micah. John 7:42 shows the public expectation that the Christ comes from Bethlehem, David's village. Those are the New Testament lines. The bread picture is not one of them."
+      ],
+      "questions": [
+        "What stories, before Jesus, already tie Bethlehem to David?",
+        "Why does Joseph go there in Luke 2?",
+        "What is the difference between a meaning of a town's name and a promise God makes?"
+      ],
+      "word_study": {
+        "term": "Bethlehem",
+        "text": "The Hebrew name is commonly explained as house of bread. Beth is the word for house. Lehem is the word for bread. That explanation is old and well attested. It tells you what the name means. It does not, by itself, tell you that Jesus' sentence in John 6:35 was hidden inside the town. Matthew and Luke use the town because of David and because of Micah."
+      }
+    },
+    "mary": {
+      "context": [
+        "Mary is a young woman in Nazareth, pledged to be married to Joseph. She is not a queen. Luke introduces her when God sends the angel Gabriel to her.",
+        "Gabriel says she has found favor with God. She will conceive and bear a son, and she will call him Jesus. He will be great, the Son of the Most High, and he will receive the throne of David. Mary asks how this can be, since she is a virgin. The angel says the Holy Spirit will come upon her.",
+        "Mary's answer is trust. She calls herself the servant of the Lord and asks that the word be done to her. She is the mother of Jesus. The Gospels do not turn her into a savior. They honor her faith and her place in the birth."
+      ],
+      "passages": [
+        {
+          "ref": "Luke 1:31",
+          "text": "And behold, you will conceive in your womb and bear a son, and you shall call his name Jesus."
+        }
+      ],
+      "cross_refs": [
+        "Luke 1:26-38",
+        "Luke 1:46-55",
+        "Matthew 1:18-25",
+        "Luke 2:5-7",
+        "Galatians 4:4"
+      ],
+      "connections": [
+        {
+          "other": "annunciation",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from the announcement is the order of the story. Gabriel's words are spoken to Mary. Luke 1:26-38 tells the visit, her question, and her yes. The New Testament itself joins the announcement to her."
+        },
+        {
+          "other": "jesus_birth",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to the birth is explicit. Luke 2:7 says she gave birth to her firstborn son, wrapped him in swaddling cloths, and laid him in a manger. She is his mother in the narrative the New Testament tells."
+        }
+      ],
+      "nt": [
+        "Matthew 1:18-25 tells the same conception from Joseph's side and quotes Isaiah's virgin. Luke tells it from Mary's side. Paul says God sent his Son, born of woman (Galatians 4:4). The New Testament is consistent: Jesus has a human mother, and the child is conceived by the Holy Spirit, not by an ordinary father."
+      ],
+      "questions": [
+        "What does Gabriel promise Mary about her son's throne?",
+        "How does Mary answer, and what does that answer show?",
+        "What do Luke, Matthew, and Paul each say about Jesus being born of a woman?"
+      ]
+    },
+    "joseph": {
+      "context": [
+        "Joseph is a descendant of David, engaged to Mary. When he learns she is expecting a child, he is a just man and plans to divorce her quietly rather than shame her.",
+        "An angel appears in a dream and calls him son of David. The child conceived in Mary is from the Holy Spirit. Joseph is to take Mary as his wife and name the son Jesus, because he will save his people from their sins.",
+        "Joseph obeys. He takes Mary home. He is not the biological father. He is the legal father, the Davidic man who names the child and, later, takes him to Egypt and back. Matthew's genealogy runs to Joseph for that legal line."
+      ],
+      "passages": [
+        {
+          "ref": "Matthew 1:20",
+          "text": "Joseph, son of David, do not fear to take Mary as your wife, for that which is conceived in her is from the Holy Spirit."
+        }
+      ],
+      "cross_refs": [
+        "Matthew 1:1-17",
+        "Matthew 1:18-25",
+        "Luke 2:4",
+        "Matthew 2:13-15"
+      ],
+      "connections": [
+        {
+          "other": "covenant_david",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from David's covenant reaches Joseph through the family list. Matthew 1:6-16 names the generations from David to Joseph. The angel's title, son of David, is the New Testament putting Joseph under that promise."
+        },
+        {
+          "other": "jesus",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to Jesus is explicit and careful. Matthew 1:16 calls Joseph the husband of Mary, of whom Jesus was born. Matthew 1:25 says Joseph called his name Jesus. The same chapter says the child was conceived by the Holy Spirit. Joseph is legal father, not biological father. The New Testament states both facts."
+        }
+      ],
+      "nt": [
+        "Matthew 1 is the New Testament reading of Joseph. The genealogy gives him David's line. The dream gives him the name to speak over the child, and the reason: he will save his people from their sins (Matthew 1:21). Luke 2:4 adds that Joseph goes to Bethlehem because he is of the house and lineage of David. The Gospels do not confuse Joseph's role. They define it."
+      ],
+      "questions": [
+        "What was Joseph planning to do before the dream, and why?",
+        "What two things does the angel tell him about the child's origin and name?",
+        "Why does Matthew trace a genealogy to Joseph if Joseph is not the biological father?"
+      ]
+    },
+    "annunciation": {
+      "context": [
+        "The annunciation is Gabriel's visit to Mary in Nazareth, in the sixth month of Elizabeth's pregnancy. God sends the angel. This is not a vague feeling. It is a message with a child, a name, and a throne.",
+        "The son will be called the Son of the Most High. The Lord God will give him the throne of his father David. He will reign over the house of Jacob forever, and his kingdom will have no end.",
+        "Mary asks how, because she is a virgin. Gabriel answers that the Holy Spirit will come upon her and the power of the Most High will overshadow her. The child will be called holy, the Son of God."
+      ],
+      "passages": [
+        {
+          "ref": "Luke 1:32-33",
+          "text": "He will be great and will be called the Son of the Most High. And the Lord God will give to him the throne of his father David, and he will reign over the house of Jacob forever, and of his kingdom there will be no end."
+        }
+      ],
+      "cross_refs": [
+        "Luke 1:26-38",
+        "2 Samuel 7:12-16",
+        "Isaiah 9:6-7",
+        "Matthew 1:20-23"
+      ],
+      "connections": [
+        {
+          "other": "covenant_david",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from David's covenant is the throne in the angel's sentence. Luke 1:32-33 takes the forever kingdom promised to David's offspring and speaks it over Mary's son. The New Testament itself makes that connection."
+        },
+        {
+          "other": "mary",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to Mary is the order of the event. The announcement happens to her. Luke 1:26-38 is one scene: the angel comes, Mary hears, Mary responds. The New Testament tells it that way."
+        }
+      ],
+      "nt": [
+        "Luke 1:32-33 is the New Testament reading of the Davidic promise at the moment of the announcement. The throne, the house of Jacob, and the kingdom without end are Gabriel's words, not a later guess. Matthew 1:20-23 tells the matching announcement to Joseph and adds Isaiah's Immanuel. Together the Gospels say the child is David's heir and God with us, conceived by the Holy Spirit."
+      ],
+      "questions": [
+        "What three things does Gabriel say about the son's kingdom?",
+        "What question does Mary ask, and what does the answer protect?",
+        "Which older promise sounds most like the angel's words about the throne?"
+      ]
+    },
+    "jesus_birth": {
+      "context": [
+        "Caesar has ordered a registration. Joseph goes from Nazareth to Bethlehem because he belongs to David's house. Mary, who is expecting, goes with him. While they are there, the time comes, and she gives birth.",
+        "The child is laid in a manger because there is no place in the inn. That night, angels tell shepherds in the fields that a Savior has been born in the city of David. He is Christ the Lord. The shepherds go and find the baby.",
+        "Matthew tells the same birth from another side. Mary is found to be with child by the Holy Spirit. The angel tells Joseph. The birth fulfills Isaiah's word about the virgin and Immanuel. Later, wise men come, and the scribes point Herod to Bethlehem."
+      ],
+      "passages": [
+        {
+          "ref": "Luke 2:11",
+          "text": "For unto you is born this day in the city of David a Savior, who is Christ the Lord."
+        },
+        {
+          "ref": "Luke 2:7",
+          "text": "And she gave birth to her firstborn son and wrapped him in swaddling cloths and laid him in a manger, because there was no place for them in the inn."
+        }
+      ],
+      "cross_refs": [
+        "Luke 2:1-20",
+        "Matthew 1:18-25",
+        "Micah 5:2",
+        "Matthew 2:1-6",
+        "Galatians 4:4"
+      ],
+      "connections": [
+        {
+          "other": "promise_seed",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from the first promise uses Galatians 4:4. God sent his Son, born of a woman. The New Testament states the birth. It does not quote Genesis 3:15 in that verse. Christians also hear the garden promise fulfilled in this child, and the confession says the seed of the woman is Christ. The cited New Testament line for the birth is Galatians 4:4."
+        },
+        {
+          "other": "prophecy_immanuel",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from Immanuel is Matthew's quotation. He says the birth fulfills Isaiah 7:14, and he translates the name as God with us (Matthew 1:22-23). The New Testament itself makes that link."
+        },
+        {
+          "other": "mary",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from Mary is the birth narrative. Luke 2:7 says she gave birth to her firstborn son. The New Testament tells you who the mother is."
+        },
+        {
+          "other": "prophecy_bethlehem",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from Micah is the scribes' answer to Herod. Matthew 2:4-6 quotes the prophet and names Bethlehem as the place of the king's birth. The New Testament itself uses Micah for this event."
+        },
+        {
+          "other": "bethlehem",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from the town is Luke's travel note and birth. Luke 2:4-7 says they go to Bethlehem, the city of David, and the child is born there."
+        }
+      ],
+      "nt": [
+        "Luke gives the angel's sentence: a Savior, Christ the Lord, in the city of David (Luke 2:11). Matthew gives Isaiah and the name Immanuel (Matthew 1:22-23), and the scribes' use of Micah (Matthew 2:4-6). Paul gives the simple fact that the Son was born of woman when the time was full (Galatians 4:4). The New Testament reads this birth as the arrival of the promised person, not as one more story in a list."
+      ],
+      "questions": [
+        "Why is Jesus born in Bethlehem, according to Luke?",
+        "What three titles does the angel give the child in Luke 2:11?",
+        "Which prophet does Matthew quote, and which prophet do the scribes quote?"
+      ]
+    },
+    "jesus": {
+      "context": [
+        "Matthew begins his Gospel with a genealogy, not a definition. The book of the genealogy of Jesus Christ, the son of David, the son of Abraham. In one line he sets Jesus inside the two great family promises, Abraham's offspring and David's king.",
+        "Christ is not a last name. It is a title. It means Messiah, the anointed king God had promised. Jesus is the personal name, the name Joseph is told to give because this child will save his people from their sins.",
+        "Every other stop on this map is a thread. This stop is the person the threads are for. He is the son in the promises, the king from Judah and Jesse and David, the child of Mary, the one born in Bethlehem, and the one who says he gives life."
+      ],
+      "passages": [
+        {
+          "ref": "Matthew 1:1",
+          "text": "The book of the genealogy of Jesus Christ, the son of David, the son of Abraham."
+        },
+        {
+          "ref": "Matthew 1:21",
+          "text": "She will bear a son, and you shall call his name Jesus, for he will save his people from their sins."
+        }
+      ],
+      "cross_refs": [
+        "Luke 1:32-33",
+        "Luke 2:11",
+        "John 1:41",
+        "Galatians 3:16",
+        "Revelation 5:5"
+      ],
+      "connections": [
+        {
+          "other": "promise_abraham",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from Abraham is explicit. Paul says the offspring in Abraham's promise is Christ (Galatians 3:16). Matthew 1:1 calls Jesus the son of Abraham. The New Testament itself names him as that descendant."
+        },
+        {
+          "other": "promise_judah",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from Judah is explicit. Revelation 5:5 calls him the Lion of the tribe of Judah. Hebrews 7:14 says our Lord descended from Judah. The New Testament itself gives him that tribe."
+        },
+        {
+          "other": "jesse_root",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from Jesse is explicit. Paul quotes Isaiah about the root of Jesse and says the nations will hope in him (Romans 15:12). The New Testament itself applies the prophecy to Christ."
+        },
+        {
+          "other": "joseph",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from Joseph is the legal family. Matthew 1:16 says Jesus was born of Mary, the wife of Joseph. Matthew 1:25 says Joseph named him. Matthew 1:20 says the child was conceived by the Holy Spirit. The New Testament states the legal line and the miraculous conception together."
+        },
+        {
+          "other": "prophecy_child",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from Isaiah's child uses Matthew 4:13-16, where Isaiah 9:1-2 is fulfilled in Jesus' ministry in Galilee. The child on David's throne in Isaiah 9:6-7 is read with Luke 1:32-33. The New Testament quote in Matthew is Isaiah 9:1-2. The throne promise is Gabriel's word."
+        },
+        {
+          "other": "magi",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The line from the wise men is the scene in Matthew 2. They ask for the one born king of the Jews, and they worship the child (Matthew 2:2, Matthew 2:11). The New Testament itself shows them coming to Jesus."
+        }
+      ],
+      "nt": [
+        "The New Testament reads the whole line of promises as ending on this person. Matthew 1:1 stacks Abraham and David on his name. Luke 2:11 calls the baby Savior, Christ the Lord. John 1:41 has Andrew say he has found the Messiah, and John explains that Messiah means Christ. Galatians 3:16 says the offspring is Christ. The Gospels and Paul are not telling unrelated stories. They are naming one man."
+      ],
+      "questions": [
+        "What two ancestors does Matthew put in his first sentence, and why those two?",
+        "What is the difference between the name Jesus and the title Christ?",
+        "Which of the lines into this stop is a quotation of an Old Testament promise, and which is a family record?"
+      ],
+      "word_study": {
+        "term": "Messiah and Christ",
+        "text": "John 1:41 gives the glossary. Andrew says, We have found the Messiah, and John adds, which means Christ. Messiah comes from Hebrew for anointed one. Christ is the Greek way of saying the same thing. In Israel, kings and priests were anointed with oil. The promised Christ is the one God anoints as king and savior. The New Testament does not leave the translation to guesswork."
+      }
+    },
+    "magi": {
+      "context": [
+        "After Jesus is born in Bethlehem, wise men from the east arrive in Jerusalem. They have seen a star. They ask a public question: where is he who has been born king of the Jews?",
+        "Herod is troubled, and all Jerusalem with him. He gathers the chief priests and scribes. They answer from the prophet: Bethlehem. Herod sends the wise men, pretending he wants to worship too. The star leads them to the house. They see the child with Mary, fall down, and worship. They offer gold, frankincense, and myrrh, and they go home another way.",
+        "These men are Gentiles, not from Israel. Their worship says the king promised to Abraham's nations has begun to be sought by the nations. Matthew tells the story as history, with a place, a ruler, and a prophecy."
+      ],
+      "passages": [
+        {
+          "ref": "Matthew 2:2",
+          "text": "Where is he who has been born king of the Jews? For we saw his star when it rose and have come to worship him."
+        }
+      ],
+      "cross_refs": [
+        "Matthew 2:1-12",
+        "Micah 5:2",
+        "Numbers 24:17",
+        "Psalm 72:10-11",
+        "Isaiah 60:1-6"
+      ],
+      "connections": [
+        {
+          "other": "jesus",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The line to Jesus is explicit. Matthew 2:2 records their question about the child born king. Matthew 2:11 records that they worshiped him. The New Testament itself shows the search ending on Jesus, not on a symbol."
+        }
+      ],
+      "nt": [
+        "Matthew's own reading of the visit includes the scribes' use of Micah 5:2. The king the nations seek is the ruler from Bethlehem. The story does not quote Genesis or Isaiah 60 as a fulfillment formula. Those older poems about kings bringing gifts are passages Christians sometimes set beside this scene. Matthew's stated quotation is the Bethlehem prophecy. The stated action is worship of the child."
+      ],
+      "questions": [
+        "What do the wise men call the child before they ever see him?",
+        "Who tells them the town, and which prophet do they use?",
+        "What do they do when they find him, and why does that matter if he is lying in an ordinary house?"
+      ]
+    },
+    "bread_of_life": {
+      "context": [
+        "This saying comes later than the birth, in Jesus' public ministry. A crowd has eaten bread he provided. They follow him to the other side of the sea. Jesus tells them they are seeking him because they ate their fill, not because they saw what the sign meant.",
+        "He tells them to work for food that endures to eternal life, which the Son of Man will give. They ask for a sign like the manna in the wilderness. Jesus says the true bread from heaven is the one the Father gives. Then he says the sentence: I am the bread of life.",
+        "He explains it as coming to him and believing in him. Whoever comes will not hunger. Whoever believes will not thirst. The bread is not a town and not a loaf. It is himself, received by trust."
+      ],
+      "passages": [
+        {
+          "ref": "John 6:35",
+          "text": "Jesus said to them, \"I am the bread of life; whoever comes to me shall not hunger, and whoever believes in me shall never thirst.\""
+        }
+      ],
+      "cross_refs": [
+        "John 6:26-40",
+        "John 6:47-51",
+        "Exodus 16:4",
+        "Matthew 4:4"
+      ],
+      "connections": [
+        {
+          "other": "bethlehem",
+          "direction": "from",
+          "confidence": "typology",
+          "text": "The only line into this saying on the map comes from Bethlehem, and it is typology. Some readers notice that the town's name is commonly explained as house of bread, and they enjoy a picture: the house of bread is where the bread of life is born. John never makes that point. He does not mention Bethlehem in chapter 6. Careful readers should say so. You can like the picture and still refuse to treat it as a verse. The real teaching is in Jesus' own words about coming to him and believing."
+        }
+      ],
+      "nt": [
+        "The New Testament reading of this sentence is Jesus' own explanation in the same chapter. Coming to him and believing in him are how a person eats this bread (John 6:35). He also says that everyone who looks on the Son and believes has eternal life (John 6:40). He compares himself with the manna (John 6:31-33). Those are the connections John actually draws. Bethlehem is not one of them."
+      ],
+      "questions": [
+        "What had the crowd just received, and what does Jesus say they should seek instead?",
+        "How does Jesus define not hungering and not thirsting?",
+        "Why is it important that John 6 never mentions Bethlehem?"
+      ]
+    }
+  },
+  "paths": {
+    "week1_seed": {
+      "context": [
+        "This week walks the promise from its first wide form to a family, and then to the night the child is born. It starts in the garden, after sin. It moves to Abraham on the mountain. It ends in Bethlehem, where angels call the baby Savior and Lord.",
+        "You are watching one hope become clearer. First a child of the woman. Then Abraham's offspring, who will bless the nations. Then a birth in the city of David. Not every step has a single verse that says, this is the next chapter. The New Testament does say the offspring is Christ, and that God's Son was born of a woman.",
+        "Read it slowly. Notice which lines the New Testament draws in plain words, and which line is a faithful reading that the text itself does not spell out."
+      ],
+      "passages": [
+        {
+          "ref": "Genesis 3:15",
+          "text": "he shall bruise your head, and you shall bruise his heel."
+        },
+        {
+          "ref": "Genesis 22:18",
+          "text": "in your offspring shall all the nations of the earth be blessed"
+        },
+        {
+          "ref": "Luke 2:11",
+          "text": "For unto you is born this day in the city of David a Savior, who is Christ the Lord."
+        }
+      ],
+      "cross_refs": [
+        "Galatians 3:16",
+        "Galatians 4:4",
+        "Matthew 1:1",
+        "Romans 16:20"
+      ],
+      "connections": [
+        {
+          "other": "promise_abraham",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "Between the garden and Abraham, the map draws a typology line. Some readers see the promised child narrowed to Abraham's line. Genesis does not state that join. Hold it as a careful reading, not as a quotation."
+        },
+        {
+          "other": "jesus",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "From Abraham the explicit line reaches Jesus. Paul says the offspring is Christ (Galatians 3:16), and Matthew calls him the son of Abraham (Matthew 1:1)."
+        },
+        {
+          "other": "jesus_birth",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "From the first promise, Galatians 4:4 is the New Testament line to a real birth: God sent his Son, born of woman. The week then stands at the manger and hears the angel's sentence in Luke 2:11."
+        }
+      ],
+      "nt": [
+        "Taken together, the New Testament reads this week as promise and arrival. Galatians 3:16 identifies Abraham's offspring as Christ. Galatians 4:4 says the Son was born of woman. Matthew 1:1 sets Jesus in Abraham's family. Luke 2:11 announces the birth in David's city. Romans 16:20 speaks of Satan crushed, which many readers set beside the garden promise without claiming it is a direct quotation."
+      ],
+      "questions": [
+        "Where does the promise get more specific this week?",
+        "Which connection is explicit, and which is typology?",
+        "What would you say the angel announces that the garden promise only hinted?"
+      ]
+    },
+    "week2_king": {
+      "context": [
+        "This week follows a king. Jacob gives the scepter to Judah. Isaiah sees a shoot from Jesse. God promises David a throne forever. The family line reaches Joseph. Gabriel tells Mary the throne is for her son. The child is born in David's town.",
+        "Some stops sit side by side without one verse joining them in a single sentence. Jesse and David are father and son in the story, and the promises belong to one royal family, even where the map has no separate line between two neighboring stops.",
+        "Listen for the word forever, and for the title son of David. Those are the notes that keep ringing until the birth."
+      ],
+      "passages": [
+        {
+          "ref": "Genesis 49:10",
+          "text": "The scepter shall not depart from Judah, nor the ruler's staff from between his feet, until tribute comes to him; and to him shall be the obedience of the peoples."
+        },
+        {
+          "ref": "Luke 1:32-33",
+          "text": "And the Lord God will give to him the throne of his father David, and he will reign over the house of Jacob forever, and of his kingdom there will be no end."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 11:1",
+        "2 Samuel 7:12-16",
+        "Matthew 1:1-16",
+        "Romans 15:12",
+        "Luke 2:4-11"
+      ],
+      "connections": [
+        {
+          "other": "jesus",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Judah's scepter, Jesse's root, and Joseph's legal fatherhood all have explicit New Testament lines to Jesus: Revelation 5:5, Hebrews 7:14, Romans 15:12, and Matthew 1:16."
+        },
+        {
+          "other": "annunciation",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "David's covenant reaches Gabriel's words in Luke 1:32-33. The New Testament speaks the forever throne over Mary's son."
+        },
+        {
+          "other": "bethlehem",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "David's house and Bethlehem belong together. Luke 2:4 calls the town the city of David, and the child of this week is born there."
+        }
+      ],
+      "nt": [
+        "The New Testament reads this week as one royal story. Matthew 1 opens with the son of David and then lists the names. Luke's angel hands David's throne to Jesus. Paul uses Isaiah's root of Jesse for the hope of the nations. The king promised to Judah is not left in the past."
+      ],
+      "questions": [
+        "Which family names does this week follow, in order?",
+        "Where does the angel sound most like 2 Samuel 7?",
+        "Why does a legal father still matter in Matthew's story?"
+      ]
+    },
+    "week3_sign": {
+      "context": [
+        "This week is about a sign and the people in it. Isaiah says a virgin will bear a son called Immanuel. Isaiah also says a child is born and a son is given. Then the story arrives at Mary, who hears Gabriel, and at Joseph, who obeys a dream. The week ends when the child is born.",
+        "The sign is not a trick. Matthew says the birth happened this way to fulfill the prophet. God with us is a person, conceived by the Holy Spirit, born of Mary, named by Joseph.",
+        "Hold Isaiah 9 carefully. Matthew quotes the light in Galilee from the start of that chapter. The child on David's shoulder is the rest of the same prophecy, read with the angel's promise of David's throne."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 7:14",
+          "text": "Behold, the virgin shall conceive and bear a son, and shall call his name Immanuel."
+        },
+        {
+          "ref": "Matthew 1:23",
+          "text": "Behold, the virgin shall conceive and bear a son, and they shall call his name Immanuel (which means, God with us)."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 9:1-7",
+        "Luke 1:26-38",
+        "Matthew 1:18-25",
+        "Luke 2:7",
+        "Galatians 4:4"
+      ],
+      "connections": [
+        {
+          "other": "jesus_birth",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Isaiah's Immanuel and Mary's motherhood both meet the birth in explicit New Testament lines: Matthew 1:22-23 and Luke 2:7."
+        },
+        {
+          "other": "mary",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Gabriel's announcement is spoken to Mary. Luke 1:26-38 is that explicit sequence."
+        },
+        {
+          "other": "jesus",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Joseph's line reaches Jesus as legal father in Matthew 1:16 and Matthew 1:25, with the Spirit's conception stated in Matthew 1:20."
+        }
+      ],
+      "nt": [
+        "Matthew 1:22-23 is the New Testament's direct reading of Isaiah 7:14. He quotes it and translates Immanuel. Luke 1:31-35 tells Mary she will conceive by the Holy Spirit and bear a son named Jesus. Galatians 4:4 says the Son was born of woman. Those are the clear readings of this week's sign."
+      ],
+      "questions": [
+        "What does Immanuel mean, and who tells you the meaning?",
+        "How do Mary's question and Joseph's dream fit together?",
+        "Which part of Isaiah 9 does Matthew quote, and which part do we connect by the angel's words?"
+      ]
+    },
+    "week4_town": {
+      "context": [
+        "This week is about a place. Micah says the ruler comes from little Bethlehem. The town already belongs to David and to Jesse. Wise men arrive asking for a king, and the teachers of Israel answer with Micah. The child is born there.",
+        "The smallness is part of the story. The prophet says the town is too little to count among the clans. God still chooses it. The king does not begin in a palace.",
+        "One picture on this map, from Bethlehem to the bread of life, is not part of the week's necessary line. It is a typology note, and it should stay gentle. The week's real path is prophet, town, seekers, and birth."
+      ],
+      "passages": [
+        {
+          "ref": "Micah 5:2",
+          "text": "But you, O Bethlehem Ephrathah, who are too little to be among the clans of Judah, from you shall come forth for me one who is to rule in Israel"
+        },
+        {
+          "ref": "Matthew 2:6",
+          "text": "And you, O Bethlehem, in the land of Judah, are by no means least among the rulers of Judah; for from you shall come a ruler who will shepherd my people Israel."
+        }
+      ],
+      "cross_refs": [
+        "1 Samuel 16:1",
+        "Luke 2:1-7",
+        "Matthew 2:1-12",
+        "John 7:42"
+      ],
+      "connections": [
+        {
+          "other": "bethlehem",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Micah names the town, and Luke 2:4-7 tells the birth in it. Matthew 2:4-6 shows the scribes using the prophecy when Herod asks."
+        },
+        {
+          "other": "jesus",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The wise men seek the child born king and worship him (Matthew 2:2, Matthew 2:11). That explicit line reaches Jesus."
+        },
+        {
+          "other": "bread_of_life",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "The bread picture is the typology line from the town. Enjoy it only as an illustration. Scripture does not teach it."
+        }
+      ],
+      "nt": [
+        "Matthew 2:4-6 is the New Testament reading of this week in one scene. The king is born. The rulers ask where. The Scriptures answer Bethlehem. Luke 2 simply narrates the journey and the birth. John 7:42 shows that people expected the Christ from David's village."
+      ],
+      "questions": [
+        "Why does Micah call Bethlehem little, and how does Matthew's quotation speak of the town?",
+        "What question do the wise men ask in the capital?",
+        "Which line this week should you not treat as a Bible promise?"
+      ]
+    },
+    "christmas": {
+      "context": [
+        "Christmas on this map is two stops. First the birth, in David's city, announced to shepherds. Then the person the birth reveals: Jesus Christ, son of David, son of Abraham.",
+        "The day is not a pause in the story. It is the moment the promises become a baby you could hold. Savior, Christ, and Lord are angel words, not later nicknames.",
+        "There is no separate line drawn on the map from the birth straight to the title Jesus. The two stops belong together because the child who is born is that person. The lines into each stop, from Abraham, David, Isaiah, Micah, Mary, and the wise men, are what tie the night to the long story."
+      ],
+      "passages": [
+        {
+          "ref": "Luke 2:11",
+          "text": "For unto you is born this day in the city of David a Savior, who is Christ the Lord."
+        },
+        {
+          "ref": "Matthew 1:1",
+          "text": "The book of the genealogy of Jesus Christ, the son of David, the son of Abraham."
+        }
+      ],
+      "cross_refs": [
+        "Luke 2:1-20",
+        "Matthew 1:18-25",
+        "Galatians 4:4",
+        "John 1:14",
+        "John 1:41"
+      ],
+      "connections": [
+        {
+          "other": "jesus_birth",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The birth gathers explicit lines from the first promise in Galatians 4:4, from Immanuel in Matthew 1:22-23, from Mary in Luke 2:7, from Micah in Matthew 2:4-6, and from the town in Luke 2:4-7."
+        },
+        {
+          "other": "jesus",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The person gathers explicit lines from Abraham, Judah, Jesse, Joseph, Isaiah's child, and the wise men. Matthew 1:1 states the family titles in one sentence."
+        }
+      ],
+      "nt": [
+        "John 1:14 says the Word became flesh and dwelt among us. That is the Christmas fact in John's words. Luke 2:11 tells you what the angels called him. Matthew 1:1 tells you which promises he carries in his name. Read those three and the night is anchored."
+      ],
+      "questions": [
+        "What titles does the angel use on the night of the birth?",
+        "What two family names does Matthew put on Jesus in his first verse?",
+        "Why can these two stops belong together even without one line drawn between them?"
+      ]
+    }
+  }
+}
