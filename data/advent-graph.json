@@ -3,7 +3,7 @@
     "title": "Scarlet Thread: Advent Path",
     "version": "0.1",
     "translation": "ESV",
-    "notes": "confidence 'explicit' = a New Testament text is cited for the line; read the note for the exact claim. 'typology' = interpretive; faithful readers differ. Quotes are short ESV excerpts verified against esv.org."
+    "notes": "confidence 'explicit' = a direct textual or narrative connection; read the cited passages and note for the exact claim. 'typology' = interpretive; faithful readers differ. Quotes are short ESV excerpts verified against esv.org."
   },
   "paths": [
     {
@@ -239,7 +239,7 @@
       "refs": [
         "John 6:35"
       ],
-      "summary": "Jesus said he is the bread of life. He means that people truly live by coming to him and trusting him."
+      "summary": "Jesus said he is the bread of life. In John 6:35, coming to him and believing in him stand alongside no hunger and no thirst."
     }
   ],
   "edges": [

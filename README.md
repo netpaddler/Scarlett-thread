@@ -4,21 +4,21 @@ Scarlet Thread tells Bible stories as one connected graph that points to Jesus C
 
 The perspective is Reformed and Christ-centered, in the line of the Westminster Standards. The wording is meant for a new believer. Scripture quotations are short excerpts from the ESV.
 
-This first version is an Advent map for 2026. It has 16 nodes, 19 edges, and five guided paths: the four Advent Sundays, then Christmas Day.
+This first version is an Advent map for 2026. It has 16 nodes, 18 edges, and five guided paths: the four Advent Sundays, then Christmas Day.
 
 ## How to read it
 
 The site has two modes.
 
-**Walk a week.** Choose Week 1, Week 2, Week 3, Week 4, or Christmas. Move with Back and Next (or the arrow keys). Next names the stop that comes after, and at the end of a week it moves on to the next week. Each stop opens with a short explanation and a quote when the map has one. A rail beside the reading (above it on a phone) marks where you are on the week, and the line between two stops shows whether the New Testament makes that connection, whether it is a picture of Jesus, or whether the two stops only sit side by side.
+**Walk a week.** Choose Week 1, Week 2, Week 3, Week 4, or Christmas. Move with Back and Next (or the arrow keys). Next names the stop that comes after, and at the end of a week it moves on to the next week. Each stop opens with a short explanation and a quote when the map has one. A rail beside the reading (above it on a phone) marks where you are on the week, and the line between two stops shows whether the connection is direct, interpretive, or only side by side.
 
-**See the map.** An interactive graph of every node and edge. Drag to pan, and pinch or use the buttons to zoom. Solid edges are stated in Scripture. Dashed edges are typology. Colors follow the edge type, and the key in the corner of the map explains them. A switch hides typology edges. Choose a node to open its reading beside the map (below it on a phone). If the drawing is hard to use, the list of names in the same place opens the same details.
+**See the map.** An interactive graph of every node and edge. Drag to pan, and pinch or use the buttons to zoom. Solid edges are direct textual or narrative connections. Dashed edges are interpretive. Colors follow the edge type, and the key in the corner of the map explains them. A switch hides interpretive edges. Choose a node to open its reading beside the map (below it on a phone). If the drawing is hard to use, the list of names in the same place opens the same details.
 
-A solid line means the New Testament itself draws the link. A dashed line is typology, an interpretive picture. Faithful readers may differ on those.
+A solid line marks a direct textual or narrative connection. A dashed line marks an interpretive connection. Read the cited passages and note for the exact claim.
 
 Sermon links come from Faith Presbyterian Church Tacoma's YouTube channel: https://www.youtube.com/@faithpresbyterianchurch-ta4701. They are listed in `data/sermons.json`, under each node id, best match first. To add one, copy an existing entry and fill in `title`, `preacher`, `date`, `service`, `text`, `url`, `start_seconds`, `match` (`exact` or `thematic`), and `notes`. Use the YouTube URL as published. Do not invent a sermon or a link.
 
-Each stop opens with a short explanation. Go deeper, from `data/deeper.json`, tells the story, quotes the main verses, and walks the lines on the map. Go deepest, from `data/confessions.json`, quotes the Westminster Confession and Catechisms in the modern spelling text on the Orthodox Presbyterian Church site, with the Scripture proofs printed in the editions at thewestminsterstandard.org. Add a section only when it really speaks to that stop, and keep every quotation exact.
+Each stop opens with a short explanation. Go deeper, from `data/deeper.json`, tells the story, quotes the main verses, and walks the lines on the map. Go deepest, from `data/confessions.json`, quotes the Westminster Confession and Catechisms in the modern spelling text on the Orthodox Presbyterian Church site, with Scripture proofs from the OPC's 2005 proof-text editions. Add a section only when it really speaks to that stop, and keep every quotation exact.
 
 The app works on a phone and on a desktop, in light mode and in dark mode.
 
@@ -60,9 +60,9 @@ The map lives in `data/advent-graph.json`. Do not change the Scripture quotes or
 
 ### Confidence flags
 
-`explicit` means the New Testament itself draws the link. The app calls this "Stated in Scripture" and draws a solid line.
+`explicit` means a direct textual or narrative connection. The app draws a solid line and tells the reader to check the cited passages and note for the exact claim.
 
-`typology` means an interpretive link. Faithful readers may differ. The app calls this "Typology" and draws a dashed line. The note on a typology edge says how to hold it (for example, as illustration only).
+`typology` means an interpretive link. Faithful readers may differ. The app draws a dashed line.
 
 Some stops on a guided path sit next to each other without a direct edge. The app says so. It does not invent a line to fill the gap.
 
@@ -104,7 +104,7 @@ The repository name is `Scarlett-thread`, so the address uses that spelling.
 
 If the repository is private, GitHub Pages for a private repository depends on the account plan. A public repository can serve this site on the free plan.
 
-Before a public launch, check the ESV excerpts in `data/advent-graph.json` against the licensed text. The file's own editor note asks for that check. The app copies those quotes as they are and does not rewrite them.
+The ESV excerpts and references were independently checked against esv.org in November 2026. The app copies those quotes as they are and does not rewrite them.
 
 ## Project layout
 
