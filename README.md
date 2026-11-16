@@ -18,7 +18,7 @@ A solid line means the New Testament itself draws the link. A dashed line is typ
 
 Sermon links come from Faith Presbyterian Church Tacoma's YouTube channel: https://www.youtube.com/@faithpresbyterianchurch-ta4701. They are listed in `data/sermons.json`, under each node id, best match first. To add one, copy an existing entry and fill in `title`, `preacher`, `date`, `service`, `text`, `url`, `start_seconds`, `match` (`exact` or `thematic`), and `notes`. Use the YouTube URL as published. Do not invent a sermon or a link.
 
-Each stop opens with a short explanation. Go deeper shows the passages and how the stop connects. Go deepest quotes the Westminster Confession and Catechisms from `data/confessions.json`, using the modern spelling text on the Orthodox Presbyterian Church site. Add a section only when it really speaks to that stop, and keep the quotation exact.
+Each stop opens with a short explanation. Go deeper, from `data/deeper.json`, tells the story, quotes the main verses, and walks the lines on the map. Go deepest, from `data/confessions.json`, quotes the Westminster Confession and Catechisms in the modern spelling text on the Orthodox Presbyterian Church site, with the Scripture proofs printed in the editions at thewestminsterstandard.org. Add a section only when it really speaks to that stop, and keep every quotation exact.
 
 The app works on a phone and on a desktop, in light mode and in dark mode.
 

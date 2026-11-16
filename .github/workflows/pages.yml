@@ -32,7 +32,7 @@ jobs:
         run: |
           mkdir -p _site/data _site/vendor
           cp index.html styles.css app.js favicon.svg _site/
-          cp data/advent-graph.json data/sermons.json data/confessions.json _site/data/
+          cp data/advent-graph.json data/sermons.json data/confessions.json data/deeper.json _site/data/
           cp vendor/cytoscape.min.js vendor/dagre.min.js vendor/cytoscape-dagre.js _site/vendor/
 
       - name: Upload site

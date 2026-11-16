@@ -1184,6 +1184,38 @@ h1 {
   margin: 0.35rem 0 0;
 }
 
+.deeper-passage {
+  margin: 0.85rem 0;
+}
+
+.deeper-passage blockquote {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+.deeper-passage figcaption {
+  margin-top: 0.3rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.deeper-questions {
+  margin: 0.3rem 0 0.4rem;
+  padding-left: 1.2rem;
+}
+
+.deeper-questions li {
+  margin: 0.4rem 0;
+}
+
+.fold-body {
+  max-width: 68ch;
+}
+
 .confession-text {
   margin: 0.55rem 0 0;
   padding: 0;
