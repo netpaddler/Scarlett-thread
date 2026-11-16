@@ -12,25 +12,25 @@
   };
 
   var EDGE_LABELS = {
-    prophecy_fulfillment: "A promise kept",
-    promise_narrowing: "The promise gets clearer",
+    prophecy_fulfillment: "Prophecy connection",
+    promise_narrowing: "Promises read together",
     family_line: "Family",
     event_sequence: "What happened next",
     place_link: "A place",
-    type_to_christ: "A picture of Jesus"
+    type_to_christ: "Interpretive picture"
   };
 
   var KIND_GLOSS = {
     promise: "A promise is something God says he will do.",
-    covenant: "A covenant is a promise God makes and keeps.",
-    prophecy: "A prophecy is God telling what he will do."
+    covenant: "A covenant is a binding relationship God establishes, with promises and obligations.",
+    prophecy: "A prophecy is a message God gives through a prophet. It can announce what God will do."
   };
 
   var PATH_LINE = {
-    week1_seed: "God makes a promise, and each stop makes it clearer.",
-    week2_king: "The promise becomes a king from David's family.",
+    week1_seed: "This walk reads the garden and Abraham together as promises fulfilled in Christ.",
+    week2_king: "Follow the promised ruler through David's family.",
     week3_sign: "God gives a sign. A son will be born, and God will be with us.",
-    week4_town: "The king will come from a town most people would overlook.",
+    week4_town: "The promised ruler comes from Bethlehem.",
     christmas: "The promise arrives. Jesus is born."
   };
 
@@ -125,10 +125,10 @@
 
   function confidenceCopy(flag) {
     if (flag === "explicit") {
-      return "The New Testament itself makes this connection.";
+      return "A New Testament text is cited for this line. Read the note for the exact claim.";
     }
     if (flag === "typology") {
-      return "This is a picture of Jesus. Typology is the old word for that kind of picture. Christians who trust the Bible do not all see it the same way.";
+      return "This is an interpretive connection. Christians who trust the Bible do not all see it the same way.";
     }
     return flag || "";
   }
@@ -406,7 +406,7 @@
       });
     }
     if (entry.nt && entry.nt.length) {
-      parent.append(h("h4", { class: "section-label", text: "How the New Testament reads it" }));
+      parent.append(h("h4", { class: "section-label", text: "New Testament connections" }));
       addParagraphs(parent, entry.nt);
     }
     if (entry.word_study && entry.word_study.text) {
@@ -1352,8 +1352,8 @@
 
   function typologyHint() {
     document.getElementById("typology-hint").textContent = state.hideTypology
-      ? "Picture lines are hidden on the map. Open a name and go deeper to read about them."
-      : "A dashed line is a picture of Jesus. Hiding those leaves only connections the New Testament states.";
+      ? "Interpretive lines are hidden on the map. Open a name and go deeper to read about them."
+      : "A dashed line marks an interpretive connection. Hiding those leaves lines with a cited New Testament text. Read each note for the exact claim.";
   }
 
   function zoomBy(factor) {

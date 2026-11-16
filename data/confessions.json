@@ -15,113 +15,113 @@
         "url": "https://opc.org/lc.html"
       }
     },
-    "proofs": "Scripture proofs are those printed with the Westminster Confession and Catechisms at https://thewestminsterstandard.org/the-westminster-confession/ and the catechism pages there. The Standards themselves are quoted in the modern spelling text of the Orthodox Presbyterian Church."
+    "proofs": "Scripture proof citations are from the Orthodox Presbyterian Church editions with proof texts: https://opc.org/documents/CFLayout.pdf, https://opc.org/documents/SCLayout.pdf, and https://opc.org/documents/LCLayout.pdf. The Standards themselves use the constitutional text published by the OPC."
   },
   "sections": {
     "wcf-7-3": {
       "work": "wcf",
       "cite": "Confession 7.3",
-      "heading": "Of God's Covenant with Man",
+      "heading": "Of God’s Covenant with Man",
       "text": "3. Man, by his fall, having made himself incapable of life by that covenant, the Lord was pleased to make a second, commonly called the covenant of grace; wherein he freely offereth unto sinners life and salvation by Jesus Christ; requiring of them faith in him, that they may be saved, and promising to give unto all those that are ordained unto eternal life his Holy Spirit, to make them willing, and able to believe.",
-      "proofs": "John 15:5; Romans 5:6; Romans 8:7; Romans 3:10, 12; Ephesians 2:1, 5; Colossians 2:13; John 6:44, 65; 1 Corinthians 2:14; Ephesians 2:2-5; Titus 3:3-5"
+      "proofs": "Galatians 3:21; Romans 3:20-21; Romans 8:3; Genesis 3:15; Isaiah 42:6; John 3:16; Romans 10:6, 9; Revelation 22:17; Acts 13:48; Ezekiel 36:26-27; John 6:37, 44-45; 1 Corinthians 12:3"
     },
     "wcf-7-5": {
       "work": "wcf",
       "cite": "Confession 7.5",
-      "heading": "Of God's Covenant with Man",
+      "heading": "Of God’s Covenant with Man",
       "text": "5. This covenant was differently administered in the time of the law, and in the time of the gospel: under the law, it was administered by promises, prophecies, sacrifices, circumcision, the paschal lamb, and other types and ordinances delivered to the people of the Jews, all foresignifying Christ to come; which were, for that time, sufficient and efficacious, through the operation of the Spirit, to instruct and build up the elect in faith in the promised Messiah, by whom they had full remission of sins, and eternal salvation; and is called the old testament.",
-      "proofs": "2 Corinthians 3:6-9; Romans 4:11; Colossians 2:11-12; 1 Corinthians 5:7; Hebrews 8 through 10; John 8:56; 1 Corinthians 10:1-4; Hebrews 11:13; Galatians 3:7-9, 14"
+      "proofs": "2 Corinthians 3:6-9; Hebrews 8-10; Romans 4:11; Colossians 2:11-12; 1 Corinthians 5:7; 1 Corinthians 10:1-4; Hebrews 11:13; John 8:56; Galatians 3:7-9, 14; Psalm 32:1-2, 5"
     },
     "wcf-7-6": {
       "work": "wcf",
       "cite": "Confession 7.6",
-      "heading": "Of God's Covenant with Man",
+      "heading": "Of God’s Covenant with Man",
       "text": "6. Under the gospel, when Christ, the substance, was exhibited, the ordinances in which this covenant is dispensed are the preaching of the Word, and the administration of the sacraments of baptism and the Lord’s Supper: which, though fewer in number, and administered with more simplicity, and less outward glory, yet, in them, it is held forth in more fullness, evidence and spiritual efficacy, to all nations, both Jews and Gentiles; and is called the new testament. There are not therefore two covenants of grace, differing in substance, but one and the same, under various dispensations.",
-      "proofs": "Colossians 2:17; Matthew 28:19-20; 1 Corinthians 11:23-25; Jeremiah 31:33-34; Hebrews 12:22-28; Matthew 28:19; Ephesians 2:15-19; Luke 22:20; Galatians 3:14, 16; Hebrews 13:8"
+      "proofs": "Colossians 2:17; 1 Corinthians 1:21; Matthew 28:19-20; 1 Corinthians 11:23-25; Hebrews 12:22-24; 2 Corinthians 3:9-11; Jeremiah 31:33-34; Luke 2:32; Acts 10:34; Ephesians 2:15-19; Luke 22:20; Galatians 3:8-9, 14, 16; Romans 3:21-22, 30; Romans 4:3, 6-8, 16-17, 23-24; Genesis 15:6; Psalm 32:1-2; Hebrews 4:2; Romans 10:6-10; 1 Corinthians 10:3-4"
     },
     "wcf-8-1": {
       "work": "wcf",
       "cite": "Confession 8.1",
       "heading": "Of Christ the Mediator",
       "text": "1. It pleased God, in his eternal purpose, to choose and ordain the Lord Jesus, his only begotten Son, to be the Mediator between God and man, the Prophet, Priest, and King, the Head and Savior of his church, the Heir of all things, and Judge of the world: unto whom he did from all eternity give a people, to be his seed, and to be by him in time redeemed, called, justified, sanctified, and glorified.",
-      "proofs": "Isaiah 42:1; John 3:16; 1 Peter 1:19-20; Acts 3:22; Hebrews 5:5-6; Psalm 2:6; Luke 1:33; Ephesians 5:23; Hebrews 1:2; Acts 17:31; John 17:6; 1 Timothy 2:6"
+      "proofs": "Isaiah 42:1; 1 Peter 1:19-20; John 3:16; 1 Timothy 2:5; Acts 3:20, 22; Deuteronomy 18:15; Hebrews 5:5-6; Psalm 2:6; Luke 1:33; Isaiah 9:5-6; Acts 2:29-36; Colossians 1:13; Ephesians 5:23; Hebrews 1:2; Acts 17:31; John 17:6; Psalm 22:30; Isaiah 53:10; Ephesians 1:4; 1 Timothy 2:6; Isaiah 55:4-5; 1 Corinthians 1:30; Romans 8:30"
     },
     "wcf-8-2": {
       "work": "wcf",
       "cite": "Confession 8.2",
       "heading": "Of Christ the Mediator",
       "text": "2. The Son of God, the second person in the Trinity, being very and eternal God, of one substance and equal with the Father, did, when the fullness of time was come, take upon him man’s nature, with all the essential properties, and common infirmities thereof, yet without sin; being conceived by the power of the Holy Ghost, in the womb of the virgin Mary, of her substance. So that two whole, perfect, and distinct natures, the Godhead and the manhood, were inseparably joined together in one person, without conversion, composition, or confusion. Which person is very God, and very man, yet one Christ, the only Mediator between God and man.",
-      "proofs": "John 1:1, 14; Galatians 4:4; Philippians 2:6; 1 John 5:20; Hebrews 2:14, 16-17; Hebrews 4:15; Luke 1:27, 31, 35; Romans 9:5; Colossians 2:9; 1 Timothy 3:16; 1 Peter 3:18; Romans 1:3-4; 1 Timothy 2:5"
+      "proofs": "John 1:1, 14; 1 John 5:20; Philippians 2:6; Galatians 4:4; Philippians 2:7; Hebrews 2:14, 16-17; Hebrews 4:15; Luke 1:27, 31, 35; Matthew 1:18, 20-21; Matthew 16:16; Colossians 2:9; Romans 9:5; 1 Timothy 3:16; Romans 1:3-4; 1 Timothy 2:5"
     },
     "wcf-8-6": {
       "work": "wcf",
       "cite": "Confession 8.6",
       "heading": "Of Christ the Mediator",
       "text": "6. Although the work of redemption was not actually wrought by Christ till after his incarnation, yet the virtue, efficacy, and benefits thereof were communicated unto the elect, in all ages successively from the beginning of the world, in and by those promises, types, and sacrifices, wherein he was revealed, and signified to be the seed of the woman which should bruise the serpent’s head; and the Lamb slain from the beginning of the world; being yesterday and today the same, and forever.",
-      "proofs": "Genesis 3:15; Galatians 4:4-5; Hebrews 13:8; Revelation 13:8"
+      "proofs": "Galatians 4:4-5; Genesis 3:15; 1 Corinthians 10:4; Revelation 13:8; Hebrews 13:8; Romans 3:25; Hebrews 9:15"
     },
     "wsc-20": {
       "work": "wsc",
       "cite": "Shorter Catechism 20",
       "heading": "Westminster Shorter Catechism",
       "text": "Q. 20. Did God leave all mankind to perish in the estate of sin and misery?\nA. God having, out of his mere good pleasure, from all eternity, elected some to everlasting life, did enter into a covenant of grace, to deliver them out of the estate of sin and misery, and to bring them into an estate of salvation by a redeemer.",
-      "proofs": "Ephesians 1:4; Romans 3:20-22; Galatians 3:21-22"
+      "proofs": "Acts 13:48; Ephesians 1:4-5; 2 Thessalonians 2:13-14; Genesis 3:15; Genesis 17:7; Exodus 19:5-6; Jeremiah 31:31-34; Matthew 20:28; 1 Corinthians 11:25; Hebrews 9:15"
     },
     "wsc-21": {
       "work": "wsc",
       "cite": "Shorter Catechism 21",
       "heading": "Westminster Shorter Catechism",
       "text": "Q. 21. Who is the redeemer of God’s elect?\nA. The only redeemer of God’s elect is the Lord Jesus Christ, who, being the eternal Son of God, became man, and so was, and continueth to be, God and man in two distinct natures, and one person, forever.",
-      "proofs": "1 Timothy 2:5-6; John 1:14; Galatians 4:4; Romans 9:5; Luke 1:35; Colossians 2:9; Hebrews 7:24-25"
+      "proofs": "John 14:6; Acts 4:12; 1 Timothy 2:5-6; Psalm 2:7; Matthew 3:17; Matthew 17:5; John 1:18; Isaiah 9:6; Matthew 1:23; John 1:14; Galatians 4:4; Acts 1:11; Hebrews 7:24-25"
     },
     "wsc-22": {
       "work": "wsc",
       "cite": "Shorter Catechism 22",
       "heading": "Westminster Shorter Catechism",
       "text": "Q. 22. How did Christ, being the Son of God, become man?\nA. Christ, the Son of God, became man, by taking to himself a true body and a reasonable soul, being conceived by the power of the Holy Ghost in the womb of the virgin Mary, and born of her, yet without sin.",
-      "proofs": "Hebrews 2:14, 16; Hebrews 10:5; Matthew 26:38; Luke 1:27, 31, 35, 42; Galatians 4:4; Hebrews 4:15; Hebrews 7:26"
+      "proofs": "Philippians 2:7; Hebrews 2:14, 17; Luke 1:27, 31, 35; 2 Corinthians 5:21; Hebrews 4:15; Hebrews 7:26; 1 John 3:5"
     },
     "wsc-23": {
       "work": "wsc",
       "cite": "Shorter Catechism 23",
       "heading": "Westminster Shorter Catechism",
       "text": "Q. 23. What offices doth Christ execute as our redeemer?\nA. Christ, as our redeemer, executeth the offices of a prophet, of a priest, and of a king, both in his estate of humiliation and exaltation.",
-      "proofs": "Acts 3:21-22; Hebrews 5:5-7; Hebrews 7:25; Psalm 2:6; Isaiah 9:6-7; Matthew 21:5; Psalm 2:8-11"
+      "proofs": "Deuteronomy 18:18; Acts 2:33; Acts 3:22-23; Hebrews 1:1-2; Hebrews 4:14-15; Hebrews 5:5-6; Isaiah 9:6-7; Luke 1:32-33; John 18:37; 1 Corinthians 15:25"
     },
     "wsc-26": {
       "work": "wsc",
       "cite": "Shorter Catechism 26",
       "heading": "Westminster Shorter Catechism",
       "text": "Q. 26. How doth Christ execute the office of a king?\nA. Christ executeth the office of a king, in subduing us to himself, in ruling and defending us, and in restraining and conquering all his and our enemies.",
-      "proofs": "Acts 15:14-16; Isaiah 33:22; Isaiah 32:1-2; 1 Corinthians 15:25"
+      "proofs": "Psalm 110:3; Matthew 28:18-20; John 17:2; Colossians 1:13; Psalm 2:6-9; Psalm 110:1-2; Matthew 12:28; 1 Corinthians 15:24-26; Colossians 2:15"
     },
     "wsc-27": {
       "work": "wsc",
       "cite": "Shorter Catechism 27",
       "heading": "Westminster Shorter Catechism",
       "text": "Q. 27. Wherein did Christ’s humiliation consist?\nA. Christ’s humiliation consisted in his being born, and that in a low condition, made under the law, undergoing the miseries of this life, the wrath of God, and the cursed death of the cross; in being buried, and continuing under the power of death for a time.",
-      "proofs": "Luke 2:7; Galatians 4:4; Hebrews 12:2-3; Isaiah 53:2-3; Luke 22:44; Matthew 27:46; Philippians 2:8; 1 Corinthians 15:3-4; Acts 2:24-27, 31"
+      "proofs": "Luke 2:7; 2 Corinthians 8:9; Galatians 4:4; Isaiah 53:3; Luke 9:58; John 4:6; John 11:35; Hebrews 2:18; Psalm 22:1; Matthew 27:46; Isaiah 53:10; 1 John 2:2; Galatians 3:13; Philippians 2:8; Matthew 12:40; 1 Corinthians 15:3-4"
     },
     "wsc-86": {
       "work": "wsc",
       "cite": "Shorter Catechism 86",
       "heading": "Westminster Shorter Catechism",
       "text": "Q. 86. What is faith in Jesus Christ?\nA. Faith in Jesus Christ is a saving grace, whereby we receive and rest upon him alone for salvation, as he is offered to us in the gospel.",
-      "proofs": "Hebrews 10:39; John 1:12; Isaiah 26:3-4; Philippians 3:9; Galatians 2:16"
+      "proofs": "Ephesians 2:8-9; Romans 4:16; John 20:30-31; Galatians 2:15-16; Philippians 3:3-11"
     },
     "wlc-36": {
       "work": "wlc",
       "cite": "Larger Catechism 36",
       "heading": "Westminster Larger Catechism",
       "text": "Q. 36. Who is the mediator of the covenant of grace?\nA. The only mediator of the covenant of grace is the Lord Jesus Christ, who, being the eternal Son of God, of one substance and equal with the Father, in the fullness of time became man, and so was and continues to be God and man, in two entire distinct natures, and one person, forever.",
-      "proofs": "1 Timothy 2:5; John 1:1, 14; John 10:30; Philippians 2:6; Galatians 4:4; Luke 1:35; Romans 9:5; Colossians 2:9; Hebrews 7:24-25"
+      "proofs": "1 Timothy 2:5; John 14:6; Acts 4:12; John 1:1, 14, 18; John 10:30; Philippians 2:6; Psalm 2:7; Matthew 3:17; Matthew 17:5; Galatians 4:4; Matthew 1:23; Luke 1:35; Acts 1:11; Romans 9:5; Colossians 2:9; Hebrews 7:24-25; Hebrews 13:8; Philippians 2:5-11"
     },
     "wlc-37": {
       "work": "wlc",
       "cite": "Larger Catechism 37",
       "heading": "Westminster Larger Catechism",
       "text": "Q. 37. How did Christ, being the Son of God, become man?\nA. Christ the Son of God became man, by taking to himself a true body, and a reasonable soul, being conceived by the power of the Holy Ghost in the womb of the virgin Mary, of her substance, and born of her, yet without sin.",
-      "proofs": "John 1:14; Matthew 26:38; Luke 1:27, 31, 35, 42; Galatians 4:4; Hebrews 4:15; Hebrews 7:26"
+      "proofs": "John 1:14; Matthew 26:38; Philippians 2:7; Hebrews 2:14-17; Luke 2:40, 52; John 11:33; Luke 1:27, 31, 35; Galatians 4:4; Hebrews 4:15; Hebrews 7:26; 2 Corinthians 5:21; 1 John 3:5"
     },
     "wlc-41": {
       "work": "wlc",
@@ -135,7 +135,7 @@
       "cite": "Larger Catechism 42",
       "heading": "Westminster Larger Catechism",
       "text": "Q. 42. Why was our mediator called Christ?\nA. Our mediator was called Christ, because he was anointed with the Holy Ghost above measure; and so set apart, and fully furnished with all authority and ability, to execute the offices of prophet, priest, and king of his church, in the estate both of his humiliation and exaltation.",
-      "proofs": "John 3:34; Psalm 45:7; John 6:27; Matthew 28:18-20; Acts 3:21-22; Luke 4:18, 21; Hebrews 5:5-7; Psalm 2:6; Isaiah 9:6-7; Philippians 2:8-11"
+      "proofs": "Matthew 3:16; Acts 10:37-38; John 3:34; Psalm 45:7; John 6:27; Matthew 28:18-20; Romans 1:3-4; Acts 3:21-22; Luke 4:18, 21; Hebrews 1:1-2; Deuteronomy 18:18; Hebrews 5:5-7; Hebrews 4:14-15; Psalm 2:6; Luke 1:32-34; John 18:37; Matthew 21:5; Isaiah 9:6-7; Philippians 2:8-11"
     },
     "wlc-47": {
       "work": "wlc",
@@ -151,19 +151,19 @@
         "section": "wcf-8-6",
         "line": "The confession reads this promise as being about Jesus. Long before he was born, God was already pointing to the child who would crush the serpent.",
         "explain": "This paragraph teaches that Christ's saving work reached God's people even before Bethlehem. God showed him in promises, pictures, and sacrifices. The seed of the woman who bruises the serpent's head is named as one of those signs. That is this node's verse, read as a word about Christ. Genesis 3:15 and Galatians 4:4-5 are both among the printed proofs.",
-        "relevant_proofs": "Genesis 3:15; Galatians 4:4-5; Hebrews 13:8; Revelation 13:8"
+        "relevant_proofs": "Genesis 3:15; Galatians 4:4-5; 1 Corinthians 10:4; Hebrews 13:8"
       },
       {
         "section": "wcf-7-3",
-        "line": "A covenant is a promise God makes and keeps. After people sinned and could not save themselves, God promised life through Jesus.",
-        "explain": "This paragraph teaches why a second covenant was needed. People could not earn life after the fall. God freely offers life through Jesus Christ and promises the Spirit to those he will save. A covenant is a promise God makes and keeps. The proofs stress human helplessness, which is the setting of the garden promise.",
-        "relevant_proofs": "Romans 5:6; Ephesians 2:1, 5; John 6:44"
+        "line": "A covenant of grace is the binding relationship God establishes to offer sinners life and salvation through Jesus Christ.",
+        "explain": "This paragraph teaches why the covenant of grace was needed. People could not earn life after the fall. God freely offers life and salvation through Jesus Christ and promises the Spirit to those he will save. The printed proofs include Genesis 3:15, Galatians 3:21, John 3:16, and John 6:37, 44-45.",
+        "relevant_proofs": "Genesis 3:15; Galatians 3:21; John 3:16; John 6:37, 44-45"
       },
       {
         "section": "wsc-20",
         "line": "God did not leave the world in the misery of that first sin. He made a covenant of grace, to save through a redeemer.",
-        "explain": "The question asks if God left humanity to perish. The answer is no. From his own pleasure he made a covenant of grace to save through a redeemer. That is the garden promise described as a plan, not an afterthought. The proofs include Ephesians 1:4 and Galatians 3:21-22.",
-        "relevant_proofs": "Ephesians 1:4; Romans 3:20-22; Galatians 3:21-22"
+        "explain": "The question asks if God left humanity to perish. The answer is no. From his own pleasure he made a covenant of grace to save through a redeemer. That is the garden promise described as a plan, not an afterthought. The proofs include Ephesians 1:4-5 and Genesis 3:15.",
+        "relevant_proofs": "Acts 13:48; Ephesians 1:4-5; Genesis 3:15; Hebrews 9:15"
       }
     ],
     "promise_abraham": [
@@ -177,15 +177,15 @@
         "section": "wcf-7-6",
         "line": "The promise did not turn into a different plan when Jesus arrived. He is the real thing those earlier words were about, for every nation.",
         "explain": "Christ is the substance, the reality the signs were about. There are not two covenants of grace. Galatians 3:16 is in the proof list, the verse that says the offspring is Christ. Abraham's promise and Jesus are one plan.",
-        "relevant_proofs": "Galatians 3:14, 16; Hebrews 13:8"
+        "relevant_proofs": "Galatians 3:8-9, 14, 16; Romans 4:3, 6-8, 16-17, 23-24; Genesis 15:6"
       }
     ],
     "promise_judah": [
       {
         "section": "wsc-26",
-        "line": "Judah's family was promised a ruler whose crown would last. The catechism says Jesus is that kind of king. He rules his people and overcomes his enemies.",
-        "explain": "Christ's kingship is not a metaphor only. He subdues a people to himself, rules and defends them, and conquers his enemies. Judah's scepter is the family form of that office. Acts 15:14-16, a proof, speaks of rebuilding David's fallen tent.",
-        "relevant_proofs": "Acts 15:14-16; Isaiah 33:22; 1 Corinthians 15:25"
+        "line": "Judah's family was promised a ruler. The catechism says Jesus is king: he rules his people and overcomes his enemies.",
+        "explain": "Christ's kingship is not a metaphor only. He subdues a people to himself, rules and defends them, and conquers his enemies. Judah's scepter is the family form of that office. Psalms 2 and 110 are among the printed proofs.",
+        "relevant_proofs": "Psalm 110:3; Psalm 2:6-9; Psalm 110:1-2; Matthew 28:18-20; 1 Corinthians 15:24-26"
       },
       {
         "section": "wlc-42",
@@ -199,27 +199,15 @@
         "section": "wlc-42",
         "line": "Isaiah saw a new king growing from Jesse's family, like a shoot from an old stump. Christ means the one God anointed for that work.",
         "explain": "The branch from Jesse bears the Spirit and judges the earth. The catechism's word for that person is Christ, the anointed king, prophet, and priest. The family stump and the anointing belong together.",
-        "relevant_proofs": "Isaiah 9:6-7; Luke 4:18, 21; Psalm 2:6"
-      },
-      {
-        "section": "wsc-23",
-        "line": "A prophet tells God's word. A priest brings people to God. A king rules and protects. Jesus does all three.",
-        "explain": "Three offices, held both in lowliness and in glory, keep the root of Jesse from being only a successful ruler. He reveals God, reconciles people to God, and reigns. Isaiah 9:6-7 is a proof of this answer.",
-        "relevant_proofs": "Isaiah 9:6-7; Psalm 2:6; Acts 3:21-22"
+        "relevant_proofs": "Psalm 2:6; Luke 4:18, 21; Isaiah 9:6-7"
       }
     ],
     "covenant_david": [
       {
-        "section": "wcf-7-3",
-        "line": "A covenant is a promise God makes and keeps. The promise to David sits inside God's one promise to save people through Jesus.",
-        "explain": "David's forever house is not a separate religion beside the gospel. It belongs to the covenant of grace, the promise of life in Jesus Christ. Calling it a covenant means God bound himself to do it.",
-        "relevant_proofs": "Romans 5:6; Ephesians 2:1; John 6:44"
-      },
-      {
         "section": "wsc-26",
         "line": "God told David that his son would reign forever. The catechism says Jesus is the king who defends his people.",
-        "explain": "The son on David's throne reigns as Christ reigns in this answer: ruling, defending, and conquering. The angel will put that reign on Jesus. A proof, Acts 15:14-16, speaks of David's house being restored.",
-        "relevant_proofs": "Acts 15:14-16; Isaiah 33:22; 1 Corinthians 15:25"
+        "explain": "The son on David's throne reigns as Christ reigns in this answer: ruling, defending, and conquering. The angel will put that reign on Jesus. Psalms 2 and 110 are among the printed proofs.",
+        "relevant_proofs": "Psalm 110:3; Psalm 2:6-9; Psalm 110:1-2; Matthew 28:18-20; 1 Corinthians 15:24-26"
       }
     ],
     "prophecy_immanuel": [
@@ -227,13 +215,13 @@
         "section": "wcf-8-2",
         "line": "Immanuel means God with us. The confession says Jesus is truly God and truly human, conceived in Mary by the Holy Spirit.",
         "explain": "The Son took a true human nature, conceived by the Holy Spirit in the virgin Mary, and is one person, truly God and truly man. That is Immanuel as doctrine. Luke 1:27, 31, and 35, and Galatians 4:4, are proofs.",
-        "relevant_proofs": "Luke 1:27, 31, 35; Galatians 4:4; John 1:14"
+        "relevant_proofs": "Luke 1:27, 31, 35; Galatians 4:4; John 1:1, 14"
       },
       {
         "section": "wsc-22",
         "line": "In fewer words, Jesus took a real body and a real human soul. He was born of Mary, and he was without sin.",
         "explain": "The shorter answer says he took a true body and a reasonable soul, was conceived by the Spirit, and was born of Mary without sin. God with us is God become man, not God standing at a distance.",
-        "relevant_proofs": "Luke 1:27, 31, 35; Galatians 4:4; Hebrews 4:15"
+        "relevant_proofs": "Luke 1:27, 31, 35; Hebrews 2:14, 17; Hebrews 4:15"
       }
     ],
     "prophecy_child": [
@@ -241,40 +229,28 @@
         "section": "wsc-23",
         "line": "Isaiah says a child will be born who carries the government on his shoulder. The catechism says Jesus serves us as prophet, priest, and king.",
         "explain": "The child with the government on his shoulder is described here as prophet, priest, and king. Isaiah 9:6-7 is one of the proofs attached to this answer. The names in Isaiah and the offices in the catechism are meant to be read together.",
-        "relevant_proofs": "Isaiah 9:6-7; Psalm 2:6; Acts 3:21-22"
-      },
-      {
-        "section": "wlc-41",
-        "line": "The name Jesus means he saves his people from their sins. That is the son Isaiah said would be given.",
-        "explain": "The son who is given is named Jesus because he saves. This answer has one proof, Matthew 1:21. Salvation is not an extra. It is what his name says.",
-        "relevant_proofs": "Matthew 1:21"
+        "relevant_proofs": "Isaiah 9:6-7; Acts 3:22-23; Luke 1:32-33"
       }
     ],
     "prophecy_bethlehem": [
       {
-        "section": "wlc-47",
-        "line": "Micah names a very small town. The catechism says Jesus chose a humble birth, with more than the usual lowliness.",
-        "explain": "The ruler comes from a town too little to boast. The catechism calls the birth a willing lowliness, from a woman of low estate, with humble circumstances. Luke 2:7 is a proof.",
-        "relevant_proofs": "Luke 2:7; Galatians 4:4; John 1:14"
-      },
-      {
         "section": "wsc-26",
         "line": "The child from that town is a ruler. The catechism says Jesus is king.",
         "explain": "A ruler who shepherds Israel is a king. This answer says Christ rules, defends, and conquers. Micah's town and Christ's office belong in one reading.",
-        "relevant_proofs": "Isaiah 33:22; 1 Corinthians 15:25; Acts 15:14-16"
+        "relevant_proofs": "Psalm 110:3; Psalm 2:6-9; Psalm 110:1-2; Matthew 28:18-20; 1 Corinthians 15:24-26"
       }
     ],
     "bethlehem": [
       {
         "section": "wsc-27",
-        "line": "Bethlehem was a small town, not a palace city. The catechism says Jesus was born into a low, humble life on purpose.",
-        "explain": "Humiliation includes being born, and born in a low condition. Bethlehem rather than a palace is that condition in the Gospel story. The first proof text is Luke 2:7.",
-        "relevant_proofs": "Luke 2:7; Galatians 4:4; Philippians 2:8"
+        "line": "Jesus was born in humble circumstances. The catechism says his humiliation included being born in a low condition.",
+        "explain": "Humiliation includes being born in a low condition. Luke 2:7 is the first proof. The catechism does not make Bethlehem's size or name part of the doctrine.",
+        "relevant_proofs": "Luke 2:7; 2 Corinthians 8:9; Galatians 4:4"
       },
       {
         "section": "wlc-47",
-        "line": "His birth came with humble details. A young mother, a small town, and no royal welcome are part of that.",
-        "explain": "The answer stays on conception and birth. Humble details are part of the doctrine, not decorations. The proofs name Luke 2:7 and Galatians 4:4.",
+        "line": "His birth came with circumstances of unusual humility.",
+        "explain": "The answer stays on conception and birth. The proofs name John 1:14, 18, Galatians 4:4, and Luke 2:7.",
         "relevant_proofs": "Luke 2:7; Galatians 4:4; John 1:14, 18"
       }
     ],
@@ -289,15 +265,7 @@
         "section": "wsc-22",
         "line": "He took a real human body and soul, was born of Mary, and was without sin.",
         "explain": "Born of her, yet without sin, is the catechism's sentence for Mary's child. The body and the soul are real. The conception is the Spirit's work.",
-        "relevant_proofs": "Luke 1:27, 31, 35, 42; Galatians 4:4; Hebrews 4:15"
-      }
-    ],
-    "joseph": [
-      {
-        "section": "wcf-8-2",
-        "line": "Joseph would raise Jesus, but he was not the biological father. The confession says Jesus was conceived by the Holy Spirit in Mary's womb.",
-        "explain": "Joseph is not named here, and that silence matters. The child is from Mary's substance, conceived by the Spirit. Joseph can carry David's legal line because the conception is not from him. Luke 1:35 is among the proofs.",
-        "relevant_proofs": "Luke 1:27, 31, 35; Galatians 4:4"
+        "relevant_proofs": "Luke 1:27, 31, 35; Hebrews 2:14, 17; Hebrews 4:15"
       }
     ],
     "annunciation": [
@@ -311,7 +279,7 @@
         "section": "wsc-26",
         "line": "Gabriel also said her son would have David's throne. The catechism says Jesus really is king.",
         "explain": "The throne of David in the angel's speech is kingship. This answer says Christ rules and defends his people and conquers his enemies. The announcement is about a king, not only a miracle.",
-        "relevant_proofs": "Acts 15:14-16; Isaiah 33:22; 1 Corinthians 15:25"
+        "relevant_proofs": "Psalm 110:3; Psalm 2:6-9; Psalm 110:1-2; Matthew 28:18-20; 1 Corinthians 15:24-26"
       }
     ],
     "jesus_birth": [
@@ -319,12 +287,12 @@
         "section": "wsc-22",
         "line": "Jesus was born as a real baby, with a real body, and he was without sin.",
         "explain": "The manger holds a true body. The catechism insists on a true body and a reasonable soul, born of Mary without sin. Christmas is not God visiting in disguise.",
-        "relevant_proofs": "Luke 1:27, 31, 35; Galatians 4:4; Hebrews 4:15"
+        "relevant_proofs": "Luke 1:27, 31, 35; Hebrews 2:14, 17; Hebrews 4:15"
       },
       {
         "section": "wlc-47",
-        "line": "The eternal Son of God chose a humble birth. Bethlehem and a young mother are part of that lowliness.",
-        "explain": "The same night is humiliation. The Son became man in low estate, with humble circumstances. Luke 2:7, the proof, is the manger because there was no place in the inn.",
+        "line": "The eternal Son of God chose a humble birth. The manger is part of that lowliness.",
+        "explain": "The same night is humiliation. The Son became man in low estate, with humble circumstances. Luke 2:7, the proof, records the manger because there was no place in the inn.",
         "relevant_proofs": "Luke 2:7; Galatians 4:4; John 1:14, 18"
       }
     ],
@@ -333,19 +301,19 @@
         "section": "wcf-8-1",
         "line": "A mediator stands between God and us. Jesus is that person. He is prophet, priest, and king, and he saves his people.",
         "explain": "God ordained his Son to be mediator, prophet, priest, and king, and gave him a people. Matthew's first verse presents that person as son of David and son of Abraham. Luke 1:33 is a proof for the throne.",
-        "relevant_proofs": "Luke 1:33; Psalm 2:6; Acts 3:22; Hebrews 5:5-6"
+        "relevant_proofs": "Luke 1:33; Psalm 2:6; Acts 3:20, 22; Hebrews 5:5-6"
       },
       {
         "section": "wsc-21",
         "line": "Jesus is fully God and fully human, one person, forever. He is the only rescuer of God's people.",
-        "explain": "There is one redeemer. He became man and remains God and man forever. The proofs include John 1:14, Galatians 4:4, and Luke 1:35, the verses of his coming in the flesh.",
-        "relevant_proofs": "1 Timothy 2:5-6; John 1:14; Galatians 4:4; Luke 1:35"
+        "explain": "There is one redeemer. He became man and remains God and man forever. The proofs include John 1:14, Galatians 4:4, and Matthew 1:23, the verses of his coming in the flesh.",
+        "relevant_proofs": "1 Timothy 2:5-6; Matthew 1:23; John 1:14; Galatians 4:4"
       },
       {
         "section": "wlc-36",
         "line": "The one promise that runs through the Bible has one mediator. A mediator is the person who brings God and people together. That person is Jesus.",
         "explain": "He is the only mediator of the covenant of grace. The many promises on the map do not mean many saviors. The proofs repeat Luke 1:35, Galatians 4:4, and 1 Timothy 2:5.",
-        "relevant_proofs": "1 Timothy 2:5; Galatians 4:4; Luke 1:35; John 1:14"
+        "relevant_proofs": "1 Timothy 2:5; Galatians 4:4; Luke 1:35; John 1:1, 14, 18"
       },
       {
         "section": "wlc-41",
@@ -357,23 +325,17 @@
     "magi": [
       {
         "section": "wsc-26",
-        "line": "They came looking for a king. The catechism says Jesus is king. He gathers a people and overcomes his enemies.",
-        "explain": "They look for a king and worship a child. The catechism says this king gathers, rules, defends, and conquers. Their gifts do not make him king. God already promised the office.",
-        "relevant_proofs": "Acts 15:14-16; Isaiah 33:22; 1 Corinthians 15:25"
-      },
-      {
-        "section": "wlc-47",
-        "line": "They found that king in a humble birth, not in a palace. The catechism calls this his willing lowliness.",
-        "explain": "The king is found in a house, not a court. The catechism calls the birth a low estate with more than ordinary abasement. Luke 2:7 is the proof that keeps the scene humble.",
-        "relevant_proofs": "Luke 2:7; Galatians 4:4; John 1:14"
+        "line": "They came looking for a king. The catechism says Christ rules and defends his people and conquers his enemies.",
+        "explain": "They call the child king and worship him. The catechism explains Christ's kingly office. Their gifts do not prove any separate doctrine.",
+        "relevant_proofs": "Psalm 110:3; Psalm 2:6-9; Psalm 110:1-2; Matthew 28:18-20; 1 Corinthians 15:24-26"
       }
     ],
     "bread_of_life": [
       {
         "section": "wsc-86",
         "line": "When Jesus says he is the bread of life, he means people truly live by trusting him. The catechism calls that trust faith. We rest on him alone to save us.",
-        "explain": "Faith receives Christ and rests on him alone. Jesus says the bread of life is himself, taken by coming and believing. This catechism answer does not cite John 6. It cites John 1:12, receiving him, and Galatians 2:16, faith in Christ. That is the trust his saying demands. Do not turn the Bethlehem wordplay into this doctrine.",
-        "relevant_proofs": "John 1:12; Galatians 2:16; Hebrews 10:39"
+        "explain": "Faith receives Christ and rests on him alone. Jesus says the bread of life is himself, received by coming and believing. This catechism answer does not cite John 6. It cites Ephesians 2:8-9, John 20:30-31, Galatians 2:15-16, and Philippians 3:3-11. Do not turn the Bethlehem wordplay into this doctrine.",
+        "relevant_proofs": "Ephesians 2:8-9; John 20:30-31; Galatians 2:15-16; Philippians 3:3-11"
       }
     ]
   },
@@ -383,7 +345,7 @@
         "section": "wcf-7-6",
         "line": "This week follows one promise as it gets clearer, from the garden, to Abraham, to Jesus. The confession says there are not two different rescue plans. Jesus is the heart of the same promise.",
         "explain": "The week is one covenant getting clearer, from the garden to Abraham to the birth. Christ is the substance. Galatians 3:16 is in the proofs. There are not two rescue plans.",
-        "relevant_proofs": "Galatians 3:14, 16; Hebrews 13:8"
+        "relevant_proofs": "Galatians 3:8-9, 14, 16; Romans 4:3, 6-8, 16-17, 23-24; Genesis 15:6"
       }
     ],
     "week2_king": [
@@ -391,7 +353,7 @@
         "section": "wsc-23",
         "line": "This week follows the promise of a king from David's family. The catechism says Jesus is that king, and also a prophet and a priest.",
         "explain": "The week follows a king through a family and an announcement. The catechism will not let him be king only. He is also prophet and priest. Isaiah 9:6-7 is a proof of this answer.",
-        "relevant_proofs": "Isaiah 9:6-7; Psalm 2:6; Acts 3:21-22"
+        "relevant_proofs": "Isaiah 9:6-7; Acts 3:22-23; Luke 1:32-33"
       }
     ],
     "week3_sign": [
@@ -399,7 +361,7 @@
         "section": "wcf-8-2",
         "line": "This week is about the sign of a son born to a virgin. The confession says that son is God with us.",
         "explain": "Sign, mother, dream, and birth are the incarnation. The proofs listed with this paragraph include Luke 1 and Galatians 4:4, the week's own texts.",
-        "relevant_proofs": "Luke 1:27, 31, 35; Galatians 4:4; John 1:14"
+        "relevant_proofs": "Luke 1:27, 31, 35; Galatians 4:4; John 1:1, 14"
       }
     ],
     "week4_town": [
@@ -414,8 +376,8 @@
       {
         "section": "wsc-21",
         "line": "Christmas is the birth of the rescuer. He is God and man in one person, forever.",
-        "explain": "The night names the redeemer, God and man in one person. The proofs include Luke 1:35 and Galatians 4:4.",
-        "relevant_proofs": "Luke 1:35; Galatians 4:4; John 1:14; 1 Timothy 2:5-6"
+        "explain": "The night names the redeemer, God and man in one person. The proofs include Matthew 1:23 and Galatians 4:4.",
+        "relevant_proofs": "1 Timothy 2:5-6; Matthew 1:23; John 1:14; Galatians 4:4"
       },
       {
         "section": "wlc-41",
@@ -427,29 +389,29 @@
   },
   "theology": {
     "nodes": {
-      "promise_seed": "In Reformed theology this promise opens the covenant of grace. People could not restore what sin broke. God promised a redeemer. John Calvin follows that promise in the Institutes, book 2, chapter 6, and the unity of the old and new covenants in book 2, chapter 10.",
-      "promise_abraham": "Abraham stands inside that one covenant, not beside it. The family promise and the later gospel are one in substance. Calvin compares the old and new covenants in the Institutes, book 2, chapters 10 and 11.",
-      "promise_judah": "The scepter is Christ's office as king. Calvin explains the three offices, prophet, king, and priest, in the Institutes, book 2, chapter 15.",
-      "jesse_root": "The shoot is the anointed king, not a new plan. The same chapter of Calvin, Institutes 2.15, is the Reformed account of those offices. The Spirit on the branch agrees with the catechism's language of anointing.",
-      "covenant_david": "David's forever throne is a form of the covenant of grace. Calvin treats the one promise across both Testaments in Institutes 2.10 and 2.11, and Christ's kingship in 2.15.",
-      "prophecy_immanuel": "Immanuel is the incarnation. The Son took a true human nature and remains one person. Calvin argues that the mediator had to become man in the Institutes, book 2, chapters 12 and 13.",
-      "prophecy_child": "The child on David's throne holds the offices of prophet, priest, and king. Calvin's account is Institutes, book 2, chapter 15. The name Mighty God keeps him from being only a human ruler.",
-      "prophecy_bethlehem": "The small town belongs to Christ's humiliation and to his rule. Calvin explains the incarnation in Institutes 2.12 and 2.13, and the redeemer's lowly path in 2.16.",
-      "bethlehem": "Birth in this town is part of Christ's humiliation, his willing low condition. Calvin follows that path of the redeemer in the Institutes, book 2, chapter 16.",
-      "mary": "Reformed teaching honors Mary as the virgin mother and does not give her the mediator's work. The confession locates the incarnation in her womb. Calvin explains that real birth in Institutes 2.12 and 2.13.",
-      "joseph": "Joseph keeps both truths the doctrine needs: a real place in David's line, and a conception by the Spirit. Calvin's chapters on the mediator's human nature are Institutes 2.12 and 2.13.",
-      "annunciation": "The angel joins incarnation and kingship. Calvin treats the incarnation in Institutes 2.12 and 2.13, and the kingly office in 2.15.",
-      "jesus_birth": "The birth is incarnation and humiliation together. Calvin's chapters on becoming man are Institutes 2.12 and 2.13. Chapter 2.16 then follows his lowliness.",
-      "jesus": "He is the only mediator, God and man, prophet, priest, and king. Calvin opens this in the Institutes, book 2, chapters 12 through 15.",
-      "magi": "The nations worship a king who has taken the low place. Calvin describes the kingly office in Institutes 2.15 and the humble path of the redeemer in 2.16.",
-      "bread_of_life": "Coming and believing are faith, receiving Christ and resting on him. Calvin's chapter on faith is Institutes, book 3, chapter 2. This is not a claim that Bethlehem's name fulfills John 6."
+      "promise_seed": "In Reformed theology, Genesis 3:15 is the first gospel promise. Confession 8.6 identifies Christ as the woman's offspring who bruises the serpent's head.",
+      "promise_abraham": "Reformed theology reads Abraham's promise within the one covenant of grace. Confession 7.5 and 7.6 say the covenant is one in substance across its different administrations.",
+      "promise_judah": "The scepter points to Christ's kingly office. The catechisms describe the Christ as the anointed prophet, priest, and king who rules and defends his people.",
+      "jesse_root": "The Spirit resting on Jesse's branch fits the catechism's description of Christ as the one anointed by the Holy Spirit to be prophet, priest, and king.",
+      "covenant_david": "The Davidic promise reaches its goal in Christ's kingship. The catechism says he subdues, rules, and defends his people and conquers his enemies.",
+      "prophecy_immanuel": "Immanuel is fulfilled in the incarnation. The eternal Son took a true human nature and remains one person with two distinct natures, truly God and truly man.",
+      "prophecy_child": "The child on David's throne is read as Christ the king. Shorter Catechism 23 includes Isaiah 9:6-7 among its proofs for Christ's three offices.",
+      "prophecy_bethlehem": "The ruler from Bethlehem is read as Christ the king. His place of origin does not make the town itself a saving sign.",
+      "bethlehem": "Christ's birth in low circumstances belongs to his humiliation. The catechisms ground that claim in Luke 2:7, not in a symbolic meaning of Bethlehem's name.",
+      "mary": "Reformed teaching honors Mary as the virgin mother of Jesus while reserving the work of mediator for Christ alone. The confession says his human nature was conceived in her by the Holy Spirit.",
+      "joseph": "Joseph belongs to David's line and names the child, while Scripture says the conception is by the Holy Spirit. The Westminster Standards do not assign Joseph a separate mediatorial role.",
+      "annunciation": "The announcement joins incarnation and kingship. The child is conceived by the Holy Spirit and receives David's throne.",
+      "jesus_birth": "The birth is both incarnation and humiliation. The eternal Son truly became man and was born in a low condition.",
+      "jesus": "Jesus is the only mediator, truly God and truly man, and the anointed prophet, priest, and king.",
+      "magi": "The wise men worship the child they call king. Their visit displays his kingship, but the catechisms do not interpret each gift or identify the visitors with a particular prophecy.",
+      "bread_of_life": "Coming to Jesus and believing in him is faith, receiving and resting on Christ alone for salvation. This doctrine comes from Jesus' explanation in John 6, not from a wordplay on Bethlehem."
     },
     "paths": {
-      "week1_seed": "The week traces one covenant of grace until Christ, its substance, is born. Calvin compares the covenants in Institutes 2.10 and 2.11.",
-      "week2_king": "The week is the promise of the king. Calvin explains that office in Institutes 2.15.",
-      "week3_sign": "The week is the incarnation announced and fulfilled. Calvin's argument is in Institutes 2.12 and 2.13.",
-      "week4_town": "The week is the humble place of the king's birth. Calvin treats that lowliness in Institutes 2.16.",
-      "christmas": "Christmas names the redeemer in the flesh. Calvin's account of who he is and how he took our nature is Institutes 2.12 to 2.14."
+      "week1_seed": "This week follows promises that Reformed theology reads within the one covenant of grace. Christ is their substance and fulfillment.",
+      "week2_king": "This week follows the promise of the king. The catechisms identify kingship as one of Christ's three offices.",
+      "week3_sign": "This week centers on the incarnation announced and fulfilled: the eternal Son took a true human nature and was born of Mary.",
+      "week4_town": "This week follows the promised ruler to the humble circumstances of his birth. The town's name is not itself a prophecy.",
+      "christmas": "Christmas is the incarnation and birth of the only redeemer, truly God and truly man in one person."
     }
   }
 }
