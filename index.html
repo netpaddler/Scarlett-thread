@@ -2,131 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scarlet Thread</title>
-  <meta name="description" content="Bible stories told as one connected path to Jesus Christ. An Advent map of people, places, promises, and prophecy.">
-  <meta name="theme-color" content="#f3eee6" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#14110f" media="(prefers-color-scheme: dark)">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Scarlet Thread: an Advent walk through the Bible</title>
+  <meta name="description" content="The whole Bible is one story, and it points to Jesus. Walk the four weeks of Advent one stop at a time, or follow the lines on a map of promises, people, and places.">
+  <meta name="theme-color" content="#f6f1e8">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script>
     (function () {
+      var theme = "light";
       try {
         var stored = localStorage.getItem("scarlet-thread-theme");
-        var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-        document.documentElement.setAttribute("data-theme", theme);
-      } catch (err) {
-        document.documentElement.setAttribute("data-theme", "light");
-      }
+        theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      } catch (err) { /* private mode */ }
+      document.documentElement.setAttribute("data-theme", theme);
     })();
   </script>
 </head>
-<body>
+<body data-mode="walk">
   <a class="skip" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="brand-row">
+
+  <header class="topbar">
+    <div class="topbar-inner">
       <div class="brand">
-        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
-          <path class="logo-thread" d="M6 34c7-14 9-14 16-4s9 10 18-16" fill="none" stroke-width="2.4" stroke-linecap="round"></path>
+        <svg class="logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <path d="M5 22.5c4.5-9 6.5-9 10.5-3.5S21.5 24 27 9.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path>
         </svg>
-        <div>
-          <p class="eyebrow">Advent 2026</p>
-          <h1>Scarlet Thread</h1>
-          <p class="lede">The whole Bible is one story. It points to Jesus.</p>
-        </div>
+        <h1>Scarlet Thread</h1>
       </div>
-      <div class="header-actions">
-        <div class="mode-switch" role="tablist" aria-label="Ways to read">
-          <button type="button" id="tab-walk" role="tab" aria-selected="true" aria-controls="walk-view">Walk a week</button>
-          <button type="button" id="tab-explore" role="tab" aria-selected="false" aria-controls="explore-view">See the map</button>
-        </div>
-        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+      <div class="mode-switch" role="tablist" aria-label="Ways to read">
+        <button type="button" id="tab-walk" role="tab" aria-selected="true" aria-controls="walk-view"><span class="tab-long">Walk a week</span><span class="tab-short">Walk</span></button>
+        <button type="button" id="tab-explore" role="tab" aria-selected="false" aria-controls="explore-view" tabindex="-1"><span class="tab-long">See the map</span><span class="tab-short">Map</span></button>
       </div>
+      <button type="button" id="theme-toggle" class="icon-btn theme-toggle" aria-pressed="false" title="Dark mode">
+        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="visually-hidden" id="theme-label">Dark mode</span>
+      </button>
     </div>
-    <hr class="thread-rule">
   </header>
 
-  <p class="banner">Pick a week and move one stop at a time. Or open the map and follow the lines.</p>
+  <main id="main" tabindex="-1">
+    <section class="intro wrap" aria-label="About Scarlet Thread">
+      <p class="eyebrow">Advent 2026</p>
+      <p class="intro-title">The whole Bible is one story. It points to Jesus.</p>
+      <p class="intro-text">Pick a week and move one stop at a time. Or open the map and follow the lines.</p>
+    </section>
 
-  <main id="main" class="wrap">
-    <p id="status" class="status" role="status">Loading the map.</p>
+    <div id="status" class="status wrap" role="status">
+      <span class="status-thread" aria-hidden="true"></span>
+      <span id="status-text">Loading the map.</span>
+    </div>
     <noscript>
-      <p class="status">Scarlet Thread needs JavaScript to load the map and walk the paths.</p>
+      <p class="status wrap">Scarlet Thread needs JavaScript to load the map and walk the weeks.</p>
     </noscript>
 
-    <section id="walk-view" class="view" role="tabpanel" aria-labelledby="walk-heading" hidden>
-      <h2 id="walk-heading" class="view-title">Walk a week</h2>
-      <p id="path-line" class="view-lead">Four Sundays, then Christmas. Each week follows one thread to Jesus.</p>
-      <div id="path-picker" class="path-picker" role="group" aria-label="Advent paths"></div>
+    <section id="walk-view" class="view walk wrap" role="tabpanel" aria-labelledby="tab-walk" hidden>
+      <h2 class="visually-hidden">Walk a week</h2>
+      <div id="path-picker" class="weeks" role="group" aria-label="Advent weeks"></div>
 
-      <figure class="diagram">
-        <figcaption>
-          <span class="diagram-title">This week</span>
-          <span class="diagram-note">The filled dot is where you are. A solid line is a connection the New Testament makes. A dashed line is a picture of Jesus. A dotted line means these two stops sit side by side, with no direct line between them.</span>
-        </figcaption>
-        <div id="thread" class="thread" role="list" aria-label="Stops on this path"></div>
-      </figure>
+      <div class="walk-grid">
+        <aside class="rail" aria-labelledby="rail-title">
+          <p class="label" id="rail-title">This week</p>
+          <p id="path-line" class="path-line">Four Sundays, then Christmas. Each week follows one thread to Jesus.</p>
+          <div id="thread" class="thread" role="list" aria-label="Stops this week"></div>
+          <ul class="line-key" aria-label="What the lines mean">
+            <li><span class="key-line solid" aria-hidden="true"></span>The New Testament makes this connection</li>
+            <li><span class="key-line dashed" aria-hidden="true"></span>A picture of Jesus</li>
+            <li><span class="key-line dotted" aria-hidden="true"></span>Side by side, with no direct line</li>
+          </ul>
+        </aside>
 
-      <div class="walk-read">
-        <article id="step-card" class="card"></article>
-        <div id="path-deepest"></div>
-        <div id="link-slot"></div>
-        <div class="step-nav">
-          <button type="button" id="prev-step" class="nav-btn secondary">Back</button>
-          <button type="button" id="next-step" class="nav-btn primary">Next</button>
+        <div class="walk-read">
+          <article id="step-card" class="reading" aria-live="off"></article>
+          <nav class="step-nav" aria-label="Move between stops">
+            <button type="button" id="prev-step" class="nav-btn back">
+              <span class="nav-dir">Back</span>
+              <span class="nav-name" id="prev-name"></span>
+            </button>
+            <button type="button" id="next-step" class="nav-btn next">
+              <span class="nav-dir" id="next-dir">Next</span>
+              <span class="nav-name" id="next-name"></span>
+            </button>
+          </nav>
+          <p class="hint keyboard-hint">Arrow keys move between stops.</p>
+          <section id="path-deepest" class="week-notes" aria-label="About this week"></section>
         </div>
-        <p class="hint keyboard-hint">Arrow keys move between stops.</p>
       </div>
     </section>
 
-    <section id="explore-view" class="view" role="tabpanel" aria-labelledby="explore-heading" hidden>
-      <h2 id="explore-heading" class="view-title">See the map</h2>
-      <p class="view-lead">Drag to move. Pinch or use the buttons to look closer. Tap a name to read it.</p>
-
-      <div class="toolbar">
-        <label class="switch">
-          <input id="hide-typology" type="checkbox">
-          <span>Hide picture lines</span>
-        </label>
-        <div class="zoom-controls">
-          <button type="button" id="zoom-in">Zoom in</button>
-          <button type="button" id="zoom-out">Zoom out</button>
-          <button type="button" id="zoom-fit">Fit</button>
-        </div>
-      </div>
-      <p id="typology-hint" class="hint">Hiding typology leaves only lines the New Testament states.</p>
-
-      <details class="legend-box" id="legend-details">
-        <summary>What the lines mean</summary>
-        <h3>How sure is the line?</h3>
-        <ul class="legend">
-          <li><span class="line-sample solid"></span> The New Testament says this</li>
-          <li><span class="line-sample dashed"></span> A picture of Jesus</li>
-        </ul>
-        <h3>What kind of line?</h3>
-        <ul class="legend" id="edge-legend"></ul>
-        <h3>Kind of name</h3>
-        <ul class="legend" id="node-legend"></ul>
-      </details>
-
+    <section id="explore-view" class="view explore" role="tabpanel" aria-labelledby="tab-explore" hidden>
+      <h2 class="visually-hidden">See the map</h2>
       <div class="explore-layout">
-        <div class="graph-column">
-          <p class="visually-hidden">The map drawing may be hard to use with a keyboard or a screen reader. Pick a name in the list for the same details.</p>
-          <div id="graph" class="graph-frame" aria-label="Advent map of people, places, events, and promises"></div>
-          <p id="graph-error" class="status" hidden>The diagram did not start. Use Pick a name to read each stop.</p>
-        </div>
-        <aside id="panel" class="panel" aria-live="polite"></aside>
-        <div class="name-wrap">
-          <details class="name-list" id="name-list">
-            <summary>Choose a name</summary>
-            <div id="name-list-body"></div>
+        <div class="map-frame">
+          <p class="visually-hidden">The map drawing may be hard to use with a keyboard or a screen reader. The list of names beside it opens the same details.</p>
+          <div id="graph" class="graph" aria-label="Advent map of people, places, events, and promises"></div>
+          <p id="graph-loading" class="map-loading" aria-hidden="true">Drawing the map.</p>
+          <p id="graph-error" class="map-error" hidden>The map drawing did not start. Use the list of names to read each stop.</p>
+
+          <label class="map-chip switch">
+            <input id="hide-typology" type="checkbox">
+            <span class="switch-track" aria-hidden="true"></span>
+            <span>Hide picture lines</span>
+          </label>
+
+          <div class="map-zoom" role="group" aria-label="Zoom">
+            <button type="button" id="zoom-in" class="icon-btn" aria-label="Zoom in" title="Zoom in">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </button>
+            <button type="button" id="zoom-out" class="icon-btn" aria-label="Zoom out" title="Zoom out">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 12h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </button>
+            <button type="button" id="zoom-fit" class="icon-btn" aria-label="Show the whole map" title="Show the whole map">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 9V4.5H9M15 4.5h4.5V9M19.5 15v4.5H15M9 19.5H4.5V15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+
+          <details class="map-key" id="legend-details">
+            <summary>What the lines mean</summary>
+            <div class="map-key-body">
+              <p id="typology-hint" class="hint">A dashed line is a picture of Jesus. Hiding those leaves only connections the New Testament states.</p>
+              <h3>How sure is the line?</h3>
+              <ul class="legend">
+                <li><span class="line-sample solid" aria-hidden="true"></span>The New Testament says this</li>
+                <li><span class="line-sample dashed" aria-hidden="true"></span>A picture of Jesus</li>
+              </ul>
+              <h3>What kind of line?</h3>
+              <ul class="legend" id="edge-legend"></ul>
+              <h3>Kind of name</h3>
+              <ul class="legend" id="node-legend"></ul>
+            </div>
           </details>
         </div>
+
+        <aside id="panel" class="sheet" aria-label="Reading"></aside>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer wrap">
     <p>The whole Bible is one story, and it points to Jesus. The reading is Reformed, in line with the Westminster Standards.</p>
     <p>Scripture quotations are short excerpts from the ESV Bible (The Holy Bible, English Standard Version), copyright 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
     <p>Confession and catechism quotations are the modern spelling text published by the Orthodox Presbyterian Church.</p>
@@ -137,7 +152,6 @@
 
   <script src="vendor/cytoscape.min.js"></script>
   <script src="vendor/dagre.min.js"></script>
-  <script src="vendor/cytoscape-dagre.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

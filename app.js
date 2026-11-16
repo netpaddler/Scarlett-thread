@@ -50,19 +50,29 @@
     "July", "August", "September", "October", "November", "December"
   ];
 
+  var SITE_NAME = "Scarlet Thread";
+  var THEME_COLORS = { light: "#f6f1e8", dark: "#15120f" };
+  var GRAPH_FONT = '"Source Serif 4", "Iowan Old Style", Georgia, serif';
+  var FOCAL = { jesus: true, jesus_birth: true };
+  var NODE_SIZE = { w: 136, h: 58 };
+  var FOCAL_SIZE = { w: 160, h: 88 };
+  var READABLE_ZOOM = 0.74;
+  var PHONE_QUERY = "(max-width: 959px)";
+
   var data = null;
   var sermons = {};
   var confessions = null;
   var deeper = null;
   var nodesById = new Map();
   var exploreCy = null;
+  var graphPending = false;
+  var fontsReady = Promise.resolve();
   var state = {
     mode: "walk",
     pathId: null,
     step: 0,
     selectedId: null,
-    hideTypology: false,
-    fitted: false
+    hideTypology: false
   };
 
   function h(tag, attrs, children) {
@@ -86,6 +96,19 @@
 
   function token(name) {
     return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  function reducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function isPhone() {
+    return window.matchMedia(PHONE_QUERY).matches;
+  }
+
+  function topbarHeight() {
+    var bar = document.querySelector(".topbar");
+    return bar ? bar.getBoundingClientRect().height : 0;
   }
 
   function currentTheme() {
@@ -129,6 +152,10 @@
     return data.paths.find(function (path) { return path.id === state.pathId; }) || data.paths[0];
   }
 
+  function pathIndex(id) {
+    return data.paths.findIndex(function (path) { return path.id === id; });
+  }
+
   function nodeById(id) {
     return nodesById.get(id) || null;
   }
@@ -139,33 +166,11 @@
     });
   }
 
-  function addFact(dl, term, value) {
-    if (value == null || value === "") return;
-    var row = h("div");
-    row.append(h("dt", { text: term }), h("dd", { text: value }));
-    dl.append(row);
+  function setTitle(prefix) {
+    document.title = prefix ? prefix + " \u00b7 " + SITE_NAME : SITE_NAME + ": an Advent walk through the Bible";
   }
 
-  function appendNodeBody(parent, node) {
-    var facts = h("dl", { class: "facts" });
-    addFact(facts, "Kind", kindLabel(node.type));
-    addFact(facts, "Scripture", (node.refs || []).join(", ") || "None listed");
-    parent.append(facts);
-    if (node.quote && node.quote.text) {
-      var figure = h("figure", { class: "quote" });
-      var quote = h("blockquote", { text: node.quote.text });
-      quote.setAttribute("translate", "no");
-      figure.append(quote);
-      if (node.quote.ref) figure.append(h("figcaption", { text: node.quote.ref }));
-      parent.append(figure);
-    }
-    if (node.summary) {
-      parent.append(
-        h("h4", { class: "section-label", text: "Summary" }),
-        h("p", { class: "summary", text: node.summary })
-      );
-    }
-  }
+  /* Sermons */
 
   function sermonsFor(nodeId) {
     var list = sermons[nodeId];
@@ -246,14 +251,47 @@
     parent.append(section);
   }
 
-  function fold(summaryText, fill) {
+  /* Reading layers */
+
+  function fold(summaryText, subText, fill) {
     var body = h("div", { class: "fold-body" });
     fill(body);
     if (!body.childNodes.length) return null;
     var details = h("details", { class: "fold" });
-    details.append(h("summary", { text: summaryText }));
-    details.append(body);
+    var summary = h("summary");
+    summary.append(h("span", { class: "fold-title", text: summaryText }));
+    if (subText) summary.append(h("span", { class: "fold-sub", text: subText }));
+    summary.append(h("span", { class: "fold-icon", "aria-hidden": "true" }));
+    details.append(summary, body);
     return details;
+  }
+
+  function toggleFold(details) {
+    var body = details.querySelector(":scope > .fold-body");
+    if (!body || reducedMotion() || typeof body.animate !== "function") {
+      details.open = !details.open;
+      return;
+    }
+    if (details._anim) details._anim.cancel();
+    var opening = !details.open;
+    var from = opening ? 0 : body.offsetHeight;
+    if (opening) details.open = true;
+    var to = opening ? body.offsetHeight : 0;
+    var anim = body.animate(
+      [
+        { height: from + "px", opacity: opening ? 0 : 1 },
+        { height: to + "px", opacity: opening ? 1 : 0 }
+      ],
+      { duration: opening ? 320 : 240, easing: "cubic-bezier(0.2, 0.7, 0.2, 1)" }
+    );
+    details._anim = anim;
+    anim.onfinish = function () {
+      details._anim = null;
+      if (!opening) details.open = false;
+    };
+    anim.oncancel = function () {
+      details._anim = null;
+    };
   }
 
   function appendStart(parent, node) {
@@ -269,24 +307,6 @@
     }
   }
 
-  function appendConnection(parent, edge, homeId) {
-    var otherId = edge.from === homeId ? edge.to : edge.from;
-    var other = nodeById(otherId);
-    var block = h("div", { class: "edge-block" });
-    var direction = edge.from === homeId ? "Line to " : "Line from ";
-    block.append(h("p", { class: "next-label", text: direction + (other ? other.label : otherId) }));
-    block.append(h("p", { class: "badge " + edge.confidence, text: confidenceCopy(edge.confidence) }));
-    var facts = h("dl", { class: "facts" });
-    addFact(facts, "Kind of line", edgeLabel(edge.type));
-    addFact(facts, "Scripture", (edge.refs || []).join(", ") || "None listed");
-    if (edge.note) addFact(facts, "In plain words", edge.note);
-    block.append(facts);
-    if (state.hideTypology && edge.confidence === "typology") {
-      block.append(h("p", { class: "hint", text: "This picture line is hidden on the map right now." }));
-    }
-    parent.append(block);
-  }
-
   function confessionItems(group, id) {
     if (!confessions || !confessions[group] || !confessions[group][id]) return [];
     return confessions[group][id].filter(function (item) {
@@ -295,7 +315,6 @@
   }
 
   function appendStandards(parent, items) {
-    if (!items.length) return;
     items.forEach(function (item) {
       var section = confessions.sections[item.section];
       var work = confessions.meta && confessions.meta.works ? confessions.meta.works[section.work] : null;
@@ -326,13 +345,13 @@
     });
   }
 
-  function makeDeepest(group, id, label) {
+  function makeDeepest(group, id, label, sub) {
     var items = confessionItems(group, id);
     var theology = confessions && confessions.theology && confessions.theology[group]
       ? confessions.theology[group][id]
       : "";
     if (!items.length && !theology) return null;
-    return fold(label || "Go deepest", function (body) {
+    return fold(label, sub, function (body) {
       body.append(h("p", {
         class: "hint",
         text: "These words are from the Westminster Standards. Reformed churches use them to say, carefully, what the Bible teaches. The quotations are the modern spelling text from the Orthodox Presbyterian Church."
@@ -410,11 +429,22 @@
     return deeper[group][id] || null;
   }
 
+  function appendLayers(parent, node) {
+    var deeperFold = fold("Go deeper", "The verses, the story, and how the lines connect", function (body) {
+      appendRichDeeper(body, deeperEntry("nodes", node.id));
+    });
+    if (deeperFold) parent.append(deeperFold);
+    var deepest = makeDeepest("nodes", node.id, "Go deepest", "What the Westminster Standards say");
+    if (deepest) parent.append(deepest);
+  }
+
   function announce(text) {
     var live = document.getElementById("live");
     live.textContent = "";
     window.setTimeout(function () { live.textContent = text; }, 30);
   }
+
+  /* Routing and modes */
 
   function writeHash() {
     var next = state.mode === "explore"
@@ -447,33 +477,63 @@
     document.documentElement.setAttribute("data-theme", theme);
     var dark = theme === "dark";
     var button = document.getElementById("theme-toggle");
+    var label = dark ? "Light mode" : "Dark mode";
     button.setAttribute("aria-pressed", dark ? "true" : "false");
-    button.textContent = dark ? "Light mode" : "Dark mode";
+    button.setAttribute("title", label);
+    document.getElementById("theme-label").textContent = label;
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", THEME_COLORS[theme]);
     if (exploreCy) {
       var zoom = exploreCy.zoom();
       var pan = exploreCy.pan();
       exploreCy.style(graphStylesheet());
-      exploreCy.zoom(zoom);
-      exploreCy.pan(pan);
+      exploreCy.viewport({ zoom: zoom, pan: pan });
     }
+  }
+
+  function updateTitle() {
+    if (state.mode === "explore") {
+      var picked = state.selectedId ? nodeById(state.selectedId) : null;
+      setTitle(picked ? picked.label : "The map");
+      return;
+    }
+    var node = nodeById(currentPath().nodes[state.step]);
+    setTitle(node ? node.label : "");
   }
 
   function showMode(options) {
     var opts = options || {};
     var explore = state.mode === "explore";
+    document.body.setAttribute("data-mode", explore ? "explore" : "walk");
     document.getElementById("status").hidden = true;
     document.getElementById("walk-view").hidden = explore;
     document.getElementById("explore-view").hidden = !explore;
-    document.getElementById("tab-walk").setAttribute("aria-selected", explore ? "false" : "true");
-    document.getElementById("tab-explore").setAttribute("aria-selected", explore ? "true" : "false");
+    var walkTab = document.getElementById("tab-walk");
+    var exploreTab = document.getElementById("tab-explore");
+    walkTab.setAttribute("aria-selected", explore ? "false" : "true");
+    exploreTab.setAttribute("aria-selected", explore ? "true" : "false");
+    walkTab.tabIndex = explore ? -1 : 0;
+    exploreTab.tabIndex = explore ? 0 : -1;
     writeHash();
+    updateTitle();
     if (explore) {
       window.requestAnimationFrame(function () {
-        ensureGraph();
-        if (opts.frame && state.selectedId) frameNode(state.selectedId);
+        ensureGraph(function () {
+          if (opts.frame && state.selectedId) frameNode(state.selectedId, false);
+        });
       });
     }
   }
+
+  function switchMode(mode, focusTab) {
+    if (state.mode === mode) return;
+    state.mode = mode;
+    showMode();
+    window.scrollTo(0, 0);
+    if (focusTab) document.getElementById(mode === "explore" ? "tab-explore" : "tab-walk").focus();
+  }
+
+  /* Walk */
 
   function renderPicker() {
     var host = document.getElementById("path-picker");
@@ -481,22 +541,22 @@
     data.paths.forEach(function (path) {
       var button = h("button", {
         type: "button",
-        class: "path-card",
+        class: "week",
         "aria-pressed": path.id === currentPath().id ? "true" : "false",
         onClick: function () { choosePath(path.id); }
       });
       button.append(
-        h("span", { class: "path-date", text: formatMonthDay(path.advent_sunday || path.date || "") }),
-        h("span", { class: "path-title", text: path.title })
+        h("span", { class: "week-date", text: formatMonthDay(path.advent_sunday || path.date || "") }),
+        h("span", { class: "week-title", text: path.title })
       );
       host.append(button);
     });
     var active = host.querySelector('[aria-pressed="true"]');
-    if (active) {
+    if (active && host.scrollWidth > host.clientWidth) {
       var hostRect = host.getBoundingClientRect();
       var rect = active.getBoundingClientRect();
-      if (rect.left < hostRect.left + 4 || rect.right > hostRect.right - 4) {
-        host.scrollLeft += rect.left - hostRect.left - 8;
+      if (rect.left < hostRect.left || rect.right > hostRect.right - 24) {
+        host.scrollLeft += rect.left - hostRect.left;
       }
     }
   }
@@ -535,33 +595,25 @@
         class: "thread-stop",
         "aria-current": index === state.step ? "step" : null,
         "aria-label": label + (kind ? ", " + kind : "") + ", stop " + (index + 1) + " of " + path.nodes.length,
-        onClick: function () { setStep(index); }
+        onClick: function () { setStep(index, { scroll: true }); }
       });
-      var track = h("span", { class: "thread-track" });
-      var before = h("span", { class: "thread-line", "aria-hidden": "true" });
-      var after = h("span", { class: "thread-line", "aria-hidden": "true" });
+      var track = h("span", { class: "thread-track", "aria-hidden": "true" });
+      var before = h("span", { class: "thread-line" });
+      var after = h("span", { class: "thread-line" });
       if (index === 0) before.classList.add("is-empty");
       else styleLine(before, path.nodes[index - 1], id);
       if (index === path.nodes.length - 1) after.classList.add("is-empty");
       else styleLine(after, id, path.nodes[index + 1]);
-      track.append(
-        before,
-        h("span", { class: "bead", "aria-hidden": "true", text: String(index + 1) }),
-        after
-      );
+      track.append(before, h("span", { class: "bead", text: String(index + 1) }), after);
       button.append(track, h("span", { class: "thread-label", text: label }));
       if (kind) button.append(h("span", { class: "thread-kind", text: kind }));
       item.append(button);
       host.append(item);
     });
     var current = host.querySelector(".is-current");
-    if (current) {
-      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      current.scrollIntoView({
-        inline: "center",
-        block: "nearest",
-        behavior: reduce ? "auto" : "smooth"
-      });
+    if (current && host.scrollWidth > host.clientWidth) {
+      var left = current.offsetLeft - (host.clientWidth - current.offsetWidth) / 2;
+      host.scrollTo({ left: Math.max(0, left), behavior: reducedMotion() ? "auto" : "smooth" });
     }
   }
 
@@ -570,23 +622,20 @@
     var node = nodeById(path.nodes[state.step]);
     var card = document.getElementById("step-card");
     card.replaceChildren();
-    card.append(
-      h("p", { class: "kicker", text: "Stop " + (state.step + 1) + " of " + path.nodes.length }),
-      h("p", { class: "kicker-path", text: path.title })
+    var kicker = h("p", { class: "kicker" });
+    kicker.append(
+      h("span", { text: "Stop " + (state.step + 1) + " of " + path.nodes.length }),
+      h("span", { class: "kicker-path", text: path.title })
     );
+    card.append(kicker);
     if (!node) {
-      card.append(h("p", { text: "This stop is missing from the map." }));
+      card.append(h("p", { class: "summary", text: "This stop is missing from the map." }));
       return;
     }
-    card.append(h("h3", { class: "step-name", text: node.label }));
+    card.append(h("h3", { id: "step-title", class: "step-name", tabindex: "-1", text: node.label }));
     appendStart(card, node);
+    appendLayers(card, node);
     appendSermons(card, node.id);
-    var deeperFold = fold("Go deeper", function (body) {
-      appendRichDeeper(body, deeperEntry("nodes", node.id));
-    });
-    if (deeperFold) card.append(deeperFold);
-    var deepest = makeDeepest("nodes", node.id);
-    if (deepest) card.append(deepest);
     card.append(h("button", {
       type: "button",
       class: "text-btn",
@@ -595,63 +644,38 @@
     }));
   }
 
-  function renderLink() {
-    var path = currentPath();
-    var slot = document.getElementById("link-slot");
-    slot.replaceChildren();
-    var card = h("section", { class: "link-card" });
-    if (state.step >= path.nodes.length - 1) {
-      card.dataset.confidence = "none";
-      card.append(
-        h("h3", { class: "link-title", text: "End of this path" }),
-        h("p", { class: "next-label", text: "Step back to review a stop, or choose another reading." })
-      );
-      slot.append(card);
-      return;
-    }
-    var currentId = path.nodes[state.step];
-    var nextId = path.nodes[state.step + 1];
-    var next = nodeById(nextId);
-    var found = edgesBetween(currentId, nextId);
-    card.append(
-      h("h3", { class: "link-title", text: "The line to the next stop" }),
-      h("p", { class: "next-label", text: "Next: " + (next ? next.label : nextId) })
-    );
-    if (!found.length) {
-      card.dataset.confidence = "none";
-      card.append(h("p", {
-        class: "direction-note",
-        text: "No direct line. This reading places the two stops side by side. The map does not draw a line straight from one to the other."
-      }));
-      slot.append(card);
-      return;
-    }
-    var first = found[0];
-    card.dataset.confidence = first.confidence === "typology" ? "typology" : "explicit";
-    card.style.setProperty("--link-color", "var(--edge-" + first.type + ")");
-    found.forEach(function (edge) {
-      if (edge.from !== currentId || edge.to !== nextId) {
-        var from = nodeById(edge.from);
-        var to = nodeById(edge.to);
-        card.append(h("p", {
-          class: "direction-note",
-          text: "On the map this line runs from " + (from ? from.label : edge.from) + " to " + (to ? to.label : edge.to) + "."
-        }));
-      }
-      card.append(h("p", { class: "badge " + edge.confidence, text: confidenceCopy(edge.confidence) }));
-      var facts = h("dl", { class: "facts" });
-      addFact(facts, "Line", edgeLabel(edge.type));
-      addFact(facts, "Scripture", (edge.refs || []).join(", ") || "None listed");
-      if (edge.note) addFact(facts, "Note", edge.note);
-      card.append(facts);
-    });
-    slot.append(card);
+  function nextPath() {
+    var index = pathIndex(currentPath().id);
+    return index >= 0 && index < data.paths.length - 1 ? data.paths[index + 1] : null;
   }
 
   function updateNav() {
-    var total = currentPath().nodes.length;
-    document.getElementById("prev-step").disabled = state.step <= 0;
-    document.getElementById("next-step").disabled = state.step >= total - 1;
+    var path = currentPath();
+    var total = path.nodes.length;
+    var prev = document.getElementById("prev-step");
+    var next = document.getElementById("next-step");
+    var prevNode = state.step > 0 ? nodeById(path.nodes[state.step - 1]) : null;
+    var nextNode = state.step < total - 1 ? nodeById(path.nodes[state.step + 1]) : null;
+    prev.disabled = state.step <= 0;
+    prev.style.visibility = prev.disabled ? "hidden" : "";
+    document.getElementById("prev-name").textContent = prevNode ? prevNode.label : "";
+    var after = nextPath();
+    var dir = document.getElementById("next-dir");
+    var name = document.getElementById("next-name");
+    if (nextNode) {
+      next.disabled = false;
+      dir.textContent = "Next";
+      name.textContent = nextNode.label;
+    } else if (after) {
+      next.disabled = false;
+      dir.textContent = "Next week";
+      name.textContent = after.title;
+    } else {
+      next.disabled = true;
+      dir.textContent = "Next";
+      name.textContent = "";
+    }
+    next.style.visibility = next.disabled ? "hidden" : "";
   }
 
   function renderPathFrame() {
@@ -661,183 +685,354 @@
     var host = document.getElementById("path-deepest");
     if (!host) return;
     host.replaceChildren();
-    var weekDeeper = fold("This week, go deeper", function (body) {
+    var weekDeeper = fold("This week, go deeper", "The whole week in one story, with verses and questions", function (body) {
       appendRichDeeper(body, deeperEntry("paths", path.id));
     });
+    var deepest = makeDeepest("paths", path.id, "This week, go deepest", "What the Westminster Standards say about this week");
+    if (!weekDeeper && !deepest) return;
+    host.append(h("h3", { class: "label", text: "About " + path.title }));
     if (weekDeeper) host.append(weekDeeper);
-    var deepest = makeDeepest("paths", path.id, "This week, go deepest");
     if (deepest) host.append(deepest);
   }
 
-  function renderWalk() {
+  function renderWalk(options) {
+    var opts = options || {};
     renderPathFrame();
     renderThread();
     renderStep();
-    document.getElementById("link-slot").replaceChildren();
     updateNav();
+    if (opts.animate && !reducedMotion()) {
+      var card = document.getElementById("step-card");
+      card.classList.remove("is-entering");
+      void card.offsetWidth;
+      card.classList.add("is-entering");
+    }
+    if (state.mode === "walk") updateTitle();
     var node = nodeById(currentPath().nodes[state.step]);
     if (node) {
-      announce("Step " + (state.step + 1) + " of " + currentPath().nodes.length + ". " + node.label);
+      announce("Stop " + (state.step + 1) + " of " + currentPath().nodes.length + ". " + node.label);
     }
   }
 
-  function choosePath(id) {
+  function bringReadingIntoView() {
+    var card = document.getElementById("step-card");
+    var offset = topbarHeight() + 16;
+    var top = card.getBoundingClientRect().top;
+    if (top >= offset && top < window.innerHeight * 0.5) return;
+    window.scrollTo({
+      top: Math.max(0, window.scrollY + top - offset - 8),
+      behavior: reducedMotion() ? "auto" : "smooth"
+    });
+  }
+
+  function choosePath(id, options) {
+    var opts = options || {};
     if (!data.paths.some(function (path) { return path.id === id; })) return;
     state.pathId = id;
     state.step = 0;
     renderPicker();
-    renderWalk();
+    renderWalk({ animate: true });
     writeHash();
+    if (opts.scroll) bringReadingIntoView();
   }
 
-  function setStep(step) {
+  function setStep(step, options) {
+    var opts = options || {};
     var total = currentPath().nodes.length;
     if (step < 0 || step >= total || step === state.step) return;
     state.step = step;
-    renderWalk();
+    renderWalk({ animate: true });
     writeHash();
+    if (opts.scroll) bringReadingIntoView();
+  }
+
+  function goNext() {
+    var total = currentPath().nodes.length;
+    if (state.step < total - 1) {
+      setStep(state.step + 1, { scroll: true });
+      return;
+    }
+    var after = nextPath();
+    if (after) choosePath(after.id, { scroll: true });
   }
 
   function openOnMap(id) {
     state.mode = "explore";
     state.selectedId = id;
     renderPanel();
-    renderNameList();
     showMode({ frame: true });
-    if (window.matchMedia("(max-width: 959px)").matches) {
-      window.setTimeout(function () {
-        document.getElementById("panel").scrollIntoView({ block: "start", behavior: "auto" });
-      }, 80);
-    }
+    window.scrollTo(0, 0);
   }
 
-  function dagreReady() {
-    try {
-      return typeof cytoscape("layout", "dagre") === "function";
-    } catch (err) {
-      return false;
-    }
+  /* Map */
+
+  function visibleEdges() {
+    return data.edges.filter(function (edge) {
+      return !(state.hideTypology && edge.confidence === "typology");
+    });
   }
 
-  function registerDagre() {
-    if (dagreReady()) return;
-    if (typeof cytoscapeDagre === "function") cytoscapeDagre(cytoscape);
+  function edgeKey(edge) {
+    return edge.from + "__" + edge.to + "__" + edge.type;
   }
 
-  function layoutOptions() {
-    if (dagreReady()) {
-      return {
-        name: "dagre",
-        rankDir: "LR",
-        nodeSep: 36,
-        edgeSep: 16,
-        rankSep: 96,
-        animate: false,
-        fit: false,
-        padding: 28
-      };
-    }
-    return {
-      name: "breadthfirst",
-      directed: true,
-      spacingFactor: 1.35,
-      animate: false,
-      fit: false,
-      padding: 28
-    };
+  function nodeSize(id) {
+    return FOCAL[id] ? FOCAL_SIZE : NODE_SIZE;
   }
 
   function edgeElements() {
-    var elements = [];
-    data.edges.forEach(function (edge) {
-      if (state.hideTypology && edge.confidence === "typology") return;
-      elements.push({
+    return visibleEdges().map(function (edge) {
+      return {
         data: {
-          id: edge.from + "__" + edge.to + "__" + edge.type,
+          id: edgeKey(edge),
           source: edge.from,
           target: edge.to,
           etype: edge.type,
           confidence: edge.confidence
         },
         classes: edge.confidence === "typology" ? "typology" : "explicit"
-      });
+      };
     });
-    return elements;
   }
 
   function nodeElements() {
     return data.nodes.map(function (node) {
+      var size = nodeSize(node.id);
       return {
         data: {
           id: node.id,
           label: node.label,
-          ntype: node.type
-        }
+          ntype: node.type,
+          w: size.w,
+          h: size.h
+        },
+        classes: FOCAL[node.id] ? "focal" : ""
       };
+    });
+  }
+
+  function dagreLayout() {
+    if (typeof dagre === "undefined" || !dagre.graphlib) return null;
+    try {
+      var g = new dagre.graphlib.Graph({ multigraph: true });
+      g.setGraph({ rankdir: "LR", nodesep: 22, ranksep: 64, edgesep: 16, marginx: 0, marginy: 0 });
+      g.setDefaultEdgeLabel(function () { return {}; });
+      data.nodes.forEach(function (node) {
+        var size = nodeSize(node.id);
+        g.setNode(node.id, { width: size.w, height: size.h });
+      });
+      visibleEdges().forEach(function (edge) {
+        g.setEdge(edge.from, edge.to, {}, edgeKey(edge));
+      });
+      dagre.layout(g);
+      var positions = {};
+      data.nodes.forEach(function (node) {
+        var spot = g.node(node.id);
+        positions[node.id] = { x: spot.x, y: spot.y };
+      });
+      var points = {};
+      g.edges().forEach(function (ref) {
+        points[ref.name] = g.edge(ref).points || [];
+      });
+      return { positions: positions, points: points };
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function spread(count, span) {
+    if (count <= 1) return [0];
+    var gap = Math.min(14, span / (count - 1));
+    var out = [];
+    for (var i = 0; i < count; i += 1) out.push((i - (count - 1) / 2) * gap);
+    return out;
+  }
+
+  /* Each edge leaves the right side of its source and enters the left side of its
+     target, so the map reads left to right. Ports are spread along the side so
+     arrows into Jesus do not pile on one point. */
+  function routeEdges(layout) {
+    var pos = layout.positions;
+    var outgoing = {};
+    var incoming = {};
+    exploreCy.edges().forEach(function (edge) {
+      var s = edge.data("source");
+      var t = edge.data("target");
+      (outgoing[s] = outgoing[s] || []).push(edge);
+      (incoming[t] = incoming[t] || []).push(edge);
+    });
+    var sourceOffset = {};
+    var targetOffset = {};
+    Object.keys(outgoing).forEach(function (id) {
+      var list = outgoing[id].slice().sort(function (a, b) {
+        return pos[a.data("target")].y - pos[b.data("target")].y;
+      });
+      var offsets = spread(list.length, nodeSize(id).h - 24);
+      list.forEach(function (edge, i) { sourceOffset[edge.id()] = offsets[i]; });
+    });
+    Object.keys(incoming).forEach(function (id) {
+      var list = incoming[id].slice().sort(function (a, b) {
+        return pos[a.data("source")].y - pos[b.data("source")].y;
+      });
+      var offsets = spread(list.length, nodeSize(id).h - 24);
+      list.forEach(function (edge, i) { targetOffset[edge.id()] = offsets[i]; });
+    });
+
+    exploreCy.edges().forEach(function (edge) {
+      var sId = edge.data("source");
+      var tId = edge.data("target");
+      var S = pos[sId];
+      var T = pos[tId];
+      var sw = nodeSize(sId).w / 2;
+      var tw = nodeSize(tId).w / 2;
+      var so = sourceOffset[edge.id()] || 0;
+      var to = targetOffset[edge.id()] || 0;
+      var start = { x: S.x + sw, y: S.y + so };
+      var end = { x: T.x - tw, y: T.y + to };
+      if (end.x <= start.x + 8) {
+        edge.removeClass("routed");
+        return;
+      }
+      var inner = (layout.points[edge.id()] || []).slice(1, -1).filter(function (p) {
+        return p.x > start.x + 4 && p.x < end.x - 4;
+      });
+      var firstX = inner.length ? inner[0].x : end.x;
+      var lastX = inner.length ? inner[inner.length - 1].x : start.x;
+      var controls = [{ x: start.x + (firstX - start.x) / 2, y: start.y }]
+        .concat(inner)
+        .concat([{ x: end.x - (end.x - lastX) / 2, y: end.y }]);
+      var vx = T.x - S.x;
+      var vy = T.y - S.y;
+      var len2 = vx * vx + vy * vy;
+      var len = Math.sqrt(len2) || 1;
+      var weights = [];
+      var distances = [];
+      controls.forEach(function (p) {
+        var dx = p.x - S.x;
+        var dy = p.y - S.y;
+        weights.push((dx * vx + dy * vy) / (len2 || 1));
+        distances.push((dy * vx - dx * vy) / len);
+      });
+      edge.data({
+        cpw: weights,
+        cpd: distances,
+        sep: sw + "px " + so + "px",
+        tep: (-tw) + "px " + to + "px"
+      });
+      edge.addClass("routed");
     });
   }
 
   function graphStylesheet() {
     var ink = token("--ink");
     var accent = token("--accent-fill");
-    var dark = currentTheme() === "dark";
+    var paper = token("--paper");
+    var duration = reducedMotion() ? 0 : 200;
     return [
       {
         selector: "node",
         style: {
+          shape: "round-rectangle",
+          "corner-radius": 10,
+          width: "data(w)",
+          height: "data(h)",
           label: "data(label)",
           "text-wrap": "wrap",
-          "text-max-width": "136px",
+          "text-max-width": function (ele) { return (ele.data("w") - 18) + "px"; },
           "text-halign": "center",
           "text-valign": "center",
           "text-justification": "center",
-          "text-overflow": "clip",
-          "font-size": 13,
-          "font-weight": 600,
+          "line-height": 1.25,
+          "font-family": GRAPH_FONT,
+          "font-size": 15,
+          "font-weight": 500,
           color: ink,
-          width: 154,
-          height: 72,
-          shape: "round-rectangle",
           "background-color": function (ele) { return token("--node-" + ele.data("ntype") + "-fill"); },
-          "border-width": 2,
+          "border-width": 1,
           "border-color": function (ele) { return token("--node-" + ele.data("ntype") + "-line"); },
           "overlay-opacity": 0,
-          "shadow-blur": 0,
-          "shadow-opacity": 0,
-          "font-family": "system-ui, Segoe UI, sans-serif"
+          "underlay-color": accent,
+          "underlay-opacity": 0,
+          "underlay-padding": 6,
+          "underlay-shape": "round-rectangle",
+          "transition-property": "opacity, underlay-opacity, border-width",
+          "transition-duration": duration
+        }
+      },
+      {
+        selector: "node.focal",
+        style: {
+          "font-size": 17,
+          "font-weight": 600,
+          "background-color": paper,
+          "border-color": accent,
+          "border-width": 1.5
+        }
+      },
+      {
+        selector: "node.hover",
+        style: {
+          "underlay-color": ink,
+          "underlay-opacity": 0.07
         }
       },
       {
         selector: "node.picked",
         style: {
-          "border-width": 4,
+          "border-width": 2.5,
           "border-color": accent,
-          opacity: 1
+          "underlay-color": accent,
+          "underlay-opacity": 0.14
         }
       },
       {
         selector: "edge",
         style: {
-          width: 2.5,
+          width: 1.5,
           "curve-style": "bezier",
           "line-color": function (ele) { return token("--edge-" + ele.data("etype")); },
           "target-arrow-color": function (ele) { return token("--edge-" + ele.data("etype")); },
           "target-arrow-shape": "triangle",
-          "arrow-scale": 0.85,
-          opacity: 0.95,
-          "overlay-opacity": 0
+          "arrow-scale": 0.7,
+          opacity: 0.78,
+          "line-cap": "round",
+          "overlay-opacity": 0,
+          "transition-property": "opacity, width",
+          "transition-duration": duration
+        }
+      },
+      {
+        selector: "edge.routed",
+        style: {
+          "curve-style": "unbundled-bezier",
+          "edge-distances": "node-position",
+          "control-point-weights": function (ele) { return ele.data("cpw"); },
+          "control-point-distances": function (ele) { return ele.data("cpd"); },
+          "source-endpoint": function (ele) { return ele.data("sep"); },
+          "target-endpoint": function (ele) { return ele.data("tep"); }
         }
       },
       {
         selector: "edge.typology",
         style: {
           "line-style": "dashed",
-          "line-dash-pattern": [7, 5]
+          "line-dash-pattern": [6, 5]
         }
       },
       {
-        selector: ".faded",
-        style: { opacity: 0.34 }
+        selector: "edge.hover, edge.lit",
+        style: {
+          width: 2.25,
+          opacity: 1
+        }
+      },
+      {
+        selector: "node.faded",
+        style: { opacity: 0.3 }
+      },
+      {
+        selector: "edge.faded",
+        style: { opacity: 0.12 }
       }
     ];
   }
@@ -846,32 +1041,96 @@
     if (!exploreCy) return;
     var id = state.selectedId;
     exploreCy.batch(function () {
-      exploreCy.elements().removeClass("faded picked");
+      exploreCy.elements().removeClass("faded picked lit");
       if (!id) return;
       var node = exploreCy.getElementById(id);
       if (!node || node.empty()) return;
       exploreCy.elements().addClass("faded");
       node.removeClass("faded").addClass("picked");
-      node.connectedEdges().removeClass("faded");
-      node.connectedNodes().removeClass("faded");
+      node.connectedEdges().removeClass("faded").addClass("lit");
+      node.connectedEdges().connectedNodes().removeClass("faded");
     });
   }
 
-  function frameNode(id) {
+  /* Space covered by the controls that float over the map. */
+  function mapInsets() {
+    var phone = isPhone();
+    return { top: 64, bottom: phone ? 76 : 60, side: 28 };
+  }
+
+  function moveViewport(viewport, animate) {
+    if (!exploreCy) return;
+    exploreCy.stop();
+    if (animate && !reducedMotion()) {
+      exploreCy.animate(viewport, { duration: 420, easing: "ease-in-out-cubic" });
+    } else {
+      exploreCy.viewport(viewport);
+    }
+  }
+
+  function fitView(animate, whole) {
+    if (!exploreCy) return;
+    var bb = exploreCy.elements().boundingBox();
+    if (!bb.w || !bb.h) return;
+    var inset = mapInsets();
+    var w = exploreCy.width();
+    var h = exploreCy.height();
+    var availW = Math.max(80, w - 2 * inset.side);
+    var availH = Math.max(80, h - inset.top - inset.bottom);
+    var zoom = Math.min(availW / bb.w, availH / bb.h, 1.05);
+    var pan;
+    if (zoom >= READABLE_ZOOM || whole) {
+      pan = {
+        x: w / 2 - zoom * (bb.x1 + bb.w / 2),
+        y: inset.top + availH / 2 - zoom * (bb.y1 + bb.h / 2)
+      };
+    } else {
+      zoom = Math.max(0.8, Math.min(availH / bb.h, 1));
+      pan = {
+        x: inset.side - zoom * bb.x1,
+        y: inset.top + availH / 2 - zoom * (bb.y1 + bb.h / 2)
+      };
+    }
+    moveViewport({ zoom: zoom, pan: pan }, animate);
+  }
+
+  function frameNode(id, animate) {
     if (!exploreCy || !id) return;
     var node = exploreCy.getElementById(id);
     if (!node || node.empty()) return;
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var zoom = Math.max(exploreCy.zoom(), window.innerWidth < 800 ? 0.95 : 0.72);
-    exploreCy.stop();
-    exploreCy.animate({
-      center: { eles: node },
-      zoom: zoom
-    }, { duration: reduce ? 0 : 280 });
+    var inset = mapInsets();
+    var zoom = Math.min(Math.max(exploreCy.zoom(), 0.9), 1.3);
+    var p = node.position();
+    var h = exploreCy.height();
+    var centerY = inset.top + (h - inset.top - inset.bottom) / 2;
+    moveViewport({
+      zoom: zoom,
+      pan: { x: exploreCy.width() / 2 - zoom * p.x, y: centerY - zoom * p.y }
+    }, animate !== false);
+  }
+
+  function applyLayout() {
+    var layout = dagreLayout();
+    if (layout) {
+      exploreCy.batch(function () {
+        exploreCy.nodes().forEach(function (node) {
+          node.position(layout.positions[node.id()]);
+        });
+        routeEdges(layout);
+      });
+      return;
+    }
+    exploreCy.edges().removeClass("routed");
+    exploreCy.layout({
+      name: "breadthfirst",
+      directed: true,
+      spacingFactor: 1.2,
+      animate: false,
+      fit: false
+    }).run();
   }
 
   function createGraph() {
-    registerDagre();
     var container = document.getElementById("graph");
     try {
       exploreCy = cytoscape({
@@ -879,127 +1138,93 @@
         elements: nodeElements().concat(edgeElements()),
         layout: { name: "preset" },
         style: graphStylesheet(),
-        minZoom: 0.2,
-        maxZoom: 2.6,
-        wheelSensitivity: 0.22,
+        minZoom: 0.25,
+        maxZoom: 2.5,
+        wheelSensitivity: 0.2,
         boxSelectionEnabled: false,
-        autoungrabify: true,
-        nodeDimensionsIncludeLabels: true
+        autoungrabify: true
       });
     } catch (err) {
       document.getElementById("graph-error").hidden = false;
+      document.getElementById("graph-loading").classList.add("is-done");
       exploreCy = null;
       return;
     }
-    var layout = exploreCy.layout(layoutOptions());
-    layout.one("layoutstop", function () {
-      exploreCy.resize();
-      exploreCy.fit(undefined, 36);
-      state.fitted = true;
-      refreshHighlight();
-    });
-    layout.run();
+    applyLayout();
+    exploreCy.resize();
+    fitView(false);
+    if (state.selectedId) frameNode(state.selectedId, false);
+    refreshHighlight();
+    document.getElementById("graph-loading").classList.add("is-done");
+
     exploreCy.on("tap", function (evt) {
       if (evt.target === exploreCy) {
-        clearSelection();
+        if (state.selectedId) clearSelection();
         return;
       }
       if (evt.target.isNode && evt.target.isNode()) {
-        selectNode(evt.target.id(), { scrollPanel: true });
+        selectNode(evt.target.id(), { frame: true, fromMap: true });
         return;
       }
       if (evt.target.isEdge && evt.target.isEdge()) {
-        selectNode(evt.target.data("target"), { scrollPanel: true, frame: true });
+        selectNode(evt.target.data("target"), { frame: true, fromMap: true });
       }
     });
+    exploreCy.on("mouseover", "node", function (evt) {
+      evt.target.addClass("hover");
+      evt.target.connectedEdges().addClass("hover");
+      container.style.cursor = "pointer";
+    });
+    exploreCy.on("mouseout", "node", function (evt) {
+      evt.target.removeClass("hover");
+      evt.target.connectedEdges().removeClass("hover");
+      container.style.cursor = "";
+    });
+    exploreCy.on("mouseover", "edge", function (evt) {
+      evt.target.addClass("hover");
+      container.style.cursor = "pointer";
+    });
+    exploreCy.on("mouseout", "edge", function (evt) {
+      evt.target.removeClass("hover");
+      container.style.cursor = "";
+    });
   }
 
-  function ensureGraph() {
+  function ensureGraph(done) {
     if (typeof cytoscape !== "function") {
       document.getElementById("graph-error").hidden = false;
+      document.getElementById("graph-loading").classList.add("is-done");
       return;
     }
-    if (!exploreCy) createGraph();
-    if (!exploreCy) return;
-    exploreCy.resize();
-    if (!state.fitted) {
-      exploreCy.fit(undefined, 32);
-      state.fitted = true;
-    }
-    refreshHighlight();
-  }
-
-  function relayout(fitAfter) {
-    if (!exploreCy) return;
-    var layout = exploreCy.layout(layoutOptions());
-    layout.one("layoutstop", function () {
-      if (fitAfter) exploreCy.fit(undefined, 32);
+    if (exploreCy) {
+      exploreCy.resize();
       refreshHighlight();
-    });
-    layout.run();
-  }
-
-  function renderEdgeDetails(edge, homeId) {
-    var otherId = edge.from === homeId ? edge.to : edge.from;
-    var other = nodeById(otherId);
-    var block = h("div", { class: "edge-block" });
-    var button = h("button", {
-      type: "button",
-      class: "edge-jump",
-      onClick: function () { selectNode(otherId, { frame: true, scrollPanel: true, focusPanel: true }); }
-    });
-    button.append(
-      h("span", { class: "edge-dir", text: edge.from === homeId ? "Line to" : "Line from" }),
-      h("span", { class: "edge-target", text: other ? other.label : otherId })
-    );
-    block.append(button);
-    block.append(h("p", { class: "badge " + edge.confidence, text: confidenceCopy(edge.confidence) }));
-    var facts = h("dl", { class: "facts" });
-    addFact(facts, "Line", edgeLabel(edge.type));
-    addFact(facts, "Scripture", (edge.refs || []).join(", ") || "None listed");
-    if (edge.note) addFact(facts, "Note", edge.note);
-    block.append(facts);
-    if (state.hideTypology && edge.confidence === "typology") {
-      block.append(h("p", { class: "hint", text: "This typology line is hidden on the map right now." }));
-    }
-    return block;
-  }
-
-  function renderPanel() {
-    var panel = document.getElementById("panel");
-    panel.replaceChildren();
-    if (!state.selectedId) {
-      panel.append(
-        h("h3", { class: "step-name", text: "Choose a name" }),
-        h("p", {
-          class: "summary",
-          text: "Tap a name. You will see the short story first. Go deeper for the verses and the lines. Go deepest for the Westminster Standards."
-        })
-      );
+      if (done) done();
       return;
     }
-    var node = nodeById(state.selectedId);
-    if (!node) {
-      panel.append(h("p", { text: "This stop is missing from the map." }));
-      return;
-    }
-    var title = h("h3", { id: "panel-title", class: "step-name", tabindex: "-1", text: node.label });
-    panel.append(title);
-    appendStart(panel, node);
-    appendSermons(panel, node.id);
-    var outgoing = data.edges.filter(function (edge) { return edge.from === node.id; });
-    var incoming = data.edges.filter(function (edge) { return edge.to === node.id; });
-    var deeperFold = fold("Go deeper", function (body) {
-      appendRichDeeper(body, deeperEntry("nodes", node.id));
+    if (graphPending) return;
+    graphPending = true;
+    fontsReady.then(function () {
+      graphPending = false;
+      if (!exploreCy) createGraph();
     });
-    if (deeperFold) panel.append(deeperFold);
-    var deepest = makeDeepest("nodes", node.id);
-    if (deepest) panel.append(deepest);
   }
 
-  function renderNameList() {
-    var host = document.getElementById("name-list-body");
-    host.replaceChildren();
+  function relayout() {
+    if (!exploreCy) return;
+    exploreCy.batch(function () {
+      exploreCy.edges().remove();
+      exploreCy.add(edgeElements());
+    });
+    applyLayout();
+    refreshHighlight();
+    if (state.selectedId) frameNode(state.selectedId, true);
+    else fitView(true);
+  }
+
+  /* Map: the reading sheet */
+
+  function renderNameList(host) {
     var seen = {};
     KIND_ORDER.forEach(function (kind) { seen[kind] = true; });
     var kinds = KIND_ORDER.slice();
@@ -1009,22 +1234,77 @@
         kinds.push(node.type);
       }
     });
+    var list = h("nav", { class: "names", "aria-label": "Every name on the map" });
     kinds.forEach(function (kind) {
       var group = data.nodes.filter(function (node) { return node.type === kind; })
         .slice()
         .sort(function (a, b) { return a.label.localeCompare(b.label); });
       if (!group.length) return;
-      host.append(h("h3", { class: "name-kind", text: kindLabel(kind) }));
+      var heading = h("h4", { class: "name-kind" });
+      heading.append(h("span", { class: "kind-dot", "data-kind": kind, "aria-hidden": "true" }), document.createTextNode(kindLabel(kind)));
+      list.append(heading);
       group.forEach(function (node) {
-        host.append(h("button", {
+        list.append(h("button", {
           type: "button",
           class: "name-btn",
-          "aria-pressed": node.id === state.selectedId ? "true" : "false",
           text: node.label,
-          onClick: function () { selectNode(node.id, { frame: true, scrollPanel: true, focusPanel: true }); }
+          onClick: function () { selectNode(node.id, { frame: true, focusPanel: true }); }
         }));
       });
     });
+    host.append(list);
+  }
+
+  function renderPanel() {
+    var panel = document.getElementById("panel");
+    panel.replaceChildren();
+    if (!state.selectedId) {
+      panel.append(
+        h("p", { class: "eyebrow", text: "The map" }),
+        h("h3", { id: "panel-title", class: "step-name", tabindex: "-1", text: "Choose a name" }),
+        h("p", {
+          class: "lead",
+          text: "Tap a name. You will see the short story first. Go deeper for the verses and the lines. Go deepest for the Westminster Standards."
+        })
+      );
+      renderNameList(panel);
+      return;
+    }
+    var node = nodeById(state.selectedId);
+    if (!node) {
+      panel.append(h("p", { class: "summary", text: "This stop is missing from the map." }));
+      return;
+    }
+    panel.append(h("button", {
+      type: "button",
+      class: "back-btn",
+      text: "All names",
+      onClick: function () { clearSelection({ focusPanel: true }); }
+    }));
+    panel.append(
+      h("p", { class: "kicker", text: kindLabel(node.type) }),
+      h("h3", { id: "panel-title", class: "step-name", tabindex: "-1", text: node.label })
+    );
+    appendStart(panel, node);
+    appendLayers(panel, node);
+    appendSermons(panel, node.id);
+  }
+
+  function revealSheet() {
+    var panel = document.getElementById("panel");
+    if (!isPhone()) {
+      panel.scrollTop = 0;
+      return;
+    }
+    var layout = document.querySelector(".explore-layout");
+    var top = layout.getBoundingClientRect().top + window.scrollY - topbarHeight();
+    if (Math.abs(window.scrollY - top) < 4) return;
+    window.scrollTo({ top: Math.max(0, top), behavior: reducedMotion() ? "auto" : "smooth" });
+  }
+
+  function focusPanelTitle() {
+    var title = document.getElementById("panel-title");
+    if (title) title.focus({ preventScroll: true });
   }
 
   function selectNode(id, options) {
@@ -1032,31 +1312,25 @@
     state.selectedId = id;
     state.mode = "explore";
     renderPanel();
-    renderNameList();
     refreshHighlight();
-    if (opts.frame) frameNode(id);
+    if (opts.frame) frameNode(id, true);
     writeHash();
-    if (opts.scrollPanel && window.matchMedia("(max-width: 959px)").matches) {
-      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      document.getElementById("panel").scrollIntoView({
-        block: "start",
-        behavior: reduce ? "auto" : "smooth"
-      });
-    }
-    if (opts.focusPanel) {
-      var title = document.getElementById("panel-title");
-      if (title) title.focus();
-    }
+    updateTitle();
+    revealSheet();
+    if (opts.focusPanel) focusPanelTitle();
     var node = nodeById(id);
     if (node) announce(node.label);
   }
 
-  function clearSelection() {
+  function clearSelection(options) {
+    var opts = options || {};
     state.selectedId = null;
     renderPanel();
-    renderNameList();
     refreshHighlight();
     writeHash();
+    updateTitle();
+    revealSheet();
+    if (opts.focusPanel) focusPanelTitle();
   }
 
   function renderLegend() {
@@ -1066,12 +1340,12 @@
     nodes.replaceChildren();
     EDGE_ORDER.forEach(function (key) {
       var item = h("li");
-      item.append(h("span", { class: "swatch", "data-edge": key }), document.createTextNode(edgeLabel(key)));
+      item.append(h("span", { class: "swatch", "data-edge": key, "aria-hidden": "true" }), document.createTextNode(edgeLabel(key)));
       edges.append(item);
     });
     KIND_ORDER.forEach(function (key) {
       var item = h("li");
-      item.append(h("span", { class: "kind-dot", "data-kind": key }), document.createTextNode(kindLabel(key)));
+      item.append(h("span", { class: "kind-dot", "data-kind": key, "aria-hidden": "true" }), document.createTextNode(kindLabel(key)));
       nodes.append(item);
     });
   }
@@ -1086,50 +1360,76 @@
     if (!exploreCy) return;
     var next = exploreCy.zoom() * factor;
     next = Math.max(exploreCy.minZoom(), Math.min(exploreCy.maxZoom(), next));
-    exploreCy.zoom({
-      level: next,
-      renderedPosition: { x: exploreCy.width() / 2, y: exploreCy.height() / 2 }
-    });
+    var center = { x: exploreCy.width() / 2, y: exploreCy.height() / 2 };
+    exploreCy.stop();
+    if (reducedMotion()) {
+      exploreCy.zoom({ level: next, renderedPosition: center });
+      return;
+    }
+    var pan = exploreCy.pan();
+    var ratio = next / exploreCy.zoom();
+    exploreCy.animate({
+      zoom: next,
+      pan: { x: center.x - (center.x - pan.x) * ratio, y: center.y - (center.y - pan.y) * ratio }
+    }, { duration: 200, easing: "ease-out-cubic" });
   }
 
+  /* Events */
+
   function bind() {
-    document.getElementById("tab-walk").addEventListener("click", function () {
-      state.mode = "walk";
-      showMode();
-    });
-    document.getElementById("tab-explore").addEventListener("click", function () {
-      state.mode = "explore";
-      showMode();
-      renderPanel();
-      renderNameList();
+    var tabs = [document.getElementById("tab-walk"), document.getElementById("tab-explore")];
+    tabs[0].addEventListener("click", function () { switchMode("walk"); });
+    tabs[1].addEventListener("click", function () { switchMode("explore"); });
+    document.querySelector(".mode-switch").addEventListener("keydown", function (event) {
+      var keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+      if (keys.indexOf(event.key) < 0) return;
+      event.preventDefault();
+      event.stopPropagation();
+      var mode = event.key === "ArrowLeft" || event.key === "Home" ? "walk" : "explore";
+      switchMode(mode, true);
+      document.getElementById(mode === "explore" ? "tab-explore" : "tab-walk").focus();
     });
     document.getElementById("theme-toggle").addEventListener("click", function () {
       var next = currentTheme() === "dark" ? "light" : "dark";
-      try { localStorage.setItem("scarlet-thread-theme", next); } catch (err) { /* ignore */ }
+      try { localStorage.setItem("scarlet-thread-theme", next); } catch (err) { /* private mode */ }
       applyTheme(next);
     });
-    document.getElementById("prev-step").addEventListener("click", function () { setStep(state.step - 1); });
-    document.getElementById("next-step").addEventListener("click", function () { setStep(state.step + 1); });
+    var prevButton = document.getElementById("prev-step");
+    var nextButton = document.getElementById("next-step");
+    prevButton.addEventListener("click", function () {
+      setStep(state.step - 1, { scroll: true });
+      if (prevButton.disabled) nextButton.focus({ preventScroll: true });
+    });
+    nextButton.addEventListener("click", function () {
+      goNext();
+      if (nextButton.disabled) prevButton.focus({ preventScroll: true });
+    });
+    document.addEventListener("click", function (event) {
+      var summary = event.target.closest(".fold > summary");
+      if (!summary) return;
+      event.preventDefault();
+      toggleFold(summary.parentElement);
+    });
     document.getElementById("hide-typology").addEventListener("change", function (event) {
       state.hideTypology = event.target.checked;
       typologyHint();
-      renderPanel();
-      if (!exploreCy) return;
-      exploreCy.edges().remove();
-      exploreCy.add(edgeElements());
-      relayout(true);
+      relayout();
     });
     document.getElementById("zoom-in").addEventListener("click", function () { zoomBy(1.25); });
     document.getElementById("zoom-out").addEventListener("click", function () { zoomBy(0.8); });
-    document.getElementById("zoom-fit").addEventListener("click", function () {
-      if (!exploreCy) return;
-      exploreCy.fit(undefined, 32);
-      state.fitted = true;
-    });
+    document.getElementById("zoom-fit").addEventListener("click", function () { fitView(true, true); });
     document.addEventListener("keydown", function (event) {
       if (event.altKey || event.ctrlKey || event.metaKey) return;
       if (state.mode !== "walk") {
-        if (event.key === "Escape" && state.selectedId) clearSelection();
+        if (event.key === "Escape") {
+          var key = document.getElementById("legend-details");
+          if (key.open) {
+            key.open = false;
+            key.querySelector("summary").focus();
+          } else if (state.selectedId) {
+            clearSelection({ focusPanel: true });
+          }
+        }
         return;
       }
       var tag = event.target && event.target.tagName;
@@ -1147,11 +1447,18 @@
       renderPicker();
       renderWalk();
       renderPanel();
-      renderNameList();
-      showMode();
+      refreshHighlight();
+      showMode({ frame: true });
     });
+    var resizeTimer = null;
     window.addEventListener("resize", function () {
-      if (exploreCy && !document.getElementById("explore-view").hidden) exploreCy.resize();
+      if (!exploreCy || document.getElementById("explore-view").hidden) return;
+      exploreCy.resize();
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(function () {
+        if (state.selectedId) frameNode(state.selectedId, false);
+        else fitView(false);
+      }, 150);
     });
     var media = window.matchMedia("(prefers-color-scheme: dark)");
     if (media.addEventListener) {
@@ -1166,7 +1473,8 @@
   function fail(message) {
     var status = document.getElementById("status");
     status.hidden = false;
-    status.textContent = message;
+    status.classList.add("is-error");
+    document.getElementById("status-text").textContent = message;
   }
 
   function start() {
@@ -1182,9 +1490,8 @@
     renderPicker();
     renderWalk();
     renderPanel();
-    renderNameList();
     typologyHint();
-    showMode();
+    showMode({ frame: true });
   }
 
   function loadJson(url) {
@@ -1192,6 +1499,16 @@
       if (!response.ok) throw new Error("status " + response.status);
       return response.json();
     });
+  }
+
+  if (document.fonts && document.fonts.load) {
+    fontsReady = Promise.race([
+      Promise.all([
+        document.fonts.load('500 15px "Source Serif 4"'),
+        document.fonts.load('600 17px "Source Serif 4"')
+      ]),
+      new Promise(function (resolve) { window.setTimeout(resolve, 1500); })
+    ]).catch(function () { return null; });
   }
 
   Promise.all([
