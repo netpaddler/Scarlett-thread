@@ -10,9 +10,9 @@ This first version is an Advent map for 2026. It has 16 nodes, 19 edges, and fiv
 
 The site has two modes.
 
-**Walk a path.** Choose Week 1, Week 2, Week 3, Week 4, or Christmas. Move with Back and Next (or the arrow keys). Each stop shows the label, kind, Scripture references, a short quote when the map has one, and a summary when the map has one. Between stops, the page shows the line to the next stop: its type, Scripture, note, and whether that line is stated in Scripture or typology. A small diagram marks where you are on the path.
+**Walk a week.** Choose Week 1, Week 2, Week 3, Week 4, or Christmas. Move with Back and Next (or the arrow keys). Next names the stop that comes after, and at the end of a week it moves on to the next week. Each stop opens with a short explanation and a quote when the map has one. A rail beside the reading (above it on a phone) marks where you are on the week, and the line between two stops shows whether the New Testament makes that connection, whether it is a picture of Jesus, or whether the two stops only sit side by side.
 
-**Explore the map.** An interactive graph of every node and edge. Drag to pan, and pinch or use the buttons to zoom. Solid edges are stated in Scripture. Dashed edges are typology. Colors follow the edge type, and a legend sits with the map. A switch hides typology edges. Choose a node to open its Scripture and the lines connected to it. If the drawing is hard to use, open Pick a name for the same details.
+**See the map.** An interactive graph of every node and edge. Drag to pan, and pinch or use the buttons to zoom. Solid edges are stated in Scripture. Dashed edges are typology. Colors follow the edge type, and the key in the corner of the map explains them. A switch hides typology edges. Choose a node to open its reading beside the map (below it on a phone). If the drawing is hard to use, the list of names in the same place opens the same details.
 
 A solid line means the New Testament itself draws the link. A dashed line is typology, an interpretive picture. Faithful readers may differ on those.
 
@@ -82,7 +82,7 @@ Opening `index.html` as a file will not load the map. Browsers block that fetch.
 
 Any other static server works too. For example: `npx --yes serve`.
 
-The graph library is included in `vendor/` (Cytoscape.js and dagre, both MIT licensed), so the map works without a network connection once the page is served. Fonts are requested from Google Fonts and fall back to Georgia and a system sans serif if that request fails.
+The graph library is included in `vendor/` (Cytoscape.js and dagre, both MIT licensed), so the map works without a network connection once the page is served. The app runs the dagre layout itself and routes each line left to right from it. The reading font, Source Serif 4, is served from `fonts/` under the SIL Open Font License (see `fonts/OFL.txt`). Interface text uses the system sans serif.
 
 ## GitHub Pages
 
@@ -112,6 +112,8 @@ Before a public launch, check the ESV excerpts in `data/advent-graph.json` again
 - `data/advent-graph.json`: the Advent map.
 - `data/sermons.json`: Faith Presbyterian sermon links for each node.
 - `data/confessions.json`: Westminster Confession and Catechism quotations for each stop.
-- `vendor/`: Cytoscape.js, dagre, and the dagre layout adapter.
+- `data/deeper.json`: the Go deeper reading for each stop and each week.
+- `vendor/`: Cytoscape.js and dagre.
+- `fonts/`: Source Serif 4 and its license.
 - `favicon.svg`: the mark.
 - `.github/workflows/pages.yml`: the Pages deploy.
