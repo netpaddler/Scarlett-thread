@@ -6,49 +6,431 @@
     "notes": "confidence 'explicit' = the New Testament itself draws the link. 'typology' = interpretive; faithful readers differ. Quotes are short ESV excerpts; verify against the licensed text before publishing."
   },
   "paths": [
-    { "id": "week1_seed", "title": "Week 1: The Seed", "advent_sunday": "2026-11-29", "nodes": ["promise_seed", "promise_abraham", "jesus_birth"] },
-    { "id": "week2_king", "title": "Week 2: The King", "advent_sunday": "2026-12-06", "nodes": ["promise_judah", "jesse_root", "covenant_david", "joseph", "annunciation", "jesus_birth"] },
-    { "id": "week3_sign", "title": "Week 3: The Sign", "advent_sunday": "2026-12-13", "nodes": ["prophecy_immanuel", "prophecy_child", "mary", "joseph", "jesus_birth"] },
-    { "id": "week4_town", "title": "Week 4: The Town", "advent_sunday": "2026-12-20", "nodes": ["prophecy_bethlehem", "bethlehem", "magi", "jesus_birth"] },
-    { "id": "christmas", "title": "Christmas: Born in the City of David", "date": "2026-12-25", "nodes": ["jesus_birth", "jesus"] }
+    {
+      "id": "week1_seed",
+      "title": "Week 1: First promise",
+      "advent_sunday": "2026-11-29",
+      "nodes": [
+        "promise_seed",
+        "promise_abraham",
+        "jesus_birth"
+      ]
+    },
+    {
+      "id": "week2_king",
+      "title": "Week 2: The king",
+      "advent_sunday": "2026-12-06",
+      "nodes": [
+        "promise_judah",
+        "jesse_root",
+        "covenant_david",
+        "joseph",
+        "annunciation",
+        "jesus_birth"
+      ]
+    },
+    {
+      "id": "week3_sign",
+      "title": "Week 3: God with us",
+      "advent_sunday": "2026-12-13",
+      "nodes": [
+        "prophecy_immanuel",
+        "prophecy_child",
+        "mary",
+        "joseph",
+        "jesus_birth"
+      ]
+    },
+    {
+      "id": "week4_town",
+      "title": "Week 4: A small town",
+      "advent_sunday": "2026-12-20",
+      "nodes": [
+        "prophecy_bethlehem",
+        "bethlehem",
+        "magi",
+        "jesus_birth"
+      ]
+    },
+    {
+      "id": "christmas",
+      "title": "Christmas: Jesus is born",
+      "date": "2026-12-25",
+      "nodes": [
+        "jesus_birth",
+        "jesus"
+      ]
+    }
   ],
   "nodes": [
-    { "id": "jesus", "label": "Jesus Christ", "type": "person", "refs": ["Matthew 1:1"], "summary": "The son of David, the son of Abraham; the center every thread points to." },
-    { "id": "jesus_birth", "label": "The Birth of Jesus", "type": "event", "refs": ["Luke 2:1-20", "Matthew 1:18-25"], "quote": { "ref": "Luke 2:11", "text": "For unto you is born this day in the city of David a Savior, who is Christ the Lord." } },
-    { "id": "promise_seed", "label": "The First Gospel Promise", "type": "promise", "refs": ["Genesis 3:15"], "quote": { "ref": "Genesis 3:15", "text": "he shall bruise your head, and you shall bruise his heel." } },
-    { "id": "promise_abraham", "label": "Abraham's Offspring", "type": "covenant", "refs": ["Genesis 22:18"], "quote": { "ref": "Genesis 22:18", "text": "in your offspring shall all the nations of the earth be blessed" } },
-    { "id": "promise_judah", "label": "The Scepter of Judah", "type": "promise", "refs": ["Genesis 49:9-10"], "summary": "The scepter shall not depart from Judah." },
-    { "id": "jesse_root", "label": "The Root of Jesse", "type": "prophecy", "refs": ["Isaiah 11:1", "Isaiah 11:10"], "summary": "A shoot from the stump of Jesse, David's father." },
-    { "id": "covenant_david", "label": "Covenant with David", "type": "covenant", "refs": ["2 Samuel 7:12-13", "2 Samuel 7:16"], "summary": "God promises David an offspring whose throne and kingdom He will establish forever." },
-    { "id": "prophecy_immanuel", "label": "The Virgin's Son, Immanuel", "type": "prophecy", "refs": ["Isaiah 7:14"], "quote": { "ref": "Isaiah 7:14", "text": "Behold, the virgin shall conceive and bear a son, and shall call his name Immanuel." } },
-    { "id": "prophecy_child", "label": "Unto Us a Child Is Born", "type": "prophecy", "refs": ["Isaiah 9:1-7"], "quote": { "ref": "Isaiah 9:6", "text": "For to us a child is born, to us a son is given" } },
-    { "id": "prophecy_bethlehem", "label": "Ruler from Bethlehem", "type": "prophecy", "refs": ["Micah 5:2"], "quote": { "ref": "Micah 5:2", "text": "But you, O Bethlehem Ephrathah, who are too little to be among the clans of Judah, from you shall come forth for me one who is to rule in Israel" } },
-    { "id": "bethlehem", "label": "Bethlehem", "type": "place", "refs": ["Ruth 1:1", "1 Samuel 16:1", "Luke 2:4"], "summary": "Hometown of David; the name means 'house of bread'." },
-    { "id": "mary", "label": "Mary", "type": "person", "refs": ["Luke 1:26-38"] },
-    { "id": "joseph", "label": "Joseph", "type": "person", "refs": ["Matthew 1:16", "Matthew 1:20"], "summary": "Called 'son of David' by the angel." },
-    { "id": "annunciation", "label": "Gabriel's Announcement", "type": "event", "refs": ["Luke 1:26-38"], "quote": { "ref": "Luke 1:32", "text": "the Lord God will give to him the throne of his father David" } },
-    { "id": "magi", "label": "The Magi Seek the King", "type": "event", "refs": ["Matthew 2:1-12"] },
-    { "id": "bread_of_life", "label": "I Am the Bread of Life", "type": "teaching", "refs": ["John 6:35"] }
+    {
+      "id": "jesus",
+      "label": "Jesus Christ",
+      "type": "person",
+      "refs": [
+        "Matthew 1:1"
+      ],
+      "summary": "Jesus is the one the whole Bible has been moving toward. He is the son of David and the son of Abraham."
+    },
+    {
+      "id": "jesus_birth",
+      "label": "The Birth of Jesus",
+      "type": "event",
+      "refs": [
+        "Luke 2:1-20",
+        "Matthew 1:18-25"
+      ],
+      "quote": {
+        "ref": "Luke 2:11",
+        "text": "For unto you is born this day in the city of David a Savior, who is Christ the Lord."
+      },
+      "summary": "Jesus was born in Bethlehem, King David's town. An angel called him Savior and Christ the Lord. Christ means Messiah, the promised king."
+    },
+    {
+      "id": "promise_seed",
+      "label": "The First Gospel Promise",
+      "type": "promise",
+      "refs": [
+        "Genesis 3:15"
+      ],
+      "quote": {
+        "ref": "Genesis 3:15",
+        "text": "he shall bruise your head, and you shall bruise his heel."
+      },
+      "summary": "Right after the first sin, God promised a child who would crush the serpent. This is where the long story toward Jesus begins."
+    },
+    {
+      "id": "promise_abraham",
+      "label": "Abraham's Offspring",
+      "type": "covenant",
+      "refs": [
+        "Genesis 22:18"
+      ],
+      "quote": {
+        "ref": "Genesis 22:18",
+        "text": "in your offspring shall all the nations of the earth be blessed"
+      },
+      "summary": "God told Abraham that one descendant would bring blessing to every nation. A descendant is a child in the family line."
+    },
+    {
+      "id": "promise_judah",
+      "label": "The Scepter of Judah",
+      "type": "promise",
+      "refs": [
+        "Genesis 49:9-10"
+      ],
+      "summary": "God said a ruler would come from Judah's family, and the crown would not pass away from them."
+    },
+    {
+      "id": "jesse_root",
+      "label": "The Root of Jesse",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 11:1",
+        "Isaiah 11:10"
+      ],
+      "summary": "Isaiah said a new king would grow from Jesse's family, like a green shoot from an old stump. Jesse was King David's father."
+    },
+    {
+      "id": "covenant_david",
+      "label": "Covenant with David",
+      "type": "covenant",
+      "refs": [
+        "2 Samuel 7:12-13",
+        "2 Samuel 7:16"
+      ],
+      "summary": "God promised David a son whose kingdom would last forever. A covenant is a promise God makes and keeps."
+    },
+    {
+      "id": "prophecy_immanuel",
+      "label": "The Virgin's Son, Immanuel",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 7:14"
+      ],
+      "quote": {
+        "ref": "Isaiah 7:14",
+        "text": "Behold, the virgin shall conceive and bear a son, and shall call his name Immanuel."
+      },
+      "summary": "Isaiah said a virgin would have a son named Immanuel. The name means God with us."
+    },
+    {
+      "id": "prophecy_child",
+      "label": "Unto Us a Child Is Born",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 9:1-7"
+      ],
+      "quote": {
+        "ref": "Isaiah 9:6",
+        "text": "For to us a child is born, to us a son is given"
+      },
+      "summary": "Isaiah said a child would be born for us, and the government would rest on his shoulder."
+    },
+    {
+      "id": "prophecy_bethlehem",
+      "label": "Ruler from Bethlehem",
+      "type": "prophecy",
+      "refs": [
+        "Micah 5:2"
+      ],
+      "quote": {
+        "ref": "Micah 5:2",
+        "text": "But you, O Bethlehem Ephrathah, who are too little to be among the clans of Judah, from you shall come forth for me one who is to rule in Israel"
+      },
+      "summary": "Micah said the ruler of Israel would come from Bethlehem, a town too small to matter to most people."
+    },
+    {
+      "id": "bethlehem",
+      "label": "Bethlehem",
+      "type": "place",
+      "refs": [
+        "Ruth 1:1",
+        "1 Samuel 16:1",
+        "Luke 2:4"
+      ],
+      "summary": "Bethlehem was David's hometown. The name means house of bread. It was a small place for a king to be born."
+    },
+    {
+      "id": "mary",
+      "label": "Mary",
+      "type": "person",
+      "refs": [
+        "Luke 1:26-38"
+      ],
+      "summary": "Mary was the young woman who trusted God's message. She became the mother of Jesus."
+    },
+    {
+      "id": "joseph",
+      "label": "Joseph",
+      "type": "person",
+      "refs": [
+        "Matthew 1:16",
+        "Matthew 1:20"
+      ],
+      "summary": "An angel called Joseph son of David. He would raise Jesus, but he was not the biological father."
+    },
+    {
+      "id": "annunciation",
+      "label": "Gabriel's Announcement",
+      "type": "event",
+      "refs": [
+        "Luke 1:26-38"
+      ],
+      "quote": {
+        "ref": "Luke 1:32",
+        "text": "the Lord God will give to him the throne of his father David"
+      },
+      "summary": "The angel Gabriel told Mary that her son would receive the throne of his father David."
+    },
+    {
+      "id": "magi",
+      "label": "The Magi Seek the King",
+      "type": "event",
+      "refs": [
+        "Matthew 2:1-12"
+      ],
+      "summary": "Wise men from far away came looking for a new king, and they worshiped Jesus."
+    },
+    {
+      "id": "bread_of_life",
+      "label": "I Am the Bread of Life",
+      "type": "teaching",
+      "refs": [
+        "John 6:35"
+      ],
+      "summary": "Jesus said he is the bread of life. He means that people truly live by coming to him and trusting him."
+    }
   ],
   "edges": [
-    { "from": "promise_seed", "to": "jesus_birth", "type": "prophecy_fulfillment", "confidence": "explicit", "refs": ["Galatians 4:4"], "note": "God sent forth his Son, born of woman. Many read Genesis 3:15 as the first gospel (protoevangelium); Romans 16:20 echoes the crushing of Satan." },
-    { "from": "promise_seed", "to": "promise_abraham", "type": "promise_narrowing", "confidence": "typology", "refs": ["Genesis 3:15", "Genesis 22:18"], "note": "The promised offspring narrows to Abraham's line. Widely held in Reformed covenant theology, but the Genesis text does not state the connection." },
-    { "from": "promise_abraham", "to": "jesus", "type": "prophecy_fulfillment", "confidence": "explicit", "refs": ["Galatians 3:16", "Matthew 1:1"], "note": "Paul: 'And to your offspring, who is Christ.'" },
-    { "from": "promise_judah", "to": "jesus", "type": "prophecy_fulfillment", "confidence": "explicit", "refs": ["Revelation 5:5", "Hebrews 7:14"], "note": "The Lion of the tribe of Judah; our Lord descended from Judah." },
-    { "from": "promise_judah", "to": "covenant_david", "type": "family_line", "confidence": "explicit", "refs": ["Ruth 4:18-22", "Matthew 1:3-6"] },
-    { "from": "jesse_root", "to": "jesus", "type": "prophecy_fulfillment", "confidence": "explicit", "refs": ["Romans 15:12"], "note": "Paul quotes Isaiah 11:10 of Christ." },
-    { "from": "covenant_david", "to": "annunciation", "type": "prophecy_fulfillment", "confidence": "explicit", "refs": ["Luke 1:32-33"] },
-    { "from": "covenant_david", "to": "joseph", "type": "family_line", "confidence": "explicit", "refs": ["Matthew 1:6-16", "Matthew 1:20"] },
-    { "from": "joseph", "to": "jesus", "type": "family_line", "confidence": "explicit", "refs": ["Matthew 1:16", "Matthew 1:25"], "note": "Legal father, not biological; Jesus was conceived by the Holy Spirit (Matthew 1:20)." },
-    { "from": "prophecy_immanuel", "to": "jesus_birth", "type": "prophecy_fulfillment", "confidence": "explicit", "refs": ["Matthew 1:22-23"] },
-    { "from": "mary", "to": "jesus_birth", "type": "family_line", "confidence": "explicit", "refs": ["Luke 2:7"] },
-    { "from": "annunciation", "to": "mary", "type": "event_sequence", "confidence": "explicit", "refs": ["Luke 1:26-38"] },
-    { "from": "prophecy_child", "to": "jesus", "type": "prophecy_fulfillment", "confidence": "explicit", "refs": ["Matthew 4:13-16"], "note": "Matthew quotes Isaiah 9:1-2 of Jesus' ministry in Galilee. Applying 9:6-7 to Christ follows from this and from Luke 1:32-33." },
-    { "from": "prophecy_bethlehem", "to": "bethlehem", "type": "place_link", "confidence": "explicit", "refs": ["Micah 5:2"] },
-    { "from": "prophecy_bethlehem", "to": "jesus_birth", "type": "prophecy_fulfillment", "confidence": "explicit", "refs": ["Matthew 2:4-6"], "note": "The chief priests and scribes cite Micah 5:2 to Herod." },
-    { "from": "covenant_david", "to": "bethlehem", "type": "place_link", "confidence": "explicit", "refs": ["1 Samuel 16:1", "Luke 2:4"] },
-    { "from": "bethlehem", "to": "jesus_birth", "type": "place_link", "confidence": "explicit", "refs": ["Luke 2:4-7"] },
-    { "from": "magi", "to": "jesus", "type": "event_sequence", "confidence": "explicit", "refs": ["Matthew 2:2", "Matthew 2:11"], "note": "'Where is he who has been born king of the Jews?'" },
-    { "from": "bethlehem", "to": "bread_of_life", "type": "type_to_christ", "confidence": "typology", "refs": ["John 6:35"], "note": "'House of bread' as a picture of the Bread of Life is devotional wordplay. Scripture never makes this link, so present it as illustration only." }
+    {
+      "from": "promise_seed",
+      "to": "jesus_birth",
+      "type": "prophecy_fulfillment",
+      "confidence": "explicit",
+      "refs": [
+        "Galatians 4:4"
+      ],
+      "note": "Paul says God sent his Son, born of a woman. Many Christians also hear Genesis 3:15 as the first promise of that rescue. Romans 16:20 speaks of Satan being crushed."
+    },
+    {
+      "from": "promise_seed",
+      "to": "promise_abraham",
+      "type": "promise_narrowing",
+      "confidence": "typology",
+      "refs": [
+        "Genesis 3:15",
+        "Genesis 22:18"
+      ],
+      "note": "The promise gets more specific. It will come through Abraham's family. Many Reformed readers see it this way. Genesis itself does not say these two verses are the same promise."
+    },
+    {
+      "from": "promise_abraham",
+      "to": "jesus",
+      "type": "prophecy_fulfillment",
+      "confidence": "explicit",
+      "refs": [
+        "Galatians 3:16",
+        "Matthew 1:1"
+      ],
+      "note": "Paul says the offspring in that promise is Christ. Christ means Messiah, the promised king."
+    },
+    {
+      "from": "promise_judah",
+      "to": "jesus",
+      "type": "prophecy_fulfillment",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 5:5",
+        "Hebrews 7:14"
+      ],
+      "note": "The New Testament calls Jesus the Lion from Judah's tribe, and says he came from Judah's family."
+    },
+    {
+      "from": "promise_judah",
+      "to": "covenant_david",
+      "type": "family_line",
+      "confidence": "explicit",
+      "refs": [
+        "Ruth 4:18-22",
+        "Matthew 1:3-6"
+      ]
+    },
+    {
+      "from": "jesse_root",
+      "to": "jesus",
+      "type": "prophecy_fulfillment",
+      "confidence": "explicit",
+      "refs": [
+        "Romans 15:12"
+      ],
+      "note": "Paul quotes Isaiah 11:10 and says it is about Jesus."
+    },
+    {
+      "from": "covenant_david",
+      "to": "annunciation",
+      "type": "prophecy_fulfillment",
+      "confidence": "explicit",
+      "refs": [
+        "Luke 1:32-33"
+      ]
+    },
+    {
+      "from": "covenant_david",
+      "to": "joseph",
+      "type": "family_line",
+      "confidence": "explicit",
+      "refs": [
+        "Matthew 1:6-16",
+        "Matthew 1:20"
+      ]
+    },
+    {
+      "from": "joseph",
+      "to": "jesus",
+      "type": "family_line",
+      "confidence": "explicit",
+      "refs": [
+        "Matthew 1:16",
+        "Matthew 1:25"
+      ],
+      "note": "Joseph was Jesus' legal father, not his biological father. Jesus was conceived by the Holy Spirit."
+    },
+    {
+      "from": "prophecy_immanuel",
+      "to": "jesus_birth",
+      "type": "prophecy_fulfillment",
+      "confidence": "explicit",
+      "refs": [
+        "Matthew 1:22-23"
+      ]
+    },
+    {
+      "from": "mary",
+      "to": "jesus_birth",
+      "type": "family_line",
+      "confidence": "explicit",
+      "refs": [
+        "Luke 2:7"
+      ]
+    },
+    {
+      "from": "annunciation",
+      "to": "mary",
+      "type": "event_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Luke 1:26-38"
+      ]
+    },
+    {
+      "from": "prophecy_child",
+      "to": "jesus",
+      "type": "prophecy_fulfillment",
+      "confidence": "explicit",
+      "refs": [
+        "Matthew 4:13-16"
+      ],
+      "note": "Matthew quotes Isaiah 9:1-2 about Jesus teaching in Galilee. Readers also connect Isaiah 9:6-7 to him because of that, and because the angel promised him David's throne."
+    },
+    {
+      "from": "prophecy_bethlehem",
+      "to": "bethlehem",
+      "type": "place_link",
+      "confidence": "explicit",
+      "refs": [
+        "Micah 5:2"
+      ]
+    },
+    {
+      "from": "prophecy_bethlehem",
+      "to": "jesus_birth",
+      "type": "prophecy_fulfillment",
+      "confidence": "explicit",
+      "refs": [
+        "Matthew 2:4-6"
+      ],
+      "note": "When Herod asked where the king would be born, the priests read him Micah 5:2."
+    },
+    {
+      "from": "covenant_david",
+      "to": "bethlehem",
+      "type": "place_link",
+      "confidence": "explicit",
+      "refs": [
+        "1 Samuel 16:1",
+        "Luke 2:4"
+      ]
+    },
+    {
+      "from": "bethlehem",
+      "to": "jesus_birth",
+      "type": "place_link",
+      "confidence": "explicit",
+      "refs": [
+        "Luke 2:4-7"
+      ]
+    },
+    {
+      "from": "magi",
+      "to": "jesus",
+      "type": "event_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Matthew 2:2",
+        "Matthew 2:11"
+      ],
+      "note": "They asked where the child was who had been born king of the Jews."
+    },
+    {
+      "from": "bethlehem",
+      "to": "bread_of_life",
+      "type": "type_to_christ",
+      "confidence": "typology",
+      "refs": [
+        "John 6:35"
+      ],
+      "note": "Some people notice that Bethlehem means house of bread, and Jesus calls himself the bread of life. The Bible never draws that line. Enjoy it as a picture, not as a verse that says it."
+    }
   ]
 }

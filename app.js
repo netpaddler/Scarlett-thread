@@ -12,12 +12,26 @@
   };
 
   var EDGE_LABELS = {
-    prophecy_fulfillment: "Prophecy and fulfillment",
-    promise_narrowing: "Promise narrowing",
-    family_line: "Family line",
-    event_sequence: "Event sequence",
-    place_link: "Place link",
-    type_to_christ: "Type pointing to Christ"
+    prophecy_fulfillment: "A promise kept",
+    promise_narrowing: "The promise gets clearer",
+    family_line: "Family",
+    event_sequence: "What happened next",
+    place_link: "A place",
+    type_to_christ: "A picture of Jesus"
+  };
+
+  var KIND_GLOSS = {
+    promise: "A promise is something God says he will do.",
+    covenant: "A covenant is a promise God makes and keeps.",
+    prophecy: "A prophecy is God telling what he will do."
+  };
+
+  var PATH_LINE = {
+    week1_seed: "God makes a promise, and each stop makes it clearer.",
+    week2_king: "The promise becomes a king from David's family.",
+    week3_sign: "God gives a sign. A son will be born, and God will be with us.",
+    week4_town: "The king will come from a town most people would overlook.",
+    christmas: "The promise arrives. Jesus is born."
   };
 
   var KIND_ORDER = ["promise", "covenant", "prophecy", "person", "place", "event", "teaching"];
@@ -38,6 +52,7 @@
 
   var data = null;
   var sermons = {};
+  var confessions = null;
   var nodesById = new Map();
   var exploreCy = null;
   var state = {
@@ -86,12 +101,19 @@
 
   function confidenceCopy(flag) {
     if (flag === "explicit") {
-      return "Stated in Scripture. The New Testament itself draws this link.";
+      return "The New Testament itself makes this connection.";
     }
     if (flag === "typology") {
-      return "Typology. This is an interpretive link, and faithful readers may differ.";
+      return "This is a picture of Jesus. Typology is the old word for that kind of picture. Christians who trust the Bible do not all see it the same way.";
     }
     return flag || "";
+  }
+
+  function formatMonthDay(iso) {
+    if (!iso) return "";
+    var parts = iso.split("-").map(Number);
+    if (parts.length !== 3 || parts.some(function (n) { return !Number.isFinite(n); })) return iso;
+    return MONTHS[parts[1] - 1] + " " + parts[2];
   }
 
   function formatDate(iso) {
@@ -172,7 +194,7 @@
     if (meta) article.append(h("p", { class: "sermon-meta", text: meta }));
     if (sermon.text) article.append(h("p", { class: "sermon-text", text: "Scripture: " + sermon.text }));
     if (sermon.match === "thematic") {
-      article.append(h("p", { class: "sermon-note", text: "Touches on this passage" }));
+      article.append(h("p", { class: "sermon-note", text: "This sermon is mainly about another passage, and it teaches this one too." }));
     }
     var actions = h("div", { class: "sermon-actions" });
     actions.append(h("a", {
@@ -216,10 +238,92 @@
     var list = sermonsFor(nodeId);
     if (!list.length) return;
     var section = h("section", { class: "sermons" });
-    section.setAttribute("aria-label", "Hear a sermon on this from Faith Presbyterian");
-    section.append(h("h4", { class: "section-label", text: "Hear a sermon on this from Faith Presbyterian" }));
+    section.setAttribute("aria-label", "Hear a sermon from Faith Presbyterian");
+    section.append(h("h4", { class: "section-label", text: "Hear a sermon" }));
+    section.append(h("p", { class: "hint", text: "From Faith Presbyterian Church in Tacoma." }));
     list.forEach(function (sermon) { section.append(renderSermon(sermon)); });
     parent.append(section);
+  }
+
+  function fold(summaryText, fill) {
+    var body = h("div", { class: "fold-body" });
+    fill(body);
+    if (!body.childNodes.length) return null;
+    var details = h("details", { class: "fold" });
+    details.append(h("summary", { text: summaryText }));
+    details.append(body);
+    return details;
+  }
+
+  function appendStart(parent, node) {
+    if (KIND_GLOSS[node.type]) parent.append(h("p", { class: "gloss", text: KIND_GLOSS[node.type] }));
+    if (node.summary) parent.append(h("p", { class: "summary", text: node.summary }));
+    if (node.quote && node.quote.text) {
+      var figure = h("figure", { class: "quote" });
+      var quote = h("blockquote", { text: node.quote.text });
+      quote.setAttribute("translate", "no");
+      figure.append(quote);
+      if (node.quote.ref) figure.append(h("figcaption", { text: node.quote.ref }));
+      parent.append(figure);
+    }
+  }
+
+  function appendConnection(parent, edge, homeId) {
+    var otherId = edge.from === homeId ? edge.to : edge.from;
+    var other = nodeById(otherId);
+    var block = h("div", { class: "edge-block" });
+    var direction = edge.from === homeId ? "Line to " : "Line from ";
+    block.append(h("p", { class: "next-label", text: direction + (other ? other.label : otherId) }));
+    block.append(h("p", { class: "badge " + edge.confidence, text: confidenceCopy(edge.confidence) }));
+    var facts = h("dl", { class: "facts" });
+    addFact(facts, "Kind of line", edgeLabel(edge.type));
+    addFact(facts, "Scripture", (edge.refs || []).join(", ") || "None listed");
+    if (edge.note) addFact(facts, "In plain words", edge.note);
+    block.append(facts);
+    if (state.hideTypology && edge.confidence === "typology") {
+      block.append(h("p", { class: "hint", text: "This picture line is hidden on the map right now." }));
+    }
+    parent.append(block);
+  }
+
+  function confessionItems(group, id) {
+    if (!confessions || !confessions[group] || !confessions[group][id]) return [];
+    return confessions[group][id].filter(function (item) {
+      return confessions.sections && confessions.sections[item.section];
+    });
+  }
+
+  function appendStandards(parent, items) {
+    if (!items.length) return;
+    parent.append(h("p", {
+      class: "hint",
+      text: "These words are from the Westminster Standards. Reformed churches use them to say, carefully, what the Bible teaches."
+    }));
+    items.forEach(function (item) {
+      var section = confessions.sections[item.section];
+      var work = confessions.meta && confessions.meta.works ? confessions.meta.works[section.work] : null;
+      var block = h("article", { class: "confession" });
+      var cite = h("p", { class: "confession-cite" });
+      if (work && work.url) {
+        cite.append(h("a", {
+          href: work.url,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          text: section.cite
+        }));
+      } else {
+        cite.textContent = section.cite;
+      }
+      block.append(cite);
+      if (item.line) block.append(h("p", { class: "confession-line", text: item.line }));
+      block.append(h("blockquote", { class: "confession-text", text: section.text }));
+      parent.append(block);
+    });
+  }
+
+  function makeDeepest(items, label) {
+    if (!items.length) return null;
+    return fold(label || "Go deepest", function (body) { appendStandards(body, items); });
   }
 
   function announce(text) {
@@ -260,7 +364,7 @@
     var dark = theme === "dark";
     var button = document.getElementById("theme-toggle");
     button.setAttribute("aria-pressed", dark ? "true" : "false");
-    button.textContent = dark ? "Use light mode" : "Use dark mode";
+    button.textContent = dark ? "Light mode" : "Dark mode";
     if (exploreCy) {
       var zoom = exploreCy.zoom();
       var pan = exploreCy.pan();
@@ -298,7 +402,7 @@
         onClick: function () { choosePath(path.id); }
       });
       button.append(
-        h("span", { class: "path-date", text: formatDate(path.advent_sunday || path.date || "") }),
+        h("span", { class: "path-date", text: formatMonthDay(path.advent_sunday || path.date || "") }),
         h("span", { class: "path-title", text: path.title })
       );
       host.append(button);
@@ -383,7 +487,7 @@
     var card = document.getElementById("step-card");
     card.replaceChildren();
     card.append(
-      h("p", { class: "kicker", text: "Step " + (state.step + 1) + " of " + path.nodes.length }),
+      h("p", { class: "kicker", text: "Stop " + (state.step + 1) + " of " + path.nodes.length }),
       h("p", { class: "kicker-path", text: path.title })
     );
     if (!node) {
@@ -391,12 +495,51 @@
       return;
     }
     card.append(h("h3", { class: "step-name", text: node.label }));
-    appendNodeBody(card, node);
+    appendStart(card, node);
     appendSermons(card, node.id);
+    var deeper = fold("Go deeper", function (body) {
+      body.append(h("h4", { class: "section-label", text: "The passages" }));
+      body.append(h("p", { text: (node.refs || []).join(", ") || "None listed" }));
+      if (state.step >= path.nodes.length - 1) {
+        body.append(h("p", { class: "direction-note", text: "This is the last stop this week. You can step back, or pick another week." }));
+        return;
+      }
+      var nextId = path.nodes[state.step + 1];
+      var next = nodeById(nextId);
+      body.append(h("h4", { class: "section-label", text: "How this connects" }));
+      body.append(h("p", { class: "next-label", text: "Next stop: " + (next ? next.label : nextId) }));
+      var found = edgesBetween(node.id, nextId);
+      if (!found.length) {
+        body.append(h("p", {
+          class: "direction-note",
+          text: "These two stops sit side by side. The map does not draw one line straight from this one to the next."
+        }));
+        return;
+      }
+      found.forEach(function (edge) {
+        if (edge.from !== node.id || edge.to !== nextId) {
+          var from = nodeById(edge.from);
+          var to = nodeById(edge.to);
+          body.append(h("p", {
+            class: "direction-note",
+            text: "On the map this line runs from " + (from ? from.label : edge.from) + " to " + (to ? to.label : edge.to) + "."
+          }));
+        }
+        body.append(h("p", { class: "badge " + edge.confidence, text: confidenceCopy(edge.confidence) }));
+        var facts = h("dl", { class: "facts" });
+        addFact(facts, "Kind of line", edgeLabel(edge.type));
+        addFact(facts, "Scripture", (edge.refs || []).join(", ") || "None listed");
+        if (edge.note) addFact(facts, "In plain words", edge.note);
+        body.append(facts);
+      });
+    });
+    if (deeper) card.append(deeper);
+    var deepest = makeDeepest(confessionItems("nodes", node.id));
+    if (deepest) card.append(deepest);
     card.append(h("button", {
       type: "button",
       class: "text-btn",
-      text: "See this stop on the map",
+      text: "Find this on the map",
       onClick: function () { openOnMap(node.id); }
     }));
   }
@@ -460,10 +603,22 @@
     document.getElementById("next-step").disabled = state.step >= total - 1;
   }
 
+  function renderPathFrame() {
+    var path = currentPath();
+    var line = document.getElementById("path-line");
+    if (line) line.textContent = PATH_LINE[path.id] || "Each week follows one thread to Jesus.";
+    var host = document.getElementById("path-deepest");
+    if (!host) return;
+    host.replaceChildren();
+    var deepest = makeDeepest(confessionItems("paths", path.id), "This week, go deepest");
+    if (deepest) host.append(deepest);
+  }
+
   function renderWalk() {
+    renderPathFrame();
     renderThread();
     renderStep();
-    renderLink();
+    document.getElementById("link-slot").replaceChildren();
     updateNav();
     var node = nodeById(currentPath().nodes[state.step]);
     if (node) {
@@ -582,7 +737,6 @@
           "text-valign": "center",
           "text-justification": "center",
           "text-overflow": "clip",
-          "font-family": '"Source Sans 3", "Segoe UI", sans-serif',
           "font-size": 13,
           "font-weight": 600,
           color: ink,
@@ -593,10 +747,9 @@
           "border-width": 2,
           "border-color": function (ele) { return token("--node-" + ele.data("ntype") + "-line"); },
           "overlay-opacity": 0,
-          "shadow-blur": dark ? 0 : 12,
-          "shadow-color": "#3a2a22",
-          "shadow-opacity": dark ? 0 : 0.12,
-          "shadow-offset-y": 3
+          "shadow-blur": 0,
+          "shadow-opacity": 0,
+          "font-family": "system-ui, Segoe UI, sans-serif"
         }
       },
       {
@@ -765,7 +918,7 @@
         h("h3", { class: "step-name", text: "Choose a name" }),
         h("p", {
           class: "summary",
-          text: "Tap the map, or open Pick a name. This panel shows the Scripture for that stop and every line connected to it."
+          text: "Tap a name. You will see the short story first. Go deeper for the verses and the lines. Go deepest for the Westminster Standards."
         })
       );
       return;
@@ -777,22 +930,29 @@
     }
     var title = h("h3", { id: "panel-title", class: "step-name", tabindex: "-1", text: node.label });
     panel.append(title);
-    appendNodeBody(panel, node);
+    appendStart(panel, node);
     appendSermons(panel, node.id);
     var outgoing = data.edges.filter(function (edge) { return edge.from === node.id; });
     var incoming = data.edges.filter(function (edge) { return edge.to === node.id; });
-    if (!outgoing.length && !incoming.length) {
-      panel.append(h("p", { class: "summary", text: "No lines touch this name in the map." }));
-      return;
-    }
-    if (outgoing.length) {
-      panel.append(h("h4", { class: "section-label", text: "Lines from here" }));
-      outgoing.forEach(function (edge) { panel.append(renderEdgeDetails(edge, node.id)); });
-    }
-    if (incoming.length) {
-      panel.append(h("h4", { class: "section-label", text: "Lines to here" }));
-      incoming.forEach(function (edge) { panel.append(renderEdgeDetails(edge, node.id)); });
-    }
+    var deeper = fold("Go deeper", function (body) {
+      body.append(h("h4", { class: "section-label", text: "The passages" }));
+      body.append(h("p", { text: (node.refs || []).join(", ") || "None listed" }));
+      if (!outgoing.length && !incoming.length) {
+        body.append(h("p", { text: "No lines touch this name on the map." }));
+        return;
+      }
+      if (outgoing.length) {
+        body.append(h("h4", { class: "section-label", text: "Lines from here" }));
+        outgoing.forEach(function (edge) { appendConnection(body, edge, node.id); });
+      }
+      if (incoming.length) {
+        body.append(h("h4", { class: "section-label", text: "Lines to here" }));
+        incoming.forEach(function (edge) { appendConnection(body, edge, node.id); });
+      }
+    });
+    if (deeper) panel.append(deeper);
+    var deepest = makeDeepest(confessionItems("nodes", node.id));
+    if (deepest) panel.append(deepest);
   }
 
   function renderNameList() {
@@ -876,8 +1036,8 @@
 
   function typologyHint() {
     document.getElementById("typology-hint").textContent = state.hideTypology
-      ? "Typology lines are hidden. A name's details still mention them."
-      : "Hiding typology leaves only lines the New Testament states.";
+      ? "Picture lines are hidden on the map. Open a name and go deeper to read about them."
+      : "A dashed line is a picture of Jesus. Hiding those leaves only connections the New Testament states.";
   }
 
   function zoomBy(factor) {
@@ -977,9 +1137,6 @@
     bind();
     applyTheme(currentTheme());
     renderLegend();
-    if (window.matchMedia("(min-width: 960px)").matches) {
-      document.getElementById("legend-details").open = true;
-    }
     renderPicker();
     renderWalk();
     renderPanel();
@@ -997,7 +1154,8 @@
 
   Promise.all([
     loadJson("data/advent-graph.json"),
-    loadJson("data/sermons.json").catch(function () { return {}; })
+    loadJson("data/sermons.json").catch(function () { return {}; }),
+    loadJson("data/confessions.json").catch(function () { return null; })
   ])
     .then(function (files) {
       var json = files[0];
@@ -1006,6 +1164,7 @@
       }
       data = json;
       sermons = files[1] && typeof files[1] === "object" ? files[1] : {};
+      confessions = files[2] && files[2].sections ? files[2] : null;
       start();
     })
     .catch(function () {
