@@ -29,11 +29,12 @@
         <svg class="logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
           <path d="M5 22.5c4.5-9 6.5-9 10.5-3.5S21.5 24 27 9.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path>
         </svg>
-        <h1>Scarlet Thread</h1>
+        <h1><a class="brand-home" href="./">Scarlet Thread</a></h1>
       </div>
       <div class="mode-switch" role="tablist" aria-label="Ways to read">
         <button type="button" id="tab-walk" role="tab" aria-selected="true" aria-controls="walk-view"><span class="tab-long">Walk a week</span><span class="tab-short">Walk</span></button>
         <button type="button" id="tab-explore" role="tab" aria-selected="false" aria-controls="explore-view" tabindex="-1"><span class="tab-long">See the map</span><span class="tab-short">Map</span></button>
+        <button type="button" id="tab-requests" role="tab" aria-selected="false" aria-controls="requests-view" tabindex="-1"><span class="tab-long">Comments/Requests</span><span class="tab-short">Ask</span></button>
       </div>
       <button type="button" id="theme-toggle" class="icon-btn theme-toggle" aria-pressed="false" title="Dark mode">
         <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
@@ -139,6 +140,11 @@
         <aside id="panel" class="sheet" aria-label="Reading"></aside>
       </div>
     </section>
+
+    <section id="requests-view" class="view requests wrap" role="tabpanel" aria-labelledby="tab-requests" hidden>
+      <h2 class="visually-hidden">Comments and requests</h2>
+      <div id="requests-body"></div>
+    </section>
   </main>
 
   <footer class="site-footer wrap">
@@ -150,6 +156,7 @@
 
   <div id="live" class="visually-hidden" aria-live="polite"></div>
 
+  <script src="config/requests.js"></script>
   <script src="vendor/cytoscape.min.js"></script>
   <script src="vendor/dagre.min.js"></script>
   <script src="app.js"></script>

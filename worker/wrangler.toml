@@ -1,0 +1,8 @@
+name = "scarlet-thread-requests"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+REPO = "netpaddler/Scarlett-thread"
+LABEL = "map-request"
+ALLOWED_ORIGIN = "https://netpaddler.github.io"

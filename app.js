@@ -17,6 +17,7 @@
     family_line: "Family",
     event_sequence: "What happened next",
     place_link: "A place",
+    prophet_voice: "Who spoke it",
     type_to_christ: "Interpretive picture"
   };
 
@@ -41,6 +42,7 @@
     "family_line",
     "event_sequence",
     "place_link",
+    "prophet_voice",
     "type_to_christ"
   ];
 
@@ -58,6 +60,7 @@
   var FOCAL_SIZE = { w: 160, h: 88 };
   var READABLE_ZOOM = 0.74;
   var PHONE_QUERY = "(max-width: 959px)";
+  var MODES = ["walk", "explore", "requests"];
 
   var data = null;
   var sermons = {};
@@ -125,7 +128,7 @@
 
   function confidenceCopy(flag) {
     if (flag === "explicit") {
-      return "This is a direct textual or narrative connection. Read the cited passages and note for the exact claim.";
+      return "This is a direct textual or narrative connection. The exact claim is below.";
     }
     if (flag === "typology") {
       return "This is an interpretive connection. Christians who trust the Bible do not all see it the same way.";
@@ -305,6 +308,15 @@
       if (node.quote.ref) figure.append(h("figcaption", { text: node.quote.ref }));
       parent.append(figure);
     }
+    var linked = data.edges.some(function (edge) {
+      return edge.from === node.id || edge.to === node.id;
+    });
+    if (!linked) {
+      parent.append(h("p", {
+        class: "hint",
+        text: "No line on the map reaches this stop. It stands on its own."
+      }));
+    }
   }
 
   function confessionItems(group, id) {
@@ -345,17 +357,19 @@
     });
   }
 
-  function makeDeepest(group, id, label, sub) {
+  function makeDeepest(group, id, label, sub, subAlt) {
     var items = confessionItems(group, id);
     var theology = confessions && confessions.theology && confessions.theology[group]
       ? confessions.theology[group][id]
       : "";
     if (!items.length && !theology) return null;
-    return fold(label, sub, function (body) {
-      body.append(h("p", {
-        class: "hint",
-        text: "These words are from the Westminster Standards. Reformed churches use them to say, carefully, what the Bible teaches. The quotations are the modern spelling text from the Orthodox Presbyterian Church."
-      }));
+    return fold(label, items.length ? sub : subAlt, function (body) {
+      if (items.length) {
+        body.append(h("p", {
+          class: "hint",
+          text: "These words are from the Westminster Standards. Reformed churches use them to say, carefully, what the Bible teaches. The quotations are the modern spelling text from the Orthodox Presbyterian Church."
+        }));
+      }
       if (theology) {
         body.append(h("h4", { class: "section-label", text: "In Reformed theology" }));
         body.append(h("p", { text: theology }));
@@ -434,7 +448,7 @@
       appendRichDeeper(body, deeperEntry("nodes", node.id));
     });
     if (deeperFold) parent.append(deeperFold);
-    var deepest = makeDeepest("nodes", node.id, "Go deepest", "What the Westminster Standards say");
+    var deepest = makeDeepest("nodes", node.id, "Go deepest", "What the Westminster Standards say", "How Reformed theology reads this stop");
     if (deepest) parent.append(deepest);
   }
 
@@ -447,9 +461,10 @@
   /* Routing and modes */
 
   function writeHash() {
-    var next = state.mode === "explore"
-      ? (state.selectedId ? "#explore/" + state.selectedId : "#explore")
-      : "#walk/" + currentPath().id + "/" + state.step;
+    var next;
+    if (state.mode === "requests") next = "#requests";
+    else if (state.mode === "explore") next = state.selectedId ? "#explore/" + state.selectedId : "#explore";
+    else next = "#walk/" + currentPath().id + "/" + state.step;
     if (location.hash !== next) history.replaceState(null, "", next);
   }
 
@@ -457,6 +472,10 @@
     var raw = location.hash.replace(/^#/, "");
     if (!raw) return;
     var parts = raw.split("/");
+    if (parts[0] === "requests") {
+      state.mode = "requests";
+      return;
+    }
     if (parts[0] === "explore") {
       state.mode = "explore";
       state.selectedId = parts[1] && nodesById.has(parts[1]) ? parts[1] : null;
@@ -492,6 +511,10 @@
   }
 
   function updateTitle() {
+    if (state.mode === "requests") {
+      setTitle("Comments and requests");
+      return;
+    }
     if (state.mode === "explore") {
       var picked = state.selectedId ? nodeById(state.selectedId) : null;
       setTitle(picked ? picked.label : "The map");
@@ -503,20 +526,19 @@
 
   function showMode(options) {
     var opts = options || {};
-    var explore = state.mode === "explore";
-    document.body.setAttribute("data-mode", explore ? "explore" : "walk");
+    var mode = MODES.indexOf(state.mode) >= 0 ? state.mode : "walk";
+    document.body.setAttribute("data-mode", mode);
     document.getElementById("status").hidden = true;
-    document.getElementById("walk-view").hidden = explore;
-    document.getElementById("explore-view").hidden = !explore;
-    var walkTab = document.getElementById("tab-walk");
-    var exploreTab = document.getElementById("tab-explore");
-    walkTab.setAttribute("aria-selected", explore ? "false" : "true");
-    exploreTab.setAttribute("aria-selected", explore ? "true" : "false");
-    walkTab.tabIndex = explore ? -1 : 0;
-    exploreTab.tabIndex = explore ? 0 : -1;
+    MODES.forEach(function (name) {
+      document.getElementById(name + "-view").hidden = name !== mode;
+      var tab = document.getElementById("tab-" + name);
+      tab.setAttribute("aria-selected", name === mode ? "true" : "false");
+      tab.tabIndex = name === mode ? 0 : -1;
+    });
     writeHash();
     updateTitle();
-    if (explore) {
+    if (mode === "requests") renderRequests();
+    if (mode === "explore") {
       window.requestAnimationFrame(function () {
         ensureGraph(function () {
           if (opts.frame && state.selectedId) frameNode(state.selectedId, false);
@@ -530,7 +552,7 @@
     state.mode = mode;
     showMode();
     window.scrollTo(0, 0);
-    if (focusTab) document.getElementById(mode === "explore" ? "tab-explore" : "tab-walk").focus();
+    if (focusTab) document.getElementById("tab-" + mode).focus();
   }
 
   /* Walk */
@@ -688,7 +710,7 @@
     var weekDeeper = fold("This week, go deeper", "The whole week in one story, with verses and questions", function (body) {
       appendRichDeeper(body, deeperEntry("paths", path.id));
     });
-    var deepest = makeDeepest("paths", path.id, "This week, go deepest", "What the Westminster Standards say about this week");
+    var deepest = makeDeepest("paths", path.id, "This week, go deepest", "What the Westminster Standards say about this week", "How Reformed theology reads this week");
     if (!weekDeeper && !deepest) return;
     host.append(h("h3", { class: "label", text: "About " + path.title }));
     if (weekDeeper) host.append(weekDeeper);
@@ -754,6 +776,22 @@
     }
     var after = nextPath();
     if (after) choosePath(after.id, { scroll: true });
+  }
+
+  function goHome(event) {
+    if (event) {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+    }
+    state.mode = "walk";
+    state.pathId = null;
+    state.step = 0;
+    state.selectedId = null;
+    renderPicker();
+    renderWalk();
+    showMode();
+    window.scrollTo({ top: 0, behavior: reducedMotion() ? "auto" : "smooth" });
+    document.getElementById("main").focus({ preventScroll: true });
   }
 
   function openOnMap(id) {
@@ -1338,12 +1376,16 @@
     var nodes = document.getElementById("node-legend");
     edges.replaceChildren();
     nodes.replaceChildren();
-    EDGE_ORDER.forEach(function (key) {
+    var usedEdges = {};
+    data.edges.forEach(function (edge) { usedEdges[edge.type] = true; });
+    var usedKinds = {};
+    data.nodes.forEach(function (node) { usedKinds[node.type] = true; });
+    EDGE_ORDER.filter(function (key) { return usedEdges[key]; }).forEach(function (key) {
       var item = h("li");
       item.append(h("span", { class: "swatch", "data-edge": key, "aria-hidden": "true" }), document.createTextNode(edgeLabel(key)));
       edges.append(item);
     });
-    KIND_ORDER.forEach(function (key) {
+    KIND_ORDER.filter(function (key) { return usedKinds[key]; }).forEach(function (key) {
       var item = h("li");
       item.append(h("span", { class: "kind-dot", "data-kind": key, "aria-hidden": "true" }), document.createTextNode(kindLabel(key)));
       nodes.append(item);
@@ -1374,21 +1416,214 @@
     }, { duration: 200, easing: "ease-out-cubic" });
   }
 
+  /* Comments and requests */
+
+  var requestsBuilt = false;
+
+  function requestConfig() {
+    var config = window.scarletRequests;
+    return config && typeof config === "object" ? config : {};
+  }
+
+  function requestsOpen() {
+    var endpoint = requestConfig().endpoint;
+    return typeof endpoint === "string" && /^https:\/\//.test(endpoint);
+  }
+
+  function requestField(id, label, control) {
+    var wrap = h("label", { class: "request-field", for: id });
+    wrap.append(h("span", { class: "request-label", text: label }), control);
+    return wrap;
+  }
+
+  function submissionCard(issue) {
+    var card = h("article", { class: "request-card" });
+    card.append(h("h5", { class: "request-title", text: issue.title || "" }));
+    var when = formatDate(String(issue.created_at || "").slice(0, 10));
+    if (when) card.append(h("p", { class: "request-meta", text: when }));
+    if (issue.body) card.append(h("p", { class: "request-body", text: issue.body }));
+    var comments = Array.isArray(issue.comments) ? issue.comments : [];
+    if (comments.length) {
+      var replies = h("div", { class: "request-replies" });
+      replies.append(h("p", { class: "section-label", text: "Replies" }));
+      comments.forEach(function (comment) {
+        var line = comment.author ? comment.author + ": " + (comment.body || "") : comment.body || "";
+        if (line) replies.append(h("p", { text: line }));
+      });
+      card.append(replies);
+    }
+    return card;
+  }
+
+  function showSubmissions(host, issues, shown) {
+    var nodes = issues.slice(0, shown).map(submissionCard);
+    if (shown < issues.length) {
+      nodes.push(h("button", {
+        type: "button",
+        class: "text-btn",
+        text: "See more",
+        onClick: function () { showSubmissions(host, issues, shown + 5); }
+      }));
+    }
+    host.replaceChildren.apply(host, nodes);
+  }
+
+  function loadSubmissions(host) {
+    if (!host) return;
+    if (!requestsOpen()) {
+      host.replaceChildren(h("p", { class: "hint", text: "Nothing here yet." }));
+      return;
+    }
+    host.replaceChildren(h("p", { class: "hint", text: "Loading what people have sent." }));
+    fetch(requestConfig().endpoint, { method: "GET", headers: { accept: "application/json" } })
+      .then(function (response) {
+        if (!response.ok) throw new Error(String(response.status));
+        return response.json();
+      })
+      .then(function (issues) {
+        if (!Array.isArray(issues) || !issues.length) {
+          host.replaceChildren(h("p", { class: "hint", text: "No one has asked yet. Yours can be the first." }));
+          return;
+        }
+        issues.sort(function (a, b) {
+          return String(b.created_at || "").localeCompare(String(a.created_at || ""));
+        });
+        showSubmissions(host, issues, 3);
+      })
+      .catch(function () {
+        host.replaceChildren(h("p", { class: "hint", text: "The list did not load." }));
+      });
+  }
+
+  function requestForm(list) {
+    var form = h("form", { class: "request-form" });
+    var subject = h("input", { id: "request-subject", name: "subject", type: "text", maxlength: "120" });
+    var kind = h("select", { id: "request-kind", name: "kind" });
+    kind.append(
+      h("option", { value: "", text: "Not sure" }),
+      h("option", { value: "person", text: "A person" }),
+      h("option", { value: "event", text: "An event" })
+    );
+    var name = h("input", { id: "request-name", name: "name", type: "text", maxlength: "80", autocomplete: "name" });
+    var message = h("textarea", { id: "request-message", name: "message", required: "required", maxlength: "2000", rows: "5" });
+    var honey = h("input", { id: "request-company", name: "company", type: "text", tabindex: "-1", autocomplete: "off", "aria-hidden": "true" });
+    var honeyLabel = h("label", { class: "request-honey", for: "request-company" });
+    honeyLabel.append(h("span", { text: "Company" }), honey);
+    var status = h("p", { class: "request-status", role: "status" });
+    var submit = h("button", { type: "submit", class: "send-btn", text: "Send" });
+
+    form.append(
+      requestField("request-subject", "Who or what is missing", subject),
+      requestField("request-kind", "Is it a person or an event?", kind),
+      requestField("request-name", "Your name (optional)", name),
+      requestField("request-message", "Say why it belongs on the map", message),
+      honeyLabel
+    );
+
+    if (requestConfig().turnstileSiteKey) {
+      var box = h("div", { class: "request-turnstile" });
+      form.append(box);
+      var script = document.createElement("script");
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async = true;
+      script.onload = function () {
+        if (window.turnstile) {
+          form.dataset.turnstileId = window.turnstile.render(box, { sitekey: requestConfig().turnstileSiteKey });
+        }
+      };
+      document.head.append(script);
+    }
+    form.append(submit, status);
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      status.textContent = "";
+      if (!requestsOpen()) {
+        status.textContent = "Requests open soon.";
+        return;
+      }
+      var text = message.value.trim();
+      if (!text) {
+        status.textContent = "Write a comment or a request.";
+        message.focus();
+        return;
+      }
+      submit.disabled = true;
+      fetch(requestConfig().endpoint, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          name: name.value.trim(),
+          subject: subject.value.trim(),
+          kind: kind.value,
+          message: text,
+          company: honey.value,
+          turnstile: form.dataset.turnstileId && window.turnstile
+            ? window.turnstile.getResponse(form.dataset.turnstileId)
+            : ""
+        })
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error(String(response.status));
+          form.reset();
+          status.textContent = "Sent. It will show in the list below.";
+          announce("Your request was sent.");
+          loadSubmissions(list);
+        })
+        .catch(function () {
+          status.textContent = "The message did not send. Try again.";
+        })
+        .then(function () {
+          submit.disabled = false;
+        });
+    });
+    return form;
+  }
+
+  function renderRequests() {
+    if (requestsBuilt) return;
+    requestsBuilt = true;
+    var host = document.getElementById("requests-body");
+    host.replaceChildren();
+    host.append(
+      h("p", { class: "eyebrow", text: "Add to the map" }),
+      h("h3", { id: "requests-title", class: "step-name", tabindex: "-1", text: "Ask for a person or an event" }),
+      h("p", {
+        class: "lead",
+        text: "This map is small on purpose. If a person or an event belongs on it, say so. Name it, say where it is in Scripture, and say how it points to Christ. Every note is read."
+      })
+    );
+    var list = h("div", { class: "request-list" });
+    if (requestsOpen()) {
+      host.append(requestForm(list));
+    } else {
+      host.append(h("p", { class: "hint", text: "Requests open soon." }));
+    }
+    host.append(h("h4", { class: "section-label", text: "What people have asked for" }), list);
+    loadSubmissions(list);
+  }
+
   /* Events */
 
   function bind() {
-    var tabs = [document.getElementById("tab-walk"), document.getElementById("tab-explore")];
-    tabs[0].addEventListener("click", function () { switchMode("walk"); });
-    tabs[1].addEventListener("click", function () { switchMode("explore"); });
+    MODES.forEach(function (name) {
+      document.getElementById("tab-" + name).addEventListener("click", function () { switchMode(name); });
+    });
     document.querySelector(".mode-switch").addEventListener("keydown", function (event) {
       var keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
       if (keys.indexOf(event.key) < 0) return;
       event.preventDefault();
       event.stopPropagation();
-      var mode = event.key === "ArrowLeft" || event.key === "Home" ? "walk" : "explore";
-      switchMode(mode, true);
-      document.getElementById(mode === "explore" ? "tab-explore" : "tab-walk").focus();
+      var at = Math.max(0, MODES.indexOf(state.mode));
+      var to;
+      if (event.key === "Home") to = 0;
+      else if (event.key === "End") to = MODES.length - 1;
+      else if (event.key === "ArrowLeft") to = (at - 1 + MODES.length) % MODES.length;
+      else to = (at + 1) % MODES.length;
+      switchMode(MODES[to], true);
+      document.getElementById("tab-" + MODES[to]).focus();
     });
+    document.querySelector(".brand-home").addEventListener("click", goHome);
     document.getElementById("theme-toggle").addEventListener("click", function () {
       var next = currentTheme() === "dark" ? "light" : "dark";
       try { localStorage.setItem("scarlet-thread-theme", next); } catch (err) { /* private mode */ }
@@ -1421,7 +1656,7 @@
     document.addEventListener("keydown", function (event) {
       if (event.altKey || event.ctrlKey || event.metaKey) return;
       if (state.mode !== "walk") {
-        if (event.key === "Escape") {
+        if (state.mode === "explore" && event.key === "Escape") {
           var key = document.getElementById("legend-details");
           if (key.open) {
             key.open = false;
@@ -1436,7 +1671,7 @@
       if (tag === "INPUT" || tag === "TEXTAREA") return;
       if (event.key === "ArrowRight") {
         event.preventDefault();
-        setStep(state.step + 1);
+        goNext();
       } else if (event.key === "ArrowLeft") {
         event.preventDefault();
         setStep(state.step - 1);

@@ -34,6 +34,7 @@
       "title": "Week 3: God with us",
       "advent_sunday": "2026-12-13",
       "nodes": [
+        "isaiah",
         "prophecy_immanuel",
         "prophecy_child",
         "mary",
@@ -140,6 +141,19 @@
         "2 Samuel 7:16"
       ],
       "summary": "God covenanted to establish David's house and promised that his son's kingdom would last forever."
+    },
+    {
+      "id": "isaiah",
+      "label": "Isaiah the Prophet",
+      "type": "person",
+      "refs": [
+        "Isaiah 1:1",
+        "Isaiah 6:1-13",
+        "Isaiah 7:14",
+        "Isaiah 9:1-7",
+        "Isaiah 11:1-10"
+      ],
+      "summary": "Isaiah was a prophet in Judah. Three stops on this map are words from his book: the sign of Immanuel, the child born for us, and the shoot from Jesse's stump."
     },
     {
       "id": "prophecy_immanuel",
@@ -335,6 +349,40 @@
         "Matthew 1:25"
       ],
       "note": "Matthew traces David's line to Joseph, calls him Mary's husband, and records that Joseph named Jesus. Christian interpreters commonly describe Joseph as Jesus' legal father, but Matthew does not use that legal phrase. Jesus was conceived by the Holy Spirit."
+    },
+    {
+      "from": "isaiah",
+      "to": "prophecy_immanuel",
+      "type": "prophet_voice",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 7:14",
+        "Matthew 1:22-23"
+      ],
+      "note": "The sign of Immanuel is Isaiah 7:14, in Isaiah's own book. Matthew 1:22-23 quotes it and says it took place to fulfill what the Lord had spoken by the prophet. Matthew does not name Isaiah in that verse. He names him elsewhere, as at Matthew 3:3 and Matthew 4:14."
+    },
+    {
+      "from": "isaiah",
+      "to": "prophecy_child",
+      "type": "prophet_voice",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 9:1-7",
+        "Matthew 4:14-16"
+      ],
+      "note": "This stop is Isaiah 9:1-7, in Isaiah's own book. Matthew 4:14-16 names Isaiah and quotes the opening of it, Isaiah 9:1-2, about the light in Galilee. Matthew does not quote the child in Isaiah 9:6-7."
+    },
+    {
+      "from": "isaiah",
+      "to": "jesse_root",
+      "type": "prophet_voice",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 11:1",
+        "Isaiah 11:10",
+        "Romans 15:12"
+      ],
+      "note": "The shoot from Jesse's stump is Isaiah 11:1. Paul quotes Isaiah 11:10 at Romans 15:12 and names Isaiah as the one who says it."
     },
     {
       "from": "prophecy_immanuel",
