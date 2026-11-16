@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scarlet Thread</title>
+  <meta name="description" content="Bible stories told as one connected path to Jesus Christ. An Advent map of people, places, promises, and prophecy.">
+  <meta name="theme-color" content="#f3eee6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14110f" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,560;0,9..144,680;1,9..144,520&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("scarlet-thread-theme");
+        var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (err) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="brand-row">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <rect x="1.5" y="1.5" width="45" height="45" rx="13" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+          <path class="logo-thread" d="M8 33c6-12 8-12 14-4s8 8 16-14" fill="none" stroke-width="2.6" stroke-linecap="round"></path>
+        </svg>
+        <div>
+          <p class="eyebrow">Advent 2026</p>
+          <h1>Scarlet Thread</h1>
+          <p class="lede">Bible stories told as one connected path to Jesus Christ.</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <div class="mode-switch" role="tablist" aria-label="Ways to read">
+          <button type="button" id="tab-walk" role="tab" aria-selected="true" aria-controls="walk-view">Walk a path</button>
+          <button type="button" id="tab-explore" role="tab" aria-selected="false" aria-controls="explore-view">Explore the map</button>
+        </div>
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Use dark mode</button>
+      </div>
+    </div>
+    <hr class="thread-rule">
+  </header>
+
+  <p class="banner">People, places, events, and promises are drawn as one story that leads to Jesus Christ. A solid line means the New Testament itself draws the link. A dashed line is typology, and faithful readers may differ.</p>
+
+  <main id="main" class="wrap">
+    <p id="status" class="status" role="status">Loading the map.</p>
+    <noscript>
+      <p class="status">Scarlet Thread needs JavaScript to load the map and walk the paths.</p>
+    </noscript>
+
+    <section id="walk-view" class="view" role="tabpanel" aria-labelledby="walk-heading" hidden>
+      <h2 id="walk-heading" class="view-title">Walk a path</h2>
+      <p class="view-lead">Choose a week. Then move one stop at a time, from promise toward Jesus Christ.</p>
+      <div id="path-picker" class="path-picker" role="group" aria-label="Advent paths"></div>
+
+      <figure class="diagram">
+        <figcaption>
+          <span class="diagram-title">This path</span>
+          <span class="diagram-note">The filled stop is where you are. A solid line is stated in Scripture. A dashed line is typology. A dotted line means the map has no direct line between those stops.</span>
+        </figcaption>
+        <div id="thread" class="thread" role="list" aria-label="Stops on this path"></div>
+      </figure>
+
+      <div class="walk-read">
+        <article id="step-card" class="card"></article>
+        <div id="link-slot"></div>
+        <div class="step-nav">
+          <button type="button" id="prev-step" class="nav-btn secondary">Back</button>
+          <button type="button" id="next-step" class="nav-btn primary">Next</button>
+        </div>
+        <p class="hint keyboard-hint">Arrow keys move between stops.</p>
+      </div>
+    </section>
+
+    <section id="explore-view" class="view" role="tabpanel" aria-labelledby="explore-heading" hidden>
+      <h2 id="explore-heading" class="view-title">Explore the map</h2>
+      <p class="view-lead">Drag the map to move. Pinch, or use the buttons, to zoom. Choose a name to read its Scripture and the lines around it.</p>
+
+      <div class="toolbar">
+        <label class="switch">
+          <input id="hide-typology" type="checkbox">
+          <span>Hide typology</span>
+        </label>
+        <div class="zoom-controls">
+          <button type="button" id="zoom-in">Zoom in</button>
+          <button type="button" id="zoom-out">Zoom out</button>
+          <button type="button" id="zoom-fit">Fit</button>
+        </div>
+      </div>
+      <p id="typology-hint" class="hint">Hiding typology leaves only lines the New Testament states.</p>
+
+      <details class="legend-box" id="legend-details">
+        <summary>How to read the lines</summary>
+        <h3>Line style</h3>
+        <ul class="legend">
+          <li><span class="line-sample solid"></span> Stated in Scripture</li>
+          <li><span class="line-sample dashed"></span> Typology</li>
+        </ul>
+        <h3>Line type</h3>
+        <ul class="legend" id="edge-legend"></ul>
+        <h3>Kind of name</h3>
+        <ul class="legend" id="node-legend"></ul>
+      </details>
+
+      <div class="explore-layout">
+        <div class="graph-column">
+          <p class="visually-hidden">The map drawing may be hard to use with a keyboard or a screen reader. Pick a name in the list for the same details.</p>
+          <div id="graph" class="graph-frame" aria-label="Advent map of people, places, events, and promises"></div>
+          <p id="graph-error" class="status" hidden>The diagram did not start. Use Pick a name to read each stop.</p>
+        </div>
+        <aside id="panel" class="panel" aria-live="polite"></aside>
+        <div class="name-wrap">
+          <details class="name-list" id="name-list">
+            <summary>Pick a name</summary>
+            <div id="name-list-body"></div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Scarlet Thread is Christ-centered, in the Reformed tradition of the Westminster Standards. It is written so a new believer can follow the story.</p>
+    <p>Scripture quotations are short excerpts from the ESV Bible (The Holy Bible, English Standard Version), copyright 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
+    <p id="map-version">Map version 0.1.</p>
+  </footer>
+
+  <div id="live" class="visually-hidden" aria-live="polite"></div>
+
+  <script src="vendor/cytoscape.min.js"></script>
+  <script src="vendor/dagre.min.js"></script>
+  <script src="vendor/cytoscape-dagre.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
