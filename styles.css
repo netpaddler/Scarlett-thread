@@ -30,6 +30,8 @@
   --edge-place_link: #7a5737;
   --edge-prophet_voice: #2f6b6b;
   --edge-type_to_christ: #6c4785;
+  --edge-quoted_by: #1f5f8b;
+  --edge-book_sequence: #55606b;
 
   --node-person-fill: #f4e9df;
   --node-person-line: #9a6a50;
@@ -106,6 +108,8 @@
   --edge-place_link: #d2ae8c;
   --edge-prophet_voice: #84c7c2;
   --edge-type_to_christ: #c6a7e0;
+  --edge-quoted_by: #8ec2e8;
+  --edge-book_sequence: #a7b3c0;
 
   --node-person-fill: #2a211b;
   --node-person-line: #d6a88c;
@@ -507,6 +511,24 @@ body[data-mode="explore"] .intro {
 
 .week[aria-pressed="true"]::after {
   transform: scaleX(1);
+}
+
+/* The book switcher reuses the week button, without a date above the title. */
+.books {
+  margin-top: var(--s-4);
+  gap: var(--s-5);
+}
+
+.book-btn {
+  min-width: 0;
+  padding-top: 0;
+}
+
+.book-btn .week-title {
+  margin-top: 0;
+  font-size: var(--t-sm);
+  font-family: var(--sans);
+  letter-spacing: 0.01em;
 }
 
 .week-date {
@@ -1711,6 +1733,8 @@ body[data-mode="explore"] .intro {
 .swatch[data-edge="place_link"] { border-top-color: var(--edge-place_link); }
 .swatch[data-edge="prophet_voice"] { border-top-color: var(--edge-prophet_voice); }
 .swatch[data-edge="type_to_christ"] { border-top-color: var(--edge-type_to_christ); border-top-style: dashed; }
+.swatch[data-edge="quoted_by"] { border-top-color: var(--edge-quoted_by); }
+.swatch[data-edge="book_sequence"] { border-top-color: var(--edge-book_sequence); }
 
 .kind-dot {
   flex: none;

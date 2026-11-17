@@ -13,8 +13,10 @@
 
   var EDGE_LABELS = {
     prophecy_fulfillment: "Prophecy connection",
+    quoted_by: "Quoted in the New Testament",
     promise_narrowing: "Promises read together",
     family_line: "Family",
+    book_sequence: "Next in Moses' sermon",
     event_sequence: "What happened next",
     place_link: "A place",
     prophet_voice: "Who spoke it",
@@ -32,14 +34,18 @@
     week2_king: "Follow the promised ruler through David's family.",
     week3_sign: "God gives a sign. A son will be born, and God will be with us.",
     week4_town: "The promised ruler comes from Bethlehem.",
-    christmas: "The promise arrives. Jesus is born."
+    christmas: "The promise arrives. Jesus is born.",
+    deut_book: "Read Moses' last sermon straight through, from the plains of Moab to his grave.",
+    deut_nt: "Follow the verses that Jesus and the apostles took out of Deuteronomy."
   };
 
   var KIND_ORDER = ["promise", "covenant", "prophecy", "person", "place", "event", "teaching"];
   var EDGE_ORDER = [
     "prophecy_fulfillment",
+    "quoted_by",
     "promise_narrowing",
     "family_line",
+    "book_sequence",
     "event_sequence",
     "place_link",
     "prophet_voice",
@@ -62,6 +68,36 @@
   var PHONE_QUERY = "(max-width: 959px)";
   var MODES = ["walk", "explore", "requests"];
 
+  /* Each book is one graph file. The first one is the default and keeps the
+     plain "#explore" hash, so Advent links made before this change still work. */
+  var BOOKS = [
+    { key: "advent", file: "data/advent-graph.json", label: "Advent" },
+    { key: "deuteronomy", file: "data/deuteronomy-graph.json", label: "Deuteronomy (pilot)" }
+  ];
+
+  /* Advent's graph file carries none of these keys, so Advent falls back to the
+     wording the page shipped with and reads exactly as it did before. */
+  var META_DEFAULTS = {
+    eyebrow: "Advent 2026",
+    intro_title: "A Reformed Advent reading: the Bible's story points to Jesus.",
+    intro_text: "Pick a week and move one stop at a time. Or open the map and follow the lines.",
+    path_word: "week",
+    subtitle: "an Advent walk through the Bible",
+    picker_label: "Advent weeks",
+    graph_label: "Advent map of people, places, events, and promises",
+    path_line_default: "Each week follows one thread to Jesus.",
+    key_note: "A stop's line usually runs to Jesus, not to the stop beside it. That is why so much of this week is dotted. Open a stop to see the lines it does have.",
+    tab_walk_long: "Walk a week",
+    tab_walk_short: "Walk"
+  };
+
+  var books = {};
+  /* Null prototype, so a hash like "#explore/constructor" is a miss and not a hit
+     on an inherited property. Nodes and paths are kept apart because only a node
+     id can be selected on the map, and only a path id can be walked. */
+  var nodeBook = Object.create(null);
+  var pathBook = Object.create(null);
+  var bookKey = BOOKS[0].key;
   var data = null;
   var sermons = {};
   var confessions = null;
@@ -119,6 +155,27 @@
     return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
   }
 
+  function bookMeta(key) {
+    var m = data && data.meta ? data.meta : {};
+    if (key === "tab_walk_long" || key === "tab_walk_short") {
+      var tabs = m.tabs || {};
+      var which = key === "tab_walk_long" ? "walk_long" : "walk_short";
+      return tabs[which] != null ? tabs[which] : META_DEFAULTS[key];
+    }
+    return m[key] != null ? m[key] : META_DEFAULTS[key];
+  }
+
+  function pathWord() {
+    return bookMeta("path_word");
+  }
+
+  function bookByKey(key) {
+    for (var i = 0; i < BOOKS.length; i += 1) {
+      if (BOOKS[i].key === key) return BOOKS[i];
+    }
+    return null;
+  }
+
   function kindLabel(type) {
     return KIND_LABELS[type] || String(type || "").replace(/_/g, " ");
   }
@@ -171,7 +228,7 @@
   }
 
   function setTitle(prefix) {
-    document.title = prefix ? prefix + " \u00b7 " + SITE_NAME : SITE_NAME + ": an Advent walk through the Bible";
+    document.title = prefix ? prefix + " \u00b7 " + SITE_NAME : SITE_NAME + ": " + bookMeta("subtitle");
   }
 
   /* Sermons */
@@ -504,7 +561,10 @@
   function writeHash(push) {
     var next;
     if (state.mode === "requests") next = "#requests";
-    else if (state.mode === "explore") next = state.selectedId ? "#explore/" + state.selectedId : "#explore";
+    else if (state.mode === "explore") {
+      if (state.selectedId) next = "#explore/" + state.selectedId;
+      else next = bookKey === BOOKS[0].key ? "#explore" : "#explore/" + bookKey;
+    }
     else next = "#walk/" + currentPath().id + "/" + state.step;
     if (location.hash === next) return;
     /* A move the reader made gets its own history entry, so Back goes to the
@@ -523,13 +583,37 @@
     }
     if (parts[0] === "explore") {
       state.mode = "explore";
-      state.selectedId = parts[1] && nodesById.has(parts[1]) ? parts[1] : null;
+      var target = parts[1] || "";
+      /* A bare "#explore" is the first book's map with nothing selected. That is the
+         hash Advent has always used, so it has to switch back from another book. */
+      if (!target) {
+        setBook(BOOKS[0].key);
+        state.selectedId = null;
+        return;
+      }
+      /* "#explore/deuteronomy" names a book, again with nothing selected. */
+      if (bookByKey(target)) {
+        setBook(target);
+        state.selectedId = null;
+        return;
+      }
+      /* Otherwise it is a stop, and the id says which book it belongs to. Only a
+         node id counts, so an old or mistyped hash falls back to the list of names. */
+      if (nodeBook[target]) {
+        setBook(nodeBook[target]);
+        state.selectedId = nodesById.has(target) ? target : null;
+        return;
+      }
+      state.selectedId = null;
       return;
     }
     if (parts[0] === "walk") {
       state.mode = "walk";
-      if (parts[1] && data.paths.some(function (path) { return path.id === parts[1]; })) {
-        state.pathId = parts[1];
+      if (parts[1] && pathBook[parts[1]]) {
+        setBook(pathBook[parts[1]]);
+        if (data.paths.some(function (path) { return path.id === parts[1]; })) {
+          state.pathId = parts[1];
+        }
       }
       var step = Number(parts[2]);
       var total = currentPath().nodes.length;
@@ -614,6 +698,100 @@
     if (focusTab) document.getElementById("tab-" + mode).focus();
   }
 
+  /* Books */
+
+  function destroyGraph() {
+    if (exploreCy) {
+      exploreCy.destroy();
+      exploreCy = null;
+    }
+    graphPending = false;
+    var loading = document.getElementById("graph-loading");
+    if (loading) loading.classList.remove("is-done");
+    var failed = document.getElementById("graph-error");
+    if (failed) failed.hidden = true;
+  }
+
+  /* Switching books swaps the whole graph, so the walk, the legend, the picker
+     and the drawing are all rebuilt. The libraries stay loaded. */
+  function setBook(key) {
+    if (!books[key] || key === bookKey) return false;
+    bookKey = key;
+    data = books[key];
+    nodesById = new Map(data.nodes.map(function (node) { return [node.id, node]; }));
+    state.pathId = data.paths[0].id;
+    state.step = 0;
+    state.selectedId = null;
+    destroyGraph();
+    return true;
+  }
+
+  function applyBookChrome() {
+    var set = function (id, text) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = text;
+    };
+    set("intro-eyebrow", bookMeta("eyebrow"));
+    set("intro-title", bookMeta("intro_title"));
+    set("intro-text", bookMeta("intro_text"));
+    set("rail-title", "This " + pathWord());
+    set("key-note", bookMeta("key_note"));
+    var long = document.querySelector("#tab-walk .tab-long");
+    if (long) long.textContent = bookMeta("tab_walk_long");
+    var short = document.querySelector("#tab-walk .tab-short");
+    if (short) short.textContent = bookMeta("tab_walk_short");
+    var picker = document.getElementById("path-picker");
+    if (picker) picker.setAttribute("aria-label", bookMeta("picker_label"));
+    var thread = document.getElementById("thread");
+    if (thread) thread.setAttribute("aria-label", "Stops this " + pathWord());
+    var notes = document.getElementById("path-deepest");
+    if (notes) notes.setAttribute("aria-label", "About this " + pathWord());
+    var graph = document.getElementById("graph");
+    if (graph) graph.setAttribute("aria-label", bookMeta("graph_label"));
+    var version = document.getElementById("map-version");
+    if (version) {
+      version.textContent = data.meta && data.meta.version
+        ? "Map version " + data.meta.version + "."
+        : "";
+    }
+  }
+
+  function renderBookPicker() {
+    var host = document.getElementById("book-picker");
+    if (!host) return;
+    host.replaceChildren();
+    /* If the second book fails to load there is nothing to switch to, so the page
+       stays exactly as it was before books existed. */
+    host.hidden = BOOKS.length < 2;
+    if (host.hidden) return;
+    BOOKS.forEach(function (book) {
+      var button = h("button", {
+        type: "button",
+        class: "week book-btn",
+        "aria-pressed": book.key === bookKey ? "true" : "false",
+        onClick: function () { chooseBook(book.key); }
+      });
+      button.append(h("span", { class: "week-title", text: book.label }));
+      host.append(button);
+    });
+  }
+
+  function chooseBook(key) {
+    if (!setBook(key)) return;
+    applyBookChrome();
+    renderBookPicker();
+    renderLegend();
+    renderPicker();
+    renderWalk({ animate: true });
+    renderPanel();
+    typologyHint();
+    updateTitle();
+    writeHash(true);
+    if (state.mode === "explore") {
+      nextFrame(function () { ensureGraph(); });
+    }
+  }
+
   /* Walk */
 
   function renderPicker() {
@@ -626,10 +804,9 @@
         "aria-pressed": path.id === currentPath().id ? "true" : "false",
         onClick: function () { choosePath(path.id); }
       });
-      button.append(
-        h("span", { class: "week-date", text: formatMonthDay(path.advent_sunday || path.date || "") }),
-        h("span", { class: "week-title", text: path.title })
-      );
+      var when = formatMonthDay(path.advent_sunday || path.date || "");
+      if (when) button.append(h("span", { class: "week-date", text: when }));
+      button.append(h("span", { class: "week-title", text: path.title }));
       host.append(button);
     });
     var active = host.querySelector('[aria-pressed="true"]');
@@ -750,7 +927,7 @@
       name.textContent = nextNode.label;
     } else if (after) {
       next.disabled = false;
-      dir.textContent = "Next week";
+      dir.textContent = "Next " + pathWord();
       name.textContent = after.title;
     } else {
       next.disabled = true;
@@ -763,14 +940,15 @@
   function renderPathFrame() {
     var path = currentPath();
     var line = document.getElementById("path-line");
-    if (line) line.textContent = PATH_LINE[path.id] || "Each week follows one thread to Jesus.";
+    if (line) line.textContent = PATH_LINE[path.id] || bookMeta("path_line_default");
     var host = document.getElementById("path-deepest");
     if (!host) return;
     host.replaceChildren();
-    var weekDeeper = fold("This week, go deeper", "The whole week in one story, with verses and questions", function (body) {
+    var word = pathWord();
+    var weekDeeper = fold("This " + word + ", go deeper", "The whole " + word + " in one story, with verses and questions", function (body) {
       appendRichDeeper(body, deeperEntry("paths", path.id));
     });
-    var deepest = makeDeepest("paths", path.id, "This week, go deepest", "What the Westminster Standards say about this week", "How Reformed theology reads this week");
+    var deepest = makeDeepest("paths", path.id, "This " + word + ", go deepest", "What the Westminster Standards say about this " + word, "How Reformed theology reads this " + word);
     if (!weekDeeper && !deepest) return;
     host.append(h("h3", { class: "label", text: "About " + path.title }));
     if (weekDeeper) host.append(weekDeeper);
@@ -1772,7 +1950,16 @@
       }
     });
     window.addEventListener("hashchange", function () {
+      var was = bookKey;
       readHash();
+      /* A hash can name a stop in the other book, and Back can cross between
+         books, so the legend, the switcher and the intro are rebuilt too. */
+      if (bookKey !== was) {
+        applyBookChrome();
+        renderBookPicker();
+        renderLegend();
+        typologyHint();
+      }
       renderPicker();
       renderWalk();
       renderPanel();
@@ -1807,14 +1994,14 @@
   }
 
   function start() {
+    data = books[bookKey];
     nodesById = new Map(data.nodes.map(function (node) { return [node.id, node]; }));
     state.pathId = data.paths[0].id;
     readHash();
-    if (data.meta && data.meta.version) {
-      document.getElementById("map-version").textContent = "Map version " + data.meta.version + ".";
-    }
     bind();
     applyTheme(currentTheme());
+    applyBookChrome();
+    renderBookPicker();
     renderLegend();
     renderPicker();
     renderWalk();
@@ -1840,18 +2027,35 @@
     ]).catch(function () { return null; });
   }
 
+  function validGraph(json) {
+    return !!json && Array.isArray(json.nodes) && Array.isArray(json.edges) && Array.isArray(json.paths)
+      && json.nodes.length > 0 && json.paths.length > 0
+      && json.paths.every(function (path) { return Array.isArray(path.nodes) && path.nodes.length > 0; });
+  }
+
   Promise.all([
-    loadJson("data/advent-graph.json"),
+    Promise.all(BOOKS.map(function (book) {
+      /* A second book that fails to load must not take the first one down. */
+      return loadJson(book.file).catch(function () { return null; });
+    })),
     loadJson("data/sermons.json").catch(function () { return {}; }),
     loadJson("data/confessions.json").catch(function () { return null; }),
     loadJson("data/deeper.json").catch(function () { return null; })
   ])
     .then(function (files) {
-      var json = files[0];
-      if (!json || !Array.isArray(json.nodes) || !Array.isArray(json.edges) || !Array.isArray(json.paths)) {
+      var graphs = files[0];
+      BOOKS.forEach(function (book, index) {
+        var json = graphs[index];
+        if (!validGraph(json)) return;
+        books[book.key] = json;
+        json.nodes.forEach(function (node) { nodeBook[node.id] = book.key; });
+        json.paths.forEach(function (path) { pathBook[path.id] = book.key; });
+      });
+      BOOKS = BOOKS.filter(function (book) { return !!books[book.key]; });
+      if (!BOOKS.length) {
         throw new Error("The map file is missing nodes, edges, or paths.");
       }
-      data = json;
+      bookKey = BOOKS[0].key;
       sermons = files[1] && typeof files[1] === "object" ? files[1] : {};
       confessions = files[2] && files[2].sections ? files[2] : null;
       deeper = files[3] && files[3].nodes ? files[3] : null;
