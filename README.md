@@ -20,7 +20,7 @@ The title in the top bar is a link back to the start: Week 1, first stop. The br
 
 A solid line marks a direct textual or narrative connection. A dashed line marks an interpretive connection. Open a stop and go deeper for the exact claim.
 
-Sermon links come from Faith Presbyterian Church Tacoma's YouTube channel: https://www.youtube.com/@faithpresbyterianchurch-ta4701. They are listed in `data/sermons.json`, under each node id, best match first. To add one, copy an existing entry and fill in `title`, `preacher`, `date`, `service`, `text`, `url`, `start_seconds`, `match` (`exact` or `thematic`), and `notes`. Use the YouTube URL as published. Do not invent a sermon or a link.
+Sermon links come from Faith Presbyterian Church Tacoma's YouTube channel and sermon archive. Advent links are listed in `data/sermons.json`, and Deuteronomy links are listed in `data/deuteronomy-sermons.json`, under each node id, best match first. A YouTube entry uses the published video URL and a caption checked start time. An archive entry uses the verified faithtacoma.org page. Each entry gives `title`, `preacher`, `date`, `text`, `url`, and `match`. YouTube entries also give `start_seconds`. Use `exact` when the sermon text contains the stop's passage, or `overlap` when it covers only part of the passage or a nearby passage. Give every overlap a brief, honest note. Do not invent a sermon, link, or timestamp.
 
 Each stop opens with a short explanation. Go deeper, from `data/deeper.json`, tells the story, quotes the main verses, and walks the lines on the map. Go deepest, from `data/confessions.json`, quotes the Westminster Confession and Catechisms in the modern spelling text on the Orthodox Presbyterian Church site, with Scripture proofs from the OPC's 2005 proof-text editions. Add a section only when it really speaks to that stop, and keep every quotation exact.
 
@@ -84,7 +84,7 @@ Where a quotation differs in wording from the ESV of Deuteronomy, the edge note 
 
 Node ids and path ids are unique across both books, so a link names the book as well as the stop. `#walk/deut_nt/5` and `#explore/dt_prophet` both open Deuteronomy. `#explore/deuteronomy` opens its map with nothing selected. Advent links are unchanged, including the plain `#explore`.
 
-`data/deeper.json` and `data/confessions.json` are shared between the books, and the Deuteronomy ids were added to both. `data/sermons.json` was not touched. No Deuteronomy sermon links were added, because the Faith Presbyterian channel has not been searched for them. That is open work, not a finding.
+`data/deeper.json` and `data/confessions.json` are shared between the books, and the Deuteronomy ids were added to both. Advent keeps its existing sermon data in `data/sermons.json`. Deuteronomy sermons live separately in `data/deuteronomy-sermons.json`, so adding the second book does not alter Advent's entries.
 
 Go deepest on the Deuteronomy stops reuses Westminster sections already in `data/confessions.json`, whose text and proofs were checked against the OPC editions in the earlier audit. No new section was added. The OPC proof-text PDFs are page scans with no text layer, so a new section's proofs could not be verified, and the rule is to leave a section out rather than guess at it.
 
@@ -152,7 +152,8 @@ The ESV excerpts and references were independently checked against esv.org in No
 - `index.html`, `styles.css`, `app.js`: the site.
 - `data/advent-graph.json`: the Advent map.
 - `data/deuteronomy-graph.json`: the Deuteronomy map.
-- `data/sermons.json`: Faith Presbyterian sermon links for each node.
+- `data/sermons.json`: Faith Presbyterian sermon links for Advent nodes.
+- `data/deuteronomy-sermons.json`: Faith Presbyterian sermon links for Deuteronomy nodes.
 - `data/confessions.json`: Westminster Confession and Catechism quotations for each stop.
 - `data/deeper.json`: the Go deeper reading for each stop and each week.
 - `vendor/`: Cytoscape.js and dagre.

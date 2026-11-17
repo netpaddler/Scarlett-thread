@@ -1,0 +1,382 @@
+{
+  "_note": "Faith Presbyterian Church Tacoma sermons for the Deuteronomy map. Titles, preachers, dates, and texts were checked against individual sermon pages and church series pages. YouTube links are used only when the official church video and a caption derived start time were verified. match is exact when the sermon text contains the stop's passage and overlap when it covers only part of the passage or a nearby passage.",
+  "dt_moses": [
+    {
+      "title": "From Mountain to Mission",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2021-09-05",
+      "service": "am",
+      "text": "Deuteronomy 1:1-8",
+      "url": "https://www.youtube.com/watch?v=XP5y-d51OSs&t=2511s",
+      "start_seconds": 2511,
+      "match": "exact"
+    },
+    {
+      "title": "Faith Before Works",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "1992-01-12",
+      "text": "Deuteronomy 1:1-46",
+      "url": "https://www.faithtacoma.org/1-deuteronomy-rayburn/faith-before-works-deuteronomy-146-12",
+      "match": "exact"
+    }
+  ],
+  "dt_decalogue": [
+    {
+      "title": "The First Commandment",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-09-11",
+      "service": "am",
+      "text": "Deuteronomy 5:6-7",
+      "url": "https://www.youtube.com/watch?v=cPvkkrS-E9o&t=1696s",
+      "start_seconds": 1696,
+      "match": "exact"
+    },
+    {
+      "title": "The Second Commandment",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-09-25",
+      "service": "am",
+      "text": "Deuteronomy 5:8-10",
+      "url": "https://www.youtube.com/watch?v=J0P6Hr_x-oU&t=2296s",
+      "start_seconds": 2296,
+      "match": "exact"
+    },
+    {
+      "title": "The Third Commandment",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-10-02",
+      "service": "am",
+      "text": "Deuteronomy 5:6, 11",
+      "url": "https://www.youtube.com/watch?v=LzbLaXAkoCg&t=2391s",
+      "start_seconds": 2391,
+      "match": "exact"
+    },
+    {
+      "title": "The Fourth Commandment",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-10-09",
+      "service": "am",
+      "text": "Deuteronomy 5:6, 12-15",
+      "url": "https://www.youtube.com/watch?v=yzjrrTVyAds&t=2024s",
+      "start_seconds": 2024,
+      "match": "exact"
+    },
+    {
+      "title": "The Fifth Commandment",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-10-16",
+      "service": "am",
+      "text": "Deuteronomy 5:6, 16",
+      "url": "https://www.youtube.com/watch?v=MSnqETRe1ac&t=2379s",
+      "start_seconds": 2379,
+      "match": "exact"
+    },
+    {
+      "title": "The Sixth Commandment",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-10-23",
+      "text": "Deuteronomy 5:6, 17",
+      "url": "https://www.faithtacoma.org/deuteronomy-nicoletti/the-sixth-commandment-deuteronomy-56-17",
+      "match": "exact"
+    },
+    {
+      "title": "The Seventh Commandment",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-10-30",
+      "service": "am",
+      "text": "Deuteronomy 5:6, 18",
+      "url": "https://www.youtube.com/watch?v=yWEw-EcqbeA&t=2382s",
+      "start_seconds": 2382,
+      "match": "exact"
+    },
+    {
+      "title": "The Eighth Commandment",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-11-06",
+      "service": "am",
+      "text": "Deuteronomy 5:6, 19",
+      "url": "https://www.youtube.com/watch?v=XyF0R2l-OIY&t=1952s",
+      "start_seconds": 1952,
+      "match": "exact"
+    },
+    {
+      "title": "The Ninth Commandment",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-11-13",
+      "service": "am",
+      "text": "Deuteronomy 5:6, 20",
+      "url": "https://www.youtube.com/watch?v=ucdGQ4-Fl8I&t=2321s",
+      "start_seconds": 2321,
+      "match": "exact"
+    },
+    {
+      "title": "The Tenth Commandment",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-11-20",
+      "service": "am",
+      "text": "Deuteronomy 5:6, 21",
+      "url": "https://www.youtube.com/watch?v=HelgRs0r2Pw&t=2126s",
+      "start_seconds": 2126,
+      "match": "exact"
+    },
+    {
+      "title": "First Things First",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-09-04",
+      "service": "am",
+      "text": "Deuteronomy 4:44-5:6",
+      "url": "https://www.youtube.com/watch?v=u-wcjHgvM-w&t=2418s",
+      "start_seconds": 2418,
+      "match": "overlap",
+      "notes": "This sermon reaches the opening of the passage at this stop."
+    },
+    {
+      "title": "An Exercise in Casuistry",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "1992-04-26",
+      "text": "Deuteronomy 4:44-5:22",
+      "url": "https://www.faithtacoma.org/1-deuteronomy-rayburn/an-exercise-in-casuistry-deuteronomy-444-522",
+      "match": "overlap",
+      "notes": "This sermon covers the commandments together with the surrounding passage."
+    }
+  ],
+  "dt_shema": [
+    {
+      "title": "Remaining Faithful in the Midst of Success",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2022-12-04",
+      "service": "am",
+      "text": "Deuteronomy 6",
+      "url": "https://www.youtube.com/watch?v=Ak93qoh5cik&t=2068s",
+      "start_seconds": 2068,
+      "match": "exact"
+    },
+    {
+      "title": "God-Fearing Children",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "1992-05-17",
+      "text": "Deuteronomy 6:1-25",
+      "url": "https://www.faithtacoma.org/1-deuteronomy-rayburn/god-fearing-children-deuteronomy-61-25",
+      "match": "exact"
+    }
+  ],
+  "dt_wilderness_test": [
+    {
+      "title": "The Temptation to Forget, When Times Are Tough",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2023-09-03",
+      "service": "am",
+      "text": "Deuteronomy 8:1-10",
+      "url": "https://www.youtube.com/watch?v=SLs-Yh9h4Ko&t=2604s",
+      "start_seconds": 2604,
+      "match": "exact"
+    },
+    {
+      "title": "Forget Not All His Benefits",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "1992-06-07",
+      "text": "Deuteronomy 8:1-20",
+      "url": "https://www.faithtacoma.org/1-deuteronomy-rayburn/the-sin-of-forgetting-deuteronomy-81-20",
+      "match": "exact"
+    },
+    {
+      "title": "The Temptation to Forget, When Times Are Good",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2023-09-10",
+      "service": "am",
+      "text": "Deuteronomy 8:5-20",
+      "url": "https://www.youtube.com/watch?v=GQ0KTBouPFQ&t=2096s",
+      "start_seconds": 2096,
+      "match": "overlap",
+      "notes": "This sermon begins at verse 5, just after the opening verses at this stop."
+    }
+  ],
+  "dt_prophet": [
+    {
+      "title": "The Prophet",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2024-10-27",
+      "service": "am",
+      "text": "Deuteronomy 18:9-22",
+      "url": "https://www.youtube.com/watch?v=_33fm6umVlg&t=2029s",
+      "start_seconds": 2029,
+      "match": "exact"
+    },
+    {
+      "title": "The Prophet, Part 2: The Person",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2024-11-10",
+      "service": "am",
+      "text": "Deuteronomy 18:9-22",
+      "url": "https://www.youtube.com/watch?v=nK6SfNs3No8&t=2095s",
+      "start_seconds": 2095,
+      "match": "exact"
+    }
+  ],
+  "dt_hanged": [
+    {
+      "title": "Dignity Despite Depravity",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2025-11-16",
+      "service": "am",
+      "text": "Deuteronomy 21:22-23",
+      "url": "https://www.youtube.com/watch?v=jdE8hYKNXT0&t=3122s",
+      "start_seconds": 3122,
+      "match": "exact"
+    }
+  ],
+  "dt_curses": [
+    {
+      "title": "Blessings and Curses",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "1992-11-01",
+      "text": "Deuteronomy 26:16-19; 28:58-68; 30:11-16",
+      "url": "https://www.faithtacoma.org/1-deuteronomy-rayburn/blessings-and-curses-deuteronomy-2616-19-2858-68-3011-16",
+      "match": "overlap",
+      "notes": "This sermon covers nearby passages in the blessing and curse sections, not the verses quoted at this stop."
+    }
+  ],
+  "dt_word_near": [
+    {
+      "title": "Blessings and Curses",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "1992-11-01",
+      "text": "Deuteronomy 26:16-19; 28:58-68; 30:11-16",
+      "url": "https://www.faithtacoma.org/1-deuteronomy-rayburn/blessings-and-curses-deuteronomy-2616-19-2858-68-3011-16",
+      "match": "overlap",
+      "notes": "This sermon covers verses 11 through 16 of this stop's passage, together with passages on blessing and curse."
+    }
+  ],
+  "dt_song": [],
+  "dt_death": [
+    {
+      "title": "The Death of Moses",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "1992-11-08",
+      "text": "Deuteronomy 32:48-52; 34:1-12",
+      "url": "https://www.faithtacoma.org/1-deuteronomy-rayburn/the-death-of-moses-deuteronomy-3248-52",
+      "match": "exact"
+    }
+  ],
+  "nt_temptation": [
+    {
+      "title": "Tempted as a Man",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "2003-10-19",
+      "text": "Matthew 4:1-11",
+      "url": "https://www.faithtacoma.org/matthew/2003-10-19-am",
+      "match": "exact"
+    },
+    {
+      "title": "The Temptation",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "2011-12-04",
+      "text": "Luke 4:1-13",
+      "url": "https://www.faithtacoma.org/luke/2011-12-04-am",
+      "match": "exact"
+    },
+    {
+      "title": "Twisting Words",
+      "preacher": "Rev. Nathaniel Gutierrez",
+      "date": "2021-06-13",
+      "service": "am",
+      "text": "Matthew 3:16-4:11",
+      "url": "https://www.youtube.com/watch?v=yXjcfISy_4Y&t=2902s",
+      "start_seconds": 2902,
+      "match": "exact"
+    }
+  ],
+  "nt_greatest": [
+    {
+      "title": "The Greatest Commandment(s)",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2026-02-22",
+      "service": "am",
+      "text": "Mark 12:28-34",
+      "url": "https://www.youtube.com/watch?v=ouCgPZGJzVo&t=1850s",
+      "start_seconds": 1850,
+      "match": "exact"
+    },
+    {
+      "title": "The Kingdom of Love",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "2008-04-06",
+      "text": "Mark 12:28-34",
+      "url": "https://www.faithtacoma.org/mark/2008-04-06-am",
+      "match": "exact"
+    },
+    {
+      "title": "The Deity of Jesus Christ",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "2005-08-21",
+      "text": "Matthew 22:34-46",
+      "url": "https://www.faithtacoma.org/matthew/the-deity-of-jesus-christ",
+      "match": "exact"
+    }
+  ],
+  "nt_acts3": [
+    {
+      "title": "The Miracle of Salvation",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "2015-10-11",
+      "text": "Acts 3:1-26",
+      "url": "https://www.faithtacoma.org/acts2/the-miracle-of-salvation-acts-31-26",
+      "match": "exact"
+    },
+    {
+      "title": "A Miracle",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "1997-05-25",
+      "text": "Acts 3:1-26",
+      "url": "https://www.faithtacoma.org/acts-rayburn-1997/1997-05-25-pm",
+      "match": "exact"
+    }
+  ],
+  "nt_gal3": [
+    {
+      "title": "He Gave Himself for Us",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "2018-02-11",
+      "text": "Galatians 3:10-14",
+      "url": "https://www.faithtacoma.org/gospel/he-gave-himself-for-us-galatians-310-14",
+      "match": "exact"
+    },
+    {
+      "title": "Studies in Galatians No. 11",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "1999-04-25",
+      "text": "Galatians 3:10-14",
+      "url": "https://www.faithtacoma.org/1-galatians-rayburn/galatians-310-14",
+      "match": "exact"
+    }
+  ],
+  "nt_rom10": [
+    {
+      "title": "The Fatal and Most Natural Heresy",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "2010-01-31",
+      "text": "Romans 9:30-10:13",
+      "url": "https://www.faithtacoma.org/romans/2010-01-31-am",
+      "match": "overlap",
+      "notes": "This sermon covers the first part of this stop's passage."
+    },
+    {
+      "title": "The Evangelistic Imperative",
+      "preacher": "Rev. Dr. Robert S. Rayburn",
+      "date": "2010-02-07",
+      "text": "Romans 10:14-21",
+      "url": "https://www.faithtacoma.org/romans/2010-02-07-am",
+      "match": "overlap",
+      "notes": "This sermon covers the latter part of this stop's passage."
+    },
+    {
+      "title": "God's \"I Love You\" and Its Implications",
+      "preacher": "Rev. Steven Nicoletti",
+      "date": "2014-08-10",
+      "text": "Romans 10:5-15",
+      "url": "https://www.faithtacoma.org/none/2014-08-10-pm",
+      "match": "overlap",
+      "notes": "This sermon covers verses 5 through 15 of this stop's passage."
+    }
+  ]
+}
