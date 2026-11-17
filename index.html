@@ -59,7 +59,7 @@
       <p class="status wrap">Scarlet Thread needs JavaScript to load the map and walk the weeks.</p>
     </noscript>
 
-    <section id="walk-view" class="view walk wrap" role="tabpanel" aria-labelledby="tab-walk" hidden>
+    <section id="walk-view" class="view walk wrap" role="tabpanel" aria-labelledby="tab-walk" tabindex="0" hidden>
       <h2 class="visually-hidden">Walk a week</h2>
       <div id="path-picker" class="weeks" role="group" aria-label="Advent weeks"></div>
 
@@ -73,6 +73,7 @@
             <li><span class="key-line dashed" aria-hidden="true"></span>An interpretive connection</li>
             <li><span class="key-line dotted" aria-hidden="true"></span>Side by side, with no direct line</li>
           </ul>
+          <p class="hint key-note">A stop's line usually runs to Jesus, not to the stop beside it. That is why so much of this week is dotted. Open a stop to see the lines it does have.</p>
         </aside>
 
         <div class="walk-read">
@@ -93,7 +94,7 @@
       </div>
     </section>
 
-    <section id="explore-view" class="view explore" role="tabpanel" aria-labelledby="tab-explore" hidden>
+    <section id="explore-view" class="view explore" role="tabpanel" aria-labelledby="tab-explore" tabindex="0" hidden>
       <h2 class="visually-hidden">See the map</h2>
       <div class="explore-layout">
         <div class="map-frame">
@@ -141,7 +142,7 @@
       </div>
     </section>
 
-    <section id="requests-view" class="view requests wrap" role="tabpanel" aria-labelledby="tab-requests" hidden>
+    <section id="requests-view" class="view requests wrap" role="tabpanel" aria-labelledby="tab-requests" tabindex="0" hidden>
       <h2 class="visually-hidden">Comments and requests</h2>
       <div id="requests-body"></div>
     </section>
@@ -157,8 +158,6 @@
   <div id="live" class="visually-hidden" aria-live="polite"></div>
 
   <script src="config/requests.js"></script>
-  <script src="vendor/cytoscape.min.js"></script>
-  <script src="vendor/dagre.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

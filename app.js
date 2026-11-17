@@ -69,6 +69,7 @@
   var nodesById = new Map();
   var exploreCy = null;
   var graphPending = false;
+  var graphLibsPromise = null;
   var fontsReady = Promise.resolve();
   var state = {
     mode: "walk",
@@ -443,6 +444,46 @@
     return deeper[group][id] || null;
   }
 
+  /* Most stops do not link to the stop beside them in the week. They link to
+     Jesus or to the birth. The rail cannot show that, so the card names the
+     lines this stop really has. These are the edges already in the map file. */
+  function jumpToStop(id) {
+    if (state.mode === "explore") {
+      selectNode(id, { frame: true, focusPanel: true });
+      return;
+    }
+    openOnMap(id);
+  }
+
+  function appendConnections(parent, node) {
+    var links = data.edges.filter(function (edge) {
+      return edge.from === node.id || edge.to === node.id;
+    });
+    if (!links.length) return;
+    parent.append(h("h4", { class: "section-label", text: "Lines on the map" }));
+    var list = h("ul", { class: "links" });
+    links.forEach(function (edge) {
+      var outgoing = edge.from === node.id;
+      var otherId = outgoing ? edge.to : edge.from;
+      var other = nodeById(otherId);
+      var name = other ? other.label : otherId;
+      var dir = outgoing ? "To" : "From";
+      var button = h("button", {
+        type: "button",
+        class: "link-chip" + (edge.confidence === "typology" ? " is-typology" : ""),
+        "aria-label": dir + " " + name + ". " + edgeLabel(edge.type) + ". Open on the map.",
+        onClick: function () { jumpToStop(otherId); }
+      });
+      button.append(
+        h("span", { class: "swatch", "data-edge": edge.type, "aria-hidden": "true" }),
+        h("span", { class: "link-dir", "aria-hidden": "true", text: dir }),
+        h("span", { class: "link-name", text: name })
+      );
+      list.append(h("li", {}, [button]));
+    });
+    parent.append(list);
+  }
+
   function appendLayers(parent, node) {
     var deeperFold = fold("Go deeper", "The verses, the story, and how the lines connect", function (body) {
       appendRichDeeper(body, deeperEntry("nodes", node.id));
@@ -460,12 +501,16 @@
 
   /* Routing and modes */
 
-  function writeHash() {
+  function writeHash(push) {
     var next;
     if (state.mode === "requests") next = "#requests";
     else if (state.mode === "explore") next = state.selectedId ? "#explore/" + state.selectedId : "#explore";
     else next = "#walk/" + currentPath().id + "/" + state.step;
-    if (location.hash !== next) history.replaceState(null, "", next);
+    if (location.hash === next) return;
+    /* A move the reader made gets its own history entry, so Back goes to the
+       stop before it instead of leaving the site. */
+    if (push) history.pushState(null, "", next);
+    else history.replaceState(null, "", next);
   }
 
   function readHash() {
@@ -535,11 +580,11 @@
       tab.setAttribute("aria-selected", name === mode ? "true" : "false");
       tab.tabIndex = name === mode ? 0 : -1;
     });
-    writeHash();
+    writeHash(opts.push);
     updateTitle();
     if (mode === "requests") renderRequests();
     if (mode === "explore") {
-      window.requestAnimationFrame(function () {
+      nextFrame(function () {
         ensureGraph(function () {
           if (opts.frame && state.selectedId) frameNode(state.selectedId, false);
         });
@@ -547,10 +592,24 @@
     }
   }
 
+  /* Let the view lay out before cytoscape measures it. A window that is covered
+     or minimised is served no frames, so fall back to a timer rather than leave
+     the reader on "Drawing the map." */
+  function nextFrame(callback) {
+    var ran = false;
+    var run = function () {
+      if (ran) return;
+      ran = true;
+      callback();
+    };
+    window.requestAnimationFrame(run);
+    window.setTimeout(run, 150);
+  }
+
   function switchMode(mode, focusTab) {
     if (state.mode === mode) return;
     state.mode = mode;
-    showMode();
+    showMode({ push: true });
     window.scrollTo(0, 0);
     if (focusTab) document.getElementById("tab-" + mode).focus();
   }
@@ -656,6 +715,7 @@
     }
     card.append(h("h3", { id: "step-title", class: "step-name", tabindex: "-1", text: node.label }));
     appendStart(card, node);
+    appendConnections(card, node);
     appendLayers(card, node);
     appendSermons(card, node.id);
     card.append(h("button", {
@@ -754,7 +814,7 @@
     state.step = 0;
     renderPicker();
     renderWalk({ animate: true });
-    writeHash();
+    writeHash(true);
     if (opts.scroll) bringReadingIntoView();
   }
 
@@ -764,7 +824,7 @@
     if (step < 0 || step >= total || step === state.step) return;
     state.step = step;
     renderWalk({ animate: true });
-    writeHash();
+    writeHash(true);
     if (opts.scroll) bringReadingIntoView();
   }
 
@@ -789,7 +849,7 @@
     state.selectedId = null;
     renderPicker();
     renderWalk();
-    showMode();
+    showMode({ push: true });
     window.scrollTo({ top: 0, behavior: reducedMotion() ? "auto" : "smooth" });
     document.getElementById("main").focus({ preventScroll: true });
   }
@@ -798,7 +858,7 @@
     state.mode = "explore";
     state.selectedId = id;
     renderPanel();
-    showMode({ frame: true });
+    showMode({ frame: true, push: true });
     window.scrollTo(0, 0);
   }
 
@@ -1183,9 +1243,8 @@
         autoungrabify: true
       });
     } catch (err) {
-      document.getElementById("graph-error").hidden = false;
-      document.getElementById("graph-loading").classList.add("is-done");
       exploreCy = null;
+      graphFailed();
       return;
     }
     applyLayout();
@@ -1228,12 +1287,39 @@
     });
   }
 
-  function ensureGraph(done) {
-    if (typeof cytoscape !== "function") {
-      document.getElementById("graph-error").hidden = false;
-      document.getElementById("graph-loading").classList.add("is-done");
-      return;
+  function graphFailed() {
+    document.getElementById("graph-error").hidden = false;
+    document.getElementById("graph-loading").classList.add("is-done");
+  }
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var tag = document.createElement("script");
+      tag.src = src;
+      tag.async = false;
+      tag.onload = function () { resolve(null); };
+      tag.onerror = function () { reject(new Error(src)); };
+      document.head.appendChild(tag);
+    });
+  }
+
+  /* The map drawing is 650KB of library. The walk never needs it, so it is
+     fetched the first time a reader opens the map. dagreLayout falls back to a
+     plain layout when dagre is missing, so only cytoscape is required. */
+  function graphLibs() {
+    if (!graphLibsPromise) {
+      var cyReady = typeof cytoscape === "function"
+        ? Promise.resolve(null)
+        : loadScript("vendor/cytoscape.min.js");
+      var dagreReady = (typeof dagre !== "undefined" && dagre.graphlib)
+        ? Promise.resolve(null)
+        : loadScript("vendor/dagre.min.js").catch(function () { return null; });
+      graphLibsPromise = dagreReady.then(function () { return cyReady; });
     }
+    return graphLibsPromise;
+  }
+
+  function ensureGraph(done) {
     if (exploreCy) {
       exploreCy.resize();
       refreshHighlight();
@@ -1242,9 +1328,16 @@
     }
     if (graphPending) return;
     graphPending = true;
-    fontsReady.then(function () {
+    Promise.all([graphLibs(), fontsReady]).then(function () {
       graphPending = false;
+      if (typeof cytoscape !== "function") {
+        graphFailed();
+        return;
+      }
       if (!exploreCy) createGraph();
+    }, function () {
+      graphPending = false;
+      graphFailed();
     });
   }
 
@@ -1324,6 +1417,7 @@
       h("h3", { id: "panel-title", class: "step-name", tabindex: "-1", text: node.label })
     );
     appendStart(panel, node);
+    appendConnections(panel, node);
     appendLayers(panel, node);
     appendSermons(panel, node.id);
   }
@@ -1352,7 +1446,7 @@
     renderPanel();
     refreshHighlight();
     if (opts.frame) frameNode(id, true);
-    writeHash();
+    writeHash(true);
     updateTitle();
     revealSheet();
     if (opts.focusPanel) focusPanelTitle();
@@ -1365,7 +1459,7 @@
     state.selectedId = null;
     renderPanel();
     refreshHighlight();
-    writeHash();
+    writeHash(true);
     updateTitle();
     revealSheet();
     if (opts.focusPanel) focusPanelTitle();

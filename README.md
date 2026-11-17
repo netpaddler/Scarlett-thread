@@ -16,7 +16,7 @@ The site has three modes.
 
 **Ask for a stop.** Comments/Requests holds a short form. A reader names a person or an event that is missing from the map, says why it belongs, and sends it. Past submissions are listed under the form, newest first, with any reply.
 
-The title in the top bar is a link back to the start: Week 1, first stop.
+The title in the top bar is a link back to the start: Week 1, first stop. The browser Back button steps back through the stops and the names you opened, instead of leaving the site.
 
 A solid line marks a direct textual or narrative connection. A dashed line marks an interpretive connection. Open a stop and go deeper for the exact claim.
 
@@ -68,7 +68,7 @@ The map lives in `data/advent-graph.json`. Do not change the Scripture quotes or
 
 `typology` means an interpretive link. Faithful readers may differ. The app draws a dashed line.
 
-Some stops on a guided path sit next to each other without a direct edge. The app says so. It does not invent a line to fill the gap.
+Some stops on a guided path sit next to each other without a direct edge. The app says so. It does not invent a line to fill the gap. Under Lines on the map, each stop names the edges it really has. Those usually run to Jesus or to the birth rather than to the stop beside it, which is why most of a week's rail is dotted.
 
 ## Comments and requests
 
@@ -105,7 +105,7 @@ Opening `index.html` as a file will not load the map. Browsers block that fetch.
 
 Any other static server works too. For example: `npx --yes serve`.
 
-The graph library is included in `vendor/` (Cytoscape.js and dagre, both MIT licensed), so the map works without a network connection once the page is served. The app runs the dagre layout itself and routes each line left to right from it. The reading font, Source Serif 4, is served from `fonts/` under the SIL Open Font License (see `fonts/OFL.txt`). Interface text uses the system sans serif.
+The graph library is included in `vendor/` (Cytoscape.js and dagre, both MIT licensed), so the map works without a network connection once the page is served. The two files come to about 650KB, so the page does not fetch them until a reader opens the map. The walk never needs them. The app runs the dagre layout itself and routes each line left to right from it. The reading font, Source Serif 4, is served from `fonts/` under the SIL Open Font License (see `fonts/OFL.txt`). Interface text uses the system sans serif.
 
 ## GitHub Pages
 

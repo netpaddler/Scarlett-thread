@@ -35,7 +35,7 @@ jobs:
           cp config/requests.js _site/config/
           cp data/advent-graph.json data/sermons.json data/confessions.json data/deeper.json _site/data/
           cp vendor/cytoscape.min.js vendor/dagre.min.js _site/vendor/
-          cp fonts/source-serif-4-latin.woff2 fonts/source-serif-4-italic-latin.woff2 fonts/OFL.txt _site/fonts/
+          cp fonts/source-serif-4-latin.woff2 fonts/OFL.txt _site/fonts/
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
