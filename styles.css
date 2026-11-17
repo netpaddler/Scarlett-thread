@@ -1211,6 +1211,25 @@ body[data-mode="explore"] .intro {
   margin-top: var(--s-1);
 }
 
+.sermon-list {
+  margin-top: var(--s-3);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.sermon-list > summary {
+  min-height: 48px;
+  padding: var(--s-3) 0;
+  color: var(--accent);
+  font-size: var(--t-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sermon-list-body .sermon:last-child {
+  border-bottom: 0;
+}
+
 .sermon {
   padding: var(--s-4) 0;
   border-bottom: 1px solid var(--line);

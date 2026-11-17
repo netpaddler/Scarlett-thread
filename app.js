@@ -99,7 +99,7 @@
   var pathBook = Object.create(null);
   var bookKey = BOOKS[0].key;
   var data = null;
-  var sermons = {};
+  var sermonsByBook = {};
   var confessions = null;
   var deeper = null;
   var nodesById = new Map();
@@ -234,7 +234,8 @@
   /* Sermons */
 
   function sermonsFor(nodeId) {
-    var list = sermons[nodeId];
+    var bookSermons = sermonsByBook[bookKey] || {};
+    var list = bookSermons[nodeId];
     return Array.isArray(list) ? list : [];
   }
 
@@ -248,6 +249,7 @@
 
   function renderSermon(sermon) {
     var article = h("article", { class: "sermon" });
+    var videoId = youtubeId(sermon.url);
     var titleLink = h("a", {
       href: sermon.url,
       target: "_blank",
@@ -262,6 +264,11 @@
     if (sermon.text) article.append(h("p", { class: "sermon-text", text: "Scripture: " + sermon.text }));
     if (sermon.match === "thematic") {
       article.append(h("p", { class: "sermon-note", text: "This sermon is mainly about another passage, and it teaches this one too." }));
+    } else if (sermon.match === "overlap") {
+      article.append(h("p", {
+        class: "sermon-note",
+        text: sermon.notes || "This sermon covers part of this stop's passage."
+      }));
     }
     var actions = h("div", { class: "sermon-actions" });
     actions.append(h("a", {
@@ -269,10 +276,9 @@
       href: sermon.url,
       target: "_blank",
       rel: "noopener noreferrer",
-      text: "Watch on YouTube"
+      text: videoId ? "Watch on YouTube" : "Open sermon page"
     }));
     var player = h("div", { class: "sermon-player", hidden: true });
-    var videoId = youtubeId(sermon.url);
     if (videoId) {
       var play = h("button", {
         type: "button",
@@ -308,7 +314,16 @@
     section.setAttribute("aria-label", "Hear a sermon from Faith Presbyterian");
     section.append(h("h4", { class: "section-label", text: "Hear a sermon" }));
     section.append(h("p", { class: "hint", text: "From Faith Presbyterian Church in Tacoma." }));
-    list.forEach(function (sermon) { section.append(renderSermon(sermon)); });
+    if (bookKey === "deuteronomy" && list.length > 4) {
+      var details = h("details", { class: "sermon-list" });
+      details.append(h("summary", { text: "Show " + list.length + " sermons" }));
+      var body = h("div", { class: "sermon-list-body" });
+      list.forEach(function (sermon) { body.append(renderSermon(sermon)); });
+      details.append(body);
+      section.append(details);
+    } else {
+      list.forEach(function (sermon) { section.append(renderSermon(sermon)); });
+    }
     parent.append(section);
   }
 
@@ -2039,6 +2054,7 @@
       return loadJson(book.file).catch(function () { return null; });
     })),
     loadJson("data/sermons.json").catch(function () { return {}; }),
+    loadJson("data/deuteronomy-sermons.json").catch(function () { return {}; }),
     loadJson("data/confessions.json").catch(function () { return null; }),
     loadJson("data/deeper.json").catch(function () { return null; })
   ])
@@ -2056,9 +2072,12 @@
         throw new Error("The map file is missing nodes, edges, or paths.");
       }
       bookKey = BOOKS[0].key;
-      sermons = files[1] && typeof files[1] === "object" ? files[1] : {};
-      confessions = files[2] && files[2].sections ? files[2] : null;
-      deeper = files[3] && files[3].nodes ? files[3] : null;
+      sermonsByBook = {
+        advent: files[1] && typeof files[1] === "object" ? files[1] : {},
+        deuteronomy: files[2] && typeof files[2] === "object" ? files[2] : {}
+      };
+      confessions = files[3] && files[3].sections ? files[3] : null;
+      deeper = files[4] && files[4].nodes ? files[4] : null;
       start();
     })
     .catch(function () {
