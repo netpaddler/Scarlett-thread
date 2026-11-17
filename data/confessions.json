@@ -322,6 +322,54 @@
         "explain": "Faith receives Christ and rests on him alone. Jesus says the bread of life is himself, received by coming and believing. This catechism answer does not cite John 6. It cites Ephesians 2:8-9, John 20:30-31, Galatians 2:15-16, and Philippians 3:3-11. Do not turn the Bethlehem wordplay into this doctrine.",
         "relevant_proofs": "Ephesians 2:8-9; John 20:30-31; Galatians 2:15-16; Philippians 3:3-11"
       }
+    ],
+    "dt_moses": [
+      {
+        "section": "wcf-7-5",
+        "line": "The confession reads the whole law given through Moses as one administration of the covenant of grace, pointing forward to Christ.",
+        "explain": "This paragraph says that before Christ came, the same covenant of grace was administered by promises, prophecies, sacrifices, and other types and ordinances given to the people of the Jews, all foresignifying Christ to come. Deuteronomy is Moses explaining that body of law to Israel. The confession does not claim that any particular verse of Deuteronomy names Christ. It claims that the arrangement as a whole pointed to him.",
+        "relevant_proofs": "2 Corinthians 3:6-9; Hebrews 8-10; Hebrews 11:13"
+      }
+    ],
+    "dt_prophet": [
+      {
+        "section": "wlc-42",
+        "line": "The catechism lists the office of prophet among the offices Christ was anointed to hold, and prints this Deuteronomy verse among its proofs.",
+        "explain": "The answer explains why our mediator is called Christ: he was anointed and set apart to execute the offices of prophet, priest, and king. Deuteronomy 18:18, the promise read at this stop, is one of the Scripture proofs printed with the answer, alongside Acts 3:21-22. So the identification of the promised prophet with Christ is the confessional reading, and the Standards cite this verse for it.",
+        "relevant_proofs": "Acts 3:21-22; Deuteronomy 18:18; Hebrews 1:1-2"
+      }
+    ],
+    "dt_hanged": [
+      {
+        "section": "wsc-27",
+        "line": "The catechism includes the cursed death of the cross in its account of Christ's humiliation, and prints Paul's use of this verse among its proofs.",
+        "explain": "The answer describes Christ's humiliation as his being born in a low condition, made under the law, undergoing the miseries of this life, the wrath of God, and the cursed death of the cross. Galatians 3:13, where Paul quotes this Deuteronomy law, is one of the proofs printed with the answer. Deuteronomy itself is giving a burial rule. The confessional claim rests on Paul's use of it.",
+        "relevant_proofs": "Galatians 3:13; Isaiah 53:10; Philippians 2:8"
+      }
+    ],
+    "nt_acts3": [
+      {
+        "section": "wlc-42",
+        "line": "Peter's sermon is one of the proofs the catechism prints for Christ holding the office of prophet.",
+        "explain": "The answer says Christ was set apart and furnished to execute the offices of prophet, priest, and king. Acts 3:21-22, the passage at this stop, is printed among its Scripture proofs, together with Deuteronomy 18:18. The catechism is reading Peter's sermon the same way Peter does, as naming Jesus the prophet Moses promised.",
+        "relevant_proofs": "Acts 3:21-22; Deuteronomy 18:18; Luke 4:18, 21"
+      }
+    ],
+    "nt_gal3": [
+      {
+        "section": "wsc-27",
+        "line": "The verse at this stop is one of the proofs printed with the catechism's answer on Christ's humiliation.",
+        "explain": "The answer names the cursed death of the cross as part of what Christ's humiliation consisted in, and Galatians 3:13 is among the Scripture proofs listed with it. Paul's sentence, that Christ redeemed us from the curse of the law by becoming a curse for us, is the text the Standards lean on at that point.",
+        "relevant_proofs": "Galatians 3:13; Galatians 4:4; Philippians 2:8"
+      }
+    ],
+    "nt_rom10": [
+      {
+        "section": "wcf-7-6",
+        "line": "The confession teaches that there is one covenant of grace under two administrations, and prints this passage among its proofs.",
+        "explain": "The paragraph says the ordinances under the gospel are fewer and simpler but hold the same covenant forth more fully, and that there are not two covenants of grace differing in substance but one and the same under various dispensations. Romans 10:6-10 is among the Scripture proofs printed with it. That is why a Reformed reader is unsurprised to find Paul taking words Moses spoke about the commandment and applying them to the gospel.",
+        "relevant_proofs": "Romans 10:6-10; 2 Corinthians 3:9-11; Hebrews 4:2"
+      }
     ]
   },
   "paths": {
@@ -370,6 +418,22 @@
         "explain": "Luke calls him Savior, and Matthew 1:21 gives his name and explains his saving work. The catechism's proof is Matthew 1:21.",
         "relevant_proofs": "Matthew 1:21"
       }
+    ],
+    "deut_book": [
+      {
+        "section": "wcf-7-5",
+        "line": "The confession reads the law given through Moses as one administration of the covenant of grace, sufficient for its time and pointing to Christ.",
+        "explain": "This paragraph is the frame a Reformed reader brings to a walk through Deuteronomy. The promises, prophecies, sacrifices, and ordinances given to Israel were sufficient and effective for that time, through the work of the Spirit, to build up the elect in faith in the promised Messiah. The book is not a dead letter and not a finished system. It is one stage of one covenant.",
+        "relevant_proofs": "2 Corinthians 3:6-9; Hebrews 8-10; 1 Corinthians 10:1-4"
+      }
+    ],
+    "deut_nt": [
+      {
+        "section": "wcf-7-6",
+        "line": "The confession says the old and new administrations are not two covenants but one, which is why the apostles can quote Moses as speaking to the church.",
+        "explain": "The paragraph ends by saying that there are not two covenants of grace differing in substance, but one and the same under various dispensations. Romans 10:6-10, one of the stops on this path, is printed among its proofs. That one covenant is the reason an apostle can take a line from Deuteronomy and address it to readers in Rome or Galatia without arguing that the verse has changed meaning.",
+        "relevant_proofs": "Romans 10:6-10; Galatians 3:8-9, 14, 16; Hebrews 4:2"
+      }
     ]
   },
   "theology": {
@@ -390,14 +454,31 @@
       "jesus": "Jesus is the only mediator, truly God and truly man, and the anointed prophet, priest, and king.",
       "magi": "The wise men worship the child they call king. Their visit displays his kingship, but the catechisms do not interpret each gift or identify the visitors with a particular prophecy.",
       "bread_of_life": "Coming to Jesus and believing in him is faith, receiving and resting on Christ alone for salvation. This doctrine comes from Jesus' explanation in John 6, not from a wordplay on Bethlehem.",
-      "isaiah": "Reformed teaching takes a prophet's words as God's own speech given through a man, so these sentences are Scripture and not religious opinion. Isaiah's part was to speak. What the New Testament announces as fulfillment is God's own work. The God who spoke through Isaiah is the one who brought it about."
+      "isaiah": "Reformed teaching takes a prophet's words as God's own speech given through a man, so these sentences are Scripture and not religious opinion. Isaiah's part was to speak. What the New Testament announces as fulfillment is God's own work. The God who spoke through Isaiah is the one who brought it about.",
+      "dt_moses": "Reformed readers take Deuteronomy as covenant preaching, not as a legal code dropped into the middle of the Bible. Moses is calling a people God already rescued to live as his people in the land he promised. The Confession places the whole arrangement under the covenant of grace, administered for that time by promises, sacrifices, and ordinances that pointed to Christ. Read that way, the book's commands rest on what God has already done.",
+      "dt_decalogue": "The Reformed tradition reads the preface to the ten commandments as setting the pattern for all obedience. God names himself as the one who brought Israel out of slavery before he gives a command. Obedience is the response of a people already redeemed, not the price of redemption. The Standards treat the moral law summarized in these commandments as binding on everyone, while denying that keeping it is how anyone is justified.",
+      "dt_shema": "Reformed teaching takes this passage as the summary of what God requires in the first table of the law: that he be loved with the whole person. Jesus' use of it settles the matter for Christian readers, since he calls it the great and first commandment. The tradition also notes what the passage assumes, that such love is commanded and not merely invited, which is part of why it teaches that the law shows a reader his need before it shows him his duty.",
+      "dt_wilderness_test": "Reformed readers treat the wilderness years as God's fatherly discipline of a people he had already claimed, which is how Deuteronomy 8:5 puts it. The testing is not God finding out what he did not know. It is God exposing what was in Israel's heart, for Israel's sake. Christian readers then set Jesus' forty days beside Israel's forty years. The comparison is an interpretation, and a common one, but Matthew states only the quotation.",
+      "dt_prophet": "The Westminster Standards name prophet as one of the three offices Christ holds, and they cite Deuteronomy 18:18 for it. On that reading the promise is not exhausted by Israel's later prophets, though it includes them, because the prophet promised here speaks the words God puts in his mouth with an authority that makes refusal answerable to God. Reformed readers take the apostles' identification of that prophet as Jesus to be the promise's intended end.",
+      "dt_hanged": "Reformed theology takes this law as the Old Testament ground for understanding the cross as a curse borne. The law itself is about burial and about keeping the land undefiled. Paul's use of it in Galatians is what makes it doctrine, and the Shorter Catechism follows him by naming the cursed death of the cross in its answer on Christ's humiliation. The tradition is careful here: Deuteronomy supplies the vocabulary of curse, and the apostle supplies the application.",
+      "dt_curses": "This passage is central to the Reformed account of what the law does to a sinner. The law promises life to the one who keeps it and pronounces a curse on the one who does not, and the final curse covers the whole law rather than any single command. The tradition concludes that no one is justified by the law, not because the law is faulty, but because the demand is total. That conclusion is Paul's own in Galatians 3.",
+      "dt_word_near": "Reformed readers hear this passage as grace inside the law's own sermon. Moses has just finished setting out blessing and curse, and he turns to say that the word is not out of reach. The tradition reads the nearness of the word as God's own doing rather than a comment on human ability, and it points to Paul, who takes the same words and makes them describe the gospel that is preached and believed.",
+      "dt_song": "The Song of Moses holds together two things the Reformed tradition insists on keeping together: that God is just in all his ways, and that his people are unfaithful. The song says both in the same breath. It also shows God's purposes reaching past Israel's failure, which Paul takes up in Romans when he quotes verse 21 about a foolish nation. On that reading the song is more than a warning.",
+      "dt_death": "Reformed readers note what the book does not do at the end: it does not supply the prophet it promised. Moses dies outside the land, and the last word about him is that no one like him has arisen. Many in the tradition hear the book leaving a space open. That reading is interpretive, and the map marks it dashed, because Deuteronomy says only that no such prophet had arisen, not that one was still to come.",
+      "nt_temptation": "Reformed writers have long read the wilderness testing as Christ standing where Adam and Israel fell, and standing by the word of God rather than by raw power. The three answers come from Deuteronomy, which is Israel's own covenant sermon, and that choice is part of the point. The tradition also takes the scene as a defense of Scripture's sufficiency: Jesus meets temptation with it is written.",
+      "nt_greatest": "That Jesus answers with Deuteronomy 6:5 is the warrant for the Reformed treatment of the moral law as a summary of love to God and neighbor. The Standards arrange the commandments under those two heads for exactly this reason. Jesus is not replacing the law with a principle. He is naming what the law was always asking for.",
+      "nt_acts3": "Peter's sermon is one of the places the Reformed tradition grounds the prophetic office of Christ, and the Larger Catechism prints it among the proofs. What Reformed readers notice is the shape of the argument. Peter does not invent a meaning for Deuteronomy 18. He quotes it to people who knew it and then says who the prophet is, which is how the apostles read the Old Testament generally.",
+      "nt_gal3": "This passage carries a great deal of Reformed doctrine. The law pronounces a curse on everyone who fails to keep it, Christ took that curse in his death, and the blessing promised to Abraham therefore reaches the nations by faith. The Standards follow Paul in naming the cursed death of the cross as part of Christ's humiliation. The tradition also notes that Paul joins two separate Deuteronomy texts to say it, and that the joining is his argument.",
+      "nt_rom10": "Reformed readers take Romans 10 as the clearest statement of how the word works: near, preached, heard, believed, confessed. It also shows an apostle handling the Old Testament with freedom and with care at once, reapplying Moses' words about the commandment to the message about Christ. The Confession's teaching that there is one covenant of grace under two administrations is what makes that move intelligible rather than arbitrary, and Romans 10:6-10 is printed among its proofs."
     },
     "paths": {
       "week1_seed": "This week follows promises that Reformed theology reads within the one covenant of grace. Christ is their substance and fulfillment.",
       "week2_king": "This week follows the promise of the king. The catechisms identify kingship as one of Christ's three offices.",
       "week3_sign": "This week centers on the incarnation announced and fulfilled: the eternal Son took a true human nature and was born of Mary.",
       "week4_town": "This week follows the promised ruler to the humble circumstances of his birth. The town's name is not itself a prophecy.",
-      "christmas": "Christmas is the incarnation and birth of the only redeemer, truly God and truly man in one person."
+      "christmas": "Christmas is the incarnation and birth of the only redeemer, truly God and truly man in one person.",
+      "deut_book": "Walking Deuteronomy straight through puts a Reformed reader in front of the law as covenant preaching. God rescued a people, bound himself to them, told them how to live, and set blessing and curse in front of them. The Confession treats that whole arrangement as one administration of the covenant of grace, sufficient for its time and pointing to Christ. The book ends without the prophet it promised, which is where the second path begins.",
+      "deut_nt": "This path shows the apostles and Jesus himself reading Deuteronomy as a word that still speaks. Reformed theology accounts for that with one covenant under two administrations, which is the Confession's own language. The quotations are not proof texts pulled loose from their setting. Each one is used for something the Deuteronomy passage was already saying, with the one addition that the apostles make openly: that the promise and the curse and the near word all come to rest on Christ."
     }
   }
 }

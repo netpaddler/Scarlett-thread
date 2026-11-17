@@ -4,7 +4,7 @@ Scarlet Thread tells Bible stories as one connected graph that points to Jesus C
 
 The perspective is Reformed and Christ-centered, in the line of the Westminster Standards. The wording is meant for a new believer. Scripture quotations are short excerpts from the ESV.
 
-This first version is an Advent map for 2026. It has 17 nodes, 21 edges, and five guided paths: the four Advent Sundays, then Christmas Day.
+This first version is an Advent map for 2026. It has 17 nodes, 21 edges, and five guided paths: the four Advent Sundays, then Christmas Day. A second book, a pilot through Deuteronomy, sits beside it and is described below.
 
 ## How to read it
 
@@ -70,6 +70,24 @@ The map lives in `data/advent-graph.json`. Do not change the Scripture quotes or
 
 Some stops on a guided path sit next to each other without a direct edge. The app says so. It does not invent a line to fill the gap. Under Lines on the map, each stop names the edges it really has. Those usually run to Jesus or to the birth rather than to the stop beside it, which is why most of a week's rail is dotted.
 
+## The Deuteronomy book view
+
+Beside the Advent map there is a second book, `data/deuteronomy-graph.json`, labeled "Deuteronomy (pilot)". A switcher under the introduction moves between the two. Switching rebuilds the walk, the legend, the picker, and the drawing. Advent is the default and reads exactly as it did before.
+
+The Deuteronomy map has 15 nodes, 14 edges, and two paths. "Through the book" reads Moses' last sermon in order, ten stops from the plains of Moab to his grave. "Deuteronomy in the New Testament" sets each Deuteronomy text beside the writer who quotes it, twelve stops. Where a New Testament writer quotes two Deuteronomy texts, that writer stands between them on the path.
+
+The file uses the same schema as the Advent map, with extra `meta` keys that carry the wording for the book: `eyebrow`, `intro_title`, `intro_text`, `path_word`, `subtitle`, `picker_label`, `graph_label`, `path_line_default`, `key_note`, and `tabs`. `path_word` is the word the interface uses for one guided reading, "path" here and "week" for Advent. The Advent file has none of these keys, so it falls back to the copy the page ships with.
+
+Two edge types are new. `quoted_by` is a New Testament writer quoting Deuteronomy. Most of those quotations are marked in the text with a phrase such as "it is written", "Moses said", or "first Moses says"; two are not, and the notes on those stops say so. `book_sequence` is a link Deuteronomy makes inside itself, where the book carries the reader from one of these passages to another in its own words. Both types carry the same `explicit` and `typology` flags as every other edge.
+
+Where a quotation differs in wording from the ESV of Deuteronomy, the edge note gives both wordings. It does not say which Greek text the writer was using. No source available here could settle that, so the notes state the difference and leave the cause alone.
+
+Node ids and path ids are unique across both books, so a link names the book as well as the stop. `#walk/deut_nt/5` and `#explore/dt_prophet` both open Deuteronomy. `#explore/deuteronomy` opens its map with nothing selected. Advent links are unchanged, including the plain `#explore`.
+
+`data/deeper.json` and `data/confessions.json` are shared between the books, and the Deuteronomy ids were added to both. `data/sermons.json` was not touched. No Deuteronomy sermon links were added, because the Faith Presbyterian channel has not been searched for them. That is open work, not a finding.
+
+Go deepest on the Deuteronomy stops reuses Westminster sections already in `data/confessions.json`, whose text and proofs were checked against the OPC editions in the earlier audit. No new section was added. The OPC proof-text PDFs are page scans with no text layer, so a new section's proofs could not be verified, and the rule is to leave a section out rather than guess at it.
+
 ## Comments and requests
 
 The form posts to a Cloudflare Worker. The Worker opens a public GitHub issue in this repository for each submission, labels it `map-request`, and adds a short reply. A GET to the same Worker returns the labeled issues and their comments, stripped of HTML, so the site can list them. Nothing is stored anywhere else.
@@ -91,7 +109,7 @@ Issues created this way are public, and so are the names people type. The form s
 
 ## Run it locally
 
-The app is static. It has no build step and no server of its own. The browser loads `data/advent-graph.json`.
+The app is static. It has no build step and no server of its own. The browser loads `data/advent-graph.json` and `data/deuteronomy-graph.json`.
 
 From the project folder:
 
@@ -133,6 +151,7 @@ The ESV excerpts and references were independently checked against esv.org in No
 
 - `index.html`, `styles.css`, `app.js`: the site.
 - `data/advent-graph.json`: the Advent map.
+- `data/deuteronomy-graph.json`: the Deuteronomy map.
 - `data/sermons.json`: Faith Presbyterian sermon links for each node.
 - `data/confessions.json`: Westminster Confession and Catechism quotations for each stop.
 - `data/deeper.json`: the Go deeper reading for each stop and each week.

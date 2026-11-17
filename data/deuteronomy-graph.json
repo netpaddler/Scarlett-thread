@@ -1,0 +1,422 @@
+{
+  "meta": {
+    "title": "Scarlet Thread: Deuteronomy",
+    "version": "0.1",
+    "translation": "ESV",
+    "notes": "confidence 'explicit' = a direct textual or narrative connection; read the cited passages and note for the exact claim. 'typology' = interpretive; faithful readers differ. Quotes are short ESV excerpts verified against esv.org. Where a New Testament writer quotes Deuteronomy from the Greek, the note says so and gives both wordings.",
+    "eyebrow": "Deuteronomy, a pilot",
+    "intro_title": "Moses preached the law one last time. Jesus and the apostles quoted it back.",
+    "intro_text": "Pick a path and move one stop at a time. Or open the map and follow the lines.",
+    "path_word": "path",
+    "subtitle": "a walk through Deuteronomy",
+    "picker_label": "Deuteronomy paths",
+    "graph_label": "Deuteronomy map of texts in the book and the New Testament passages that quote them",
+    "tabs": {
+      "walk_long": "Walk a path",
+      "walk_short": "Walk"
+    },
+    "path_line_default": "Each path follows one thread to Jesus.",
+    "key_note": "A stop's line often runs to the New Testament text that quotes it, not to the stop beside it. That is why parts of a path are dotted. Open a stop to see the lines it does have."
+  },
+  "paths": [
+    {
+      "id": "deut_book",
+      "title": "Through the book",
+      "nodes": [
+        "dt_moses",
+        "dt_decalogue",
+        "dt_shema",
+        "dt_wilderness_test",
+        "dt_prophet",
+        "dt_hanged",
+        "dt_curses",
+        "dt_word_near",
+        "dt_song",
+        "dt_death"
+      ]
+    },
+    {
+      "id": "deut_nt",
+      "title": "Deuteronomy in the New Testament",
+      "nodes": [
+        "dt_wilderness_test",
+        "nt_temptation",
+        "dt_shema",
+        "nt_greatest",
+        "dt_prophet",
+        "nt_acts3",
+        "dt_curses",
+        "nt_gal3",
+        "dt_hanged",
+        "dt_word_near",
+        "nt_rom10",
+        "dt_song"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "dt_moses",
+      "label": "Moses Explains the Law",
+      "type": "event",
+      "refs": [
+        "Deuteronomy 1:1-5"
+      ],
+      "quote": {
+        "ref": "Deuteronomy 1:5",
+        "text": "Beyond the Jordan, in the land of Moab, Moses undertook to explain this law"
+      },
+      "summary": "Israel is camped east of the Jordan, about to enter the land. Moses is old and will not go in with them. He gathers the people and goes back over God's law one more time. Deuteronomy is that last sermon."
+    },
+    {
+      "id": "dt_decalogue",
+      "label": "The Ten Commandments",
+      "type": "teaching",
+      "refs": [
+        "Deuteronomy 5:6-21"
+      ],
+      "quote": {
+        "ref": "Deuteronomy 5:6",
+        "text": "I am the LORD your God, who brought you out of the land of Egypt, out of the house of slavery."
+      },
+      "summary": "Moses repeats the ten commandments the people heard at Horeb. He begins where God began, by naming who is speaking: the God who brought them out of Egypt. The commands rest on that rescue."
+    },
+    {
+      "id": "dt_shema",
+      "label": "Hear, O Israel",
+      "type": "teaching",
+      "refs": [
+        "Deuteronomy 6:4-9",
+        "Deuteronomy 6:13",
+        "Deuteronomy 6:16"
+      ],
+      "quote": {
+        "ref": "Deuteronomy 6:5",
+        "text": "You shall love the LORD your God with all your heart and with all your soul and with all your might."
+      },
+      "summary": "The center of the sermon. God is one, and he is to be loved with everything a person has. Parents are told to talk about these words at home and on the road. Jesus later quoted three lines from this chapter."
+    },
+    {
+      "id": "dt_wilderness_test",
+      "label": "Forty Years of Testing",
+      "type": "teaching",
+      "refs": [
+        "Deuteronomy 8:1-5"
+      ],
+      "quote": {
+        "ref": "Deuteronomy 8:3",
+        "text": "that man does not live by bread alone, but man lives by every word that comes from the mouth of the LORD."
+      },
+      "summary": "Moses explains the forty years in the desert. The hunger and the manna were a test. They were meant to teach Israel that life comes from God's word and not from bread alone."
+    },
+    {
+      "id": "dt_prophet",
+      "label": "A Prophet Like Moses",
+      "type": "prophecy",
+      "refs": [
+        "Deuteronomy 18:15-19"
+      ],
+      "quote": {
+        "ref": "Deuteronomy 18:15",
+        "text": "The LORD your God will raise up for you a prophet like me from among you, from your brothers"
+      },
+      "summary": "God promises a prophet like Moses, raised up from among the people, and tells Israel to listen to him. The New Testament applies this promise to Jesus."
+    },
+    {
+      "id": "dt_hanged",
+      "label": "A Hanged Man Is Cursed",
+      "type": "teaching",
+      "refs": [
+        "Deuteronomy 21:22-23"
+      ],
+      "quote": {
+        "ref": "Deuteronomy 21:23",
+        "text": "for a hanged man is cursed by God."
+      },
+      "summary": "A law about a body left hanging on a tree. The man under that sentence is called cursed by God. Paul later quoted this verse to speak about the cross."
+    },
+    {
+      "id": "dt_curses",
+      "label": "Blessing and Curse",
+      "type": "teaching",
+      "refs": [
+        "Deuteronomy 27:26",
+        "Deuteronomy 28:1-2",
+        "Deuteronomy 28:15"
+      ],
+      "quote": {
+        "ref": "Deuteronomy 27:26",
+        "text": "Cursed be anyone who does not confirm the words of this law by doing them."
+      },
+      "summary": "Moses sets blessing and curse in front of the people. Obey, and the blessings come. Disobey, and the curses come. The last curse falls on anyone who does not keep the whole law."
+    },
+    {
+      "id": "dt_word_near",
+      "label": "The Word Is Very Near",
+      "type": "promise",
+      "refs": [
+        "Deuteronomy 30:11-20"
+      ],
+      "quote": {
+        "ref": "Deuteronomy 30:14",
+        "text": "But the word is very near you. It is in your mouth and in your heart, so that you can do it."
+      },
+      "summary": "Moses says the commandment is not out of reach. It is not in heaven or across the sea. It is near, in the mouth and in the heart. Then he sets life and death before the people and tells them to choose life."
+    },
+    {
+      "id": "dt_song",
+      "label": "The Song of Moses",
+      "type": "teaching",
+      "refs": [
+        "Deuteronomy 32:1-43"
+      ],
+      "quote": {
+        "ref": "Deuteronomy 32:4",
+        "text": "The Rock, his work is perfect, for all his ways are justice."
+      },
+      "summary": "Moses teaches Israel a song to keep in memory. It calls God the Rock, whose work is perfect, and it warns that the people will turn away. Paul later quoted a line from it."
+    },
+    {
+      "id": "dt_death",
+      "label": "The Death of Moses",
+      "type": "event",
+      "refs": [
+        "Deuteronomy 34:1-12"
+      ],
+      "quote": {
+        "ref": "Deuteronomy 34:10",
+        "text": "And there has not arisen a prophet since in Israel like Moses, whom the LORD knew face to face"
+      },
+      "summary": "Moses climbs Mount Nebo, sees the land, and dies without entering it. The book closes by saying that no prophet like him has arisen in Israel since."
+    },
+    {
+      "id": "nt_temptation",
+      "label": "Jesus Is Tested in the Wilderness",
+      "type": "event",
+      "refs": [
+        "Matthew 4:1-11",
+        "Luke 4:1-13"
+      ],
+      "quote": {
+        "ref": "Matthew 4:4",
+        "text": "Man shall not live by bread alone, but by every word that comes from the mouth of God."
+      },
+      "summary": "Jesus is led into the wilderness and tested for forty days. He answers the devil three times, and all three answers are lines from Deuteronomy."
+    },
+    {
+      "id": "nt_greatest",
+      "label": "The Great Commandment",
+      "type": "teaching",
+      "refs": [
+        "Matthew 22:34-40",
+        "Mark 12:28-31"
+      ],
+      "quote": {
+        "ref": "Matthew 22:37",
+        "text": "You shall love the Lord your God with all your heart and with all your soul and with all your mind."
+      },
+      "summary": "Asked which commandment is the greatest, Jesus quotes Deuteronomy 6:5. Love God with everything. He sets love of neighbor beside it as the second."
+    },
+    {
+      "id": "nt_acts3",
+      "label": "Peter Names the Prophet",
+      "type": "event",
+      "refs": [
+        "Acts 3:17-26",
+        "Acts 7:37"
+      ],
+      "quote": {
+        "ref": "Acts 3:22",
+        "text": "The Lord God will raise up for you a prophet like me from your brothers"
+      },
+      "summary": "Peter preaches at the temple and points to the prophet Moses promised. He quotes Deuteronomy 18 and says the promise is about Jesus. Stephen quotes the same verse in his own defense."
+    },
+    {
+      "id": "nt_gal3",
+      "label": "Christ Became a Curse",
+      "type": "teaching",
+      "refs": [
+        "Galatians 3:10-14"
+      ],
+      "quote": {
+        "ref": "Galatians 3:13",
+        "text": "Christ redeemed us from the curse of the law by becoming a curse for us"
+      },
+      "summary": "Paul says the law's curse rests on everyone who fails to keep it. Then he says Christ took that curse himself. He quotes two verses from Deuteronomy to say it."
+    },
+    {
+      "id": "nt_rom10",
+      "label": "The Word of Faith",
+      "type": "teaching",
+      "refs": [
+        "Romans 10:5-21"
+      ],
+      "quote": {
+        "ref": "Romans 10:8",
+        "text": "The word is near you, in your mouth and in your heart"
+      },
+      "summary": "Paul takes Moses' words about the word being near and applies them to the message about Christ. The word is near, in the mouth and in the heart, and it is received by faith."
+    }
+  ],
+  "edges": [
+    {
+      "from": "dt_wilderness_test",
+      "to": "nt_temptation",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 8:3",
+        "Matthew 4:4"
+      ],
+      "note": "Jesus says 'It is written' and quotes Deuteronomy 8:3 (Matthew 4:4). The citation is explicit. Matthew reads 'the mouth of God' where Deuteronomy reads 'the mouth of the LORD'."
+    },
+    {
+      "from": "dt_shema",
+      "to": "nt_temptation",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 6:13",
+        "Deuteronomy 6:16",
+        "Matthew 4:7",
+        "Matthew 4:10"
+      ],
+      "note": "Two of Jesus' three answers come from this chapter, and both are introduced with the words it is written. Matthew 4:7 quotes Deuteronomy 6:16 almost word for word. Matthew 4:10 reads 'You shall worship the Lord your God and him only shall you serve' where Deuteronomy 6:13 reads 'It is the LORD your God you shall fear. Him you shall serve'. Matthew has worship where Deuteronomy has fear, and he adds the word only. The quotation is marked either way."
+    },
+    {
+      "from": "dt_shema",
+      "to": "nt_greatest",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 6:5",
+        "Matthew 22:37-38"
+      ],
+      "note": "Jesus quotes Deuteronomy 6:5 and calls it the great and first commandment (Matthew 22:37-38). Matthew reads 'with all your mind' where Deuteronomy reads 'with all your might'. Mark 12:30 has four terms, adding strength. Matthew uses no citation formula here. He gives the words as Jesus' answer, and the source is not in dispute."
+    },
+    {
+      "from": "dt_prophet",
+      "to": "nt_acts3",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 18:15-19",
+        "Acts 3:22",
+        "Acts 3:23",
+        "Acts 7:37"
+      ],
+      "note": "Peter names Moses as the speaker and quotes the promise (Acts 3:22), then says God sent Jesus. Stephen quotes it as well (Acts 7:37). Acts reads 'The Lord God' where Deuteronomy reads 'The LORD your God', and does not carry 'from among you'. Acts 3:23 is not a word for word quotation of Deuteronomy 18:19: Deuteronomy says God will require it of him, and Acts says that soul shall be destroyed from the people. Identifying the prophet as Jesus is Peter's own claim, running through the sermon to Acts 3:26."
+    },
+    {
+      "from": "dt_curses",
+      "to": "nt_gal3",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 27:26",
+        "Galatians 3:10"
+      ],
+      "note": "Paul writes 'for it is written' and quotes Deuteronomy 27:26 (Galatians 3:10). His wording differs: 'Cursed be everyone who does not abide by all things written in the Book of the Law, and do them' where Deuteronomy reads 'Cursed be anyone who does not confirm the words of this law by doing them'. Everyone and all sharpen the point Deuteronomy is already making, that the curse covers the whole law."
+    },
+    {
+      "from": "dt_hanged",
+      "to": "nt_gal3",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 21:23",
+        "Galatians 3:13"
+      ],
+      "note": "Paul quotes Deuteronomy 21:23 with 'for it is written' (Galatians 3:13). He gives it as 'Cursed is everyone who is hanged on a tree', where Deuteronomy reads 'a hanged man is cursed by God'. Paul says everyone and does not repeat the words by God. Deuteronomy is a law about a body on a tree after an execution. Applying the curse it names to the crucifixion is Paul's argument, not Deuteronomy's."
+    },
+    {
+      "from": "dt_word_near",
+      "to": "nt_rom10",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 30:12-14",
+        "Romans 10:6-8"
+      ],
+      "note": "Paul quotes Deuteronomy 30:14 in Romans 10:8. He also reworks verses 12 and 13. Deuteronomy asks who will go up to heaven or over the sea to bring the commandment. Paul asks who will bring Christ down from heaven or up from the dead, and puts the abyss where Deuteronomy has the sea. The quotation of verse 14 is word for word. The reworking of 12 and 13 is Paul's own and he makes the changes openly."
+    },
+    {
+      "from": "dt_song",
+      "to": "nt_rom10",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 32:21",
+        "Romans 10:19"
+      ],
+      "note": "Paul writes 'First Moses says' and quotes Deuteronomy 32:21 (Romans 10:19). The wording shifts from third person to second: Deuteronomy says God will make them jealous with those who are no people, and Paul says I will make you jealous of those who are not a nation. Naming Moses as the speaker is Paul's own, and it is a fair reading, since Deuteronomy 31:30 says Moses spoke the song."
+    },
+    {
+      "from": "dt_decalogue",
+      "to": "dt_shema",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 5:31",
+        "Deuteronomy 6:1"
+      ],
+      "note": "The link runs through Deuteronomy 5:31, where God tells Moses to stand by him and says he will give him the whole commandment and the statutes and the rules to teach. Deuteronomy 6:1 picks up those same three terms as Moses begins to teach them. Note that 6:1 introduces what follows rather than pointing back at the ten words themselves. The site does not quote 6:1 because the ESV sets it with em dashes."
+    },
+    {
+      "from": "dt_shema",
+      "to": "dt_wilderness_test",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 7:11",
+        "Deuteronomy 8:1"
+      ],
+      "note": "Chapters 6 to 8 are one continuous address. Deuteronomy 8:1 resumes 'The whole commandment that I command you today', the same formula used at 5:31 and again at 7:11. This is a narrative link inside one sermon. It is not a quotation, and it is not a back reference to chapter 6 in particular."
+    },
+    {
+      "from": "dt_curses",
+      "to": "dt_word_near",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 30:1"
+      ],
+      "note": "Deuteronomy 30:1 points back by name to 'the blessing and the curse, which I have set before you'. That is the list in chapters 27 and 28. The text makes the link itself."
+    },
+    {
+      "from": "dt_word_near",
+      "to": "dt_song",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 31:19",
+        "Deuteronomy 31:22",
+        "Deuteronomy 31:30"
+      ],
+      "note": "Chapter 31 turns from the law to the song. God tells Moses to write the song and teach it (31:19), Moses writes it the same day (31:22), and he speaks it to the whole assembly (31:30). The sequence is in the narrative. It joins the law as a whole to the song, rather than this one passage in chapter 30 to the song."
+    },
+    {
+      "from": "dt_song",
+      "to": "dt_death",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Deuteronomy 32:44-45",
+        "Deuteronomy 33:1",
+        "Deuteronomy 34:5"
+      ],
+      "note": "Moses finishes reciting the song (32:44-45), blesses the tribes 'before his death' (33:1), and dies in Moab (34:5). The book itself runs from the song to the death."
+    },
+    {
+      "from": "dt_death",
+      "to": "dt_prophet",
+      "type": "promise_narrowing",
+      "confidence": "typology",
+      "refs": [
+        "Deuteronomy 18:15",
+        "Deuteronomy 34:10"
+      ],
+      "note": "Deuteronomy 34:10 says no prophet like Moses has arisen in Israel since. Many readers set that beside the promise of a prophet like Moses in 18:15 and conclude that the promise was still waiting when the book closed. The words do echo each other: 18:15 promises a prophet 'like me', and 34:10 says none 'like Moses' has arisen. That echo is in the text. The conclusion drawn from it is not, and faithful readers differ on how much weight 34:10 carries."
+    }
+  ]
+}
