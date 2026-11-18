@@ -102,6 +102,7 @@
   var sermonsByBook = {};
   var confessions = null;
   var deeper = null;
+  var timeline = null;
   var nodesById = new Map();
   var exploreCy = null;
   var graphPending = false;
@@ -687,6 +688,7 @@
         ensureGraph(function () {
           if (opts.frame && state.selectedId) frameNode(state.selectedId, false);
         });
+        tlRevealCurrent(false);
       });
     }
   }
@@ -1464,11 +1466,13 @@
       evt.target.addClass("hover");
       evt.target.connectedEdges().addClass("hover");
       container.style.cursor = "pointer";
+      tlHover(evt.target.id());
     });
     exploreCy.on("mouseout", "node", function (evt) {
       evt.target.removeClass("hover");
       evt.target.connectedEdges().removeClass("hover");
       container.style.cursor = "";
+      tlHover(null);
     });
     exploreCy.on("mouseover", "edge", function (evt) {
       evt.target.addClass("hover");
@@ -1582,6 +1586,7 @@
   function renderPanel() {
     var panel = document.getElementById("panel");
     panel.replaceChildren();
+    syncTimeline();
     if (!state.selectedId) {
       panel.append(
         h("p", { class: "eyebrow", text: "The map" }),
@@ -1701,6 +1706,537 @@
       zoom: next,
       pan: { x: center.x - (center.x - pan.x) * ratio, y: center.y - (center.y - pan.y) * ratio }
     }, { duration: 200, easing: "ease-out-cubic" });
+  }
+
+  /* Timeline
+     A band above the map. The top track holds the dates of this map's own
+     stops, the bottom track holds world history, and a row of chips gives the
+     modern name of each place. Everything it shows comes from
+     data/timeline.json. Nothing is dated here in code. */
+
+  var TL_STORE = "scarlet-thread-timeline";
+  var TL_LANE = 36;
+  var TL_HEAD = 6;
+  var TL_EMPTY_W = 30;
+  var TL_ITEM_W = 112;
+  var TL_UNDATED_W = 196;
+  var TL_MIN_ZOOM = 0.55;
+  var TL_MAX_ZOOM = 2.8;
+  var TL_TRACKS = [
+    { key: "bible", label: "The Bible" },
+    { key: "world", label: "World history" }
+  ];
+  var TL_CERTAINTY = {
+    firm: "Well attested",
+    approximate: "Approximate",
+    disputed: "Debated",
+    traditional: "Traditional",
+    undated: "Not dated"
+  };
+  var tl = {
+    built: null,
+    zoom: 1,
+    detail: null,
+    detailAuto: false,
+    closedFor: null,
+    byNode: Object.create(null),
+    byId: Object.create(null),
+    ctx: null
+  };
+
+  function tlInBook(entry) {
+    return !Array.isArray(entry.books) || entry.books.indexOf(bookKey) >= 0;
+  }
+
+  function tlNodes(entry) {
+    return (entry.nodes || []).filter(function (id) { return nodesById.has(id); });
+  }
+
+  function tlTextWidth(text, weight, size) {
+    if (!tl.ctx) {
+      var canvas = document.createElement("canvas");
+      tl.ctx = canvas.getContext ? canvas.getContext("2d") : null;
+    }
+    if (!tl.ctx) return String(text).length * size * 0.58;
+    tl.ctx.font = weight + " " + size + "px " + (getComputedStyle(document.body).fontFamily || "sans-serif");
+    return tl.ctx.measureText(String(text)).width;
+  }
+
+  function tlYearLabel(year) {
+    if (year < 0) return -year + " BC";
+    if (year === 0) return "AD 1";
+    return "AD " + year;
+  }
+
+  /* Each century is as wide as the number of things that start in it, so the
+     crowded years around the birth of Jesus are not a single smear. The axis
+     labels every century it has room for, and the note under the band says the
+     scale is uneven. */
+  function tlScale(items, pad) {
+    var dated = items.filter(function (item) { return item.start != null; });
+    if (!dated.length) return null;
+    var min = Infinity;
+    var max = -Infinity;
+    dated.forEach(function (item) {
+      min = Math.min(min, item.start);
+      max = Math.max(max, item.end != null ? item.end : item.start);
+    });
+    var first = Math.floor(min / 100);
+    var last = Math.floor(max / 100) + 1;
+    var counts = {};
+    dated.forEach(function (item) {
+      var c = Math.floor(item.start / 100);
+      counts[c] = counts[c] || { bible: 0, world: 0 };
+      counts[c][item.track] += 1;
+    });
+    var offsets = {};
+    var widths = {};
+    var at = pad;
+    for (var c = first; c < last; c += 1) {
+      var n = counts[c] ? Math.max(counts[c].bible, counts[c].world) : 0;
+      widths[c] = Math.max(TL_EMPTY_W, TL_ITEM_W * n) * tl.zoom;
+      offsets[c] = at;
+      at += widths[c];
+    }
+    return {
+      first: first,
+      last: last,
+      width: at + 24,
+      x: function (year) {
+        var c = Math.min(last - 1, Math.max(first, Math.floor(year / 100)));
+        return offsets[c] + ((year - c * 100) / 100) * widths[c];
+      }
+    };
+  }
+
+  function tlItemButton(item) {
+    var entry = item.entry;
+    var label = item.alt ? (item.alt.label || entry.label) : entry.label;
+    var display = item.alt ? item.alt.display : entry.date.display;
+    var button = h("button", {
+      type: "button",
+      class: "tl-item" + (item.alt ? " tl-alt" : "") + (item.end != null ? " is-range" : " is-point"),
+      "data-id": entry.id,
+      "data-track": entry.track,
+      "data-certainty": item.alt ? "disputed" : entry.certainty,
+      "aria-label": label + ", " + display + (item.alt ? ", another view" : "") + ". " + (TL_CERTAINTY[entry.certainty] || ""),
+      onClick: function () { tlOpen(entry.id, true); },
+      onMouseenter: function () { tlHoverMap(entry, true); },
+      onMouseleave: function () { tlHoverMap(entry, false); }
+    });
+    button.append(
+      h("span", { class: "tl-mark", "aria-hidden": "true" }),
+      h("span", { class: "tl-item-label", text: label }),
+      h("span", { class: "tl-item-date", text: display })
+    );
+    return button;
+  }
+
+  function buildTimeline() {
+    var host = document.getElementById("timeline");
+    var canvas = document.getElementById("tl-canvas");
+    var placesHost = document.getElementById("tl-places");
+    tl.built = bookKey;
+    tl.detail = null;
+    tl.detailAuto = false;
+    tl.byNode = Object.create(null);
+    tl.byId = Object.create(null);
+    canvas.replaceChildren();
+    placesHost.replaceChildren();
+    if (!timeline) {
+      host.hidden = true;
+      return;
+    }
+    host.hidden = false;
+
+    var events = timeline.events.filter(tlInBook);
+    var places = (timeline.places || []).filter(tlInBook);
+    events.concat(places).forEach(function (entry) {
+      tl.byId[entry.id] = entry;
+      tlNodes(entry).forEach(function (id) {
+        (tl.byNode[id] = tl.byNode[id] || []).push(entry.id);
+      });
+    });
+
+    var items = [];
+    var undated = [];
+    events.forEach(function (entry) {
+      if (entry.date.start == null) {
+        undated.push(entry);
+        return;
+      }
+      items.push({ entry: entry, track: entry.track, start: entry.date.start, end: entry.date.end });
+      (entry.alternatives || []).forEach(function (alt) {
+        if (typeof alt.start !== "number") return;
+        items.push({ entry: entry, alt: alt, track: entry.track, start: alt.start, end: alt.end });
+      });
+    });
+
+    var scale = tlScale(items, undated.length ? TL_UNDATED_W : 14);
+    if (!scale) {
+      host.hidden = true;
+      return;
+    }
+    canvas.style.width = Math.ceil(scale.width) + "px";
+
+    var axis = h("div", { class: "tl-axis", "aria-hidden": "true" });
+    var lastLabel = -Infinity;
+    for (var c = scale.first; c <= scale.last; c += 1) {
+      var x = scale.x(c * 100);
+      if (c === scale.last) x = scale.width - 24;
+      canvas.append(h("span", { class: "tl-grid", style: "left:" + x.toFixed(1) + "px", "aria-hidden": "true" }));
+      var tick = h("span", { class: "tl-tick", style: "left:" + x.toFixed(1) + "px" });
+      if (x - lastLabel >= 62 && c < scale.last) {
+        tick.append(h("span", { text: tlYearLabel(c * 100) }));
+        lastLabel = x;
+      }
+      axis.append(tick);
+    }
+
+    TL_TRACKS.forEach(function (track, index) {
+      var mine = items.filter(function (item) { return item.track === track.key; })
+        .sort(function (a, b) { return a.start - b.start || (a.alt ? 1 : 0) - (b.alt ? 1 : 0); });
+      var laneEnds = [];
+      mine.forEach(function (item) {
+        var left = scale.x(item.start);
+        var bar = item.end != null ? Math.max(8, scale.x(item.end) - left) : 0;
+        var label = item.alt ? (item.alt.label || item.entry.label) : item.entry.label;
+        var display = item.alt ? item.alt.display : item.entry.date.display;
+        var text = Math.max(tlTextWidth(label, 600, 12), tlTextWidth(display, 400, 11)) + 6;
+        var lane = 0;
+        while (lane < laneEnds.length && laneEnds[lane] > left - 1) lane += 1;
+        laneEnds[lane] = left + Math.max(bar, text) + 12;
+        item.left = left;
+        item.bar = bar;
+        item.text = text;
+        item.lane = lane;
+      });
+      var lanes = Math.max(1, laneEnds.length);
+      if (track.key === "bible" && undated.length) lanes = Math.max(lanes, Math.ceil((30 + undated.length * 30) / TL_LANE));
+      var row = h("div", {
+        class: "tl-track",
+        "data-track": track.key,
+        role: "group",
+        "aria-label": track.label,
+        style: "height:" + (TL_HEAD + lanes * TL_LANE) + "px"
+      });
+      /* The name sits in the corner the lanes fill last: the top for the Bible,
+         the bottom for world history. */
+      row.append(h("span", {
+        class: "tl-track-name",
+        text: track.label,
+        "aria-hidden": "true",
+        style: track.key === "bible" ? null : "margin-top:" + (TL_HEAD + lanes * TL_LANE - 18) + "px"
+      }));
+      mine.forEach(function (item) {
+        var button = tlItemButton(item);
+        /* The Bible's lanes stack up from the axis and the world's hang down
+           from it, so the two tracks meet at the line of years. */
+        var lane = track.key === "bible" ? lanes - 1 - item.lane : item.lane;
+        button.style.left = item.left.toFixed(1) + "px";
+        button.style.top = (TL_HEAD + lane * TL_LANE) + "px";
+        button.style.width = Math.ceil(Math.max(item.bar, item.text)) + "px";
+        if (item.bar) button.querySelector(".tl-mark").style.width = item.bar.toFixed(1) + "px";
+        row.append(button);
+      });
+      if (track.key === "bible" && undated.length) {
+        var box = h("div", { class: "tl-undated", style: "width:" + (TL_UNDATED_W - 28) + "px" });
+        box.append(h("p", { class: "tl-undated-title", text: "Before recorded history. Not dated." }));
+        undated.forEach(function (entry) {
+          box.append(h("button", {
+            type: "button",
+            class: "tl-item tl-undated-item",
+            "data-id": entry.id,
+            "data-track": entry.track,
+            "data-certainty": "undated",
+            "aria-label": entry.label + ". Not dated.",
+            text: entry.label,
+            onClick: function () { tlOpen(entry.id, true); },
+            onMouseenter: function () { tlHoverMap(entry, true); },
+            onMouseleave: function () { tlHoverMap(entry, false); }
+          }));
+        });
+        row.append(box);
+      }
+      canvas.append(row);
+      if (index === 0) canvas.append(axis);
+    });
+
+    if (places.length) {
+      placesHost.hidden = false;
+      placesHost.append(h("span", { class: "tl-places-title", text: "Places today" }));
+      places.forEach(function (entry) {
+        var chip = h("button", {
+          type: "button",
+          class: "tl-place",
+          "data-id": entry.id,
+          "data-certainty": entry.certainty,
+          onClick: function () { tlOpen(entry.id, true); },
+          onMouseenter: function () { tlHoverMap(entry, true); },
+          onMouseleave: function () { tlHoverMap(entry, false); }
+        });
+        chip.append(
+          h("span", { class: "tl-place-name", text: entry.label }),
+          h("span", { class: "tl-place-now", text: entry.modern })
+        );
+        placesHost.append(chip);
+      });
+    } else {
+      placesHost.hidden = true;
+    }
+  }
+
+  function tlElements(id) {
+    return Array.prototype.filter.call(
+      document.querySelectorAll("#timeline [data-id]"),
+      function (el) { return el.getAttribute("data-id") === id; }
+    );
+  }
+
+  /* Bring an item into view inside its own strip. Only the strip scrolls, never
+     the page. */
+  function tlReveal(el, smooth) {
+    if (!el) return;
+    var scroller = el.closest(".tl-scroll, .tl-places");
+    if (!scroller || !scroller.clientWidth) return;
+    var box = scroller.getBoundingClientRect();
+    var rect = el.getBoundingClientRect();
+    var margin = Math.min(48, scroller.clientWidth / 6);
+    var wide = rect.width > scroller.clientWidth - 2 * margin;
+    if (!wide && rect.left >= box.left + margin && rect.right <= box.right - margin) return;
+    if (wide && rect.left >= box.left + margin && rect.left <= box.left + scroller.clientWidth / 2) return;
+    var left = scroller.scrollLeft + (rect.left - box.left) - (wide ? margin : (scroller.clientWidth - rect.width) / 2);
+    var top = scroller.scrollTop;
+    if (scroller.scrollHeight > scroller.clientHeight) {
+      top = scroller.scrollTop + (rect.top - box.top) - (scroller.clientHeight - rect.height) / 2;
+    }
+    scroller.scrollTo({
+      left: Math.max(0, left),
+      top: Math.max(0, top),
+      behavior: smooth && !reducedMotion() ? "smooth" : "auto"
+    });
+  }
+
+  function tlRevealCurrent(smooth) {
+    if (!timeline) return;
+    var picked = state.selectedId ? (tl.byNode[state.selectedId] || []) : [];
+    var ids = [];
+    if (tl.detail) ids.push(tl.detail);
+    picked.forEach(function (id) { if (ids.indexOf(id) < 0) ids.push(id); });
+    var seen = [];
+    ids.forEach(function (id) {
+      tlElements(id).forEach(function (el) {
+        if (el.classList.contains("tl-alt")) return;
+        var scroller = el.closest(".tl-scroll, .tl-places");
+        if (seen.indexOf(scroller) >= 0) return;
+        seen.push(scroller);
+        tlReveal(el, smooth);
+      });
+    });
+  }
+
+  function renderTimelineDetail() {
+    var card = document.getElementById("tl-detail");
+    card.replaceChildren();
+    var entry = tl.detail ? tl.byId[tl.detail] : null;
+    if (!entry) {
+      card.hidden = true;
+      return;
+    }
+    card.hidden = false;
+    var isPlace = !entry.date;
+    var kicker = isPlace ? "A place today" : (entry.track === "bible" ? "The Bible" : "World history");
+    card.append(h("button", {
+      type: "button",
+      class: "icon-btn tl-detail-close",
+      "aria-label": "Close this note",
+      title: "Close",
+      onClick: function () { tlClose(); }
+    }, [document.createTextNode("×")]));
+    card.append(
+      h("p", { class: "kicker", text: kicker }),
+      h("h3", { class: "tl-detail-title", text: entry.label })
+    );
+    var when = h("p", { class: "tl-detail-date" });
+    when.append(
+      h("span", { text: isPlace ? entry.modern : entry.date.display }),
+      h("span", { class: "tl-tag", "data-certainty": entry.certainty, text: TL_CERTAINTY[entry.certainty] || entry.certainty })
+    );
+    card.append(when);
+    card.append(h("p", { class: "tl-detail-note", text: entry.note }));
+    (entry.alternatives || []).forEach(function (alt) {
+      var line = h("p", { class: "tl-detail-alt" });
+      line.append(h("strong", { text: "Another view: " + alt.display + ". " }), document.createTextNode(alt.note || ""));
+      card.append(line);
+    });
+    var meaning = timeline.certainty && timeline.certainty[entry.certainty];
+    if (meaning) card.append(h("p", { class: "tl-detail-sure", text: (TL_CERTAINTY[entry.certainty] || "") + ": " + meaning }));
+    card.append(h("p", { class: "tl-detail-source", text: "Source: " + entry.source }));
+    var nodes = tlNodes(entry);
+    if (nodes.length) {
+      var row = h("div", { class: "tl-detail-nodes" });
+      row.append(h("span", { class: "tl-detail-nodes-title", text: "On the map" }));
+      nodes.forEach(function (id) {
+        var node = nodeById(id);
+        row.append(h("button", {
+          type: "button",
+          class: "tl-node-btn",
+          "aria-pressed": id === state.selectedId ? "true" : "false",
+          text: node.label,
+          onClick: function () {
+            tl.detailAuto = false;
+            selectNode(id, { frame: true });
+          }
+        }));
+      });
+      card.append(row);
+    } else {
+      card.append(h("p", { class: "tl-detail-source", text: "This one is background. It is not a stop on this map." }));
+    }
+  }
+
+  /* Called from renderPanel, so it runs on every change of stop or of book. */
+  function syncTimeline() {
+    if (!timeline) return;
+    if (tl.built !== bookKey) buildTimeline();
+    var picked = state.selectedId ? (tl.byNode[state.selectedId] || []) : [];
+    /* A note the reader closed stays closed until they pick another stop. */
+    if (tl.closedFor !== state.selectedId) tl.closedFor = null;
+    if (state.selectedId && picked.length) {
+      if (picked.indexOf(tl.detail) < 0 && !tl.closedFor) {
+        tl.detail = picked[0];
+        tl.detailAuto = true;
+      }
+    } else if (tl.detailAuto) {
+      tl.detail = null;
+      tl.detailAuto = false;
+    }
+    Array.prototype.forEach.call(document.querySelectorAll("#timeline [data-id]"), function (el) {
+      var id = el.getAttribute("data-id");
+      el.classList.toggle("is-picked", picked.indexOf(id) >= 0);
+      el.classList.toggle("is-open", id === tl.detail);
+      el.classList.remove("is-hot");
+    });
+    renderTimelineDetail();
+    tlRevealCurrent(true);
+  }
+
+  function tlOpen(id, fromClick) {
+    var entry = tl.byId[id];
+    if (!entry) return;
+    tl.detail = id;
+    tl.detailAuto = false;
+    tl.closedFor = null;
+    var nodes = tlNodes(entry);
+    if (fromClick && nodes.length && nodes.indexOf(state.selectedId) < 0) {
+      selectNode(nodes[0], { frame: true });
+      return;
+    }
+    syncTimeline();
+    announce(entry.label + ", " + (entry.date ? entry.date.display : entry.modern));
+  }
+
+  function tlClose() {
+    tl.detail = null;
+    tl.detailAuto = false;
+    tl.closedFor = state.selectedId;
+    syncTimeline();
+  }
+
+  /* A stop under the pointer on the map lights its dates on the timeline. */
+  function tlHover(nodeId) {
+    if (!timeline) return;
+    var hot = nodeId ? (tl.byNode[nodeId] || []) : [];
+    var first = null;
+    Array.prototype.forEach.call(document.querySelectorAll("#timeline [data-id]"), function (el) {
+      var on = hot.indexOf(el.getAttribute("data-id")) >= 0;
+      el.classList.toggle("is-hot", on);
+      if (on && !first && el.closest(".tl-scroll") && !el.classList.contains("tl-alt")) first = el;
+    });
+    if (first) tlReveal(first, false);
+  }
+
+  /* And a date under the pointer lights its stops on the map. */
+  function tlHoverMap(entry, on) {
+    if (!exploreCy) return;
+    tlNodes(entry).forEach(function (id) {
+      var node = exploreCy.getElementById(id);
+      if (!node || node.empty()) return;
+      if (on) node.addClass("hover");
+      else node.removeClass("hover");
+    });
+  }
+
+  function setTimelineOpen(open, remember) {
+    var host = document.getElementById("timeline");
+    host.classList.toggle("is-closed", !open);
+    document.querySelector(".map-frame").classList.toggle("tl-open", open);
+    document.getElementById("tl-toggle").setAttribute("aria-expanded", open ? "true" : "false");
+    document.getElementById("tl-body").hidden = !open;
+    document.getElementById("tl-hint").textContent = open
+      ? "The c. means about. Dashed dates are debated. Busy centuries are drawn wider. Tap a date to read about it."
+      : "Open to see when each stop happened, beside world history.";
+    if (remember) {
+      try { localStorage.setItem(TL_STORE, open ? "open" : "closed"); } catch (err) { /* private mode */ }
+    }
+    if (open) nextFrame(function () { tlRevealCurrent(false); });
+  }
+
+  function timelineIsOpen() {
+    return !document.getElementById("timeline").classList.contains("is-closed");
+  }
+
+  function tlZoom(factor) {
+    var next = Math.max(TL_MIN_ZOOM, Math.min(TL_MAX_ZOOM, tl.zoom * factor));
+    if (next === tl.zoom) return;
+    var scroller = document.getElementById("tl-scroll");
+    var middle = scroller.scrollWidth
+      ? (scroller.scrollLeft + scroller.clientWidth / 2) / scroller.scrollWidth
+      : 0;
+    var detail = tl.detail;
+    var auto = tl.detailAuto;
+    tl.zoom = next;
+    buildTimeline();
+    tl.detail = detail;
+    tl.detailAuto = auto;
+    scroller.scrollLeft = Math.max(0, middle * scroller.scrollWidth - scroller.clientWidth / 2);
+    syncTimeline();
+    document.getElementById("tl-zoom-in").disabled = tl.zoom >= TL_MAX_ZOOM;
+    document.getElementById("tl-zoom-out").disabled = tl.zoom <= TL_MIN_ZOOM;
+  }
+
+  function startTimeline() {
+    if (!timeline) return;
+    var stored = null;
+    try { stored = localStorage.getItem(TL_STORE); } catch (err) { stored = null; }
+    /* On a phone the map is already short, so the band starts folded. */
+    setTimelineOpen(stored ? stored === "open" : !isPhone(), false);
+    document.getElementById("tl-toggle").addEventListener("click", function () {
+      setTimelineOpen(!timelineIsOpen(), true);
+    });
+    document.getElementById("tl-zoom-in").addEventListener("click", function () { tlZoom(1.3); });
+    document.getElementById("tl-zoom-out").addEventListener("click", function () { tlZoom(1 / 1.3); });
+    /* Folding the band, or opening it, changes the room the drawing has. */
+    if (typeof ResizeObserver === "function") {
+      var timer = null;
+      new ResizeObserver(function () {
+        if (!exploreCy || document.getElementById("explore-view").hidden) return;
+        exploreCy.resize();
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () {
+          if (state.selectedId) frameNode(state.selectedId, false);
+          else fitView(false);
+        }, 120);
+      }).observe(document.getElementById("graph"));
+    }
+  }
+
+  function validTimeline(json) {
+    return !!json && Array.isArray(json.events) && json.events.length > 0
+      && json.events.every(function (entry) {
+        return entry && entry.id && entry.label && entry.date && entry.date.display
+          && (entry.track === "bible" || entry.track === "world");
+      });
   }
 
   /* Comments and requests */
@@ -1948,6 +2484,8 @@
           if (key.open) {
             key.open = false;
             key.querySelector("summary").focus();
+          } else if (tl.detail) {
+            tlClose();
           } else if (state.selectedId) {
             clearSelection({ focusPanel: true });
           }
@@ -2014,6 +2552,7 @@
     state.pathId = data.paths[0].id;
     readHash();
     bind();
+    startTimeline();
     applyTheme(currentTheme());
     applyBookChrome();
     renderBookPicker();
@@ -2056,7 +2595,9 @@
     loadJson("data/sermons.json").catch(function () { return {}; }),
     loadJson("data/deuteronomy-sermons.json").catch(function () { return {}; }),
     loadJson("data/confessions.json").catch(function () { return null; }),
-    loadJson("data/deeper.json").catch(function () { return null; })
+    loadJson("data/deeper.json").catch(function () { return null; }),
+    /* The timeline is an extra. Without it the map reads as it did before. */
+    loadJson("data/timeline.json").catch(function () { return null; })
   ])
     .then(function (files) {
       var graphs = files[0];
@@ -2078,6 +2619,7 @@
       };
       confessions = files[3] && files[3].sections ? files[3] : null;
       deeper = files[4] && files[4].nodes ? files[4] : null;
+      timeline = validTimeline(files[5]) ? files[5] : null;
       start();
     })
     .catch(function () {
