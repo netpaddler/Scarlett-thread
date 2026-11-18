@@ -108,6 +108,18 @@ The Isaiah book's key is `isaiah_book`, not `isaiah`, because the Advent map alr
 
 Where faithful Reformed readers differ, the stop describes the main views, labels them "Interpretation", and does not choose. On Revelation 20 the amillennial, postmillennial, and historic premillennial views are each described, with what all three share. Dispensational timelines are named and not laid out. The same rule covers the seals, the 144,000, the two witnesses, the woman of chapter 12, the beasts and 666, Babylon, the rider of 19:11, the four broad approaches to the book, and its date. In Isaiah it covers the near meaning of the Immanuel sign, the Servant Songs as one figure, Isaiah 14:12, Isaiah 65:20, and the date of chapters 40 to 66. In the visions, a `book_sequence` edge is the order John tells them in. The join between chapters 19 and 20 is drawn dashed because that order is the disputed point.
 
+## Lines between the books and the All books view
+
+`data/cross-links.json` ties the books together. It adds no stops and changes none. It has three parts.
+
+- `links`: one line from a stop in one book to a stop in another. Each has an `id`, `from` (the earlier text), `to` (the later one), a `type`, `refs`, and a `note` in plain words. The types are `quotation` (the later writer quotes the earlier words and says so), `fulfillment` (the New Testament states the earlier word came true), `allusion` (shared wording with no citation formula), `typology` (interpretive, drawn dashed, and the note says what Scripture does and does not state), and `same_passage` (two books each have a stop on the same passage). Only add a link the text supports, and quote the ESV exactly.
+- `threads`: guided paths across the books, such as "The Lamb". A thread is a list of existing stop ids. Where two neighbouring stops have no line between them the walk shows a dotted join.
+- `overview`: the wording for the All books view.
+
+In the app a stop with links shows them under "In other books", as "Also in Isaiah: ..." with the kind of link, the note, and the references. The chip is a plain hash, so it opens the stop in the other book and Back returns. A `see_also` entry that a link already covers is not shown twice.
+
+"All books" is the last button in the book switcher. It is not a file. The app builds it from the books that loaded plus the links. Each book is a box on the map, laid out as on its own map, and the thick lines are the links between books. The Walk tab walks the threads, and the timeline shows every entry from every book. Its hashes are `#explore/all`, `#explore/all/<stop id>`, and `#walk/<thread id>/<step>`. If `cross-links.json` fails to load, the four books read as before and the All books button is not shown.
+
 ## The timeline
 
 A band above the map sets the map's stops beside world history. It is on every map. The top track holds the Bible dates for the stops of the book that is open. The bottom track holds world history: Egypt's kingdoms and pharaohs, Hammurabi, the Hittites, Assyria and the fall of Samaria, Babylon and the fall of Jerusalem, Cyrus and Persia, Alexander, the Maccabees, Rome, Augustus, Herod, Pilate, and the destruction of the temple. A row of chips under the tracks gives the modern name of each place, such as Ur in southern Iraq.

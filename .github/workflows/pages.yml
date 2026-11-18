@@ -33,7 +33,7 @@ jobs:
           mkdir -p _site/data _site/vendor _site/fonts _site/config
           cp index.html styles.css app.js favicon.svg _site/
           cp config/requests.js _site/config/
-          cp data/advent-graph.json data/deuteronomy-graph.json data/isaiah-graph.json data/revelation-graph.json data/sermons.json data/deuteronomy-sermons.json data/confessions.json data/deeper.json data/timeline.json _site/data/
+          cp data/advent-graph.json data/deuteronomy-graph.json data/isaiah-graph.json data/revelation-graph.json data/sermons.json data/deuteronomy-sermons.json data/confessions.json data/deeper.json data/timeline.json data/cross-links.json _site/data/
           cp vendor/cytoscape.min.js vendor/dagre.min.js _site/vendor/
           cp fonts/source-serif-4-latin.woff2 fonts/OFL.txt _site/fonts/
 

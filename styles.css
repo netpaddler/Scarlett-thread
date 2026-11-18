@@ -33,6 +33,7 @@
   --edge-quoted_by: #1f5f8b;
   --edge-ot_echo: #5c6b1e;
   --edge-book_sequence: #55606b;
+  --edge-same_passage: #a4541a;
 
   --node-person-fill: #f4e9df;
   --node-person-line: #9a6a50;
@@ -112,6 +113,7 @@
   --edge-quoted_by: #8ec2e8;
   --edge-ot_echo: #c3d07a;
   --edge-book_sequence: #a7b3c0;
+  --edge-same_passage: #f0a868;
 
   --node-person-fill: #2a211b;
   --node-person-line: #d6a88c;
@@ -1390,6 +1392,57 @@ a.link-chip {
   text-decoration: none;
 }
 
+/* Lines to other books: the chip, then what kind of line it is and why. */
+.links.cross-links {
+  gap: var(--s-4);
+}
+
+.links.cross-links li {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-1, 4px);
+}
+
+.cross-note,
+.cross-refs {
+  margin: 0;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: var(--t-sm);
+  line-height: 1.5;
+}
+
+.cross-note strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.cross-refs {
+  color: var(--muted);
+}
+
+.home-link {
+  display: flex;
+  width: fit-content;
+  margin-top: var(--s-3);
+  text-decoration: none;
+}
+
+.name-btn.has-cross .cross-count {
+  display: inline-block;
+  min-width: 1.5em;
+  margin-left: auto;
+  margin-right: var(--s-3);
+  padding: 0 0.4em;
+  border: 1px solid var(--accent-fill);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.75em;
+  line-height: 1.5;
+  text-align: center;
+}
+
 .see-also-note {
   color: var(--muted);
   font-family: var(--sans);
@@ -1779,6 +1832,8 @@ a.link-chip {
 .swatch[data-edge="quoted_by"] { border-top-color: var(--edge-quoted_by); }
 .swatch[data-edge="ot_echo"] { border-top-color: var(--edge-ot_echo); }
 .swatch[data-edge="book_sequence"] { border-top-color: var(--edge-book_sequence); }
+.swatch[data-edge="same_passage"] { border-top-color: var(--edge-same_passage); }
+.swatch.is-thick { border-top-width: 4px; }
 
 .kind-dot {
   flex: none;
