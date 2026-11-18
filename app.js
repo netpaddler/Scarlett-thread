@@ -58,8 +58,8 @@
     christmas: "The promise arrives. Jesus is born.",
     deut_book: "Read Moses' last sermon straight through, from the plains of Moab to his grave.",
     deut_nt: "Follow the verses that Jesus and the apostles took out of Deuteronomy.",
-    isaiah_through: "Read Isaiah in order, from the vision of the throne to the new heavens and the new earth.",
-    isaiah_nt: "Set Isaiah's words beside the New Testament writers who say they came true in Jesus.",
+    isaiah_through: "Read Isaiah in order, from the opening charge to the new heavens and the new earth.",
+    isaiah_nt: "Set Isaiah's words beside the New Testament writers who use them of Jesus.",
     rev_through: "Follow John's visions in the order he tells them, from Patmos to the river of life.",
     rev_ot: "Set John's visions beside the Old Testament passages they echo."
   };
