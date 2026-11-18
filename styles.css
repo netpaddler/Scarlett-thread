@@ -31,6 +31,7 @@
   --edge-prophet_voice: #2f6b6b;
   --edge-type_to_christ: #6c4785;
   --edge-quoted_by: #1f5f8b;
+  --edge-ot_echo: #5c6b1e;
   --edge-book_sequence: #55606b;
 
   --node-person-fill: #f4e9df;
@@ -109,6 +110,7 @@
   --edge-prophet_voice: #84c7c2;
   --edge-type_to_christ: #c6a7e0;
   --edge-quoted_by: #8ec2e8;
+  --edge-ot_echo: #c3d07a;
   --edge-book_sequence: #a7b3c0;
 
   --node-person-fill: #2a211b;
@@ -1372,6 +1374,28 @@ body[data-mode="explore"] .intro {
   border-top-style: dashed;
 }
 
+.links.see-also {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.links.see-also li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+a.link-chip {
+  text-decoration: none;
+}
+
+.see-also-note {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: var(--t-sm);
+}
+
 .link-dir {
   color: var(--ink-soft);
 }
@@ -1753,6 +1777,7 @@ body[data-mode="explore"] .intro {
 .swatch[data-edge="prophet_voice"] { border-top-color: var(--edge-prophet_voice); }
 .swatch[data-edge="type_to_christ"] { border-top-color: var(--edge-type_to_christ); border-top-style: dashed; }
 .swatch[data-edge="quoted_by"] { border-top-color: var(--edge-quoted_by); }
+.swatch[data-edge="ot_echo"] { border-top-color: var(--edge-ot_echo); }
 .swatch[data-edge="book_sequence"] { border-top-color: var(--edge-book_sequence); }
 
 .kind-dot {

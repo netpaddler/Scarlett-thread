@@ -14,6 +14,7 @@
   var EDGE_LABELS = {
     prophecy_fulfillment: "Prophecy connection",
     quoted_by: "Quoted in the New Testament",
+    ot_echo: "Echo of the Old Testament",
     promise_narrowing: "Promises read together",
     family_line: "Family",
     book_sequence: "Next in Moses' sermon",
@@ -36,13 +37,18 @@
     week4_town: "The promised ruler comes from Bethlehem.",
     christmas: "The promise arrives. Jesus is born.",
     deut_book: "Read Moses' last sermon straight through, from the plains of Moab to his grave.",
-    deut_nt: "Follow the verses that Jesus and the apostles took out of Deuteronomy."
+    deut_nt: "Follow the verses that Jesus and the apostles took out of Deuteronomy.",
+    isaiah_through: "Read Isaiah in order, from the vision of the throne to the new heavens and the new earth.",
+    isaiah_nt: "Set Isaiah's words beside the New Testament writers who say they came true in Jesus.",
+    rev_through: "Follow John's visions in the order he tells them, from Patmos to the river of life.",
+    rev_ot: "Set John's visions beside the Old Testament passages they echo."
   };
 
   var KIND_ORDER = ["promise", "covenant", "prophecy", "person", "place", "event", "teaching"];
   var EDGE_ORDER = [
     "prophecy_fulfillment",
     "quoted_by",
+    "ot_echo",
     "promise_narrowing",
     "family_line",
     "book_sequence",
@@ -72,7 +78,11 @@
      plain "#explore" hash, so Advent links made before this change still work. */
   var BOOKS = [
     { key: "advent", file: "data/advent-graph.json", label: "Advent" },
-    { key: "deuteronomy", file: "data/deuteronomy-graph.json", label: "Deuteronomy (pilot)" }
+    { key: "deuteronomy", file: "data/deuteronomy-graph.json", label: "Deuteronomy (pilot)" },
+    /* Advent already has a stop with the id "isaiah", and "#explore/isaiah" must
+       keep opening it, so this book's key is not the bare name. */
+    { key: "isaiah_book", file: "data/isaiah-graph.json", label: "Isaiah" },
+    { key: "revelation", file: "data/revelation-graph.json", label: "Revelation" }
   ];
 
   /* Advent's graph file carries none of these keys, so Advent falls back to the
@@ -181,8 +191,11 @@
     return KIND_LABELS[type] || String(type || "").replace(/_/g, " ");
   }
 
+  /* A book can rename an edge type in its own meta, so "Next in Moses' sermon"
+     does not turn up in Isaiah. Advent and Deuteronomy carry no such key. */
   function edgeLabel(type) {
-    return EDGE_LABELS[type] || String(type || "").replace(/_/g, " ");
+    var own = data && data.meta && data.meta.edge_labels ? data.meta.edge_labels[type] : null;
+    return own || EDGE_LABELS[type] || String(type || "").replace(/_/g, " ");
   }
 
   function confidenceCopy(flag) {
@@ -557,6 +570,37 @@
     parent.append(list);
   }
 
+  /* A stop can point to a stop on another map with see_also. The link is a plain
+     hash, so the router switches books and Back comes home again. A target whose
+     book did not load is left out. */
+  function appendSeeAlso(parent, node) {
+    var items = (node.see_also || []).map(function (item) {
+      var key = item && nodeBook[item.id];
+      var book = key && key !== bookKey ? bookByKey(key) : null;
+      if (!book || !books[key]) return null;
+      var other = books[key].nodes.find(function (candidate) { return candidate.id === item.id; });
+      return other ? { book: book, node: other, text: item.text } : null;
+    }).filter(Boolean);
+    if (!items.length) return;
+    parent.append(h("h4", { class: "section-label", text: "On another map" }));
+    var list = h("ul", { class: "links see-also" });
+    items.forEach(function (item) {
+      var link = h("a", {
+        class: "link-chip",
+        href: "#explore/" + item.node.id,
+        "aria-label": item.node.label + ", on the " + item.book.label + " map. Open it."
+      });
+      link.append(
+        h("span", { class: "link-dir", "aria-hidden": "true", text: item.book.label }),
+        h("span", { class: "link-name", text: item.node.label })
+      );
+      var row = h("li", {}, [link]);
+      if (item.text) row.append(h("span", { class: "see-also-note", text: item.text }));
+      list.append(row);
+    });
+    parent.append(list);
+  }
+
   function appendLayers(parent, node) {
     var deeperFold = fold("Go deeper", "The verses, the story, and how the lines connect", function (body) {
       appendRichDeeper(body, deeperEntry("nodes", node.id));
@@ -910,6 +954,7 @@
     card.append(h("h3", { id: "step-title", class: "step-name", tabindex: "-1", text: node.label }));
     appendStart(card, node);
     appendConnections(card, node);
+    appendSeeAlso(card, node);
     appendLayers(card, node);
     appendSermons(card, node.id);
     card.append(h("button", {
@@ -1616,6 +1661,7 @@
     );
     appendStart(panel, node);
     appendConnections(panel, node);
+    appendSeeAlso(panel, node);
     appendLayers(panel, node);
     appendSermons(panel, node.id);
   }

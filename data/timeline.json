@@ -10,7 +10,8 @@
       "Where scholars differ, the entry keeps the primary date and lists the other view under alternatives. An alternative with a start year is also drawn on the timeline as a dashed marker.",
       "The early date of the Exodus (c. 1446 BC, from 1 Kings 6:1) is primary. The late date (c. 1260s BC) is always shown beside it.",
       "nodes lists the map stops an entry belongs to. books limits an entry to one map. An entry with no books key shows on every map.",
-      "Sources are named at the level of the work. Do not add a page number, a date, or an event that has not been checked."
+      "Sources are named at the level of the work. Do not add a page number, a date, or an event that has not been checked.",
+      "books uses the map keys advent, deuteronomy, isaiah_book, and revelation. The Isaiah key is isaiah_book because the Advent map already has a stop with the id isaiah."
     ]
   },
   "certainty": {
@@ -24,13 +25,13 @@
     {
       "id": "b_first_promise",
       "track": "bible",
-      "books": ["advent"],
+      "books": ["advent", "revelation"],
       "label": "The first gospel promise",
       "date": { "start": null, "end": null, "display": "Not dated" },
       "certainty": "undated",
       "note": "God speaks this promise in the garden, at the very start of the Bible's story. Scripture gives no dates for Genesis 1 to 11, and Christians who trust the Bible count those years differently. This timeline leaves them undated.",
       "source": "Genesis 3:15",
-      "nodes": ["promise_seed"]
+      "nodes": ["promise_seed", "rvo_seed"]
     },
     {
       "id": "b_abraham",
@@ -83,7 +84,7 @@
         }
       ],
       "source": "Exodus 12:40-41; 1 Kings 6:1; Judges 11:26",
-      "nodes": []
+      "nodes": ["rvo_passover"]
     },
     {
       "id": "b_sinai",
@@ -180,35 +181,35 @@
     {
       "id": "b_isaiah",
       "track": "bible",
-      "books": ["advent"],
+      "books": ["advent", "isaiah_book"],
       "label": "Isaiah the prophet",
       "date": { "start": -740, "end": -686, "display": "c. 740 to 686 BC" },
       "certainty": "approximate",
       "note": "Isaiah is called in the year King Uzziah dies, c. 740 BC, and prophesies through the reign of Hezekiah, who dies c. 686 BC. The promise of a shoot from the stump of Jesse (Isaiah 11) comes from these years. Its exact year is not known.",
       "source": "Isaiah 1:1; Isaiah 6:1; Isaiah 11:1-10. The kings' years follow Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings.",
-      "nodes": ["isaiah", "jesse_root"]
+      "nodes": ["isaiah", "jesse_root", "is_opening", "is_shoot", "is_babylon"]
     },
     {
       "id": "b_immanuel",
       "track": "bible",
-      "books": ["advent"],
+      "books": ["advent", "isaiah_book"],
       "label": "The Immanuel sign",
       "date": { "start": -735, "end": -732, "display": "c. 735 to 732 BC" },
       "certainty": "approximate",
       "note": "The kings of Syria and Israel attack Judah. Isaiah gives King Ahaz a sign: a virgin will bear a son and call his name Immanuel.",
       "source": "Isaiah 7:1-17; 2 Kings 16:5-9",
-      "nodes": ["prophecy_immanuel"]
+      "nodes": ["prophecy_immanuel", "is_immanuel"]
     },
     {
       "id": "b_child",
       "track": "bible",
-      "books": ["advent"],
+      "books": ["advent", "isaiah_book"],
       "label": "Unto us a child is born",
       "date": { "start": -735, "end": -730, "display": "c. 730s BC" },
       "certainty": "approximate",
       "note": "Isaiah speaks this promise in the years when Assyria overruns Galilee, the land of Zebulun and Naphtali. The exact year is not given.",
       "source": "Isaiah 9:1-7; 2 Kings 15:29",
-      "nodes": ["prophecy_child"]
+      "nodes": ["prophecy_child", "is_child"]
     },
     {
       "id": "b_micah",
@@ -246,7 +247,7 @@
         }
       ],
       "source": "Matthew 2:1; Luke 2:1-7; Josephus, Jewish Antiquities 17",
-      "nodes": ["jesus_birth", "jesus", "joseph", "mary", "bethlehem"]
+      "nodes": ["jesus_birth", "jesus", "joseph", "mary", "bethlehem", "isn_mt1"]
     },
     {
       "id": "b_magi",
@@ -295,7 +296,7 @@
         }
       ],
       "source": "Matthew 22:34-40; Matthew 27:1 to 28:10; Luke 23:1 to 24:12; John 19:1 to 20:18; 1 Corinthians 15:3-4",
-      "nodes": ["jesus", "nt_greatest", "nt_gal3"]
+      "nodes": ["jesus", "nt_greatest", "nt_gal3", "isn_jn12", "rv_lamb"]
     },
     {
       "id": "b_peter",
@@ -521,7 +522,8 @@
       "date": { "start": -539, "end": null, "display": "539 BC" },
       "certainty": "firm",
       "note": "Cyrus the Great of Persia conquers Babylon. In his first year over Babylon he lets the exiles of Judah go home to rebuild the temple.",
-      "source": "Ezra 1:1-4; Isaiah 44:28 to 45:1; the Nabonidus Chronicle and the Cyrus Cylinder, British Museum"
+      "source": "Ezra 1:1-4; Isaiah 44:28 to 45:1; the Nabonidus Chronicle and the Cyrus Cylinder, British Museum",
+      "nodes": ["is_cyrus", "is_babylon"]
     },
     {
       "id": "w_alexander",
@@ -633,6 +635,164 @@
       "certainty": "firm",
       "note": "After a Jewish revolt that began in AD 66, the Roman general Titus takes Jerusalem and burns the temple. Jesus had said that not one stone would be left on another.",
       "source": "Josephus, The Jewish War 5 to 6; Matthew 24:1-2"
+    },
+    {
+      "id": "bi_uzziah",
+      "track": "bible",
+      "books": ["isaiah_book"],
+      "label": "King Uzziah dies",
+      "date": { "start": -740, "end": null, "display": "c. 740 BC" },
+      "certainty": "approximate",
+      "note": "Uzziah, also called Azariah, had reigned over Judah for fifty-two years. In the year he died, Isaiah saw the Lord sitting on a throne and was sent to preach. Some books give 739 BC.",
+      "source": "Isaiah 6:1; 2 Kings 15:1-7; 2 Chronicles 26:1-23. The year follows Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings.",
+      "nodes": ["is_call"]
+    },
+    {
+      "id": "bi_hezekiah",
+      "track": "bible",
+      "books": ["isaiah_book"],
+      "label": "Hezekiah and Sennacherib",
+      "date": { "start": -701, "end": null, "display": "701 BC" },
+      "certainty": "firm",
+      "note": "In the fourteenth year of King Hezekiah, Sennacherib of Assyria takes the fortified towns of Judah and threatens Jerusalem. Hezekiah prays, Isaiah brings God's answer, and the LORD delivers the city. The world history track shows the same year from the Assyrian side.",
+      "source": "Isaiah 36:1 to 37:38; 2 Kings 18:13 to 19:37; the Taylor Prism, British Museum",
+      "nodes": ["is_hezekiah"]
+    },
+    {
+      "id": "bi_later",
+      "track": "bible",
+      "books": ["isaiah_book", "revelation"],
+      "label": "Isaiah 40 to 66",
+      "date": { "start": -740, "end": -686, "display": "c. 740 to 686 BC" },
+      "certainty": "disputed",
+      "note": "These chapters speak comfort to exiles in Babylon and name Cyrus, about 150 years ahead of his time. On the view this map follows, Isaiah the son of Amoz wrote them during his own ministry, and many who hold this view place them late in his life. The exact years are not known, so the whole ministry is shown.",
+      "alternatives": [
+        {
+          "label": "Isaiah 40 to 66 (later date view)",
+          "start": -550,
+          "end": -539,
+          "display": "c. 550 to 539 BC, and later",
+          "note": "Many modern scholars hold that chapters 40 to 55 were written by an unnamed prophet among the exiles shortly before Cyrus took Babylon, and chapters 56 to 66 later still. The New Testament quotes both halves of the book as Isaiah's. John 12:38-41 quotes Isaiah 53 and Isaiah 6 together and names Isaiah for both."
+        }
+      ],
+      "source": "Isaiah 1:1; Isaiah 40:1-2; Isaiah 44:28; John 12:38-41",
+      "nodes": ["is_comfort", "is_servant_chosen", "is_cyrus", "is_servant_light", "is_servant_obedient", "is_servant_suffering", "is_invitation", "is_anointed", "is_new_creation", "rvo_isaiah65"]
+    },
+    {
+      "id": "br_ezekiel1",
+      "track": "bible",
+      "books": ["revelation"],
+      "label": "Ezekiel sees the glory of the LORD",
+      "date": { "start": -593, "end": null, "display": "593 BC" },
+      "certainty": "firm",
+      "note": "Ezekiel dates this vision to the fifth year of the exile of King Jehoiachin, who was taken to Babylon in 597 BC. Ezekiel was among the exiles by the Chebar canal in Babylonia, in what is now Iraq.",
+      "source": "Ezekiel 1:1-3; 2 Kings 24:10-16; the Babylonian Chronicles, British Museum",
+      "nodes": ["rvo_ezekiel1"]
+    },
+    {
+      "id": "br_ezekiel47",
+      "track": "bible",
+      "books": ["revelation"],
+      "label": "Ezekiel's vision of the temple river",
+      "date": { "start": -573, "end": null, "display": "c. 573 BC" },
+      "certainty": "approximate",
+      "note": "Ezekiel dates his vision of a new temple to the twenty-fifth year of the exile, the fourteenth year after Jerusalem fell. The river that flows from the temple is part of that vision.",
+      "source": "Ezekiel 40:1; Ezekiel 47:1-12",
+      "nodes": ["rvo_ezekiel47"]
+    },
+    {
+      "id": "br_daniel7",
+      "track": "bible",
+      "books": ["revelation"],
+      "label": "Daniel's vision of the four beasts",
+      "date": { "start": -553, "end": null, "display": "c. 553 BC" },
+      "certainty": "disputed",
+      "note": "Daniel dates this dream to the first year of Belshazzar, who ruled in Babylon for his father, King Nabonidus. That year is usually placed c. 553 BC, and some place it a few years later. This map follows the book's own dating.",
+      "alternatives": [
+        {
+          "label": "Daniel (late date view)",
+          "start": -165,
+          "end": null,
+          "display": "c. 165 BC",
+          "note": "Many modern scholars hold that the book of Daniel reached its present form in the time of the Maccabees, four centuries after the events it tells."
+        }
+      ],
+      "source": "Daniel 7:1; the Nabonidus Chronicle, British Museum",
+      "nodes": ["rvo_daniel7"]
+    },
+    {
+      "id": "br_zechariah4",
+      "track": "bible",
+      "books": ["revelation"],
+      "label": "Zechariah's night visions",
+      "date": { "start": -519, "end": null, "display": "519 BC" },
+      "certainty": "firm",
+      "note": "Zechariah dates his visions to the eleventh month of the second year of Darius, king of Persia, which falls early in 519 BC. The exiles had come home and were rebuilding the temple. It was finished about four years later.",
+      "source": "Zechariah 1:7; Zechariah 4:1-14; Ezra 5:1-2; Ezra 6:15",
+      "nodes": ["rvo_zechariah4"]
+    },
+    {
+      "id": "bi_galilee",
+      "track": "bible",
+      "books": ["isaiah_book"],
+      "label": "Jesus begins to preach in Galilee",
+      "date": { "start": 27, "end": 29, "display": "c. AD 27 to 29" },
+      "certainty": "approximate",
+      "note": "After John the Baptist is arrested, Jesus makes his home in Capernaum and preaches through Galilee. In the synagogue at Nazareth he reads from Isaiah 61. Luke dates the preaching of John the Baptist to the fifteenth year of Tiberius, c. AD 28 or 29, or a little earlier if the years are counted from when Tiberius began to share the rule.",
+      "source": "Matthew 4:12-17; Luke 3:1-2; Luke 4:14-21",
+      "nodes": ["isn_mt4", "isn_lk4"]
+    },
+    {
+      "id": "bi_philip",
+      "track": "bible",
+      "books": ["isaiah_book"],
+      "label": "Philip and the Ethiopian official",
+      "date": { "start": 31, "end": 36, "display": "c. AD 31 to 36" },
+      "certainty": "approximate",
+      "note": "Acts gives no year. The meeting comes after the death of Stephen and before the conversion of Saul, within a few years of the cross, which is dated AD 30 or AD 33. The bar covers the range usually given.",
+      "source": "Acts 8:1-5; Acts 8:26-40; Acts 9:1-19",
+      "nodes": ["isn_acts8"]
+    },
+    {
+      "id": "bi_1peter",
+      "track": "bible",
+      "books": ["isaiah_book"],
+      "label": "Peter writes his first letter",
+      "date": { "start": 62, "end": 64, "display": "c. AD 62 to 64" },
+      "certainty": "approximate",
+      "note": "Peter writes to Christians scattered across what is now Turkey. He sends greetings from Babylon, which most readers take as a name for Rome. The letter is usually placed shortly before his death under Nero. Scholars who doubt that Peter wrote it date it later.",
+      "source": "1 Peter 1:1; 1 Peter 5:12-13; Eusebius, Church History 2.25",
+      "nodes": ["isn_1pet2"]
+    },
+    {
+      "id": "br_patmos",
+      "track": "bible",
+      "books": ["isaiah_book", "revelation"],
+      "label": "John writes Revelation on Patmos",
+      "date": { "start": 95, "end": null, "display": "c. AD 95" },
+      "certainty": "disputed",
+      "note": "John sees these visions on the island of Patmos and sends them to seven churches in the province of Asia. Irenaeus, writing c. AD 180, says the vision was seen toward the end of the reign of Domitian, who died in AD 96. Most scholars follow him, and so does this map. The date marks when John saw the visions. It does not mark when the things he saw take place.",
+      "alternatives": [
+        {
+          "label": "Revelation (early date view)",
+          "start": 65,
+          "end": 69,
+          "display": "c. AD 65 to 69",
+          "note": "A minority of scholars date the book before the fall of Jerusalem in AD 70, in or just after the reign of Nero. They point to the measuring of the temple in Revelation 11:1-2 and to the words about what must soon take place. Christians who trust the Bible hold both views."
+        }
+      ],
+      "source": "Revelation 1:1-3; Revelation 1:9-11; Irenaeus, Against Heresies 5.30.3; Eusebius, Church History 3.18",
+      "nodes": ["rv_christ", "rv_churches", "rv_throne", "rv_lamb", "rv_seals", "rv_multitude", "rv_trumpets", "rv_dragon", "rv_beasts", "rv_babylon", "rv_supper", "rv_return", "rv_millennium", "rv_judgment", "rv_new_creation", "rv_river", "isn_rev21"]
+    },
+    {
+      "id": "w_domitian",
+      "track": "world",
+      "books": ["isaiah_book", "revelation"],
+      "label": "Emperor Domitian",
+      "date": { "start": 81, "end": 96, "display": "AD 81 to 96" },
+      "certainty": "firm",
+      "note": "The Roman emperor at the time most scholars place the writing of Revelation. Early Christian writers remember him as a persecutor of the church. Historians today differ on how wide that persecution was.",
+      "source": "Suetonius, The Life of Domitian; Eusebius, Church History 3.17 to 3.20; The Oxford Classical Dictionary"
     }
   ],
   "places": [
@@ -697,13 +857,13 @@
     },
     {
       "id": "p_nazareth",
-      "books": ["advent"],
+      "books": ["advent", "isaiah_book"],
       "label": "Nazareth",
       "modern": "Northern Israel",
       "certainty": "firm",
       "note": "The town in Galilee where Gabriel came to Mary and where Jesus grew up. It is a city in northern Israel today.",
       "source": "Luke 1:26; Luke 2:39-40",
-      "nodes": ["annunciation"]
+      "nodes": ["annunciation", "isn_lk4"]
     },
     {
       "id": "p_jerusalem",
@@ -712,11 +872,11 @@
       "certainty": "firm",
       "note": "David's capital and the city of the temple. It stands on the same hills today.",
       "source": "2 Samuel 5:6-9; Luke 2:22",
-      "nodes": []
+      "nodes": ["is_opening", "is_call", "is_hezekiah"]
     },
     {
       "id": "p_assyria",
-      "books": ["advent"],
+      "books": ["advent", "isaiah_book"],
       "label": "Assyria and Nineveh",
       "modern": "Northern Iraq, by Mosul",
       "certainty": "firm",
@@ -731,7 +891,7 @@
       "certainty": "firm",
       "note": "The city of Nebuchadnezzar and the place of Judah's exile. Its ruins are near the modern city of Hillah in Iraq.",
       "source": "2 Kings 25:8-11; Amélie Kuhrt, The Ancient Near East, c. 3000 to 330 BC",
-      "nodes": []
+      "nodes": ["is_babylon", "rvo_daniel7"]
     },
     {
       "id": "p_persia",
@@ -740,7 +900,7 @@
       "certainty": "firm",
       "note": "The homeland of Cyrus. The country was known as Persia in the West until the twentieth century and is now called Iran.",
       "source": "Ezra 1:1; Amélie Kuhrt, The Ancient Near East, c. 3000 to 330 BC",
-      "nodes": []
+      "nodes": ["is_cyrus"]
     },
     {
       "id": "p_galatia",
@@ -761,6 +921,36 @@
       "note": "The capital of the empire, and the home of the church Paul wrote to in Romans. It is the capital of Italy today.",
       "source": "Romans 1:7; Acts 28:14-16",
       "nodes": ["nt_rom10"]
+    },
+    {
+      "id": "p_galilee",
+      "books": ["isaiah_book"],
+      "label": "Galilee",
+      "modern": "Northern Israel",
+      "certainty": "firm",
+      "note": "The hill country and lake shore in the north, once the lands of Zebulun and Naphtali. Capernaum, where Jesus made his home, stood on the north shore of the Sea of Galilee. Its ruins can be visited today.",
+      "source": "Isaiah 9:1; Matthew 4:13-15",
+      "nodes": ["is_child", "isn_mt4"]
+    },
+    {
+      "id": "p_patmos",
+      "books": ["revelation"],
+      "label": "Patmos",
+      "modern": "Greece, an island in the Aegean Sea",
+      "certainty": "firm",
+      "note": "A small rocky island where John received the visions of Revelation. It belongs to Greece today and lies close to the coast of Turkey, southwest of ancient Ephesus.",
+      "source": "Revelation 1:9",
+      "nodes": ["rv_christ"]
+    },
+    {
+      "id": "p_seven_churches",
+      "books": ["revelation"],
+      "label": "The seven churches of Asia",
+      "modern": "Western Turkey",
+      "certainty": "firm",
+      "note": "Ephesus, Smyrna, Pergamum, Thyatira, Sardis, Philadelphia, and Laodicea were cities of the Roman province of Asia. All seven sites are in western Turkey. Smyrna is the modern city of Izmir, Pergamum is Bergama, Thyatira is Akhisar, and Philadelphia is Alaşehir. Ephesus, Sardis, and Laodicea are ruins, near Selçuk, Sart, and Denizli.",
+      "source": "Revelation 1:11; Revelation 2:1 to 3:22; The Oxford Bible Atlas",
+      "nodes": ["rv_churches"]
     }
   ]
 }
