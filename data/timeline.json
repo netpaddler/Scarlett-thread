@@ -1,0 +1,766 @@
+{
+  "meta": {
+    "title": "Scarlet Thread timeline",
+    "version": "0.1",
+    "notes": [
+      "Years are whole numbers. A year before Christ (BC) is negative and a year AD is positive, so 1446 BC is -1446.",
+      "date.display is the wording the reader sees. Every early date carries c. for about. Write ranges with the word to, never with a dash.",
+      "date.start is null only for an entry Scripture does not date. Those are drawn in a box marked as not dated. Nothing from Genesis 1 to 11 carries a year.",
+      "certainty is one of firm, approximate, disputed, traditional, undated.",
+      "Where scholars differ, the entry keeps the primary date and lists the other view under alternatives. An alternative with a start year is also drawn on the timeline as a dashed marker.",
+      "The early date of the Exodus (c. 1446 BC, from 1 Kings 6:1) is primary. The late date (c. 1260s BC) is always shown beside it.",
+      "nodes lists the map stops an entry belongs to. books limits an entry to one map. An entry with no books key shows on every map.",
+      "Sources are named at the level of the work. Do not add a page number, a date, or an event that has not been checked."
+    ]
+  },
+  "certainty": {
+    "firm": "Well attested. Some books differ by a year.",
+    "approximate": "An approximate date. The c. stands for about.",
+    "disputed": "Scholars differ. The other view is given with it.",
+    "traditional": "A tradition, not a certain record.",
+    "undated": "Scripture gives no date, so this timeline gives none."
+  },
+  "events": [
+    {
+      "id": "b_first_promise",
+      "track": "bible",
+      "books": ["advent"],
+      "label": "The first gospel promise",
+      "date": { "start": null, "end": null, "display": "Not dated" },
+      "certainty": "undated",
+      "note": "God speaks this promise in the garden, at the very start of the Bible's story. Scripture gives no dates for Genesis 1 to 11, and Christians who trust the Bible count those years differently. This timeline leaves them undated.",
+      "source": "Genesis 3:15",
+      "nodes": ["promise_seed"]
+    },
+    {
+      "id": "b_abraham",
+      "track": "bible",
+      "books": ["advent"],
+      "label": "Abraham",
+      "date": { "start": -2166, "end": -1991, "display": "c. 2166 to 1991 BC" },
+      "certainty": "disputed",
+      "note": "God promises that all the nations will be blessed in Abraham's offspring. These years come from adding the ages in Genesis and counting back from the early date of the Exodus. They are approximate.",
+      "alternatives": [
+        {
+          "display": "c. 2000 to 1700 BC",
+          "note": "Many scholars place Abraham, Isaac, and Jacob later, somewhere in these centuries."
+        }
+      ],
+      "source": "Genesis 21:5; Genesis 22:18; Genesis 25:7; Genesis 25:26; Genesis 47:9; Exodus 12:40; 1 Kings 6:1",
+      "nodes": ["promise_abraham"]
+    },
+    {
+      "id": "b_judah",
+      "track": "bible",
+      "books": ["advent"],
+      "label": "Jacob blesses Judah",
+      "date": { "start": -1859, "end": null, "display": "c. 1859 BC" },
+      "certainty": "disputed",
+      "note": "Near his death in Egypt, Jacob says the scepter will not depart from Judah. The year is counted back from the early date of the Exodus, using the 430 years of Exodus 12:40 and Jacob's 17 years in Egypt. It is approximate.",
+      "alternatives": [
+        {
+          "display": "Later, by one to two centuries",
+          "note": "The year is later if the Exodus is dated late, or if the 430 years are counted from Abraham, as some read Galatians 3:17."
+        }
+      ],
+      "source": "Genesis 47:28; Genesis 49:8-12; Exodus 12:40",
+      "nodes": ["promise_judah"]
+    },
+    {
+      "id": "b_exodus",
+      "track": "bible",
+      "label": "The Exodus from Egypt",
+      "date": { "start": -1446, "end": null, "display": "c. 1446 BC" },
+      "certainty": "disputed",
+      "note": "God brings Israel out of slavery in Egypt. 1 Kings 6:1 says Solomon began the temple in the 480th year after the Exodus, and Solomon's fourth year was c. 966 BC. That gives c. 1446 BC. This is called the early date, and this map follows it.",
+      "alternatives": [
+        {
+          "label": "The Exodus (late date view)",
+          "start": -1269,
+          "end": -1260,
+          "display": "c. 1260s BC",
+          "note": "Many scholars prefer a late date in the 1200s BC, in the reign of Ramesses II. They point to the store city named Raamses in Exodus 1:11 and to their reading of the archaeology. Christians who trust the Bible hold both views."
+        }
+      ],
+      "source": "Exodus 12:40-41; 1 Kings 6:1; Judges 11:26",
+      "nodes": []
+    },
+    {
+      "id": "b_sinai",
+      "track": "bible",
+      "books": ["deuteronomy"],
+      "label": "The law given at Mount Sinai",
+      "date": { "start": -1446, "end": null, "display": "c. 1446 BC" },
+      "certainty": "disputed",
+      "note": "In the third month after leaving Egypt, Israel camps at Mount Sinai, which Deuteronomy calls Horeb. There God speaks the Ten Commandments. Moses repeats them in Deuteronomy 5.",
+      "alternatives": [
+        {
+          "display": "c. 1260s BC",
+          "note": "This is the year on the late date of the Exodus."
+        }
+      ],
+      "source": "Exodus 19:1; Exodus 20:1-17; Deuteronomy 5:2-22",
+      "nodes": ["dt_decalogue"]
+    },
+    {
+      "id": "b_wilderness",
+      "track": "bible",
+      "books": ["deuteronomy"],
+      "label": "Forty years in the wilderness",
+      "date": { "start": -1446, "end": -1406, "display": "c. 1446 to 1406 BC" },
+      "certainty": "disputed",
+      "note": "Israel lives in the wilderness for forty years between Egypt and the promised land. Moses says God was humbling and testing them, and feeding them with manna.",
+      "alternatives": [
+        {
+          "display": "c. 1260s to 1220s BC",
+          "note": "These are the years on the late date of the Exodus."
+        }
+      ],
+      "source": "Numbers 14:33-34; Deuteronomy 8:2-5",
+      "nodes": ["dt_wilderness_test"]
+    },
+    {
+      "id": "b_sermon",
+      "track": "bible",
+      "books": ["deuteronomy"],
+      "label": "Moses preaches Deuteronomy",
+      "date": { "start": -1406, "end": null, "display": "c. 1406 BC" },
+      "certainty": "disputed",
+      "note": "In the fortieth year after the Exodus, in the eleventh month, Moses preaches to Israel on the plains of Moab, east of the Jordan River. The book of Deuteronomy is that preaching.",
+      "alternatives": [
+        {
+          "label": "Deuteronomy (late date view)",
+          "start": -1229,
+          "end": -1220,
+          "display": "c. 1220s BC",
+          "note": "This is forty years after the late date of the Exodus."
+        }
+      ],
+      "source": "Deuteronomy 1:1-5",
+      "nodes": ["dt_moses", "dt_decalogue", "dt_shema", "dt_wilderness_test", "dt_prophet", "dt_hanged", "dt_curses", "dt_word_near", "dt_song"]
+    },
+    {
+      "id": "b_moses_death",
+      "track": "bible",
+      "books": ["deuteronomy"],
+      "label": "The death of Moses",
+      "date": { "start": -1406, "end": null, "display": "c. 1406 BC" },
+      "certainty": "disputed",
+      "note": "Moses sees the promised land from Mount Nebo and dies there, in the land of Moab. Joshua leads Israel across the Jordan soon after.",
+      "alternatives": [
+        {
+          "display": "c. 1220s BC",
+          "note": "This is the year on the late date of the Exodus."
+        }
+      ],
+      "source": "Deuteronomy 34:1-8",
+      "nodes": ["dt_death"]
+    },
+    {
+      "id": "b_david",
+      "track": "bible",
+      "books": ["advent"],
+      "label": "God's covenant with David",
+      "date": { "start": -1010, "end": -970, "display": "c. 1010 to 970 BC" },
+      "certainty": "approximate",
+      "note": "David reigns forty years. During that reign God promises him a house and a throne that will last forever. The exact year of the promise is not given, so the whole reign is shown.",
+      "source": "2 Samuel 5:4-5; 2 Samuel 7:12-16. The reign is counted back from the division of the kingdom, c. 930 BC, as dated in Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings.",
+      "nodes": ["covenant_david"]
+    },
+    {
+      "id": "b_temple",
+      "track": "bible",
+      "label": "Solomon begins the temple",
+      "date": { "start": -966, "end": null, "display": "c. 966 BC" },
+      "certainty": "approximate",
+      "note": "Solomon begins to build the temple in the fourth year of his reign. 1 Kings 6:1 counts this as the 480th year after the Exodus, which is where the early date of the Exodus comes from.",
+      "source": "1 Kings 6:1. Solomon's years follow Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings.",
+      "nodes": []
+    },
+    {
+      "id": "b_isaiah",
+      "track": "bible",
+      "books": ["advent"],
+      "label": "Isaiah the prophet",
+      "date": { "start": -740, "end": -686, "display": "c. 740 to 686 BC" },
+      "certainty": "approximate",
+      "note": "Isaiah is called in the year King Uzziah dies, c. 740 BC, and prophesies through the reign of Hezekiah, who dies c. 686 BC. The promise of a shoot from the stump of Jesse (Isaiah 11) comes from these years. Its exact year is not known.",
+      "source": "Isaiah 1:1; Isaiah 6:1; Isaiah 11:1-10. The kings' years follow Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings.",
+      "nodes": ["isaiah", "jesse_root"]
+    },
+    {
+      "id": "b_immanuel",
+      "track": "bible",
+      "books": ["advent"],
+      "label": "The Immanuel sign",
+      "date": { "start": -735, "end": -732, "display": "c. 735 to 732 BC" },
+      "certainty": "approximate",
+      "note": "The kings of Syria and Israel attack Judah. Isaiah gives King Ahaz a sign: a virgin will bear a son and call his name Immanuel.",
+      "source": "Isaiah 7:1-17; 2 Kings 16:5-9",
+      "nodes": ["prophecy_immanuel"]
+    },
+    {
+      "id": "b_child",
+      "track": "bible",
+      "books": ["advent"],
+      "label": "Unto us a child is born",
+      "date": { "start": -735, "end": -730, "display": "c. 730s BC" },
+      "certainty": "approximate",
+      "note": "Isaiah speaks this promise in the years when Assyria overruns Galilee, the land of Zebulun and Naphtali. The exact year is not given.",
+      "source": "Isaiah 9:1-7; 2 Kings 15:29",
+      "nodes": ["prophecy_child"]
+    },
+    {
+      "id": "b_micah",
+      "track": "bible",
+      "books": ["advent"],
+      "label": "Micah names Bethlehem",
+      "date": { "start": -735, "end": -700, "display": "c. 735 to 700 BC" },
+      "certainty": "approximate",
+      "note": "Micah prophesies in the days of Jotham, Ahaz, and Hezekiah, at the same time as Isaiah. He says a ruler for Israel will come from Bethlehem. The exact year of this saying is not given.",
+      "source": "Micah 1:1; Micah 5:2",
+      "nodes": ["prophecy_bethlehem"]
+    },
+    {
+      "id": "b_annunciation",
+      "track": "bible",
+      "books": ["advent"],
+      "label": "Gabriel's announcement to Mary",
+      "date": { "start": -7, "end": -5, "display": "c. 7 to 5 BC" },
+      "certainty": "approximate",
+      "note": "In Nazareth the angel Gabriel tells Mary she will bear the Son of God. Luke does not give the year. It comes shortly before the birth of Jesus.",
+      "source": "Luke 1:26-38",
+      "nodes": ["annunciation", "mary"]
+    },
+    {
+      "id": "b_birth",
+      "track": "bible",
+      "label": "The birth of Jesus",
+      "date": { "start": -6, "end": -4, "display": "c. 6 to 4 BC" },
+      "certainty": "approximate",
+      "note": "Jesus is born in Bethlehem while Herod the Great is king, and Herod dies in 4 BC. So the birth is usually placed c. 6 to 4 BC. Our calendar counts from a birth year worked out about five hundred years later by a monk named Dionysius Exiguus, and his count was a few years off.",
+      "alternatives": [
+        {
+          "display": "c. 3 to 2 BC",
+          "note": "A few scholars date Herod's death to 1 BC, which would allow a birth c. 3 to 2 BC."
+        }
+      ],
+      "source": "Matthew 2:1; Luke 2:1-7; Josephus, Jewish Antiquities 17",
+      "nodes": ["jesus_birth", "jesus", "joseph", "mary", "bethlehem"]
+    },
+    {
+      "id": "b_magi",
+      "track": "bible",
+      "books": ["advent"],
+      "label": "The magi seek the king",
+      "date": { "start": -6, "end": -4, "display": "c. 6 to 4 BC" },
+      "certainty": "approximate",
+      "note": "Wise men from the east come to Jerusalem and then to Bethlehem while Herod is still alive. Matthew 2:16 suggests this may be some time after the birth, up to two years.",
+      "source": "Matthew 2:1-16",
+      "nodes": ["magi"]
+    },
+    {
+      "id": "b_temptation",
+      "track": "bible",
+      "books": ["deuteronomy"],
+      "label": "Jesus is tested in the wilderness",
+      "date": { "start": 27, "end": 29, "display": "c. AD 27 to 29" },
+      "certainty": "approximate",
+      "note": "After his baptism Jesus fasts forty days in the wilderness and answers the devil three times from Deuteronomy. Luke dates the preaching of John the Baptist to the fifteenth year of Tiberius, c. AD 28 or 29, or a little earlier if the years are counted from when Tiberius began to share the rule.",
+      "source": "Luke 3:1-2; Luke 3:21-23; Matthew 4:1-11",
+      "nodes": ["nt_temptation"]
+    },
+    {
+      "id": "b_ministry",
+      "track": "bible",
+      "books": ["advent"],
+      "label": "The public ministry of Jesus",
+      "date": { "start": 27, "end": 33, "display": "c. AD 27 to 33" },
+      "certainty": "approximate",
+      "note": "Jesus preaches, heals, and teaches. In these years he says, \"I am the bread of life.\" The ministry begins c. AD 27 to 29 and ends at the cross, c. AD 30 or 33.",
+      "source": "Luke 3:1-2; Luke 3:23; John 6:35",
+      "nodes": ["jesus", "bread_of_life"]
+    },
+    {
+      "id": "b_cross",
+      "track": "bible",
+      "label": "The cross and the resurrection",
+      "date": { "start": 30, "end": 33, "display": "c. AD 30 or 33" },
+      "certainty": "disputed",
+      "note": "Jesus is crucified under Pontius Pilate at Passover and rises on the third day. In the days just before, he teaches in the temple and names the great commandment. Pilate governed c. AD 26 to 36. Within those years, AD 30 and AD 33 are the two dates most often defended, and scholars are divided between them. The bar covers both years. It does not mean the events lasted three years.",
+      "alternatives": [
+        {
+          "display": "AD 30, or AD 33",
+          "note": "Both dates are held by scholars who trust the Gospels. This map does not choose between them."
+        }
+      ],
+      "source": "Matthew 22:34-40; Matthew 27:1 to 28:10; Luke 23:1 to 24:12; John 19:1 to 20:18; 1 Corinthians 15:3-4",
+      "nodes": ["jesus", "nt_greatest", "nt_gal3"]
+    },
+    {
+      "id": "b_peter",
+      "track": "bible",
+      "books": ["deuteronomy"],
+      "label": "Peter preaches in the temple",
+      "date": { "start": 30, "end": 33, "display": "c. AD 30 or 33" },
+      "certainty": "disputed",
+      "note": "Soon after Pentecost, Peter tells the crowd at Solomon's Portico that Jesus is the prophet Moses promised. Stephen repeats the same promise in Acts 7:37. The year follows the date of the cross, so it is AD 30 or AD 33.",
+      "alternatives": [
+        {
+          "display": "AD 30, or AD 33",
+          "note": "The year depends on the date of the cross. This map does not choose between them."
+        }
+      ],
+      "source": "Acts 3:11-26; Acts 7:37",
+      "nodes": ["nt_acts3"]
+    },
+    {
+      "id": "b_galatians",
+      "track": "bible",
+      "books": ["deuteronomy"],
+      "label": "Paul writes Galatians",
+      "date": { "start": 48, "end": 55, "display": "c. AD 48 to 55" },
+      "certainty": "disputed",
+      "note": "Paul writes to the churches of Galatia that Christ redeemed us from the curse of the law by becoming a curse for us.",
+      "alternatives": [
+        {
+          "display": "c. AD 48 to 49, or c. AD 53 to 55",
+          "note": "Some date the letter early, before the Jerusalem council of Acts 15. Others date it several years later. The bar covers both views."
+        }
+      ],
+      "source": "Galatians 1:1-2; Galatians 3:10-14; Acts 13:1 to 15:35",
+      "nodes": ["nt_gal3"]
+    },
+    {
+      "id": "b_romans",
+      "track": "bible",
+      "books": ["deuteronomy"],
+      "label": "Paul writes Romans",
+      "date": { "start": 57, "end": null, "display": "c. AD 57" },
+      "certainty": "approximate",
+      "note": "Paul writes to the church in Rome near the end of his third missionary journey, probably from Corinth, just before he carries a gift to Jerusalem.",
+      "source": "Romans 15:25-26; Romans 16:1; Acts 20:2-3",
+      "nodes": ["nt_rom10"]
+    },
+
+    {
+      "id": "w_ur3",
+      "track": "world",
+      "books": ["advent"],
+      "label": "Third Dynasty of Ur",
+      "date": { "start": -2112, "end": -2004, "display": "c. 2112 to 2004 BC" },
+      "certainty": "approximate",
+      "note": "A Sumerian kingdom ruled from the city of Ur in Mesopotamia, in what is now southern Iraq. Genesis names Ur of the Chaldeans as Abraham's first home. The dates follow the commonly used middle chronology. Other systems move them by several decades.",
+      "source": "Marc Van De Mieroop, A History of the Ancient Near East; Genesis 11:31"
+    },
+    {
+      "id": "w_egypt_mk",
+      "track": "world",
+      "books": ["advent"],
+      "label": "Egypt's Middle Kingdom",
+      "date": { "start": -2055, "end": -1650, "display": "c. 2055 to 1650 BC" },
+      "certainty": "approximate",
+      "note": "A long, settled age in Egypt, centuries after the great pyramids were built. On the early dates, Joseph and then Jacob come to Egypt in this period.",
+      "source": "Ian Shaw, ed., The Oxford History of Ancient Egypt"
+    },
+    {
+      "id": "w_hammurabi",
+      "track": "world",
+      "books": ["advent"],
+      "label": "Hammurabi of Babylon",
+      "date": { "start": -1792, "end": -1750, "display": "c. 1792 to 1750 BC" },
+      "certainty": "approximate",
+      "note": "King of Babylon, known for his collection of laws carved on stone. The dates follow the commonly used middle chronology. Other systems move them several decades earlier or later.",
+      "source": "Marc Van De Mieroop, A History of the Ancient Near East; the stele of Hammurabi, Louvre Museum"
+    },
+    {
+      "id": "w_hyksos",
+      "track": "world",
+      "label": "Hyksos kings in Egypt",
+      "date": { "start": -1650, "end": -1550, "display": "c. 1650 to 1550 BC" },
+      "certainty": "approximate",
+      "note": "Rulers from western Asia hold the north of Egypt until the Egyptians drive them out.",
+      "source": "Ian Shaw, ed., The Oxford History of Ancient Egypt"
+    },
+    {
+      "id": "w_hittites",
+      "track": "world",
+      "label": "The Hittite kingdom",
+      "date": { "start": -1650, "end": -1180, "display": "c. 1650 to 1180 BC" },
+      "certainty": "approximate",
+      "note": "A great power ruled from Hattusa, in what is now central Turkey. For a time it rivaled Egypt.",
+      "source": "Trevor Bryce, The Kingdom of the Hittites"
+    },
+    {
+      "id": "w_egypt_nk",
+      "track": "world",
+      "label": "Egypt's New Kingdom",
+      "date": { "start": -1550, "end": -1069, "display": "c. 1550 to 1069 BC" },
+      "certainty": "approximate",
+      "note": "Egypt's age of empire, with pharaohs such as Thutmose III, Amenhotep II, and Ramesses II. The Exodus falls in this period on either date. The Bible does not name the pharaoh.",
+      "source": "Ian Shaw, ed., The Oxford History of Ancient Egypt"
+    },
+    {
+      "id": "w_thutmose",
+      "track": "world",
+      "label": "Pharaoh Thutmose III",
+      "date": { "start": -1479, "end": -1425, "display": "c. 1479 to 1425 BC" },
+      "certainty": "approximate",
+      "note": "One of Egypt's strongest pharaohs. On the early date of the Exodus, he or his son Amenhotep II (c. 1427 to 1400 BC) is often suggested as the pharaoh of Moses' day. The Bible does not name him, so this is a suggestion and not a fact.",
+      "source": "Ian Shaw, ed., The Oxford History of Ancient Egypt"
+    },
+    {
+      "id": "w_ramesses",
+      "track": "world",
+      "label": "Pharaoh Ramesses II",
+      "date": { "start": -1279, "end": -1213, "display": "c. 1279 to 1213 BC" },
+      "certainty": "approximate",
+      "note": "Egypt's great builder. On the late date of the Exodus he is usually taken to be the pharaoh. The Bible does not name him, so this is a suggestion and not a fact.",
+      "source": "Ian Shaw, ed., The Oxford History of Ancient Egypt"
+    },
+    {
+      "id": "w_merneptah",
+      "track": "world",
+      "label": "The Merneptah Stele",
+      "date": { "start": -1208, "end": null, "display": "c. 1208 BC" },
+      "certainty": "approximate",
+      "note": "A victory stone of Pharaoh Merneptah, the son of Ramesses II. It holds the earliest known mention of Israel outside the Bible, as a people already living in Canaan.",
+      "source": "The Merneptah Stele, Egyptian Museum, Cairo; Ian Shaw, ed., The Oxford History of Ancient Egypt"
+    },
+    {
+      "id": "w_assyria",
+      "track": "world",
+      "label": "The Assyrian Empire",
+      "date": { "start": -911, "end": -609, "display": "c. 911 to 609 BC" },
+      "certainty": "approximate",
+      "note": "The great power of Isaiah's day. Its heartland, with cities such as Nineveh, lies in what is now northern Iraq.",
+      "source": "Amélie Kuhrt, The Ancient Near East, c. 3000 to 330 BC"
+    },
+    {
+      "id": "w_rome_founded",
+      "track": "world",
+      "label": "Rome founded (by tradition)",
+      "date": { "start": -753, "end": null, "display": "753 BC, by tradition" },
+      "certainty": "traditional",
+      "note": "This is the year the Romans themselves gave for the founding of their city. It is a tradition and not a record.",
+      "source": "The reckoning of the Roman scholar Varro; The Oxford Classical Dictionary"
+    },
+    {
+      "id": "w_tiglath",
+      "track": "world",
+      "label": "Tiglath-pileser III of Assyria",
+      "date": { "start": -745, "end": -727, "display": "745 to 727 BC" },
+      "certainty": "firm",
+      "note": "He conquers Syria and much of northern Israel, including Galilee. King Ahaz of Judah sends to him for help.",
+      "source": "2 Kings 15:29; 2 Kings 16:7-9; Amélie Kuhrt, The Ancient Near East, c. 3000 to 330 BC"
+    },
+    {
+      "id": "w_samaria",
+      "track": "world",
+      "label": "The fall of Samaria",
+      "date": { "start": -722, "end": null, "display": "722 BC" },
+      "certainty": "firm",
+      "note": "Assyria takes Samaria, the capital of the northern kingdom of Israel, and carries its people into exile. Some books give 721 BC.",
+      "source": "2 Kings 17:5-6; 2 Kings 18:9-12; Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings"
+    },
+    {
+      "id": "w_sennacherib",
+      "track": "world",
+      "label": "Sennacherib invades Judah",
+      "date": { "start": -701, "end": null, "display": "701 BC" },
+      "certainty": "firm",
+      "note": "The king of Assyria takes the towns of Judah and threatens Jerusalem in the reign of Hezekiah. The Lord delivers the city. Sennacherib's own record of the campaign survives.",
+      "source": "2 Kings 18:13 to 19:37; Isaiah 36:1 to 37:38; the Taylor Prism, British Museum"
+    },
+    {
+      "id": "w_babylon",
+      "track": "world",
+      "label": "The Babylonian Empire",
+      "date": { "start": -626, "end": -539, "display": "626 to 539 BC" },
+      "certainty": "firm",
+      "note": "Babylon rises as Assyria falls. Its greatest king, Nebuchadnezzar II, reigns 605 to 562 BC. The ruins of Babylon are in Iraq, south of Baghdad.",
+      "source": "Amélie Kuhrt, The Ancient Near East, c. 3000 to 330 BC; the Babylonian Chronicles, British Museum"
+    },
+    {
+      "id": "w_nineveh",
+      "track": "world",
+      "label": "The fall of Nineveh",
+      "date": { "start": -612, "end": null, "display": "612 BC" },
+      "certainty": "firm",
+      "note": "The Babylonians and the Medes destroy Nineveh, the Assyrian capital. The prophet Nahum had announced its fall.",
+      "source": "Nahum 3:1-7; the Babylonian Chronicles, British Museum"
+    },
+    {
+      "id": "w_jerusalem",
+      "track": "world",
+      "label": "The fall of Jerusalem",
+      "date": { "start": -586, "end": null, "display": "586 BC" },
+      "certainty": "disputed",
+      "note": "Nebuchadnezzar destroys Jerusalem and Solomon's temple and carries Judah into exile in Babylon.",
+      "alternatives": [
+        {
+          "display": "587 BC",
+          "note": "Scholars differ by one year, because of how the years of the kings are counted. Both 587 and 586 BC are widely used."
+        }
+      ],
+      "source": "2 Kings 25:1-21; Jeremiah 52:12-30; Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings"
+    },
+    {
+      "id": "w_persia",
+      "track": "world",
+      "label": "The Persian Empire",
+      "date": { "start": -550, "end": -330, "display": "c. 550 to 330 BC" },
+      "certainty": "approximate",
+      "note": "The empire of Cyrus and his heirs, the setting of Ezra, Nehemiah, and Esther. Persia is modern Iran.",
+      "source": "Amélie Kuhrt, The Ancient Near East, c. 3000 to 330 BC"
+    },
+    {
+      "id": "w_cyrus",
+      "track": "world",
+      "label": "Cyrus takes Babylon",
+      "date": { "start": -539, "end": null, "display": "539 BC" },
+      "certainty": "firm",
+      "note": "Cyrus the Great of Persia conquers Babylon. In his first year over Babylon he lets the exiles of Judah go home to rebuild the temple.",
+      "source": "Ezra 1:1-4; Isaiah 44:28 to 45:1; the Nabonidus Chronicle and the Cyrus Cylinder, British Museum"
+    },
+    {
+      "id": "w_alexander",
+      "track": "world",
+      "label": "Alexander the Great",
+      "date": { "start": -336, "end": -323, "display": "336 to 323 BC" },
+      "certainty": "firm",
+      "note": "The king of Macedon conquers the Persian Empire and takes the land of Judea in 332 BC. Greek becomes the common language of the region. The New Testament was later written in it.",
+      "source": "Arrian, The Anabasis of Alexander; The Oxford Classical Dictionary"
+    },
+    {
+      "id": "w_greek",
+      "track": "world",
+      "label": "Greek kingdoms rule Judea",
+      "date": { "start": -301, "end": -167, "display": "c. 301 to 167 BC" },
+      "certainty": "approximate",
+      "note": "After Alexander dies his generals divide his empire. The Ptolemies of Egypt hold Judea from c. 301 BC. The Seleucids of Syria take it c. 200 BC.",
+      "source": "Josephus, Jewish Antiquities 12; The Oxford Classical Dictionary"
+    },
+    {
+      "id": "w_maccabees",
+      "track": "world",
+      "label": "The Maccabees",
+      "date": { "start": -167, "end": -63, "display": "167 to 63 BC" },
+      "certainty": "firm",
+      "note": "The Seleucid king Antiochus IV outlaws Jewish worship and defiles the temple. Judas Maccabeus and his family lead a revolt, and the temple is rededicated in 164 BC. John 10:22 mentions the feast that remembers it. The family, called the Hasmoneans, leads Judea until Rome arrives. The books of Maccabees are useful history. They are not part of Scripture.",
+      "source": "1 Maccabees 1:1 to 4:61; Josephus, Jewish Antiquities 12 to 13"
+    },
+    {
+      "id": "w_pompey",
+      "track": "world",
+      "label": "Rome takes Jerusalem",
+      "date": { "start": -63, "end": null, "display": "63 BC" },
+      "certainty": "firm",
+      "note": "The Roman general Pompey captures Jerusalem. From this point Judea is under the power of Rome.",
+      "source": "Josephus, Jewish Antiquities 14"
+    },
+    {
+      "id": "w_herod",
+      "track": "world",
+      "label": "Herod the Great",
+      "date": { "start": -37, "end": -4, "display": "37 to 4 BC" },
+      "certainty": "firm",
+      "note": "Rome names Herod king of Judea in 40 BC, and he takes Jerusalem in 37 BC. He rebuilds the temple on a grand scale. He is the King Herod of Matthew 2.",
+      "alternatives": [
+        {
+          "display": "Death in 1 BC",
+          "note": "Most scholars date Herod's death to 4 BC. A few argue for 1 BC."
+        }
+      ],
+      "source": "Matthew 2:1-19; Josephus, Jewish Antiquities 14 to 17"
+    },
+    {
+      "id": "w_augustus",
+      "track": "world",
+      "label": "Caesar Augustus",
+      "date": { "start": -27, "end": 14, "display": "27 BC to AD 14" },
+      "certainty": "firm",
+      "note": "The first Roman emperor. Luke 2:1 names him as the ruler whose decree brought Joseph and Mary to Bethlehem.",
+      "source": "Luke 2:1; Suetonius, The Life of Augustus; The Oxford Classical Dictionary"
+    },
+    {
+      "id": "w_census",
+      "track": "world",
+      "label": "The census of Quirinius",
+      "date": { "start": 6, "end": null, "display": "AD 6" },
+      "certainty": "disputed",
+      "note": "Luke 2:2 links the registration at the birth of Jesus with Quirinius, governor of Syria. Outside the Bible, the census of Quirinius that we know of took place in AD 6, about ten years after Herod died. How the two fit together is debated.",
+      "alternatives": [
+        {
+          "display": "An earlier registration, c. 6 to 4 BC",
+          "note": "Some suggest an earlier registration that no other record preserves. Others translate Luke 2:2 as the registration before Quirinius was governor. This map notes the question and does not settle it."
+        }
+      ],
+      "source": "Luke 2:1-2; Acts 5:37; Josephus, Jewish Antiquities 18"
+    },
+    {
+      "id": "w_tiberius",
+      "track": "world",
+      "label": "Emperor Tiberius",
+      "date": { "start": 14, "end": 37, "display": "AD 14 to 37" },
+      "certainty": "firm",
+      "note": "The emperor during the ministry of John the Baptist and of Jesus. Luke 3:1 dates John's preaching by his reign.",
+      "source": "Luke 3:1; Tacitus, Annals 1 to 6"
+    },
+    {
+      "id": "w_pilate",
+      "track": "world",
+      "label": "Pontius Pilate governs Judea",
+      "date": { "start": 26, "end": 36, "display": "c. AD 26 to 36" },
+      "certainty": "approximate",
+      "note": "The Roman governor who sentenced Jesus to the cross. The Roman historian Tacitus mentions it, and a stone found at Caesarea in 1961 carries Pilate's name.",
+      "source": "Luke 3:1; Josephus, Jewish Antiquities 18; Tacitus, Annals 15.44; the Pilate Stone, Israel Museum"
+    },
+    {
+      "id": "w_nero",
+      "track": "world",
+      "label": "Emperor Nero",
+      "date": { "start": 54, "end": 68, "display": "AD 54 to 68" },
+      "certainty": "firm",
+      "note": "The emperor when Paul wrote Romans. Early Christian writers say that Peter and Paul were put to death in Rome under him.",
+      "source": "Tacitus, Annals 13 to 16; Eusebius, Church History 2.25"
+    },
+    {
+      "id": "w_temple70",
+      "track": "world",
+      "label": "Rome destroys the temple",
+      "date": { "start": 70, "end": null, "display": "AD 70" },
+      "certainty": "firm",
+      "note": "After a Jewish revolt that began in AD 66, the Roman general Titus takes Jerusalem and burns the temple. Jesus had said that not one stone would be left on another.",
+      "source": "Josephus, The Jewish War 5 to 6; Matthew 24:1-2"
+    }
+  ],
+  "places": [
+    {
+      "id": "p_ur",
+      "books": ["advent"],
+      "label": "Ur",
+      "modern": "Southern Iraq",
+      "certainty": "traditional",
+      "note": "Abraham's first home. It is usually identified with the ruins at Tell el-Muqayyar, near Nasiriyah in southern Iraq. A few scholars look for Abraham's Ur farther north, nearer Haran.",
+      "source": "Genesis 11:28-31; the excavations of Leonard Woolley at Ur, 1922 to 1934",
+      "nodes": ["promise_abraham"]
+    },
+    {
+      "id": "p_canaan",
+      "label": "Canaan",
+      "modern": "Israel, the West Bank, and Gaza",
+      "certainty": "approximate",
+      "note": "The land God promised to Abraham. It is roughly modern Israel, the West Bank, and Gaza, and it reaches north into Lebanon.",
+      "source": "Genesis 12:5-7; Numbers 34:1-12",
+      "nodes": []
+    },
+    {
+      "id": "p_sinai",
+      "books": ["deuteronomy"],
+      "label": "Mount Sinai (Horeb)",
+      "modern": "Sinai Peninsula, Egypt, by tradition",
+      "certainty": "traditional",
+      "note": "A long Christian tradition identifies it with Jebel Musa in the south of the Sinai Peninsula, where Saint Catherine's Monastery stands. The Bible does not fix the spot, and other sites have been proposed.",
+      "source": "Exodus 19:1-2; Deuteronomy 5:2; The Oxford Bible Atlas",
+      "nodes": ["dt_decalogue"]
+    },
+    {
+      "id": "p_moab",
+      "books": ["deuteronomy"],
+      "label": "The plains of Moab",
+      "modern": "Jordan, east of the Jordan River",
+      "certainty": "firm",
+      "note": "Where Moses preached Deuteronomy. The plains lie in modern Jordan, across the river from Jericho, just north of the Dead Sea.",
+      "source": "Numbers 22:1; Deuteronomy 1:5; Deuteronomy 34:1",
+      "nodes": ["dt_moses"]
+    },
+    {
+      "id": "p_nebo",
+      "books": ["deuteronomy"],
+      "label": "Mount Nebo",
+      "modern": "Western Jordan, near Madaba",
+      "certainty": "traditional",
+      "note": "Where Moses saw the land and died. It is traditionally identified with a ridge near Madaba in Jordan that looks across the Jordan valley toward Jericho.",
+      "source": "Deuteronomy 32:49; Deuteronomy 34:1-5",
+      "nodes": ["dt_death"]
+    },
+    {
+      "id": "p_bethlehem",
+      "books": ["advent"],
+      "label": "Bethlehem",
+      "modern": "The West Bank, just south of Jerusalem",
+      "certainty": "firm",
+      "note": "The town of David and the birthplace of Jesus. It is still a living town with the same name, a few miles south of Jerusalem.",
+      "source": "Ruth 1:1; 1 Samuel 16:1; Micah 5:2; Luke 2:4",
+      "nodes": ["bethlehem"]
+    },
+    {
+      "id": "p_nazareth",
+      "books": ["advent"],
+      "label": "Nazareth",
+      "modern": "Northern Israel",
+      "certainty": "firm",
+      "note": "The town in Galilee where Gabriel came to Mary and where Jesus grew up. It is a city in northern Israel today.",
+      "source": "Luke 1:26; Luke 2:39-40",
+      "nodes": ["annunciation"]
+    },
+    {
+      "id": "p_jerusalem",
+      "label": "Jerusalem",
+      "modern": "Jerusalem",
+      "certainty": "firm",
+      "note": "David's capital and the city of the temple. It stands on the same hills today.",
+      "source": "2 Samuel 5:6-9; Luke 2:22",
+      "nodes": []
+    },
+    {
+      "id": "p_assyria",
+      "books": ["advent"],
+      "label": "Assyria and Nineveh",
+      "modern": "Northern Iraq, by Mosul",
+      "certainty": "firm",
+      "note": "The Assyrian heartland lay along the Tigris River. The ruins of Nineveh are across the river from the modern city of Mosul.",
+      "source": "2 Kings 19:36; Amélie Kuhrt, The Ancient Near East, c. 3000 to 330 BC",
+      "nodes": []
+    },
+    {
+      "id": "p_babylon",
+      "label": "Babylon",
+      "modern": "Iraq, south of Baghdad",
+      "certainty": "firm",
+      "note": "The city of Nebuchadnezzar and the place of Judah's exile. Its ruins are near the modern city of Hillah in Iraq.",
+      "source": "2 Kings 25:8-11; Amélie Kuhrt, The Ancient Near East, c. 3000 to 330 BC",
+      "nodes": []
+    },
+    {
+      "id": "p_persia",
+      "label": "Persia",
+      "modern": "Iran",
+      "certainty": "firm",
+      "note": "The homeland of Cyrus. The country was known as Persia in the West until the twentieth century and is now called Iran.",
+      "source": "Ezra 1:1; Amélie Kuhrt, The Ancient Near East, c. 3000 to 330 BC",
+      "nodes": []
+    },
+    {
+      "id": "p_galatia",
+      "books": ["deuteronomy"],
+      "label": "Galatia",
+      "modern": "Central Turkey",
+      "certainty": "firm",
+      "note": "A Roman province in the middle of what is now Turkey. Paul preached in its southern cities, such as Iconium and Lystra.",
+      "source": "Acts 13:14 to 14:23; Galatians 1:2",
+      "nodes": ["nt_gal3"]
+    },
+    {
+      "id": "p_rome",
+      "books": ["deuteronomy"],
+      "label": "Rome",
+      "modern": "Rome, Italy",
+      "certainty": "firm",
+      "note": "The capital of the empire, and the home of the church Paul wrote to in Romans. It is the capital of Italy today.",
+      "source": "Romans 1:7; Acts 28:14-16",
+      "nodes": ["nt_rom10"]
+    }
+  ]
+}

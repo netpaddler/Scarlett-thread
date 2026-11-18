@@ -99,6 +99,30 @@
       <h2 class="visually-hidden">See the map</h2>
       <div class="explore-layout">
         <div class="map-frame">
+          <section id="timeline" class="timeline" aria-label="Timeline" hidden>
+            <div class="tl-bar">
+              <button type="button" id="tl-toggle" class="tl-toggle" aria-expanded="true" aria-controls="tl-body">
+                <svg class="icon tl-caret" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Timeline</span>
+              </button>
+              <p class="tl-hint" id="tl-hint">The c. means about. Dashed dates are debated. Busy centuries are drawn wider. Tap a date to read about it.</p>
+              <div class="tl-zoom" role="group" aria-label="Timeline zoom">
+                <button type="button" id="tl-zoom-out" class="icon-btn" aria-label="Squeeze the timeline" title="Squeeze the timeline">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 12h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                </button>
+                <button type="button" id="tl-zoom-in" class="icon-btn" aria-label="Stretch the timeline" title="Stretch the timeline">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="tl-body" id="tl-body">
+              <div class="tl-scroll" id="tl-scroll" tabindex="0" role="group" aria-label="Dates, oldest on the left. Scroll sideways.">
+                <div class="tl-canvas" id="tl-canvas"></div>
+              </div>
+              <div class="tl-places" id="tl-places" role="group" aria-label="Places today"></div>
+            </div>
+          </section>
+          <div class="map-stage">
           <p class="visually-hidden">The map drawing may be hard to use with a keyboard or a screen reader. The list of names beside it opens the same details.</p>
           <div id="graph" class="graph" aria-label="Advent map of people, places, events, and promises"></div>
           <p id="graph-loading" class="map-loading" aria-hidden="true">Drawing the map.</p>
@@ -137,6 +161,9 @@
               <ul class="legend" id="node-legend"></ul>
             </div>
           </details>
+
+          <aside id="tl-detail" class="tl-detail" aria-label="About this date" hidden></aside>
+          </div>
         </div>
 
         <aside id="panel" class="sheet" aria-label="Reading"></aside>

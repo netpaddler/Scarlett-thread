@@ -88,6 +88,42 @@ Node ids and path ids are unique across both books, so a link names the book as 
 
 Go deepest on the Deuteronomy stops reuses Westminster sections already in `data/confessions.json`, whose text and proofs were checked against the OPC editions in the earlier audit. No new section was added. The OPC proof-text PDFs are page scans with no text layer, so a new section's proofs could not be verified, and the rule is to leave a section out rather than guess at it.
 
+## The timeline
+
+A band above the map sets the map's stops beside world history. It is on both maps. The top track holds the Bible dates for the stops of the book that is open. The bottom track holds world history: Egypt's kingdoms and pharaohs, Hammurabi, the Hittites, Assyria and the fall of Samaria, Babylon and the fall of Jerusalem, Cyrus and Persia, Alexander, the Maccabees, Rome, Augustus, Herod, Pilate, and the destruction of the temple. A row of chips under the tracks gives the modern name of each place, such as Ur in southern Iraq.
+
+Hover or choose a stop on the map and its dates light up on the timeline, and the timeline scrolls to them. Tap a date and its note opens over a corner of the map, with the matching stop chosen and framed where there is one. The plus and minus buttons stretch and squeeze the band, and it scrolls sideways. The Timeline button folds it away. On a phone it starts folded.
+
+The scale is not even. A century is drawn as wide as the number of things that begin in it, so the years around the birth of Jesus are not one smear. The band says so, and the axis labels the centuries.
+
+Everything on the band comes from `data/timeline.json`. No date lives in the code. If the file fails to load, the band is hidden and the map reads as it did before.
+
+### Timeline fields
+
+`events` holds the dated entries and `places` holds the modern place names.
+
+- `id`: stable key.
+- `track`: `bible` or `world`. Events only.
+- `label`: name shown to the reader.
+- `date`: events only. `start` and `end` are whole years, negative for BC, so 1446 BC is `-1446`. `end` is `null` for a single year. `display` is the wording the reader sees, such as "c. 1446 to 1406 BC".
+- `modern`: places only. Where the place is today.
+- `note`: a short explanation in plain words.
+- `source`: a Scripture reference for a Bible entry. For world history, a standard reference named at the level of the work, with Scripture beside it where Scripture speaks of the same event.
+- `certainty`: `firm`, `approximate`, `disputed`, `traditional`, or `undated`. The file's top level `certainty` object holds the sentence the reader sees for each.
+- `alternatives`: optional. The other view on a disputed date. Each has `display` and `note`. One that also has `start` is drawn on the band as its own dashed marker.
+- `nodes`: the map stops the entry belongs to. This is the link between the band and the map.
+- `books`: optional. Limits an entry to one map, `advent` or `deuteronomy`. Without it the entry shows on both.
+
+### Timeline rules
+
+- Do not invent an event or a date. Leave an entry out before guessing at it.
+- Every early date carries "c." for about. Write a range with the word "to".
+- Nothing in Genesis 1 to 11 carries a year. Such an entry has `start: null` and `certainty: undated`, and the band draws it in a box marked as not dated.
+- Where scholars differ, keep one primary date and put the other view under `alternatives`. Do not pick silently. A `disputed` entry must have an alternative.
+- The early date of the Exodus (c. 1446 BC, from 1 Kings 6:1) is primary. The late date (c. 1260s BC) is always shown beside it. The dates for Abraham, Jacob, Sinai, the wilderness, and Deuteronomy are counted from the early date and say so.
+- The Bible does not name the pharaoh of the Exodus, so the notes on Thutmose III and Ramesses II call the link a suggestion.
+- The world history dates were written from the standard references named in each entry. They have not yet had the line by line check against sources that the rest of the site has had in `AUDIT.md`.
+
 ## Comments and requests
 
 The form posts to a Cloudflare Worker. The Worker opens a public GitHub issue in this repository for each submission, labels it `map-request`, and adds a short reply. A GET to the same Worker returns the labeled issues and their comments, stripped of HTML, so the site can list them. Nothing is stored anywhere else.
@@ -156,6 +192,7 @@ The ESV excerpts and references were independently checked against esv.org in No
 - `data/deuteronomy-sermons.json`: Faith Presbyterian sermon links for Deuteronomy nodes.
 - `data/confessions.json`: Westminster Confession and Catechism quotations for each stop.
 - `data/deeper.json`: the Go deeper reading for each stop and each week.
+- `data/timeline.json`: the dates, world history, and modern place names for the timeline band.
 - `vendor/`: Cytoscape.js and dagre.
 - `fonts/`: Source Serif 4 and its license.
 - `config/requests.js`: the public endpoint and site key for the form.

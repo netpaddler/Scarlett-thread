@@ -1953,6 +1953,596 @@ body[data-mode="explore"] .intro {
   }
 }
 
+/* Timeline: the band above the map */
+
+.map-frame {
+  display: flex;
+  flex-direction: column;
+}
+
+.map-stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  container-type: size;
+}
+
+.timeline {
+  position: relative;
+  z-index: 5;
+  flex: none;
+  min-width: 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline[hidden],
+.tl-body[hidden],
+.tl-places[hidden],
+.tl-detail[hidden] {
+  display: none;
+}
+
+.tl-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 44px;
+  padding: 0 var(--s-2);
+}
+
+.tl-toggle {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--s-1);
+  min-height: 36px;
+  padding: 0 var(--s-3) 0 var(--s-1);
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-size: var(--t-sm);
+  font-weight: 600;
+}
+
+.tl-toggle:hover {
+  background: var(--scrim);
+}
+
+.tl-caret {
+  transition: transform 180ms var(--ease);
+}
+
+.timeline.is-closed .tl-caret {
+  transform: rotate(-90deg);
+}
+
+.tl-hint {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  font-size: var(--t-xs);
+  color: var(--ink-soft);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tl-zoom {
+  display: flex;
+  flex: none;
+}
+
+.tl-zoom .icon-btn {
+  width: 36px;
+  height: 36px;
+}
+
+.tl-zoom .icon-btn:disabled {
+  opacity: 0.35;
+}
+
+.timeline.is-closed .tl-zoom {
+  display: none;
+}
+
+.tl-scroll {
+  max-height: min(44vh, 23rem);
+  overflow: auto;
+  overscroll-behavior-x: contain;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tl-scroll:focus-visible {
+  outline-offset: -2px;
+}
+
+.tl-canvas {
+  position: relative;
+  min-width: 100%;
+}
+
+.tl-grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 1px solid var(--line);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.tl-track {
+  position: relative;
+}
+
+.tl-track-name {
+  position: sticky;
+  left: var(--s-2);
+  z-index: 2;
+  display: inline-block;
+  margin-top: 2px;
+  padding: 0 6px;
+  vertical-align: top;
+  border-radius: 999px;
+  background: var(--bg);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.tl-track[data-track="bible"] .tl-track-name {
+  color: var(--accent);
+}
+
+.tl-axis {
+  position: relative;
+  z-index: 1;
+  height: 22px;
+  border-block: 1px solid var(--line-strong);
+  background: var(--paper);
+}
+
+.tl-tick {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid var(--line-strong);
+}
+
+.tl-tick span {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 14px;
+  white-space: nowrap;
+  color: var(--ink-soft);
+}
+
+.tl-item {
+  --tl-color: var(--ink-soft);
+  position: absolute;
+  display: block;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--r-sm);
+  background: transparent;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+/* A long reign keeps its name in view while its bar runs off the left edge. */
+.tl-item.is-range .tl-item-label,
+.tl-item.is-range .tl-item-date {
+  position: sticky;
+  left: var(--s-2);
+  width: max-content;
+  max-width: 100%;
+}
+
+.tl-item[data-track="bible"] {
+  --tl-color: var(--accent-fill);
+}
+
+.tl-item[data-track="world"] {
+  --tl-color: var(--edge-event_sequence);
+}
+
+.tl-mark {
+  display: block;
+  width: 8px;
+  height: 6px;
+  margin-bottom: 2px;
+  border-radius: 3px;
+  background: var(--tl-color);
+}
+
+.tl-item.is-point .tl-mark {
+  width: 8px;
+  height: 8px;
+  margin-top: -1px;
+  margin-bottom: 1px;
+  border-radius: 50%;
+}
+
+/* A debated or traditional date is drawn hollow and dashed, so the eye can
+   tell it from a settled one before reading a word. */
+.tl-item[data-certainty="disputed"] .tl-mark,
+.tl-item[data-certainty="traditional"] .tl-mark {
+  box-sizing: border-box;
+  border: 1.5px dashed var(--tl-color);
+  background: transparent;
+}
+
+.tl-item-label,
+.tl-item-date {
+  display: block;
+  overflow: visible;
+}
+
+.tl-item-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 14px;
+  color: var(--ink);
+}
+
+.tl-item-date {
+  font-size: 0.6875rem;
+  line-height: 12px;
+  color: var(--ink-soft);
+}
+
+.tl-item.tl-alt .tl-item-label {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.tl-item:hover .tl-item-label,
+.tl-item.is-hot .tl-item-label {
+  color: var(--accent);
+}
+
+.tl-item::before {
+  content: "";
+  position: absolute;
+  inset: -2px -6px -1px -5px;
+  z-index: -1;
+  border-radius: var(--r-sm);
+  background: transparent;
+}
+
+.tl-item.is-hot::before {
+  background: var(--accent-wash);
+}
+
+.tl-item.is-picked::before {
+  background: var(--accent-wash);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.tl-item.is-open::before {
+  background: var(--accent-wash);
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.tl-item.is-picked .tl-item-label,
+.tl-item.is-open .tl-item-label {
+  color: var(--accent);
+}
+
+.tl-undated {
+  position: absolute;
+  left: var(--s-2);
+  bottom: 6px;
+  padding: 6px var(--s-2);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--r-md);
+  background: var(--paper);
+}
+
+.tl-undated-title {
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+
+.tl-item.tl-undated-item {
+  position: relative;
+  z-index: 0;
+  height: auto;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 18px;
+  white-space: normal;
+  color: var(--ink);
+}
+
+.tl-item.tl-undated-item.is-picked,
+.tl-item.tl-undated-item.is-open,
+.tl-item.tl-undated-item:hover {
+  color: var(--accent);
+}
+
+.tl-places {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  overflow-x: auto;
+  padding: 6px var(--s-2);
+  border-top: 1px solid var(--line);
+  scrollbar-width: none;
+}
+
+.tl-places::-webkit-scrollbar {
+  display: none;
+}
+
+.tl-places-title {
+  flex: none;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.tl-place {
+  display: inline-flex;
+  flex: none;
+  align-items: baseline;
+  gap: 6px;
+  min-height: 28px;
+  padding: 0 var(--s-3);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.tl-place[data-certainty="traditional"] {
+  border-style: dashed;
+  border-color: var(--line-strong);
+}
+
+.tl-place-name {
+  font-weight: 600;
+}
+
+.tl-place-now {
+  color: var(--ink-soft);
+}
+
+.tl-place:hover,
+.tl-place.is-hot {
+  border-color: var(--accent);
+}
+
+.tl-place.is-picked,
+.tl-place.is-open {
+  border-style: solid;
+  border-color: var(--accent);
+  background: var(--accent-wash);
+}
+
+/* The note for one date. It floats over a corner of the drawing so that
+   opening it does not resize the map. */
+.tl-detail {
+  position: absolute;
+  right: var(--s-3);
+  bottom: var(--s-3);
+  z-index: 4;
+  width: min(23rem, calc(100% - 2 * var(--s-3)));
+  max-height: calc(100% - 76px);
+  max-height: min(24rem, 100cqh - 76px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--s-3) var(--s-4) var(--s-4);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--paper);
+  box-shadow: var(--shadow-md);
+  font-size: var(--t-sm);
+  line-height: 1.5;
+}
+
+.tl-detail-close {
+  float: right;
+  width: 32px;
+  height: 32px;
+  margin: -4px -8px 0 var(--s-2);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.tl-detail-title {
+  margin-top: 2px;
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.tl-detail-date {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px var(--s-2);
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.tl-tag {
+  padding: 0 var(--s-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--ink-soft);
+}
+
+.tl-tag[data-certainty="disputed"],
+.tl-tag[data-certainty="traditional"],
+.tl-tag[data-certainty="undated"] {
+  border-style: dashed;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tl-detail-note,
+.tl-detail-alt {
+  margin-top: var(--s-2);
+}
+
+.tl-detail-alt {
+  padding-left: var(--s-3);
+  border-left: 2px dashed var(--accent);
+}
+
+.tl-detail-sure,
+.tl-detail-source {
+  margin-top: var(--s-2);
+  font-size: var(--t-xs);
+  color: var(--ink-soft);
+}
+
+.tl-detail-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--s-3);
+}
+
+.tl-detail-nodes-title {
+  width: 100%;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.tl-node-btn {
+  min-height: 30px;
+  padding: 0 var(--s-3);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: transparent;
+  font-size: var(--t-xs);
+  font-weight: 500;
+}
+
+.tl-node-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tl-node-btn[aria-pressed="true"] {
+  border-color: var(--accent-fill);
+  background: var(--accent-fill);
+  color: var(--on-accent);
+}
+
+.map-stage .map-key-body {
+  max-height: min(30rem, 60vh, 100cqh - 72px);
+}
+
+@media (max-width: 959px) {
+  /* Open, the band takes room a phone's map cannot spare. So the frame stops
+     sticking and grows: the band, then the map at its usual height, then the
+     reading sheet, all in one scroll. */
+  .map-frame.tl-open {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+  }
+
+  .map-frame.tl-open .map-stage {
+    flex: none;
+    height: 58vh;
+    height: 58svh;
+    min-height: 320px;
+  }
+
+  .tl-scroll {
+    max-height: none;
+  }
+
+  .tl-hint {
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  .tl-hint {
+    font-size: 0.6875rem;
+  }
+
+  .tl-bar {
+    padding-block: 4px;
+  }
+
+  .tl-detail {
+    left: var(--s-3);
+    bottom: calc(var(--s-3) + var(--s-4) + 52px);
+    width: auto;
+    max-height: calc(100% - 92px);
+    max-height: calc(100cqh - 92px);
+  }
+}
+
+@media (pointer: coarse) {
+  .tl-toggle,
+  .tl-zoom .icon-btn {
+    min-height: 44px;
+  }
+
+  .tl-zoom .icon-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .tl-place {
+    min-height: 36px;
+  }
+
+  .tl-node-btn {
+    min-height: 40px;
+  }
+}
+
+@media (forced-colors: active) {
+  .timeline,
+  .tl-detail {
+    border: 1px solid CanvasText;
+  }
+
+  .tl-mark {
+    background: CanvasText;
+    forced-color-adjust: none;
+  }
+
+  .tl-item.is-picked,
+  .tl-item.is-open {
+    outline: 2px solid Highlight;
+  }
+}
+
 /* Footer */
 
 .site-footer {
