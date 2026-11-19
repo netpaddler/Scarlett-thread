@@ -175,7 +175,7 @@
     "warfield": {
       "group": "millennium",
       "short": "Warfield, \"The Millennium and the Apocalypse\"",
-      "cite": "Benjamin B. Warfield. \"The Millennium and the Apocalypse.\" The Princeton Theological Review, volume 2, number 4 (October 1904), ending on page 617.",
+      "cite": "Benjamin B. Warfield. \"The Millennium and the Apocalypse.\" The Princeton Theological Review, volume 2, number 4 (October 1904), pages 599 to 617.",
       "url": "https://archive.org/details/princetontheolog2419arms",
       "url_label": "Read the journal at archive.org"
     },
@@ -214,7 +214,7 @@
       "group": "millennium",
       "short": "Ladd, A Commentary on the Revelation of John",
       "cite": "George Eldon Ladd. A Commentary on the Revelation of John. Grand Rapids: Eerdmans, 1972. Cited by the verses commented on.",
-      "note": "Historic premillennial."
+      "note": "Historic premillennial. Ladd was a Baptist who taught at Fuller Theological Seminary, not a Presbyterian. He is listed because his commentary sets out the view in full."
     },
     "clouse": {
       "group": "millennium",
@@ -225,9 +225,9 @@
     "machen": {
       "group": "millennium",
       "short": "Machen, \"The Second General Assembly\"",
-      "cite": "J. Gresham Machen. \"The Second General Assembly of the Presbyterian Church of America.\" The Presbyterian Guardian, 1936.",
-      "url": "https://readmachen.pages.dev/article/1936/the-second-general-assembly-of-the-presbyterian-church-of-america/",
-      "url_label": "Read it online"
+      "cite": "J. Gresham Machen. \"The Second General Assembly of the Presbyterian Church of America.\" The Presbyterian Guardian, volume 3 (November 28, 1936), pages 69 to 71.",
+      "url": "https://opc.org/cfh/guardian/Volume_3/1936-11-28.pdf",
+      "url_label": "Read the issue at opc.org"
     },
     "irenaeus_ah": {
       "group": "early",
@@ -306,7 +306,7 @@
     "shaw": {
       "group": "history",
       "short": "Shaw, The Oxford History of Ancient Egypt",
-      "cite": "Ian Shaw, editor. The Oxford History of Ancient Egypt. Oxford: Oxford University Press, 2000. The chronology is on pages 479 to 483."
+      "cite": "Ian Shaw, editor. The Oxford History of Ancient Egypt. Oxford: Oxford University Press, 2000."
     },
     "vdm": {
       "group": "history",
@@ -521,7 +521,7 @@
       {
         "work": "esvsb",
         "at": "note on Isaiah 7:14",
-        "says": "Some hold the sign points only to the birth of Jesus. Others see a nearer event in the days of Ahaz as well, and the full meaning in Jesus."
+        "says": ""
       }
     ],
     "prophecy_child": [
@@ -857,7 +857,7 @@
       {
         "work": "calvin_comm",
         "at": "on Isaiah 6:1",
-        "says": "Calvin says John tells us the Lord whom Isaiah saw was Christ (John 12:41). He adds that the vision should not be limited to the person of the Son."
+        "says": "Calvin says John tells us the Lord whom Isaiah saw was Christ (John 12:41). He adds that it is wrong to limit the vision to the person of Christ."
       },
       {
         "work": "wcf",
@@ -902,7 +902,7 @@
       {
         "work": "esvsb",
         "at": "note on Isaiah 7:14",
-        "says": "Some hold the sign points only to the birth of Jesus. Others see a nearer event in the days of Ahaz as well, and the full meaning in Jesus."
+        "says": ""
       }
     ],
     "is_child": [
@@ -1124,7 +1124,7 @@
       {
         "work": "calvin_comm",
         "at": "on Isaiah 65:17",
-        "says": "Calvin reads the promise of the restoring of the church, begun after Babylon and carried through the whole reign of Christ to his last coming. He says the kingdom of Christ is here described under figures."
+        "says": "Calvin reads the promise of the restoring of the church, begun after Babylon and carried through the whole reign of Christ to his last coming. He says the change is promised here by metaphors."
       },
       {
         "work": "wlc",
@@ -1275,7 +1275,7 @@
       {
         "work": "esvsb",
         "at": "Introduction to Revelation",
-        "says": "Most scholars date the book to the mid 90s. Some argue for a date under Nero, before AD 70."
+        "says": "Most scholars date the book to the mid 90s."
       },
       {
         "work": "beale_rev",
@@ -1470,7 +1470,7 @@
       },
       {
         "work": "opc_preface",
-        "says": "The Confession of 1646 called the pope the Antichrist at 25.6. The American text removed that."
+        "says": "The Confession of 1646 called the pope the Antichrist at 25.6. The Presbyterian Church in the U.S.A. rewrote 25.6 in 1903 and removed that, and the Orthodox Presbyterian Church kept the change in 1936."
       },
       {
         "work": "hendriksen",
@@ -1808,7 +1808,7 @@
     "rvo_ezekiel47": [
       {
         "work": "beale_temple",
-        "at": "chapter \"The question of the temple in Ezekiel 40-48 and its relationship to the New Testament\""
+        "at": "chapter 11, \"The Temple in Ezekiel 40 to 48 and Its Relationship to the New Testament\""
       },
       {
         "work": "beale_rev",
@@ -1916,7 +1916,7 @@
       {
         "work": "esvsb",
         "at": "note on Isaiah 7:14",
-        "says": "Some hold the sign points only to the birth of Jesus. Others see a nearer event in the days of Ahaz as well, and the full meaning in Jesus."
+        "says": ""
       },
       {
         "work": "calvin_comm",
@@ -2326,7 +2326,7 @@
       {
         "work": "esvsb",
         "at": "Introduction to Revelation",
-        "says": "Names four approaches to the book: historicism, futurism, preterism, and idealism."
+        "says": ""
       },
       {
         "work": "johnson",
@@ -2502,8 +2502,8 @@
       },
       {
         "work": "esvsb",
-        "at": "timeline notes",
-        "says": "Gives 967 or 966 BC for the fourth year of Solomon."
+        "at": "note on 1 Kings 6:1",
+        "says": "Gives about 966 BC."
       }
     ],
     "b_isaiah": [
@@ -2824,7 +2824,7 @@
       {
         "work": "esvsb",
         "at": "Introduction to Revelation",
-        "says": "Most scholars date the book to the mid 90s. Some argue for a date under Nero, before AD 70."
+        "says": "Most scholars date the book to the mid 90s."
       }
     ],
     "w_domitian": [
@@ -2873,22 +2873,22 @@
     "b_cross": [
       {
         "work": "esvsb",
-        "at": "article on the dates of Jesus' life",
-        "says": "The only likely years are AD 30 or 33."
+        "at": "article \"The Date of Jesus' Crucifixion\"",
+        "says": "Weighs AD 30 and AD 33, and judges the evidence for AD 33 the stronger."
       }
     ],
     "b_peter": [
       {
         "work": "esvsb",
-        "at": "article on the dates of Jesus' life",
-        "says": "The only likely years for the cross are AD 30 or 33."
+        "at": "article \"The Date of Jesus' Crucifixion\"",
+        "says": "Weighs AD 30 and AD 33, and judges the evidence for AD 33 the stronger."
       }
     ],
     "b_galatians": [
       {
         "work": "esvsb",
         "at": "Introduction to Galatians",
-        "says": "About AD 48 is a plausible date."
+        "says": "Gives about AD 48."
       }
     ],
     "b_romans": [
