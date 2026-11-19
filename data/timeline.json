@@ -175,7 +175,7 @@
       "date": { "start": -966, "end": null, "display": "c. 966 BC" },
       "certainty": "approximate",
       "note": "Solomon begins to build the temple in the fourth year of his reign. 1 Kings 6:1 counts this as the 480th year after the Exodus, which is where the early date of the Exodus comes from.",
-      "source": "1 Kings 6:1. Solomon's years follow Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings.",
+      "source": "1 Kings 6:1; 1 Kings 11:42. Solomon's years are counted back from the division of the kingdom, c. 930 BC, as dated in Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings. The ESV Study Bible gives about 966 BC.",
       "nodes": []
     },
     {
@@ -461,8 +461,8 @@
       "label": "The fall of Samaria",
       "date": { "start": -722, "end": null, "display": "722 BC" },
       "certainty": "firm",
-      "note": "Assyria takes Samaria, the capital of the northern kingdom of Israel, and carries its people into exile. Some books give 721 BC.",
-      "source": "2 Kings 17:5-6; 2 Kings 18:9-12; Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings"
+      "note": "Assyria takes Samaria, the capital of the northern kingdom of Israel, and carries its people into exile. Some books give 723 or 721 BC.",
+      "source": "2 Kings 17:5-6; 2 Kings 18:9-12. Edwin R. Thiele, The Mysterious Numbers of the Hebrew Kings, places it in the year that ran from spring 723 to spring 722 BC, and argues for 723."
     },
     {
       "id": "w_sennacherib",

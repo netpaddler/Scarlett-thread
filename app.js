@@ -93,7 +93,7 @@
   var FOCAL_SIZE = { w: 160, h: 88 };
   var READABLE_ZOOM = 0.74;
   var PHONE_QUERY = "(max-width: 959px)";
-  var MODES = ["walk", "explore", "requests"];
+  var MODES = ["walk", "explore", "requests", "sources"];
 
   /* Each book is one graph file. The first one is the default and keeps the
      plain "#explore" hash, so Advent links made before this change still work. */
@@ -137,6 +137,7 @@
   var confessions = null;
   var deeper = null;
   var timeline = null;
+  var sources = null;
   var nodesById = new Map();
   var exploreCy = null;
   var graphPending = false;
@@ -147,6 +148,7 @@
     pathId: null,
     step: 0,
     selectedId: null,
+    workId: null,
     hideTypology: false
   };
 
@@ -513,7 +515,7 @@
     });
   }
 
-  function appendRichDeeper(parent, entry) {
+  function appendRichDeeper(parent, entry, ownerId) {
     if (!entry) return;
     if (entry.context && entry.context.length) {
       parent.append(h("h4", { class: "section-label", text: "The story" }));
@@ -545,6 +547,15 @@
           block.append(h("p", { class: "badge " + link.confidence, text: confidenceCopy(link.confidence) }));
         }
         if (link.text) block.append(h("p", { text: link.text }));
+        var fromId = link.direction === "from" ? link.other : ownerId;
+        var toId = link.direction === "from" ? ownerId : link.other;
+        var edge = ownerId ? data.edges.find(function (candidate) {
+          return !candidate.cross && candidate.from === fromId && candidate.to === toId;
+        }) : null;
+        if (edge) {
+          var edgeSources = sourceLine(edge.refs || [], edgeCitations(edge));
+          if (edgeSources) block.append(edgeSources);
+        }
         parent.append(block);
       });
     }
@@ -675,8 +686,10 @@
       var note = h("p", { class: "cross-note" });
       note.append(h("strong", { text: kind + ". " }), document.createTextNode(link.note || ""));
       row.append(note);
-      if (link.refs && link.refs.length) {
-        row.append(h("p", { class: "cross-refs", text: link.refs.join("; ") }));
+      var crossSources = sourceLine(link.refs || [], citationsFor("links", link.id));
+      if (crossSources) {
+        crossSources.classList.add("cross-refs");
+        row.append(crossSources);
       }
       list.append(row);
     });
@@ -696,9 +709,137 @@
     }));
   }
 
+
+  /* Sources. data/sources.json lists every work the site cites and says, stop
+     by stop and line by line, which work is cited for what. The Westminster
+     sections a stop already quotes under Go deepest are added from
+     data/confessions.json, so a section is never listed in two places. */
+
+  function sourceWork(id) {
+    return sources && sources.works && sources.works[id] ? sources.works[id] : null;
+  }
+
+  function citationsFor(group, id) {
+    var list = sources && sources[group] && Array.isArray(sources[group][id]) ? sources[group][id] : [];
+    return list.filter(function (item) { return item && sourceWork(item.work); });
+  }
+
+  /* "Confession 7.3" in confessions.json is the same section as work "wcf"
+     at "7.3" in sources.json. */
+  function standardsCitations(group, id) {
+    if (!sources) return [];
+    return confessionItems(group, id).map(function (item) {
+      var section = confessions.sections[item.section];
+      var at = String(section.cite || "").replace(/^\D+/, "");
+      return sourceWork(section.work) && at ? { work: section.work, at: at, says: item.line || "" } : null;
+    }).filter(Boolean);
+  }
+
+  function mergeCitations(lists) {
+    var seen = {};
+    var out = [];
+    lists.forEach(function (list) {
+      list.forEach(function (item) {
+        var key = item.work + "|" + (item.at || "");
+        if (seen[key]) return;
+        seen[key] = true;
+        out.push(item);
+      });
+    });
+    return out;
+  }
+
+  function uniqueRefs(lists) {
+    var seen = {};
+    var out = [];
+    lists.forEach(function (list) {
+      (list || []).forEach(function (ref) {
+        if (!ref || seen[ref]) return;
+        seen[ref] = true;
+        out.push(ref);
+      });
+    });
+    return out;
+  }
+
+  function citationLink(item) {
+    var work = sourceWork(item.work);
+    return h("a", {
+      class: "source-link",
+      href: "#sources/" + item.work,
+      text: work.short + (item.at ? " " + item.at : "")
+    });
+  }
+
+  /* One line: Scripture first, then the works, each a link to its full entry. */
+  function sourceLine(refs, cites, label) {
+    if (!refs.length && !cites.length) return null;
+    var line = h("p", { class: "source-line" });
+    line.append(h("strong", { text: (label || "Sources") + ": " }));
+    if (refs.length) line.append(document.createTextNode(refs.join("; ") + (cites.length ? ". " : "")));
+    cites.forEach(function (item, index) {
+      line.append(citationLink(item));
+      if (item.says) line.append(document.createTextNode(" (" + item.says.replace(/\.$/, "") + ")"));
+      line.append(document.createTextNode(index < cites.length - 1 ? "; " : "."));
+    });
+    return line;
+  }
+
+  function citationList(cites) {
+    var list = h("ul", { class: "source-list" });
+    cites.forEach(function (item) {
+      var row = h("li");
+      row.append(citationLink(item));
+      if (item.says) row.append(document.createTextNode(". " + item.says));
+      list.append(row);
+    });
+    return list;
+  }
+
+  function appendSourceBlock(parent, refs, cites) {
+    if (!refs.length && !cites.length) return;
+    var block = h("section", { class: "sources-block", "aria-label": "Sources" });
+    block.append(h("h4", { class: "section-label", text: "Sources" }));
+    if (refs.length) {
+      var scripture = h("p", { class: "source-line" });
+      scripture.append(h("strong", { text: "Scripture: " }), document.createTextNode(refs.join("; ")));
+      block.append(scripture);
+    }
+    if (cites.length) {
+      block.append(h("p", { class: "source-line source-works-title" }, [h("strong", { text: "Works cited:" })]));
+      block.append(citationList(cites));
+    }
+    if (sources) {
+      block.append(h("a", { class: "text-btn sources-all", href: "#sources", text: "All sources and bibliography" }));
+    }
+    parent.append(block);
+  }
+
+  function passageRefs(entry) {
+    return entry && entry.passages ? entry.passages.map(function (passage) { return passage.ref; }) : [];
+  }
+
+  function appendSources(parent, node) {
+    var entry = deeperEntry("nodes", node.id);
+    var refs = uniqueRefs([node.refs, node.quote ? [node.quote.ref] : [], passageRefs(entry), entry ? entry.cross_refs : []]);
+    var cites = mergeCitations([standardsCitations("nodes", node.id), citationsFor("nodes", node.id)]);
+    appendSourceBlock(parent, refs, cites);
+  }
+
+  function appendPathSources(parent, path) {
+    var entry = deeperEntry("paths", path.id);
+    var refs = uniqueRefs([passageRefs(entry), entry ? entry.cross_refs : []]);
+    var cites = mergeCitations([standardsCitations("paths", path.id), citationsFor("paths", path.id)]);
+    appendSourceBlock(parent, refs, cites);
+  }
+
+  function edgeCitations(edge) {
+    return edge.cross ? citationsFor("links", edge.id) : citationsFor("edges", edge.from + ">" + edge.to);
+  }
+
   function appendLayers(parent, node) {
     var deeperFold = fold("Go deeper", "The verses, the story, and how the lines connect", function (body) {
-      appendRichDeeper(body, deeperEntry("nodes", node.id));
+      appendRichDeeper(body, deeperEntry("nodes", node.id), node.id);
     });
     if (deeperFold) parent.append(deeperFold);
     var deepest = makeDeepest("nodes", node.id, "Go deepest", "What the Westminster Standards say", "How Reformed theology reads this stop");
@@ -716,6 +857,7 @@
   function writeHash(push) {
     var next;
     if (state.mode === "requests") next = "#requests";
+    else if (state.mode === "sources") next = state.workId ? "#sources/" + state.workId : "#sources";
     else if (state.mode === "explore") {
       if (state.selectedId) next = (isAll() ? "#explore/" + ALL_KEY + "/" : "#explore/") + state.selectedId;
       else next = bookKey === BOOKS[0].key ? "#explore" : "#explore/" + bookKey;
@@ -734,6 +876,11 @@
     var parts = raw.split("/");
     if (parts[0] === "requests") {
       state.mode = "requests";
+      return;
+    }
+    if (parts[0] === "sources") {
+      state.mode = "sources";
+      state.workId = parts[1] && sourceWork(parts[1]) ? parts[1] : null;
       return;
     }
     if (parts[0] === "explore") {
@@ -800,6 +947,10 @@
       setTitle("Comments and requests");
       return;
     }
+    if (state.mode === "sources") {
+      setTitle("Sources and bibliography");
+      return;
+    }
     if (state.mode === "explore") {
       var picked = state.selectedId ? nodeById(state.selectedId) : null;
       setTitle(picked ? picked.label : "The map");
@@ -823,6 +974,7 @@
     writeHash(opts.push);
     updateTitle();
     if (mode === "requests") renderRequests();
+    if (mode === "sources") renderSourcesPage();
     if (mode === "explore") {
       nextFrame(function () {
         ensureGraph(function () {
@@ -850,6 +1002,7 @@
   function switchMode(mode, focusTab) {
     if (state.mode === mode) return;
     state.mode = mode;
+    state.workId = null;
     showMode({ push: true });
     window.scrollTo(0, 0);
     if (focusTab) document.getElementById("tab-" + mode).focus();
@@ -1053,6 +1206,7 @@
     appendCross(card, node);
     appendSeeAlso(card, node);
     appendLayers(card, node);
+    appendSources(card, node);
     appendSermons(card, node.id);
     card.append(h("button", {
       type: "button",
@@ -1109,10 +1263,13 @@
       appendRichDeeper(body, deeperEntry("paths", path.id));
     });
     var deepest = makeDeepest("paths", path.id, "This " + word + ", go deepest", "What the Westminster Standards say about this " + word, "How Reformed theology reads this " + word);
-    if (!weekDeeper && !deepest) return;
+    var pathSources = h("div");
+    appendPathSources(pathSources, path);
+    if (!weekDeeper && !deepest && !pathSources.childNodes.length) return;
     host.append(h("h3", { class: "label", text: "About " + path.title }));
     if (weekDeeper) host.append(weekDeeper);
     if (deepest) host.append(deepest);
+    while (pathSources.firstChild) host.append(pathSources.firstChild);
   }
 
   function renderWalk(options) {
@@ -1931,6 +2088,7 @@
     appendCross(panel, node);
     appendSeeAlso(panel, node);
     appendLayers(panel, node);
+    appendSources(panel, node);
     appendSermons(panel, node.id);
     appendHomeLink(panel, node);
   }
@@ -2392,6 +2550,12 @@
     var meaning = timeline.certainty && timeline.certainty[entry.certainty];
     if (meaning) card.append(h("p", { class: "tl-detail-sure", text: (TL_CERTAINTY[entry.certainty] || "") + ": " + meaning }));
     card.append(h("p", { class: "tl-detail-source", text: "Source: " + entry.source }));
+    var tlCites = citationsFor("timeline", entry.id);
+    if (tlCites.length) {
+      var tlWorks = sourceLine([], tlCites, "In the bibliography");
+      tlWorks.classList.add("tl-detail-source");
+      card.append(tlWorks);
+    }
     var nodes = tlNodes(entry);
     if (nodes.length) {
       var row = h("div", { class: "tl-detail-nodes" });
@@ -2746,6 +2910,63 @@
     loadSubmissions(list);
   }
 
+  /* The Sources page: every work cited, grouped, with full publication
+     details. A link such as "#sources/calvin_isaiah" opens it at that work. */
+  var sourcesBuilt = false;
+
+  function renderSourcesPage() {
+    var host = document.getElementById("sources-body");
+    if (!sourcesBuilt) {
+      sourcesBuilt = true;
+      host.replaceChildren();
+      host.append(
+        h("p", { class: "eyebrow", text: "Sources and bibliography" }),
+        h("h3", { id: "sources-title", class: "step-name", tabindex: "-1", text: "Where this site gets what it says" })
+      );
+      if (!sources) {
+        host.append(h("p", { class: "hint", text: "The list of sources could not be loaded." }));
+        return;
+      }
+      (sources.intro || []).forEach(function (text) {
+        host.append(h("p", { class: "lead", text: text }));
+      });
+      (sources.groups || []).forEach(function (group) {
+        var ids = Object.keys(sources.works).filter(function (id) { return sources.works[id].group === group.id; });
+        if (!ids.length) return;
+        host.append(h("h4", { class: "section-label", text: group.label }));
+        if (group.note) host.append(h("p", { class: "hint", text: group.note }));
+        var list = h("ul", { class: "bibliography" });
+        ids.forEach(function (id) {
+          var work = sources.works[id];
+          var row = h("li", { id: "work-" + id, tabindex: "-1" });
+          row.append(h("p", { class: "bib-cite", text: work.cite }));
+          if (work.note) row.append(h("p", { class: "hint", text: work.note }));
+          if (work.url) {
+            row.append(h("p", { class: "hint" }, [h("a", {
+              href: work.url,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              text: work.url_label || "Read it online"
+            })]));
+          }
+          list.append(row);
+        });
+        host.append(list);
+      });
+    }
+    host.querySelectorAll(".bibliography li.is-target").forEach(function (row) { row.classList.remove("is-target"); });
+    var target = state.workId ? document.getElementById("work-" + state.workId) : null;
+    if (target) {
+      target.classList.add("is-target");
+      nextFrame(function () {
+        target.scrollIntoView({ block: "center" });
+        target.focus({ preventScroll: true });
+      });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+
   /* Events */
 
   function bind() {
@@ -2975,7 +3196,10 @@
     loadJson("data/timeline.json").catch(function () { return null; }),
     /* The lines between books are an extra too. Without the file each book
        reads as it did before and there is no All books view. */
-    loadJson("data/cross-links.json").catch(function () { return null; })
+    loadJson("data/cross-links.json").catch(function () { return null; }),
+    /* The sources are an extra as well. Without the file the stops still read,
+       and the Sources page says the list did not load. */
+    loadJson("data/sources.json").catch(function () { return null; })
   ])
     .then(function (files) {
       var graphs = files[0];
@@ -2998,6 +3222,7 @@
       confessions = files[3] && files[3].sections ? files[3] : null;
       deeper = files[4] && files[4].nodes ? files[4] : null;
       timeline = validTimeline(files[5]) ? files[5] : null;
+      sources = files[7] && files[7].works && typeof files[7].works === "object" ? files[7] : null;
       buildAllBooks(files[6]);
       start();
     })

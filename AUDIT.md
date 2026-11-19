@@ -61,3 +61,14 @@ The 29 removals are 21 unverified Calvin pointers, 7 stretched Standards attachm
 * `data/sermons.json` was not changed for the Deuteronomy pilot. No sermon link was added, and the Faith Presbyterian channel has not been searched for Deuteronomy sermons.
 * No claim is made anywhere in the Deuteronomy content about which Greek text a New Testament writer used. The only Greek source reachable from here was an English translation of the Septuagint, which cannot settle a wording question, so the notes give both ESV wordings and leave the cause unstated.
 * `data/advent-graph.json` is byte-for-byte unchanged. The Advent entries in `data/deeper.json` and `data/confessions.json` are unchanged; the Deuteronomy ids were added beside them.
+
+## Sources audit, November 2026
+
+Every stop, line, path note, cross link, Go deeper and Go deepest text, and timeline entry was read again for one question: what does it rest on? The answers are in `data/sources.json` and are shown in the app under Sources.
+
+* Westminster sections were read on opc.org and are cited only for what the section says.
+* Calvin is cited by the verse commented on, and each place was read in the Calvin Translation Society text. Where Calvin differs from the site's main reading, the citation says so: Genesis 3:15, Deuteronomy 18:15, Isaiah 49:3, Isaiah 61:1, and Zechariah 4:14.
+* Irenaeus, Eusebius, Justin Martyr, Augustine, the Geneva Bible notes, Hodge, Edwards, and Warfield were read at the place cited.
+* Modern books are cited by chapter or by the verse commented on. A position is given to an author only where it was confirmed from the book or a review of it. Elsewhere the citation names the place and says nothing more. No page numbers are given for books, except the pages of a journal article where stated.
+* Two timeline source lines named Thiele for more than he says, and were corrected. Thiele argues for 723 BC for the fall of Samaria, and the years of Solomon are counted from his date for the division of the kingdom.
+* Five sentences were softened because no source could be confirmed for them as written. They are listed in the pull request, with the claims still marked as source needed.

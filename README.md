@@ -8,13 +8,15 @@ This first version is an Advent map for 2026. It has 17 nodes, 21 edges, and fiv
 
 ## How to read it
 
-The site has three modes.
+The site has four modes.
 
 **Walk a week.** Choose Week 1, Week 2, Week 3, Week 4, or Christmas. Move with Back and Next (or the arrow keys). Next names the stop that comes after, and at the end of a week it moves on to the next week. Each stop opens with a short explanation and a quote when the map has one. A rail beside the reading (above it on a phone) marks where you are on the week, and the line between two stops shows whether the connection is direct, interpretive, or only side by side.
 
 **See the map.** An interactive graph of every node and edge. Drag to pan, and pinch or use the buttons to zoom. Solid edges are direct textual or narrative connections. Dashed edges are interpretive. Colors follow the edge type, and the key in the corner of the map explains them. A switch hides interpretive edges. Choose a node to open its reading beside the map (below it on a phone). If the drawing is hard to use, the list of names in the same place opens the same details.
 
 **Ask for a stop.** Comments/Requests holds a short form. A reader names a person or an event that is missing from the map, says why it belongs, and sends it. Past submissions are listed under the form, newest first, with any reply.
+
+**Check the sources.** The Sources tab lists every work the site cites, with full publication details. Each stop ends with its own Sources, and each name there is a link to this list.
 
 The title in the top bar is a link back to the start: Week 1, first stop. The browser Back button steps back through the stops and the names you opened, instead of leaving the site.
 
@@ -158,6 +160,34 @@ Everything on the band comes from `data/timeline.json`. No date lives in the cod
 - Every stop on every map has at least one dated entry.
 - The world history dates were written from the standard references named in each entry. They have not yet had the line by line check against sources that the rest of the site has had in `AUDIT.md`.
 
+## Sources and bibliography
+
+Every stop, line, cross link, path, and date names what it rests on. Scripture comes first. For an interpretive or typological claim, a historical date, or a statement of doctrine, the site also names a work.
+
+`data/sources.json` holds the citations. It has seven parts.
+
+- `works`: every work cited, with full publication details. `group` puts it under a heading on the Sources page. `short` is the name used in a Sources line.
+- `nodes`: citations for a stop, under its id.
+- `edges`: citations for a line on a map. The key is the two stop ids joined by `>`, as `from>to`.
+- `links`: citations for a line between books, under its id in `data/cross-links.json`.
+- `paths`: citations for a path or a thread, under its id.
+- `timeline`: the works behind a dated entry, under its id in `data/timeline.json`. The entry's own `source` field is unchanged and still shown.
+- `scripture`: extra Scripture references for a stop's Sources line.
+
+A citation is `work` (an id from `works`), `at` (the section, chapter, or verse commented on), and `says` (one plain sentence on what the work is cited for).
+
+In the app each stop ends with a Sources block: its Scripture references, then the works, each a link to the full entry. The Westminster sections a stop already quotes under Go deepest are added from `data/confessions.json`, so do not repeat them in `sources.json`. Under Go deeper, each line in "How it connects" has its own Sources line, and so does each entry under "In other books". A timeline note keeps its Source line and adds links to the bibliography. The Sources tab, at `#sources`, lists every work. `#sources/<work id>` opens the page at one work.
+
+### Rules for citations
+
+- Never invent a citation.
+- Cite a work only for what it says. If the work has not been read at that place, cite the place and leave `says` empty, or say only that the work comments there.
+- Cite only as closely as has been checked: the author, the title, and the chapter or the verse commented on. Give a page number only when it was confirmed in the book itself.
+- Prefer Reformed sources: the Westminster Standards by section, Calvin, and the standard Reformed works already in the list.
+- Where faithful Reformed teachers differ, cite a work for each view and do not take a side. Revelation 20 is the main case.
+- If a claim has no checked source, soften the claim to what Scripture states, or list it as source needed in the pull request. Do not guess.
+- No en dashes or em dashes. Write ranges with the word "to".
+
 ## Comments and requests
 
 The form posts to a Cloudflare Worker. The Worker opens a public GitHub issue in this repository for each submission, labels it `map-request`, and adds a short reply. A GET to the same Worker returns the labeled issues and their comments, stripped of HTML, so the site can list them. Nothing is stored anywhere else.
@@ -229,6 +259,7 @@ The ESV excerpts and references were independently checked against esv.org in No
 - `data/confessions.json`: Westminster Confession and Catechism quotations for each stop.
 - `data/deeper.json`: the Go deeper reading for each stop and each week.
 - `data/timeline.json`: the dates, world history, and modern place names for the timeline band.
+- `data/sources.json`: the works cited, and which work is cited where.
 - `vendor/`: Cytoscape.js and dagre.
 - `fonts/`: Source Serif 4 and its license.
 - `config/requests.js`: the public endpoint and site key for the form.
