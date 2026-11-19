@@ -1073,6 +1073,9 @@
     /* If the second book fails to load there is nothing to switch to, so the page
        stays exactly as it was before books existed. */
     host.hidden = BOOKS.length < 2;
+    var label = document.getElementById("book-label");
+    if (label) label.hidden = host.hidden;
+    renderBookSelect();
     if (host.hidden) return;
     BOOKS.forEach(function (book) {
       var button = h("button", {
@@ -1084,6 +1087,23 @@
       button.append(h("span", { class: "week-title", text: book.label }));
       host.append(button);
     });
+  }
+
+  /* The same choice, small enough to stay in the sticky top bar. The intro row
+     scrolls away on a walk and is hidden on the map, so this one is always in reach. */
+  function renderBookSelect() {
+    var wrap = document.getElementById("book-select-wrap");
+    var select = document.getElementById("book-select");
+    if (!wrap || !select) return;
+    wrap.hidden = BOOKS.length < 2;
+    select.replaceChildren();
+    if (wrap.hidden) return;
+    BOOKS.forEach(function (book) {
+      var option = h("option", { value: book.key, text: book.label });
+      option.selected = book.key === bookKey;
+      select.append(option);
+    });
+    select.value = bookKey;
   }
 
   function chooseBook(key) {
@@ -2693,10 +2713,11 @@
     if (!timeline) return;
     var stored = null;
     try { stored = localStorage.getItem(TL_STORE); } catch (err) { stored = null; }
-    /* On a phone the map is already short, so the band starts folded. */
-    setTimelineOpen(stored ? stored === "open" : !isPhone(), false);
+    /* On a phone the map is already short, so the band always starts folded,
+       whatever was remembered. A remembered choice only counts on a wide screen. */
+    setTimelineOpen(isPhone() ? false : (stored ? stored === "open" : true), false);
     document.getElementById("tl-toggle").addEventListener("click", function () {
-      setTimelineOpen(!timelineIsOpen(), true);
+      setTimelineOpen(!timelineIsOpen(), !isPhone());
     });
     document.getElementById("tl-zoom-in").addEventListener("click", function () { tlZoom(1.3); });
     document.getElementById("tl-zoom-out").addEventListener("click", function () { tlZoom(1 / 1.3); });
@@ -3042,6 +3063,9 @@
         event.preventDefault();
         setStep(state.step - 1);
       }
+    });
+    document.getElementById("book-select").addEventListener("change", function (event) {
+      chooseBook(event.target.value);
     });
     window.addEventListener("hashchange", function () {
       var was = bookKey;

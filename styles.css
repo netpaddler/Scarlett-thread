@@ -3036,3 +3036,104 @@ body[data-mode="explore"] .site-footer {
 body[data-mode="sources"] .intro {
   display: none;
 }
+
+/* Book switcher: a compact select in the top bar, in reach from the walk and the map. */
+
+.book-select {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  flex: none;
+  min-width: 0;
+  font-size: var(--t-sm);
+  color: var(--ink-soft);
+}
+
+.book-select[hidden],
+.book-label[hidden],
+body[data-mode="requests"] .book-select,
+body[data-mode="sources"] .book-select {
+  display: none;
+}
+
+.book-select-label {
+  font-weight: 600;
+}
+
+.book-select select {
+  max-width: 100%;
+  min-height: 32px;
+  padding: 0 var(--s-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm, 8px);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+}
+
+.book-label {
+  display: none;
+}
+
+/* Below the desktop layout the select takes its own row under the tabs. */
+@media (max-width: 959px) {
+  body[data-mode="walk"],
+  body[data-mode="explore"] {
+    --topbar-h: 96px;
+  }
+
+  /* The first row keeps its own 56px and lays out as before. */
+  body[data-mode="walk"] .topbar-inner,
+  body[data-mode="explore"] .topbar-inner {
+    position: relative;
+    padding-bottom: 40px;
+  }
+
+  .book-select {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 8px;
+    height: 32px;
+  }
+}
+
+/* On a phone every book shows at once: the row wraps and nothing hides off the side. */
+@media (max-width: 719px) {
+  .book-label {
+    display: block;
+    margin-top: var(--s-5);
+  }
+
+  .books {
+    flex-wrap: wrap;
+    gap: var(--s-2);
+    margin-top: var(--s-2);
+    overflow: visible;
+    border-bottom: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .book-btn {
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 var(--s-3);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+  }
+
+  .book-btn:last-child {
+    margin-right: 0;
+  }
+
+  .book-btn::after {
+    display: none;
+  }
+
+  .book-btn[aria-pressed="true"] {
+    border-color: var(--accent);
+    background: var(--scrim);
+  }
+}

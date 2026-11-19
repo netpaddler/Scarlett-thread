@@ -31,6 +31,10 @@
         </svg>
         <h1><a class="brand-home" href="./">Scarlet Thread</a></h1>
       </div>
+      <label class="book-select" id="book-select-wrap" hidden>
+        <span class="book-select-label">Book</span>
+        <select id="book-select" aria-label="Which book to read"></select>
+      </label>
       <div class="mode-switch" role="tablist" aria-label="Ways to read">
         <button type="button" id="tab-walk" role="tab" aria-selected="true" aria-controls="walk-view"><span class="tab-long">Walk a week</span><span class="tab-short">Walk</span></button>
         <button type="button" id="tab-explore" role="tab" aria-selected="false" aria-controls="explore-view" tabindex="-1"><span class="tab-long">See the map</span><span class="tab-short">Map</span></button>
@@ -50,7 +54,8 @@
       <p class="eyebrow" id="intro-eyebrow">Advent 2026</p>
       <p class="intro-title" id="intro-title">A Reformed Advent reading: the Bible's story points to Jesus.</p>
       <p class="intro-text" id="intro-text">Pick a week and move one stop at a time. Or open the map and follow the lines.</p>
-      <div id="book-picker" class="weeks books" role="group" aria-label="Which book to read"></div>
+      <p class="label book-label" id="book-label" hidden>Choose a book</p>
+      <div id="book-picker" class="weeks books" role="group" aria-labelledby="book-label"></div>
     </section>
 
     <div id="status" class="status wrap" role="status">
