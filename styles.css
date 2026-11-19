@@ -2894,3 +2894,145 @@ body[data-mode="explore"] .site-footer {
     border: 1px solid CanvasText;
   }
 }
+
+/* Sources */
+
+.sources-block {
+  margin-top: var(--s-6);
+  padding-top: var(--s-2);
+  border-top: 1px solid var(--line);
+}
+
+.sources-block .section-label {
+  margin-top: var(--s-4);
+}
+
+.source-line {
+  margin: 0;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: var(--t-sm);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.source-line strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.source-line + .source-line {
+  margin-top: var(--s-2);
+}
+
+.edge-block .source-line {
+  margin-top: var(--s-2);
+}
+
+.source-list {
+  margin: var(--s-1) 0 0;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: var(--t-sm);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.source-list li + li {
+  margin-top: var(--s-1);
+}
+
+.source-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.source-link:hover {
+  color: var(--ink);
+}
+
+.sources-all {
+  display: inline-block;
+  margin-top: var(--s-3);
+}
+
+.sources {
+  padding-top: var(--s-6);
+  padding-bottom: var(--s-8);
+}
+
+.sources .lead {
+  max-width: 62ch;
+  margin-top: var(--s-3);
+  font-family: var(--serif);
+  font-size: var(--t-read);
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.sources .section-label {
+  margin-top: var(--s-7);
+}
+
+.bibliography {
+  max-width: 46rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bibliography li {
+  padding: var(--s-3) var(--s-3);
+  margin: 0 calc(-1 * var(--s-3));
+  border-radius: 8px;
+  scroll-margin-top: 96px;
+}
+
+.bibliography li + li {
+  border-top: 1px solid var(--line);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.bibliography li.is-target {
+  background: var(--scrim);
+}
+
+.bibliography li:focus {
+  outline: none;
+}
+
+.bib-cite {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--t-read);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.bibliography .hint {
+  margin-top: var(--s-1);
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+/* Four tabs need the short names on a narrow screen. */
+@media (max-width: 700px) {
+  .tab-long {
+    display: none;
+  }
+
+  .tab-short {
+    display: inline;
+  }
+}
+
+/* The Sources page is about the whole site, so the book picker steps aside. */
+body[data-mode="sources"] .intro {
+  display: none;
+}

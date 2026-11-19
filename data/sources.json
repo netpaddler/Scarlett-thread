@@ -1,0 +1,2902 @@
+{
+  "meta": {
+    "title": "Scarlet Thread: sources and bibliography",
+    "version": "0.1",
+    "notes": [
+      "works lists every work the site cites, with full publication details. group puts it under a heading on the Sources page. short is the name used in a Sources line.",
+      "nodes, edges, links, paths, and timeline say which work is cited where. A key under edges is the two stop ids joined by >, earlier stop first, as in the graph file. A key under links is the id in cross-links.json. A key under timeline is the id in timeline.json.",
+      "Each citation has work (an id from works), at (the section, chapter, or verse commented on), and says (one plain sentence on what the work is cited for).",
+      "The Westminster sections a stop quotes under Go deepest come from confessions.json and are added to its Sources by the app. Do not repeat them here.",
+      "scripture adds Scripture references to a stop's Sources line beyond the ones already in the graph and deeper files.",
+      "Never invent a citation. Cite a work only for what it says, and only as closely as it has been checked: the author, the title, and the chapter or the verse commented on. Give a page number only when it has been confirmed from the book itself. If a claim has no checked source, soften the claim or list it as source needed. Do not guess.",
+      "Never use an en dash or an em dash. Write ranges with the word to."
+    ]
+  },
+  "intro": [
+    "Every stop, line, and date on this site rests on something you can check. Scripture comes first. Where the site explains a passage, gives a date, or states a doctrine, it names the work it leans on.",
+    "The Westminster Confession and Catechisms are cited by chapter and section, or by question number. Commentaries are cited by the verse they comment on. Other books are cited by chapter. A page number is given only where it was checked in the book itself, so most entries have none.",
+    "A work is cited only for what it says. Where faithful Reformed teachers differ, as on the thousand years of Revelation 20, a work is listed for each view and the site does not take a side.",
+    "Open any stop and look for Sources. Each name there is a link back to this page."
+  ],
+  "groups": [
+    {
+      "id": "standards",
+      "label": "The Westminster Standards"
+    },
+    {
+      "id": "reformed",
+      "label": "Reformed commentaries and theology",
+      "note": "Commentaries are cited by the verse commented on, and other books by chapter."
+    },
+    {
+      "id": "millennium",
+      "label": "Works on the thousand years of Revelation 20",
+      "note": "One or more works for each view held by Reformed teachers. They are listed so each view can be read in its own words. This site does not choose among them."
+    },
+    {
+      "id": "early",
+      "label": "Early church and ancient writers",
+      "note": "These are cited by book and chapter, which are the same in every edition."
+    },
+    {
+      "id": "history",
+      "label": "History, dates, and reference works"
+    },
+    {
+      "id": "objects",
+      "label": "Inscriptions and objects in museums"
+    }
+  ],
+  "works": {
+    "wcf": {
+      "group": "standards",
+      "short": "Westminster Confession",
+      "cite": "The Westminster Confession of Faith. Written by the Westminster Assembly in the 1640s. Cited by chapter and section from the modern spelling text published by the Orthodox Presbyterian Church, which carries the American revisions.",
+      "url": "https://opc.org/wcf.html",
+      "url_label": "Read it at opc.org"
+    },
+    "wlc": {
+      "group": "standards",
+      "short": "Larger Catechism",
+      "cite": "The Westminster Larger Catechism. Written by the Westminster Assembly in the 1640s. Cited by question number from the modern spelling text published by the Orthodox Presbyterian Church.",
+      "url": "https://opc.org/lc.html",
+      "url_label": "Read it at opc.org"
+    },
+    "wsc": {
+      "group": "standards",
+      "short": "Shorter Catechism",
+      "cite": "The Westminster Shorter Catechism. Written by the Westminster Assembly in the 1640s. Cited by question number from the modern spelling text published by the Orthodox Presbyterian Church.",
+      "url": "https://opc.org/sc.html",
+      "url_label": "Read it at opc.org"
+    },
+    "opc_preface": {
+      "group": "standards",
+      "short": "OPC preface to the Standards",
+      "cite": "Orthodox Presbyterian Church. Preface to The Confession of Faith and Catechisms of the Orthodox Presbyterian Church. It records how the American text of the Confession differs from the text of 1646.",
+      "url": "https://opc.org/preface.html",
+      "url_label": "Read it at opc.org"
+    },
+    "calvin_comm": {
+      "group": "reformed",
+      "short": "Calvin, Commentaries",
+      "cite": "John Calvin. Commentaries. English translations made for the Calvin Translation Society, Edinburgh, in the nineteenth century, as published online by the Christian Classics Ethereal Library. Cited by the verse commented on. Used here: Genesis, the Harmony of the Law (Exodus to Deuteronomy), Isaiah, Daniel, Micah, Zechariah, the Harmony of the Gospels, John, and Galatians.",
+      "note": "Calvin wrote no commentary on Revelation, so he is not cited for it.",
+      "url": "https://ccel.org/ccel/calvin",
+      "url_label": "Read them at ccel.org"
+    },
+    "calvin_inst": {
+      "group": "reformed",
+      "short": "Calvin, Institutes",
+      "cite": "John Calvin. Institutes of the Christian Religion. Translated by Henry Beveridge. First published in this translation in 1845. Cited by book, chapter, and section.",
+      "url": "https://ccel.org/ccel/calvin/institutes",
+      "url_label": "Read it at ccel.org"
+    },
+    "geneva1599": {
+      "group": "reformed",
+      "short": "Geneva Bible (1599)",
+      "cite": "The Geneva Bible, 1599 edition, with its notes. Cited by the chapter the notes are on.",
+      "url": "https://www.biblegateway.com/passage/?search=Revelation%2017&version=GNV",
+      "url_label": "Read the notes at biblegateway.com"
+    },
+    "vos_bt": {
+      "group": "reformed",
+      "short": "Vos, Biblical Theology",
+      "cite": "Geerhardus Vos. Biblical Theology: Old and New Testaments. Grand Rapids: Eerdmans, 1948. Reprinted Edinburgh: Banner of Truth, 1975. Cited by chapter."
+    },
+    "robertson": {
+      "group": "reformed",
+      "short": "Robertson, The Christ of the Covenants",
+      "cite": "O. Palmer Robertson. The Christ of the Covenants. P&R Publishing (Presbyterian and Reformed), 1980. Cited by chapter."
+    },
+    "bavinck": {
+      "group": "reformed",
+      "short": "Bavinck, Reformed Dogmatics",
+      "cite": "Herman Bavinck. Reformed Dogmatics. Edited by John Bolt. Translated by John Vriend. 4 volumes. Grand Rapids: Baker Academic, 2003 to 2008. Volume 4, Holy Spirit, Church, and New Creation, 2008. Cited by volume and chapter."
+    },
+    "young_isaiah": {
+      "group": "reformed",
+      "short": "Young, The Book of Isaiah",
+      "cite": "Edward J. Young. The Book of Isaiah: The English Text, with Introduction, Exposition, and Notes. 3 volumes. Grand Rapids: Eerdmans, 1965 (chapters 1 to 18), 1969 (chapters 19 to 39), 1972 (chapters 40 to 66). Cited by the verses commented on."
+    },
+    "young_who": {
+      "group": "reformed",
+      "short": "Young, Who Wrote Isaiah?",
+      "cite": "Edward J. Young. Who Wrote Isaiah? Grand Rapids: Eerdmans, 1958."
+    },
+    "young_daniel": {
+      "group": "reformed",
+      "short": "Young, The Prophecy of Daniel",
+      "cite": "Edward J. Young. The Prophecy of Daniel: A Commentary. Grand Rapids: Eerdmans, 1949. Cited by the chapter commented on."
+    },
+    "motyer": {
+      "group": "reformed",
+      "short": "Motyer, The Prophecy of Isaiah",
+      "cite": "J. Alec Motyer. The Prophecy of Isaiah: An Introduction and Commentary. Downers Grove, Illinois: InterVarsity Press, 1993. Cited by the verses commented on."
+    },
+    "beale_rev": {
+      "group": "reformed",
+      "short": "Beale, The Book of Revelation",
+      "cite": "G. K. Beale. The Book of Revelation: A Commentary on the Greek Text. New International Greek Testament Commentary. Grand Rapids: Eerdmans; Carlisle: Paternoster, 1999. Cited by the verses commented on."
+    },
+    "hendriksen": {
+      "group": "reformed",
+      "short": "Hendriksen, More Than Conquerors",
+      "cite": "William Hendriksen. More Than Conquerors: An Interpretation of the Book of Revelation. Grand Rapids: Baker, copyright 1940. Cited by chapter."
+    },
+    "johnson": {
+      "group": "reformed",
+      "short": "Johnson, Triumph of the Lamb",
+      "cite": "Dennis E. Johnson. Triumph of the Lamb: A Commentary on Revelation. Phillipsburg, New Jersey: P&R Publishing, 2001. Cited by chapter."
+    },
+    "beale_temple": {
+      "group": "reformed",
+      "short": "Beale, The Temple and the Church's Mission",
+      "cite": "G. K. Beale. The Temple and the Church's Mission: A Biblical Theology of the Dwelling Place of God. New Studies in Biblical Theology 17. InterVarsity Press, 2004. Cited by chapter title."
+    },
+    "esvsb": {
+      "group": "reformed",
+      "short": "ESV Study Bible",
+      "cite": "ESV Study Bible. Lane T. Dennis, executive editor. Wayne Grudem, general editor. Wheaton, Illinois: Crossway Bibles, 2008. Cited by the note or the article."
+    },
+    "pius_x": {
+      "group": "history",
+      "short": "Pius X, Ad diem illum",
+      "cite": "Pope Pius X. Ad diem illum laetissimum. Encyclical letter, 1904.",
+      "note": "This is not a Reformed work. It is listed only as the evidence for a Roman Catholic reading that this site reports and does not follow.",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "url_label": "Read it at vatican.va"
+    },
+    "hoekema": {
+      "group": "millennium",
+      "short": "Hoekema, The Bible and the Future",
+      "cite": "Anthony A. Hoekema. The Bible and the Future. Grand Rapids: Eerdmans, 1979. Cited by chapter.",
+      "note": "Amillennial."
+    },
+    "warfield": {
+      "group": "millennium",
+      "short": "Warfield, \"The Millennium and the Apocalypse\"",
+      "cite": "Benjamin B. Warfield. \"The Millennium and the Apocalypse.\" The Princeton Theological Review, volume 2, number 4 (October 1904), ending on page 617.",
+      "url": "https://archive.org/details/princetontheolog2419arms",
+      "url_label": "Read the journal at archive.org"
+    },
+    "boettner": {
+      "group": "millennium",
+      "short": "Boettner, The Millennium",
+      "cite": "Loraine Boettner. The Millennium. Philadelphia: Presbyterian and Reformed, 1957.",
+      "note": "Postmillennial."
+    },
+    "kik": {
+      "group": "millennium",
+      "short": "Kik, An Eschatology of Victory",
+      "cite": "J. Marcellus Kik. An Eschatology of Victory. Presbyterian and Reformed, 1971.",
+      "note": "Postmillennial. It includes an exposition of Revelation 20."
+    },
+    "hodge": {
+      "group": "millennium",
+      "short": "Hodge, Systematic Theology",
+      "cite": "Charles Hodge. Systematic Theology. Volume 3. Cited by part, chapter, and section.",
+      "url": "https://www.ccel.org/ccel/hodge/theology3.toc.html",
+      "url_label": "Read it at ccel.org"
+    },
+    "edwards": {
+      "group": "millennium",
+      "short": "Edwards, A History of the Work of Redemption",
+      "cite": "Jonathan Edwards. A History of the Work of Redemption. Sermons preached in 1739, edited by John Erskine and published in Edinburgh, 1774. Cited by period and part.",
+      "url": "https://ccel.org/ccel/edwards/works1/works1.xii.vi.xii.html",
+      "url_label": "Read it at ccel.org"
+    },
+    "murray": {
+      "group": "millennium",
+      "short": "Murray, The Puritan Hope",
+      "cite": "Iain H. Murray. The Puritan Hope: Revival and the Interpretation of Prophecy. Banner of Truth, 1971."
+    },
+    "ladd_rev": {
+      "group": "millennium",
+      "short": "Ladd, A Commentary on the Revelation of John",
+      "cite": "George Eldon Ladd. A Commentary on the Revelation of John. Grand Rapids: Eerdmans, 1972. Cited by the verses commented on.",
+      "note": "Historic premillennial."
+    },
+    "clouse": {
+      "group": "millennium",
+      "short": "Clouse, The Meaning of the Millennium",
+      "cite": "Robert G. Clouse, editor. The Meaning of the Millennium: Four Views. Downers Grove, Illinois: InterVarsity Press, 1977. Essays: George Eldon Ladd, \"Historic Premillennialism\"; Herman A. Hoyt, \"Dispensational Premillennialism\"; Loraine Boettner, \"Postmillennialism\"; Anthony A. Hoekema, \"Amillennialism\".",
+      "note": "Each view is set out by a teacher who holds it."
+    },
+    "machen": {
+      "group": "millennium",
+      "short": "Machen, \"The Second General Assembly\"",
+      "cite": "J. Gresham Machen. \"The Second General Assembly of the Presbyterian Church of America.\" The Presbyterian Guardian, 1936.",
+      "url": "https://readmachen.pages.dev/article/1936/the-second-general-assembly-of-the-presbyterian-church-of-america/",
+      "url_label": "Read it online"
+    },
+    "irenaeus_ah": {
+      "group": "early",
+      "short": "Irenaeus, Against Heresies",
+      "cite": "Irenaeus of Lyons. Against Heresies. Written about AD 180.",
+      "url": "https://www.newadvent.org/fathers/0103.htm",
+      "url_label": "Read it at newadvent.org"
+    },
+    "justin": {
+      "group": "early",
+      "short": "Justin Martyr, Dialogue with Trypho",
+      "cite": "Justin Martyr. Dialogue with Trypho. Second century AD.",
+      "url": "https://www.newadvent.org/fathers/0128.htm",
+      "url_label": "Read it at newadvent.org"
+    },
+    "augustine": {
+      "group": "early",
+      "short": "Augustine, The City of God",
+      "cite": "Augustine of Hippo. The City of God. Early fifth century AD.",
+      "url": "https://www.newadvent.org/fathers/1201.htm",
+      "url_label": "Read it at newadvent.org"
+    },
+    "eusebius_he": {
+      "group": "early",
+      "short": "Eusebius, Church History",
+      "cite": "Eusebius of Caesarea. Church History. Early fourth century AD.",
+      "url": "https://www.newadvent.org/fathers/2501.htm",
+      "url_label": "Read it at newadvent.org"
+    },
+    "josephus_ant": {
+      "group": "early",
+      "short": "Josephus, Jewish Antiquities",
+      "cite": "Flavius Josephus. Jewish Antiquities. First century AD."
+    },
+    "josephus_war": {
+      "group": "early",
+      "short": "Josephus, The Jewish War",
+      "cite": "Flavius Josephus. The Jewish War. First century AD."
+    },
+    "tacitus": {
+      "group": "early",
+      "short": "Tacitus, Annals",
+      "cite": "Cornelius Tacitus. Annals. Early second century AD."
+    },
+    "suetonius": {
+      "group": "early",
+      "short": "Suetonius, Lives of the Caesars",
+      "cite": "Suetonius. The Lives of the Caesars. Early second century AD."
+    },
+    "arrian": {
+      "group": "early",
+      "short": "Arrian, The Anabasis of Alexander",
+      "cite": "Arrian. The Anabasis of Alexander. Second century AD."
+    },
+    "1macc": {
+      "group": "early",
+      "short": "1 Maccabees",
+      "cite": "The First Book of Maccabees. Second century BC.",
+      "note": "Useful history. It is not part of Scripture (Westminster Confession 1.3)."
+    },
+    "thiele": {
+      "group": "history",
+      "short": "Thiele, The Mysterious Numbers of the Hebrew Kings",
+      "cite": "Edwin R. Thiele. The Mysterious Numbers of the Hebrew Kings. New revised edition. Grand Rapids: Zondervan, 1983. First edition, University of Chicago Press, 1951."
+    },
+    "merrill": {
+      "group": "history",
+      "short": "Merrill, Kingdom of Priests",
+      "cite": "Eugene H. Merrill. Kingdom of Priests: A History of Old Testament Israel. 2nd edition. Grand Rapids: Baker Academic, 2008. First edition, 1987."
+    },
+    "kitchen": {
+      "group": "history",
+      "short": "Kitchen, On the Reliability of the Old Testament",
+      "cite": "K. A. Kitchen. On the Reliability of the Old Testament. Grand Rapids: Eerdmans, 2003."
+    },
+    "shaw": {
+      "group": "history",
+      "short": "Shaw, The Oxford History of Ancient Egypt",
+      "cite": "Ian Shaw, editor. The Oxford History of Ancient Egypt. Oxford: Oxford University Press, 2000. The chronology is on pages 479 to 483."
+    },
+    "vdm": {
+      "group": "history",
+      "short": "Van De Mieroop, A History of the Ancient Near East",
+      "cite": "Marc Van De Mieroop. A History of the Ancient Near East, ca. 3000 to 323 BC. 2nd edition. Blackwell, 2007. First edition, 2004."
+    },
+    "bryce": {
+      "group": "history",
+      "short": "Bryce, The Kingdom of the Hittites",
+      "cite": "Trevor Bryce. The Kingdom of the Hittites. 2nd edition. Oxford University Press, 2005."
+    },
+    "kuhrt": {
+      "group": "history",
+      "short": "Kuhrt, The Ancient Near East",
+      "cite": "Amélie Kuhrt. The Ancient Near East, c. 3000 to 330 BC. 2 volumes. London: Routledge, 1995."
+    },
+    "ocd": {
+      "group": "history",
+      "short": "The Oxford Classical Dictionary",
+      "cite": "Simon Hornblower and Antony Spawforth, general editors; Esther Eidinow, assistant editor. The Oxford Classical Dictionary. 4th edition. Oxford: Oxford University Press, 2012."
+    },
+    "oba": {
+      "group": "history",
+      "short": "Oxford Bible Atlas",
+      "cite": "Adrian Curtis, editor. Oxford Bible Atlas. 4th edition. Oxford: Oxford University Press, 2007."
+    },
+    "woolley": {
+      "group": "history",
+      "short": "Woolley, Ur Excavations",
+      "cite": "C. Leonard Woolley. Ur Excavations. Publications of the Joint Expedition of the British Museum and of the Museum of the University of Pennsylvania to Mesopotamia. The dig ran from 1922 to 1934. Volume 2, The Royal Cemetery, 1934."
+    },
+    "isbe": {
+      "group": "history",
+      "short": "International Standard Bible Encyclopaedia",
+      "cite": "James Orr, general editor. The International Standard Bible Encyclopaedia. 1915. Cited by article.",
+      "url": "https://www.biblestudytools.com/encyclopedias/isbe/deuteronomy.html",
+      "url_label": "Read the article online"
+    },
+    "bdb": {
+      "group": "history",
+      "short": "Brown, Driver, and Briggs, Hebrew Lexicon",
+      "cite": "Francis Brown, S. R. Driver, and Charles A. Briggs. A Hebrew and English Lexicon of the Old Testament. Oxford: Clarendon Press, 1906. Cited by entry.",
+      "url": "https://biblehub.com/hebrew/1035.htm",
+      "url_label": "Read the entry online"
+    },
+    "taylor_prism": {
+      "group": "objects",
+      "short": "The Taylor Prism",
+      "cite": "The Taylor Prism: the annals of Sennacherib, king of Assyria. British Museum, BM 91032. Translated in A. Kirk Grayson and Jamie Novotny, The Royal Inscriptions of Sennacherib (Royal Inscriptions of the Neo-Assyrian Period 3), text 22.",
+      "url": "http://oracc.museum.upenn.edu/rinap/rinap3/Q003496/html",
+      "url_label": "Read the translation online"
+    },
+    "cyrus_cyl": {
+      "group": "objects",
+      "short": "The Cyrus Cylinder",
+      "cite": "The Cyrus Cylinder. British Museum, BM 90920. Found at Babylon in 1879."
+    },
+    "nabonidus_chr": {
+      "group": "objects",
+      "short": "The Nabonidus Chronicle",
+      "cite": "The Nabonidus Chronicle. British Museum, BM 35382."
+    },
+    "bab_chr": {
+      "group": "objects",
+      "short": "The Babylonian Chronicles",
+      "cite": "The Babylonian Chronicles. British Museum. The chronicle of the fall of Nineveh is BM 21901, and the chronicle of the early years of Nebuchadnezzar is BM 21946.",
+      "url": "https://www.livius.org/sources/content/mesopotamian-chronicles-content/abc-5-jerusalem-chronicle/",
+      "url_label": "Read a translation online"
+    },
+    "merneptah": {
+      "group": "objects",
+      "short": "The Merneptah Stele",
+      "cite": "The Merneptah Stele. Egyptian Museum, Cairo, JE 31408. Found at Thebes in 1896."
+    },
+    "pilate_stone": {
+      "group": "objects",
+      "short": "The Pilate Stone",
+      "cite": "The Pilate Stone. Israel Museum, Jerusalem, IAA 1961-529. Found at Caesarea in 1961."
+    },
+    "hammurabi_stele": {
+      "group": "objects",
+      "short": "The stele of Hammurabi",
+      "cite": "The law stele of Hammurabi. Louvre Museum, Paris, Sb 8.",
+      "url": "https://collections.louvre.fr/en/ark:/53355/cl010174436",
+      "url_label": "See it at the Louvre"
+    }
+  },
+  "scripture": {
+    "rv_supper": [
+      "Matthew 26:29",
+      "1 Corinthians 11:26"
+    ]
+  },
+  "nodes": {
+    "jesus": [
+      {
+        "work": "wlc",
+        "at": "42",
+        "says": "Our mediator was called Christ because he was anointed with the Holy Spirit to be prophet, priest, and king."
+      },
+      {
+        "work": "wcf",
+        "at": "7.5",
+        "says": "The promises, prophecies, and sacrifices of the Old Testament all pointed ahead to Christ."
+      },
+      {
+        "work": "calvin_inst",
+        "at": "2.10",
+        "says": "Calvin's chapter on how the Old Testament and the New agree."
+      }
+    ],
+    "jesus_birth": [
+      {
+        "work": "wlc",
+        "at": "37",
+        "says": "The Son of God became man, conceived by the power of the Holy Spirit in the womb of the virgin Mary and born of her."
+      }
+    ],
+    "promise_seed": [
+      {
+        "work": "calvin_comm",
+        "at": "on Genesis 3:15",
+        "says": "Calvin takes the offspring first as the woman's descendants as a whole. He then says the victory belongs to one head, Christ, and to his people in him."
+      },
+      {
+        "work": "vos_bt",
+        "at": "Old Testament, part 1, chapter 4",
+        "says": "On the promise of Genesis 3:15 as the first word of redemption after the fall."
+      },
+      {
+        "work": "robertson",
+        "at": "chapter 6",
+        "says": "On Genesis 3:15 as the opening promise of redemption."
+      }
+    ],
+    "promise_abraham": [
+      {
+        "work": "robertson",
+        "at": "chapter 8",
+        "says": "On God's covenant with Abraham."
+      },
+      {
+        "work": "vos_bt",
+        "at": "Old Testament, part 1, chapter 7",
+        "says": "On the promises to Abraham, Isaac, and Jacob."
+      }
+    ],
+    "promise_judah": [
+      {
+        "work": "calvin_comm",
+        "at": "on Genesis 49:10",
+        "says": "Calvin says the Messiah, who was to come from the tribe of Judah, is promised here."
+      }
+    ],
+    "jesse_root": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 11:1",
+        "says": "Calvin says this prediction applies to Christ alone."
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 11:1 to 10"
+      },
+      {
+        "work": "motyer",
+        "at": "on Isaiah 11:1 to 10"
+      }
+    ],
+    "covenant_david": [
+      {
+        "work": "robertson",
+        "at": "chapter 12",
+        "says": "On God's covenant with David and its goal in Christ."
+      },
+      {
+        "work": "wlc",
+        "at": "45",
+        "says": "How Christ carries out the office of a king."
+      }
+    ],
+    "isaiah": [
+      {
+        "work": "wcf",
+        "at": "1.4",
+        "says": "Scripture is to be received because God is its author."
+      },
+      {
+        "work": "young_who",
+        "says": "Argues that Isaiah the son of Amoz wrote the whole book."
+      },
+      {
+        "work": "thiele",
+        "says": "The years of the kings of Judah and Israel."
+      }
+    ],
+    "prophecy_immanuel": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 7:14",
+        "says": "Calvin says the name Immanuel cannot belong to a mere man, so the prophet spoke of Christ. He also weighs the objection that a far off birth could be no sign to Ahaz."
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 7:14",
+        "says": "Young reads the verse as a direct prophecy of the virgin birth of Christ."
+      },
+      {
+        "work": "motyer",
+        "at": "on Isaiah 7:14"
+      },
+      {
+        "work": "esvsb",
+        "at": "note on Isaiah 7:14",
+        "says": "Some hold the sign points only to the birth of Jesus. Others see a nearer event in the days of Ahaz as well, and the full meaning in Jesus."
+      }
+    ],
+    "prophecy_child": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 9:1 to 2",
+        "says": "Calvin says Matthew applied this passage to Christ correctly."
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 9:6 to 7"
+      },
+      {
+        "work": "motyer",
+        "at": "on Isaiah 9:6 to 7"
+      }
+    ],
+    "prophecy_bethlehem": [
+      {
+        "work": "calvin_comm",
+        "at": "on Micah 5:2",
+        "says": "Calvin compares Micah's wording with Matthew's and says Matthew pointed to the passage without copying its words."
+      },
+      {
+        "work": "wsc",
+        "at": "26",
+        "says": "How Christ carries out the office of a king."
+      }
+    ],
+    "bethlehem": [
+      {
+        "work": "bdb",
+        "at": "entry for Bethlehem",
+        "says": "The lexicon gives the name as place of bread. Beth is the common Hebrew word for house."
+      }
+    ],
+    "mary": [
+      {
+        "work": "wlc",
+        "at": "37",
+        "says": "Christ was conceived by the power of the Holy Spirit in the womb of the virgin Mary, of her substance, and born of her."
+      },
+      {
+        "work": "wlc",
+        "at": "36",
+        "says": "The only mediator of the covenant of grace is the Lord Jesus Christ."
+      },
+      {
+        "work": "wcf",
+        "at": "21.2",
+        "says": "Worship is to be given to God alone, and not to angels, saints, or any other creature."
+      }
+    ],
+    "joseph": [
+      {
+        "work": "esvsb",
+        "at": "note on Matthew 1:1 to 17",
+        "says": "The note speaks of Jesus' legal claim to the throne of David."
+      },
+      {
+        "work": "wlc",
+        "at": "37",
+        "says": "Christ was conceived by the power of the Holy Spirit in the womb of the virgin Mary."
+      }
+    ],
+    "annunciation": [
+      {
+        "work": "wlc",
+        "at": "37",
+        "says": "Christ was conceived by the power of the Holy Spirit in the womb of the virgin Mary."
+      },
+      {
+        "work": "wlc",
+        "at": "45",
+        "says": "How Christ carries out the office of a king."
+      }
+    ],
+    "magi": [
+      {
+        "work": "calvin_comm",
+        "at": "on Matthew 2:1",
+        "says": "Calvin calls the Magi the firstfruits of the Gentiles."
+      }
+    ],
+    "bread_of_life": [
+      {
+        "work": "wcf",
+        "at": "14.2",
+        "says": "The chief acts of saving faith are accepting, receiving, and resting on Christ alone."
+      }
+    ],
+    "dt_moses": [
+      {
+        "work": "isbe",
+        "at": "article \"Deuteronomy\"",
+        "says": "The Greek title, Deuteronomion, means second law, and the English name comes from it."
+      },
+      {
+        "work": "wcf",
+        "at": "19.2",
+        "says": "The moral law was given by God at Mount Sinai in ten commandments."
+      }
+    ],
+    "dt_decalogue": [
+      {
+        "work": "wsc",
+        "at": "43 to 44",
+        "says": "The preface to the ten commandments teaches that because God is the Lord, and our God and redeemer, we are bound to keep his commandments."
+      },
+      {
+        "work": "wlc",
+        "at": "101",
+        "says": "The preface shows a God in covenant with his people, who brings them out of bondage."
+      },
+      {
+        "work": "wcf",
+        "at": "19.5",
+        "says": "The moral law binds everyone to obey it, the justified as well as others."
+      },
+      {
+        "work": "wcf",
+        "at": "19.6",
+        "says": "True believers are not under the law as a covenant of works, to be justified or condemned by it. It is still their rule of life."
+      },
+      {
+        "work": "calvin_inst",
+        "at": "2.8.13",
+        "says": "Calvin calls the opening sentence a kind of preface to the whole law."
+      }
+    ],
+    "dt_shema": [
+      {
+        "work": "wsc",
+        "at": "5",
+        "says": "There is but one only, the living and true God."
+      },
+      {
+        "work": "wsc",
+        "at": "42",
+        "says": "The sum of the ten commandments is to love the Lord our God with all our heart, soul, strength, and mind, and our neighbor as ourselves."
+      },
+      {
+        "work": "wlc",
+        "at": "102",
+        "says": "The sum of the first four commandments is to love the Lord our God with all our heart, soul, strength, and mind."
+      },
+      {
+        "work": "wlc",
+        "at": "95",
+        "says": "The moral law shows all people their duty and convinces them that they are not able to keep it."
+      }
+    ],
+    "dt_wilderness_test": [
+      {
+        "work": "wcf",
+        "at": "5.5",
+        "says": "God often leaves his own children for a time to many temptations, to humble them and to bring them to lean on him more closely."
+      }
+    ],
+    "dt_prophet": [
+      {
+        "work": "calvin_comm",
+        "at": "on Deuteronomy 18:15",
+        "says": "Calvin takes a prophet to stand for the whole line of prophets God would send, and says it is not to be limited to Christ alone."
+      },
+      {
+        "work": "wlc",
+        "at": "43",
+        "says": "How Christ carries out the office of a prophet."
+      },
+      {
+        "work": "wsc",
+        "at": "24",
+        "says": "How Christ carries out the office of a prophet."
+      }
+    ],
+    "dt_hanged": [
+      {
+        "work": "calvin_comm",
+        "at": "on Galatians 3:13",
+        "says": "Calvin says Christ hung on the cross and so came under that curse, not for his own sake, but so that our curse was laid on him."
+      },
+      {
+        "work": "wlc",
+        "at": "49",
+        "says": "Christ humbled himself in his death, enduring the painful, shameful, and cursed death of the cross."
+      }
+    ],
+    "dt_curses": [
+      {
+        "work": "wsc",
+        "at": "82",
+        "says": "No mere man since the fall is able in this life to keep the commandments of God perfectly."
+      },
+      {
+        "work": "wsc",
+        "at": "84",
+        "says": "Every sin deserves God's wrath and curse."
+      },
+      {
+        "work": "wlc",
+        "at": "94",
+        "says": "No one since the fall can gain righteousness and life by the moral law."
+      },
+      {
+        "work": "wcf",
+        "at": "20.1",
+        "says": "Christ has bought for believers freedom from the curse of the moral law."
+      },
+      {
+        "work": "calvin_comm",
+        "at": "on Galatians 3:10",
+        "says": "Calvin says Paul's argument stands because no one has the strength to fulfill the law."
+      }
+    ],
+    "dt_word_near": [
+      {
+        "work": "wcf",
+        "at": "7.3",
+        "says": "In the covenant of grace God freely offers sinners life and salvation by Jesus Christ, and promises his Spirit to make them willing and able to believe."
+      },
+      {
+        "work": "wsc",
+        "at": "86",
+        "says": "Faith in Jesus Christ is receiving and resting on him alone for salvation, as he is offered in the gospel."
+      }
+    ],
+    "dt_song": [
+      {
+        "work": "wcf",
+        "at": "2.1",
+        "says": "God is most just, and also most loving, gracious, merciful, and long-suffering."
+      }
+    ],
+    "dt_death": [
+      {
+        "work": "calvin_comm",
+        "at": "on Deuteronomy 18:15",
+        "says": "Calvin's reading of the promised prophet, which this stop sets beside Deuteronomy 34:10."
+      }
+    ],
+    "nt_temptation": [
+      {
+        "work": "wlc",
+        "at": "48",
+        "says": "Christ humbled himself in his life by meeting the temptations of Satan."
+      },
+      {
+        "work": "wcf",
+        "at": "1.10",
+        "says": "The supreme judge in every question of religion is the Holy Spirit speaking in the Scripture."
+      },
+      {
+        "work": "vos_bt",
+        "at": "New Testament, chapter 4",
+        "says": "Vos's chapter on the testing of Jesus."
+      }
+    ],
+    "nt_greatest": [
+      {
+        "work": "wsc",
+        "at": "42",
+        "says": "The sum of the ten commandments is to love the Lord our God with all our heart, soul, strength, and mind, and our neighbor as ourselves."
+      },
+      {
+        "work": "wcf",
+        "at": "19.2",
+        "says": "The first four commandments hold our duty to God, and the other six our duty to man."
+      },
+      {
+        "work": "wcf",
+        "at": "19.5",
+        "says": "Christ in the gospel does not loosen the duty to obey the moral law. He strengthens it."
+      }
+    ],
+    "nt_acts3": [
+      {
+        "work": "wlc",
+        "at": "43",
+        "says": "How Christ carries out the office of a prophet."
+      },
+      {
+        "work": "calvin_comm",
+        "at": "on Deuteronomy 18:15",
+        "says": "Calvin takes the promise of the whole line of prophets, with Christ as their head."
+      }
+    ],
+    "nt_gal3": [
+      {
+        "work": "calvin_comm",
+        "at": "on Galatians 3:13",
+        "says": "Calvin says our curse was laid on Christ so that we might be freed from it."
+      },
+      {
+        "work": "wcf",
+        "at": "11.3",
+        "says": "Christ by his obedience and death fully paid the debt of all who are justified."
+      },
+      {
+        "work": "wcf",
+        "at": "20.1",
+        "says": "Christ has bought for believers freedom from the curse of the moral law."
+      }
+    ],
+    "nt_rom10": [
+      {
+        "work": "wlc",
+        "at": "155",
+        "says": "The Spirit of God makes the reading, and especially the preaching, of the word a means of drawing sinners to Christ."
+      },
+      {
+        "work": "wsc",
+        "at": "86",
+        "says": "Faith in Jesus Christ is receiving and resting on him alone for salvation, as he is offered in the gospel."
+      }
+    ],
+    "is_opening": [
+      {
+        "work": "wsc",
+        "at": "14",
+        "says": "Sin is any want of conformity to, or transgression of, the law of God."
+      },
+      {
+        "work": "thiele",
+        "says": "The years of the kings of Judah and Israel."
+      },
+      {
+        "work": "young_who",
+        "says": "Argues that Isaiah the son of Amoz wrote the whole book."
+      }
+    ],
+    "is_call": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 6:1",
+        "says": "Calvin says John tells us the Lord whom Isaiah saw was Christ (John 12:41). He adds that the vision should not be limited to the person of the Son."
+      },
+      {
+        "work": "wcf",
+        "at": "2.1",
+        "says": "God is most holy."
+      },
+      {
+        "work": "wcf",
+        "at": "5.6",
+        "says": "God, as a righteous judge, blinds and hardens wicked people for their former sins."
+      },
+      {
+        "work": "thiele",
+        "says": "The year King Uzziah died."
+      }
+    ],
+    "is_immanuel": [
+      {
+        "work": "wlc",
+        "at": "37",
+        "says": "Christ was conceived by the power of the Holy Spirit in the womb of the virgin Mary."
+      },
+      {
+        "work": "wsc",
+        "at": "21",
+        "says": "The only redeemer of God's elect is the Lord Jesus Christ, who, being the eternal Son of God, became man."
+      },
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 7:14",
+        "says": "Calvin says the prophet spoke of Christ. He knows the view that a child of that time is meant and does not accept it."
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 7:14",
+        "says": "Young reads the verse as a direct prophecy of the virgin birth of Christ."
+      },
+      {
+        "work": "motyer",
+        "at": "on Isaiah 7:14"
+      },
+      {
+        "work": "esvsb",
+        "at": "note on Isaiah 7:14",
+        "says": "Some hold the sign points only to the birth of Jesus. Others see a nearer event in the days of Ahaz as well, and the full meaning in Jesus."
+      }
+    ],
+    "is_child": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 9:1 to 2",
+        "says": "Calvin says Matthew applied this passage to Christ correctly."
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 9:1 to 7"
+      },
+      {
+        "work": "motyer",
+        "at": "on Isaiah 9:1 to 7"
+      }
+    ],
+    "is_shoot": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 11:1",
+        "says": "Calvin says this prediction applies to Christ alone, since no such branch arose until he came."
+      },
+      {
+        "work": "wlc",
+        "at": "42",
+        "says": "Christ was anointed with the Holy Spirit above measure."
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 11:1 to 10"
+      }
+    ],
+    "is_babylon": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 14:12",
+        "says": "Calvin says the context plainly shows these words are about the king of Babylon, and he sets aside the reading that takes them of Satan."
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 13 to 14"
+      }
+    ],
+    "is_hezekiah": [
+      {
+        "work": "taylor_prism",
+        "says": "Sennacherib says he took forty-six of Hezekiah's fortified cities and shut him up in Jerusalem like a bird in a cage. He does not say he took Jerusalem."
+      },
+      {
+        "work": "thiele",
+        "says": "Dates Sennacherib's campaign against Judah to 701 BC."
+      },
+      {
+        "work": "wsc",
+        "at": "26",
+        "says": "Christ as king rules and defends us, and restrains and conquers all his and our enemies."
+      }
+    ],
+    "is_comfort": [
+      {
+        "work": "wsc",
+        "at": "33",
+        "says": "Justification is an act of God's free grace, in which he pardons all our sins."
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 40:1 to 11"
+      },
+      {
+        "work": "motyer",
+        "at": "on Isaiah 40:1 to 11"
+      }
+    ],
+    "is_servant_chosen": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 42:1",
+        "says": "Calvin says the prophet here turns to speak of Christ."
+      },
+      {
+        "work": "motyer",
+        "at": "on Isaiah 38 to 55, which he titles \"The book of the Servant\""
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 42, 49, 50, and 53"
+      }
+    ],
+    "is_cyrus": [
+      {
+        "work": "wcf",
+        "at": "5.1",
+        "says": "God upholds, directs, and governs all creatures, actions, and things, from the greatest to the least."
+      },
+      {
+        "work": "wcf",
+        "at": "3.1",
+        "says": "God ordains whatever comes to pass, yet the liberty of second causes is not taken away."
+      },
+      {
+        "work": "wsc",
+        "at": "11",
+        "says": "God's works of providence are his preserving and governing all his creatures and all their actions."
+      },
+      {
+        "work": "nabonidus_chr",
+        "says": "The Babylonian record of the fall of Babylon to Cyrus in 539 BC."
+      },
+      {
+        "work": "cyrus_cyl",
+        "says": "Cyrus's own account of taking Babylon and sending captive peoples home."
+      },
+      {
+        "work": "young_who",
+        "says": "Argues that Isaiah the son of Amoz wrote the whole book."
+      },
+      {
+        "work": "motyer",
+        "at": "Introduction",
+        "says": "Treats the whole book as the work of Isaiah."
+      }
+    ],
+    "is_servant_light": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 49:3",
+        "says": "Calvin says the verse must not be limited to the person of Christ and must not be referred to Israel alone."
+      },
+      {
+        "work": "wlc",
+        "at": "35",
+        "says": "Under the New Testament, grace and salvation are held out to all nations."
+      },
+      {
+        "work": "motyer",
+        "at": "on Isaiah 38 to 55, which he titles \"The book of the Servant\""
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 42, 49, 50, and 53"
+      }
+    ],
+    "is_servant_obedient": [
+      {
+        "work": "wcf",
+        "at": "8.4",
+        "says": "The Lord Jesus undertook the office of mediator most willingly."
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 50:4 to 9"
+      },
+      {
+        "work": "motyer",
+        "at": "on Isaiah 50:4 to 9"
+      }
+    ],
+    "is_servant_suffering": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 53:5",
+        "says": "Calvin says that by his death our sins have been expiated and salvation obtained for us."
+      },
+      {
+        "work": "wcf",
+        "at": "8.5",
+        "says": "The Lord Jesus, by his perfect obedience and the sacrifice of himself, has fully satisfied the justice of his Father."
+      },
+      {
+        "work": "wcf",
+        "at": "11.3",
+        "says": "Christ made a proper, real, and full satisfaction to his Father's justice for all who are justified."
+      },
+      {
+        "work": "wlc",
+        "at": "49",
+        "says": "Christ laid down his life an offering for sin."
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 52:13 to 53:12"
+      },
+      {
+        "work": "motyer",
+        "at": "on Isaiah 52:13 to 53:12"
+      }
+    ],
+    "is_invitation": [
+      {
+        "work": "wcf",
+        "at": "7.3",
+        "says": "God freely offers sinners life and salvation by Jesus Christ."
+      },
+      {
+        "work": "wsc",
+        "at": "31",
+        "says": "In effectual calling God's Spirit persuades and enables us to embrace Jesus Christ, freely offered to us in the gospel."
+      },
+      {
+        "work": "wlc",
+        "at": "67",
+        "says": "Effectual calling is the work of God's almighty power and grace."
+      }
+    ],
+    "is_anointed": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 61:1",
+        "says": "Calvin says Christ rightly applies this prophecy to himself, and that it also fits the other prophets God anointed."
+      },
+      {
+        "work": "wcf",
+        "at": "8.3",
+        "says": "The Lord Jesus was anointed with the Holy Spirit above measure."
+      }
+    ],
+    "is_new_creation": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 65:17",
+        "says": "Calvin reads the promise of the restoring of the church, begun after Babylon and carried through the whole reign of Christ to his last coming. He says the kingdom of Christ is here described under figures."
+      },
+      {
+        "work": "wlc",
+        "at": "87",
+        "says": "At the last day there will be a general resurrection of the dead, both of the just and the unjust."
+      },
+      {
+        "work": "wcf",
+        "at": "33.1",
+        "says": "God has appointed a day in which he will judge the world in righteousness by Jesus Christ."
+      },
+      {
+        "work": "hoekema",
+        "at": "chapter 20",
+        "says": "The new earth is this creation renewed, not a different one put in its place."
+      },
+      {
+        "work": "bavinck",
+        "at": "volume 4, chapter 18",
+        "says": "The world to come is this creation renewed."
+      }
+    ],
+    "isn_mt1": [
+      {
+        "work": "wlc",
+        "at": "37",
+        "says": "Christ was conceived by the power of the Holy Spirit in the womb of the virgin Mary."
+      },
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 7:14",
+        "says": "Calvin says the prophet spoke of Christ."
+      }
+    ],
+    "isn_mt4": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 9:1 to 2",
+        "says": "Calvin says Matthew applied this passage to Christ correctly, and in its true meaning."
+      }
+    ],
+    "isn_lk4": [
+      {
+        "work": "wlc",
+        "at": "43",
+        "says": "How Christ carries out the office of a prophet."
+      },
+      {
+        "work": "wcf",
+        "at": "8.3",
+        "says": "The Lord Jesus was anointed with the Holy Spirit above measure."
+      },
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 61:1",
+        "says": "Calvin says Christ rightly applies this prophecy to himself."
+      }
+    ],
+    "isn_jn12": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 6:1",
+        "says": "Calvin says John tells us the Lord whom Isaiah saw was Christ."
+      },
+      {
+        "work": "wcf",
+        "at": "5.6",
+        "says": "God, as a righteous judge, blinds and hardens wicked people for their former sins."
+      },
+      {
+        "work": "wcf",
+        "at": "3.1",
+        "says": "God ordains whatever comes to pass, yet he is not the author of sin, and the will of his creatures is not forced."
+      }
+    ],
+    "isn_acts8": [
+      {
+        "work": "wlc",
+        "at": "155",
+        "says": "The Spirit of God makes the reading, and especially the preaching, of the word a means of drawing sinners to Christ."
+      },
+      {
+        "work": "wcf",
+        "at": "1.9",
+        "says": "The sure rule for interpreting Scripture is Scripture itself."
+      }
+    ],
+    "isn_1pet2": [
+      {
+        "work": "wcf",
+        "at": "8.5",
+        "says": "The Lord Jesus, by the sacrifice of himself, has fully satisfied the justice of his Father."
+      },
+      {
+        "work": "wlc",
+        "at": "44",
+        "says": "Christ carries out the office of a priest by once offering himself a sacrifice for the sins of his people."
+      }
+    ],
+    "isn_rev21": [
+      {
+        "work": "wlc",
+        "at": "90",
+        "says": "At the day of judgment the righteous will be received into heaven and made perfectly holy and happy in body and soul."
+      },
+      {
+        "work": "wcf",
+        "at": "32.2",
+        "says": "At the last day all the dead will be raised with the selfsame bodies."
+      },
+      {
+        "work": "hoekema",
+        "at": "chapter 20",
+        "says": "The new earth is this creation renewed, not a different one put in its place."
+      },
+      {
+        "work": "bavinck",
+        "at": "volume 4, chapter 18",
+        "says": "The world to come is this creation renewed."
+      }
+    ],
+    "rv_christ": [
+      {
+        "work": "wsc",
+        "at": "28",
+        "says": "Christ's exaltation is his rising from the dead, going up into heaven, sitting at the right hand of God the Father, and coming to judge the world at the last day."
+      },
+      {
+        "work": "wlc",
+        "at": "54",
+        "says": "Seated at God's right hand, Christ gathers and defends his church."
+      },
+      {
+        "work": "irenaeus_ah",
+        "at": "5.30.3",
+        "says": "The vision was seen almost in our own day, toward the end of Domitian's reign."
+      },
+      {
+        "work": "eusebius_he",
+        "at": "3.18",
+        "says": "John was sent to Patmos under Domitian. Eusebius quotes Irenaeus for it."
+      },
+      {
+        "work": "beale_rev",
+        "at": "Introduction",
+        "says": "Beale judges a date under Domitian more probable, and a date under Nero possible."
+      },
+      {
+        "work": "esvsb",
+        "at": "Introduction to Revelation",
+        "says": "Most scholars date the book to the mid 90s. Some argue for a date under Nero, before AD 70."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 1:1 to 3"
+      },
+      {
+        "work": "johnson",
+        "at": "on Revelation 1"
+      }
+    ],
+    "rv_churches": [
+      {
+        "work": "wcf",
+        "at": "25.6",
+        "says": "There is no other head of the church but the Lord Jesus Christ."
+      },
+      {
+        "work": "wcf",
+        "at": "25.5",
+        "says": "The purest churches under heaven are subject both to mixture and error."
+      },
+      {
+        "work": "wlc",
+        "at": "45",
+        "says": "Christ as king gives his people officers, laws, and censures, and corrects them for their sins."
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 8"
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 2 to 3"
+      }
+    ],
+    "rv_throne": [
+      {
+        "work": "wsc",
+        "at": "11",
+        "says": "God's works of providence are his most holy, wise, and powerful preserving and governing all his creatures and all their actions."
+      },
+      {
+        "work": "wcf",
+        "at": "5.1",
+        "says": "God upholds, directs, and governs all creatures, actions, and things."
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 9"
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 4:4"
+      }
+    ],
+    "rv_lamb": [
+      {
+        "work": "wsc",
+        "at": "27",
+        "says": "Christ's humiliation, down to the cursed death of the cross."
+      },
+      {
+        "work": "wsc",
+        "at": "28",
+        "says": "Christ's exaltation."
+      },
+      {
+        "work": "wcf",
+        "at": "8.5",
+        "says": "Christ bought reconciliation and an everlasting inheritance for all those whom the Father has given to him."
+      },
+      {
+        "work": "wcf",
+        "at": "8.8",
+        "says": "To all for whom Christ bought redemption he certainly applies it."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 5"
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 9"
+      }
+    ],
+    "rv_seals": [
+      {
+        "work": "wlc",
+        "at": "45",
+        "says": "Christ as king restrains and overcomes all the enemies of his people and orders all things for his glory and their good."
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 9",
+        "says": "Hendriksen takes the rider on the white horse as Christ."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 6:2",
+        "says": "Beale takes the first rider as a satanic force that oppresses believers."
+      },
+      {
+        "work": "johnson",
+        "at": "on Revelation 6"
+      }
+    ],
+    "rv_multitude": [
+      {
+        "work": "wcf",
+        "at": "17.1",
+        "says": "Those whom God has accepted, called, and sanctified can neither totally nor finally fall away from the state of grace."
+      },
+      {
+        "work": "wcf",
+        "at": "17.2",
+        "says": "Their perseverance rests on God's unchanging love and decree, on Christ's merit and intercession, and on the Spirit who abides in them. It does not rest on their own free will."
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 9",
+        "says": "Hendriksen takes the sealed as the whole church on earth, and the great multitude as the church in heaven."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 7:4 to 9",
+        "says": "Beale takes the 144,000 and the great multitude as the same group, the whole people of God."
+      },
+      {
+        "work": "johnson",
+        "at": "chapter 1",
+        "says": "Johnson notes that John hears the 144,000 and sees the countless host, two pictures of one people."
+      }
+    ],
+    "rv_trumpets": [
+      {
+        "work": "hendriksen",
+        "at": "chapters 2 to 3",
+        "says": "Hendriksen says the book has seven sections that run side by side, each spanning the time from Christ's first coming to his second. He calls this progressive parallelism."
+      },
+      {
+        "work": "wcf",
+        "at": "15.1",
+        "says": "Repentance to life is a grace of the gospel."
+      },
+      {
+        "work": "wsc",
+        "at": "26",
+        "says": "Christ as king restrains and conquers all his and our enemies."
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 10",
+        "says": "Hendriksen takes the two witnesses as the church bearing its testimony."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 11:3 to 4",
+        "says": "Beale takes the two witnesses as the faithful covenant community."
+      }
+    ],
+    "rv_dragon": [
+      {
+        "work": "calvin_comm",
+        "at": "on Genesis 3:15",
+        "says": "Calvin takes the offspring first as the woman's descendants as a whole. He then says the victory belongs to one head, Christ, and to his people in him."
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 11",
+        "says": "Hendriksen says the woman stands for the church, one in both Testaments."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 12:1 to 2",
+        "says": "Beale says the woman is the community of faith in both the Old and New Testament ages."
+      },
+      {
+        "work": "pius_x",
+        "says": "An example of the Roman Catholic reading that the woman is Mary."
+      }
+    ],
+    "rv_beasts": [
+      {
+        "work": "geneva1599",
+        "at": "notes on Revelation 13",
+        "says": "The notes apply the beasts to the Roman empire and then to the popes of Rome."
+      },
+      {
+        "work": "calvin_inst",
+        "at": "4.7.25",
+        "says": "Calvin argues from Daniel and Paul that the pope is Antichrist."
+      },
+      {
+        "work": "opc_preface",
+        "says": "The Confession of 1646 called the pope the Antichrist at 25.6. The American text removed that."
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 11",
+        "says": "Hendriksen reads 666 as man's number, six falling short of seven three times: failure upon failure upon failure."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 13:18",
+        "says": "Beale weighs the Nero Caesar reckoning, finds it doubtful, and takes 666 as a sign of what is incomplete."
+      },
+      {
+        "work": "wcf",
+        "at": "20.2",
+        "says": "God alone is Lord of the conscience."
+      }
+    ],
+    "rv_babylon": [
+      {
+        "work": "geneva1599",
+        "at": "notes on Revelation 17",
+        "says": "The notes say the woman on seven hills is the city of Rome, and apply the vision to the church of Rome."
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 13",
+        "says": "Hendriksen says Babylon is the world as the center of seduction. To say Rome is true but too narrow."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 17 to 18",
+        "says": "Beale says Babylon is the world's economic and religious system in every age, and that the great city most likely points to Rome."
+      },
+      {
+        "work": "wcf",
+        "at": "33.1",
+        "says": "God has appointed a day in which he will judge the world in righteousness by Jesus Christ."
+      }
+    ],
+    "rv_supper": [
+      {
+        "work": "wlc",
+        "at": "66",
+        "says": "The elect are joined to Christ as their head and husband."
+      },
+      {
+        "work": "wcf",
+        "at": "16.2",
+        "says": "Good works are the fruits and evidences of a true and living faith."
+      },
+      {
+        "work": "wcf",
+        "at": "16.3",
+        "says": "The ability of believers to do good works is not from themselves at all, but wholly from the Spirit of Christ."
+      },
+      {
+        "work": "wcf",
+        "at": "21.2",
+        "says": "Worship is to be given to God alone, and not to angels."
+      }
+    ],
+    "rv_return": [
+      {
+        "work": "wlc",
+        "at": "56",
+        "says": "Christ will come again at the last day in great power to judge the world in righteousness."
+      },
+      {
+        "work": "warfield",
+        "says": "Warfield reads Revelation 19:11 to 21 as a picture of the victory of the gospel in the world."
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 13"
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 19:11 to 16"
+      }
+    ],
+    "rv_millennium": [
+      {
+        "work": "wlc",
+        "at": "87",
+        "says": "At the last day there will be a general resurrection of the dead, both of the just and the unjust."
+      },
+      {
+        "work": "wlc",
+        "at": "88",
+        "says": "The general and final judgment follows straight after the resurrection."
+      },
+      {
+        "work": "wcf",
+        "at": "33.1",
+        "says": "God has appointed a day in which he will judge the world in righteousness by Jesus Christ."
+      },
+      {
+        "work": "wcf",
+        "at": "7.6",
+        "says": "There is one covenant of grace, not two that differ in substance."
+      },
+      {
+        "work": "hoekema",
+        "at": "chapter 14",
+        "says": "Sets out the main views of the thousand years."
+      },
+      {
+        "work": "clouse",
+        "says": "Four essays, each by a teacher who holds the view."
+      },
+      {
+        "work": "hoekema",
+        "at": "chapter 16",
+        "says": "The amillennial view, argued from Revelation 20."
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 14",
+        "says": "Amillennial. Satan is bound through this whole gospel age, and the first resurrection is the soul going to be with Christ in heaven."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 20:1 to 6",
+        "says": "Amillennial. The binding began with Christ's ministry and resurrection, and the thousand years is the church age."
+      },
+      {
+        "work": "augustine",
+        "at": "20.7",
+        "says": "Augustine on the two resurrections and the thousand years."
+      },
+      {
+        "work": "boettner",
+        "says": "The postmillennial view."
+      },
+      {
+        "work": "kik",
+        "says": "The postmillennial view, with an exposition of Revelation 20."
+      },
+      {
+        "work": "hodge",
+        "at": "part 4, chapter 3",
+        "says": "Hodge expects the gospel to spread through the world and the Jews to be converted before Christ returns."
+      },
+      {
+        "work": "edwards",
+        "at": "period 3, part 8",
+        "says": "Edwards expects a long time of peace and prosperity for the church on earth before the end."
+      },
+      {
+        "work": "murray",
+        "says": "On the hope held by many Puritans for the spread of the gospel before Christ returns."
+      },
+      {
+        "work": "ladd_rev",
+        "at": "on Revelation 20:1 to 6",
+        "says": "The historic premillennial view."
+      },
+      {
+        "work": "justin",
+        "at": "80 to 81",
+        "says": "Justin expects a resurrection and a thousand years in Jerusalem. He says other true Christians think otherwise."
+      },
+      {
+        "work": "irenaeus_ah",
+        "at": "5.32 to 5.35",
+        "says": "Irenaeus expects an earthly kingdom after the resurrection of the just."
+      },
+      {
+        "work": "machen",
+        "says": "Machen says ministers who hold the premillennial view have liberty in the church."
+      },
+      {
+        "work": "hoekema",
+        "at": "chapter 15",
+        "says": "A Reformed critique of the dispensational view."
+      },
+      {
+        "work": "bavinck",
+        "at": "volume 4, chapter 16",
+        "says": "Bavinck's chapter on Israel, the millennium, and Christ's return."
+      }
+    ],
+    "rv_judgment": [
+      {
+        "work": "wcf",
+        "at": "33.1",
+        "says": "God has appointed a day in which he will judge the world in righteousness by Jesus Christ, and all who have lived on earth will appear before him."
+      },
+      {
+        "work": "wcf",
+        "at": "33.2",
+        "says": "The purpose of that day: the glory of God's mercy in saving the elect, and of his justice in condemning the wicked."
+      },
+      {
+        "work": "wlc",
+        "at": "88",
+        "says": "The general and final judgment follows straight after the resurrection."
+      },
+      {
+        "work": "wlc",
+        "at": "90",
+        "says": "The righteous will be openly acknowledged and acquitted."
+      },
+      {
+        "work": "wcf",
+        "at": "16.2",
+        "says": "Good works are the fruits and evidences of a true and living faith."
+      }
+    ],
+    "rv_new_creation": [
+      {
+        "work": "wlc",
+        "at": "90",
+        "says": "The righteous will be made perfectly holy and happy in body and soul, in the full enjoyment of God for ever."
+      },
+      {
+        "work": "wcf",
+        "at": "32.2",
+        "says": "At the last day all the dead will be raised with the selfsame bodies."
+      },
+      {
+        "work": "hoekema",
+        "at": "chapter 20",
+        "says": "The new earth is this creation renewed, not a different one put in its place."
+      },
+      {
+        "work": "bavinck",
+        "at": "volume 4, chapter 18",
+        "says": "The world to come is this creation renewed."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 21:1",
+        "says": "Beale says the new creation is a renewal of the old, and that Isaiah 65:17 stands behind the wording."
+      }
+    ],
+    "rv_river": [
+      {
+        "work": "wcf",
+        "at": "33.3",
+        "says": "Christ would have his people always watchful and ready to say, Come Lord Jesus, come quickly."
+      }
+    ],
+    "rvo_daniel7": [
+      {
+        "work": "calvin_comm",
+        "at": "on Daniel 7:4 to 7",
+        "says": "Calvin takes the four beasts as the Chaldean, Persian, Macedonian, and Roman empires."
+      },
+      {
+        "work": "young_daniel",
+        "at": "on Daniel 2 and 7",
+        "says": "Young takes the four kingdoms as Babylon, Medo-Persia, Greece, and Rome."
+      },
+      {
+        "work": "wlc",
+        "at": "45",
+        "says": "How Christ carries out the office of a king."
+      }
+    ],
+    "rvo_ezekiel1": [
+      {
+        "work": "wcf",
+        "at": "5.7",
+        "says": "God's providence takes care of his church in a most special way."
+      },
+      {
+        "work": "bab_chr",
+        "says": "The Babylonian record of the capture of Jerusalem in 597 BC, when Jehoiachin was taken into exile."
+      }
+    ],
+    "rvo_passover": [
+      {
+        "work": "wlc",
+        "at": "34",
+        "says": "Under the Old Testament the covenant of grace was administered by promises, prophecies, sacrifices, circumcision, the passover, and other types, which all pointed ahead to Christ."
+      },
+      {
+        "work": "calvin_comm",
+        "at": "on Exodus 12",
+        "says": "Calvin calls the Paschal lamb a type of Christ."
+      },
+      {
+        "work": "wcf",
+        "at": "27.5",
+        "says": "The sacraments of the Old Testament signified, for substance, the same spiritual things as those of the New."
+      }
+    ],
+    "rvo_zechariah4": [
+      {
+        "work": "calvin_comm",
+        "at": "on Zechariah 4:14",
+        "says": "Calvin knows the reading that the two are a king and a priest, and does not follow it. He takes the two olive trees as the never failing supply of God's grace to his church."
+      },
+      {
+        "work": "esvsb",
+        "at": "note on Zechariah 4:14",
+        "says": "Most interpreters think the two stand for Zerubbabel the governor and Joshua the high priest."
+      }
+    ],
+    "rvo_seed": [
+      {
+        "work": "calvin_comm",
+        "at": "on Genesis 3:15",
+        "says": "Calvin takes the offspring first as the woman's descendants as a whole. He then says the victory belongs to one head, Christ, and to his people in him."
+      },
+      {
+        "work": "vos_bt",
+        "at": "Old Testament, part 1, chapter 4",
+        "says": "On the promise of Genesis 3:15 as the first word of redemption after the fall."
+      },
+      {
+        "work": "robertson",
+        "at": "chapter 6",
+        "says": "On Genesis 3:15 as the opening promise of redemption."
+      }
+    ],
+    "rvo_isaiah65": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 65:17",
+        "says": "Calvin reads the promise of the renewing of the world by Christ, through his whole reign to his last coming."
+      },
+      {
+        "work": "bavinck",
+        "at": "volume 4, chapter 18",
+        "says": "The world to come is this creation renewed."
+      },
+      {
+        "work": "hoekema",
+        "at": "chapter 20",
+        "says": "The new earth is this creation renewed, not a different one put in its place."
+      }
+    ],
+    "rvo_ezekiel47": [
+      {
+        "work": "beale_temple",
+        "at": "chapter \"The question of the temple in Ezekiel 40-48 and its relationship to the New Testament\""
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 22:1 to 2"
+      }
+    ]
+  },
+  "edges": {
+    "promise_seed>jesus_birth": [
+      {
+        "work": "wcf",
+        "at": "8.6",
+        "says": "Christ is the seed of the woman who should bruise the serpent's head."
+      }
+    ],
+    "promise_seed>promise_abraham": [
+      {
+        "work": "wcf",
+        "at": "7.6",
+        "says": "There are not two covenants of grace that differ in substance. There is one, under different administrations."
+      },
+      {
+        "work": "robertson",
+        "at": "chapter 3",
+        "says": "On how God's covenants hold together as one."
+      }
+    ],
+    "dt_death>dt_prophet": [
+      {
+        "work": "calvin_comm",
+        "at": "on Deuteronomy 18:15",
+        "says": "Calvin reads the promise of the continuing line of prophets. That is one way faithful readers weigh these two verses."
+      },
+      {
+        "work": "wlc",
+        "at": "43",
+        "says": "The Standards apply the office of prophet to Christ."
+      }
+    ],
+    "is_immanuel>is_child": [
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 7 to 9"
+      },
+      {
+        "work": "motyer",
+        "at": "on Isaiah 7 to 9"
+      }
+    ],
+    "is_child>is_shoot": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 11:1",
+        "says": "Calvin says this prediction applies to Christ alone."
+      },
+      {
+        "work": "wsc",
+        "at": "23",
+        "says": "Christ carries out the offices of prophet, priest, and king."
+      }
+    ],
+    "is_servant_chosen>is_servant_light": [
+      {
+        "work": "motyer",
+        "at": "on Isaiah 38 to 55, which he titles \"The book of the Servant\""
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 42, 49, 50, and 53"
+      },
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 49:3",
+        "says": "Calvin says the verse must not be limited to the person of Christ and must not be referred to Israel alone."
+      }
+    ],
+    "is_servant_light>is_servant_obedient": [
+      {
+        "work": "motyer",
+        "at": "on Isaiah 38 to 55, which he titles \"The book of the Servant\""
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 42, 49, 50, and 53"
+      }
+    ],
+    "is_servant_obedient>is_servant_suffering": [
+      {
+        "work": "motyer",
+        "at": "on Isaiah 38 to 55, which he titles \"The book of the Servant\""
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 42, 49, 50, and 53"
+      }
+    ],
+    "joseph>jesus": [
+      {
+        "work": "esvsb",
+        "at": "note on Matthew 1:1 to 17",
+        "says": "The note speaks of Jesus' legal claim to the throne of David."
+      }
+    ],
+    "is_immanuel>isn_mt1": [
+      {
+        "work": "esvsb",
+        "at": "note on Isaiah 7:14",
+        "says": "Some hold the sign points only to the birth of Jesus. Others see a nearer event in the days of Ahaz as well, and the full meaning in Jesus."
+      },
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 7:14",
+        "says": "Calvin says the prophet spoke of Christ, and does not accept the view that a child of that time is meant."
+      },
+      {
+        "work": "young_isaiah",
+        "at": "on Isaiah 7:14",
+        "says": "Young reads the verse as a direct prophecy of the virgin birth of Christ."
+      }
+    ],
+    "rv_seals>rv_trumpets": [
+      {
+        "work": "hendriksen",
+        "at": "chapters 2 to 3",
+        "says": "Hendriksen says the book has seven sections that run side by side, each spanning the time from Christ's first coming to his second. He calls this progressive parallelism."
+      }
+    ],
+    "rv_return>rv_millennium": [
+      {
+        "work": "ladd_rev",
+        "at": "on Revelation 20:1",
+        "says": "The historic premillennial reading of the order of chapters 19 and 20."
+      },
+      {
+        "work": "hoekema",
+        "at": "chapter 16",
+        "says": "The amillennial reading: chapter 20 goes back to the start of the age."
+      },
+      {
+        "work": "clouse",
+        "says": "The views set side by side."
+      }
+    ],
+    "rv_millennium>rv_judgment": [
+      {
+        "work": "wlc",
+        "at": "88",
+        "says": "The general and final judgment follows straight after the resurrection."
+      },
+      {
+        "work": "clouse",
+        "says": "The four essays agree that the last judgment comes after the thousand years."
+      }
+    ],
+    "rvo_passover>rv_lamb": [
+      {
+        "work": "wcf",
+        "at": "7.5",
+        "says": "The paschal lamb is named among the types that pointed ahead to Christ."
+      },
+      {
+        "work": "wlc",
+        "at": "34",
+        "says": "The passover is named among the types that pointed ahead to Christ."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 5:6"
+      }
+    ],
+    "rvo_seed>rv_dragon": [
+      {
+        "work": "wcf",
+        "at": "8.6",
+        "says": "Christ is the seed of the woman who should bruise the serpent's head."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 12:9 and 12:17"
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 11"
+      }
+    ],
+    "rvo_zechariah4>rv_trumpets": [
+      {
+        "work": "hendriksen",
+        "at": "chapter 10",
+        "says": "Hendriksen takes the two witnesses as the church bearing its testimony."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 11:3 to 4",
+        "says": "Beale takes the two witnesses as the faithful covenant community."
+      }
+    ],
+    "rvo_daniel7>rv_beasts": [
+      {
+        "work": "calvin_comm",
+        "at": "on Daniel 7:4 to 7",
+        "says": "Calvin takes the four beasts as the Chaldean, Persian, Macedonian, and Roman empires."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 13:1 to 2"
+      }
+    ],
+    "rvo_daniel7>rv_christ": [
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 1:7 and 1:13 to 14"
+      }
+    ],
+    "rvo_ezekiel1>rv_throne": [
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 4:2 to 8"
+      }
+    ],
+    "rvo_isaiah65>rv_new_creation": [
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 21:1",
+        "says": "Beale says the new creation is a renewal of the old, and that Isaiah 65:17 stands behind the wording."
+      }
+    ],
+    "is_new_creation>isn_rev21": [
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 21:1",
+        "says": "Beale says the new creation is a renewal of the old, and that Isaiah 65:17 stands behind the wording."
+      }
+    ],
+    "rvo_ezekiel47>rv_river": [
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 22:1 to 2"
+      }
+    ]
+  },
+  "links": {
+    "x_seed_same": [
+      {
+        "work": "wcf",
+        "at": "8.6",
+        "says": "Christ is the seed of the woman who should bruise the serpent's head."
+      }
+    ],
+    "x_abraham_gal3": [
+      {
+        "work": "wcf",
+        "at": "7.6",
+        "says": "One covenant of grace, held out to all nations under the gospel."
+      }
+    ],
+    "x_judah_lion": [
+      {
+        "work": "calvin_comm",
+        "at": "on Genesis 49:10",
+        "says": "Calvin says the Messiah, who was to come from the tribe of Judah, is promised here."
+      }
+    ],
+    "x_david_child": [
+      {
+        "work": "thiele",
+        "says": "The years of David and of the kings of Isaiah's day, from which the gap between them is counted."
+      }
+    ],
+    "x_david_root": [
+      {
+        "work": "robertson",
+        "at": "chapter 12",
+        "says": "On God's covenant with David and its goal in Christ."
+      }
+    ],
+    "x_shoot_root": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 11:1",
+        "says": "Calvin says this prediction applies to Christ alone."
+      }
+    ],
+    "x_shoot_rider": [
+      {
+        "work": "warfield",
+        "says": "Warfield reads Revelation 19:11 to 21 as a picture of the victory of the gospel in the world."
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapter 13"
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 19:11 to 16"
+      }
+    ],
+    "x_call_throne": [
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 4:8"
+      }
+    ],
+    "x_babylon_fallen": [
+      {
+        "work": "hendriksen",
+        "at": "chapter 13",
+        "says": "Hendriksen says Babylon is the world as the center of seduction. To say Rome is true but too narrow."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 17 to 18",
+        "says": "Beale says Babylon is the world's economic and religious system in every age, and that the great city most likely points to Rome."
+      }
+    ],
+    "x_servant_prophet": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 42:1",
+        "says": "Calvin says the prophet here turns to speak of Christ."
+      },
+      {
+        "work": "calvin_comm",
+        "at": "on Deuteronomy 18:15",
+        "says": "Calvin takes the promise of the whole line of prophets, not of Christ alone. So Reformed readers do differ on this line."
+      },
+      {
+        "work": "wlc",
+        "at": "43",
+        "says": "How Christ carries out the office of a prophet."
+      }
+    ],
+    "x_servant_lamb": [
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 5:6"
+      },
+      {
+        "work": "wlc",
+        "at": "44",
+        "says": "Christ carries out the office of a priest by once offering himself a sacrifice."
+      }
+    ],
+    "x_new_creation": [
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 21:1",
+        "says": "Beale says the new creation is a renewal of the old, and that Isaiah 65:17 stands behind the wording."
+      }
+    ],
+    "x_manna_bread": [
+      {
+        "work": "calvin_comm",
+        "at": "on John 6:31 to 35"
+      },
+      {
+        "work": "wcf",
+        "at": "27.5",
+        "says": "The sacraments of the Old Testament signified, for substance, the same spiritual things as those of the New."
+      }
+    ],
+    "x_hanged_tree": [
+      {
+        "work": "calvin_comm",
+        "at": "on Galatians 3:13",
+        "says": "Calvin says Christ hung on the cross and so came under that curse, for our sake."
+      }
+    ],
+    "x_birth_child": [
+      {
+        "work": "hendriksen",
+        "at": "chapter 11",
+        "says": "Hendriksen says the woman stands for the church, one in both Testaments."
+      },
+      {
+        "work": "beale_rev",
+        "at": "on Revelation 12:1 to 2",
+        "says": "Beale says the woman is the community of faith in both the Old and New Testament ages."
+      },
+      {
+        "work": "pius_x",
+        "says": "An example of the Roman Catholic reading that the woman is Mary."
+      }
+    ],
+    "x_immanuel_birth": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 7:14",
+        "says": "Calvin says the prophet spoke of Christ."
+      }
+    ],
+    "x_immanuel_same": [
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 7:14",
+        "says": "Calvin says the prophet spoke of Christ."
+      }
+    ],
+    "x_thirst_water": [
+      {
+        "work": "wcf",
+        "at": "7.3",
+        "says": "God freely offers sinners life and salvation by Jesus Christ."
+      }
+    ]
+  },
+  "paths": {
+    "week1_seed": [
+      {
+        "work": "wcf",
+        "at": "8.6",
+        "says": "Christ is the seed of the woman who should bruise the serpent's head."
+      },
+      {
+        "work": "robertson",
+        "at": "chapter 6",
+        "says": "On Genesis 3:15 as the opening promise of redemption."
+      }
+    ],
+    "week2_king": [
+      {
+        "work": "wlc",
+        "at": "45",
+        "says": "How Christ carries out the office of a king."
+      },
+      {
+        "work": "robertson",
+        "at": "chapter 12",
+        "says": "On God's covenant with David."
+      }
+    ],
+    "week3_sign": [
+      {
+        "work": "wlc",
+        "at": "37",
+        "says": "Christ was conceived by the power of the Holy Spirit in the womb of the virgin Mary."
+      },
+      {
+        "work": "calvin_comm",
+        "at": "on Isaiah 7:14",
+        "says": "Calvin says the prophet spoke of Christ."
+      }
+    ],
+    "week4_town": [
+      {
+        "work": "calvin_comm",
+        "at": "on Micah 5:2",
+        "says": "Calvin on Micah's words and Matthew's use of them."
+      }
+    ],
+    "christmas": [
+      {
+        "work": "wlc",
+        "at": "37",
+        "says": "The Son of God became man, conceived by the power of the Holy Spirit and born of the virgin Mary."
+      }
+    ],
+    "deut_book": [
+      {
+        "work": "wcf",
+        "at": "19.2",
+        "says": "The moral law was given at Mount Sinai in ten commandments."
+      },
+      {
+        "work": "isbe",
+        "at": "article \"Deuteronomy\"",
+        "says": "On the name and plan of the book."
+      }
+    ],
+    "deut_nt": [
+      {
+        "work": "wcf",
+        "at": "1.9",
+        "says": "The sure rule for interpreting Scripture is Scripture itself."
+      }
+    ],
+    "isaiah_through": [
+      {
+        "work": "young_who",
+        "says": "Argues that Isaiah the son of Amoz wrote the whole book."
+      },
+      {
+        "work": "motyer",
+        "at": "Introduction",
+        "says": "Treats the whole book as the work of Isaiah."
+      },
+      {
+        "work": "thiele",
+        "says": "The years of the kings of Judah and Israel."
+      }
+    ],
+    "isaiah_nt": [
+      {
+        "work": "wcf",
+        "at": "1.9",
+        "says": "The sure rule for interpreting Scripture is Scripture itself."
+      },
+      {
+        "work": "wcf",
+        "at": "7.6",
+        "says": "One covenant of grace under different administrations."
+      }
+    ],
+    "rev_through": [
+      {
+        "work": "wsc",
+        "at": "28",
+        "says": "Christ's exaltation, to his coming to judge the world at the last day."
+      },
+      {
+        "work": "wlc",
+        "at": "87 to 90",
+        "says": "The resurrection, the last judgment, and what follows."
+      },
+      {
+        "work": "esvsb",
+        "at": "Introduction to Revelation",
+        "says": "Names four approaches to the book: historicism, futurism, preterism, and idealism."
+      },
+      {
+        "work": "johnson",
+        "at": "appendix B, \"Schools of Interpretation\""
+      },
+      {
+        "work": "beale_rev",
+        "at": "Introduction",
+        "says": "Beale calls his own approach eclecticism, a redemptive-historical form of modified idealism."
+      },
+      {
+        "work": "geneva1599",
+        "at": "notes on Revelation",
+        "says": "An example of the Reformers reading the book as a map of church history."
+      },
+      {
+        "work": "hendriksen",
+        "at": "chapters 2 to 3",
+        "says": "Hendriksen says the book has seven sections that run side by side, each spanning the time from Christ's first coming to his second. He calls this progressive parallelism."
+      }
+    ],
+    "rev_ot": [
+      {
+        "work": "wlc",
+        "at": "34",
+        "says": "The promises, prophecies, sacrifices, and the passover all pointed ahead to Christ."
+      },
+      {
+        "work": "beale_rev",
+        "at": "Introduction",
+        "says": "On how Revelation uses the Old Testament."
+      }
+    ],
+    "thread_first_last": [
+      {
+        "work": "wcf",
+        "at": "8.6",
+        "says": "Christ is the seed of the woman who should bruise the serpent's head."
+      },
+      {
+        "work": "wcf",
+        "at": "7.6",
+        "says": "One covenant of grace under different administrations."
+      }
+    ],
+    "thread_lamb": [
+      {
+        "work": "wcf",
+        "at": "7.5",
+        "says": "The paschal lamb is named among the types that pointed ahead to Christ."
+      },
+      {
+        "work": "wlc",
+        "at": "44",
+        "says": "Christ once offered himself a sacrifice for the sins of his people."
+      }
+    ],
+    "thread_king": [
+      {
+        "work": "wlc",
+        "at": "45",
+        "says": "How Christ carries out the office of a king."
+      },
+      {
+        "work": "wsc",
+        "at": "26",
+        "says": "Christ as king rules and defends us."
+      }
+    ],
+    "thread_prophet_servant": [
+      {
+        "work": "wlc",
+        "at": "43",
+        "says": "How Christ carries out the office of a prophet."
+      },
+      {
+        "work": "calvin_comm",
+        "at": "on Deuteronomy 18:15",
+        "says": "Calvin takes the promise of the whole line of prophets, with Christ as their head."
+      }
+    ],
+    "thread_curse_tree": [
+      {
+        "work": "wsc",
+        "at": "27",
+        "says": "Christ's humiliation included the cursed death of the cross."
+      },
+      {
+        "work": "wcf",
+        "at": "20.1",
+        "says": "Christ has bought for believers freedom from the curse of the moral law."
+      }
+    ]
+  },
+  "timeline": {
+    "b_abraham": [
+      {
+        "work": "merrill",
+        "says": "Merrill dates the Exodus to 1446 BC, Abraham to 2166 to 1991 BC, and Jacob's move to Egypt to 1876 BC."
+      }
+    ],
+    "b_judah": [
+      {
+        "work": "merrill",
+        "says": "Merrill dates the Exodus to 1446 BC, Abraham to 2166 to 1991 BC, and Jacob's move to Egypt to 1876 BC."
+      }
+    ],
+    "b_exodus": [
+      {
+        "work": "merrill",
+        "says": "Merrill dates the Exodus to 1446 BC, Abraham to 2166 to 1991 BC, and Jacob's move to Egypt to 1876 BC."
+      },
+      {
+        "work": "kitchen",
+        "says": "Kitchen argues for an Exodus in the 1200s BC, about 1260 or 1250."
+      },
+      {
+        "work": "esvsb",
+        "at": "article \"The Date of the Exodus\"",
+        "says": "Both the early date (1446 BC) and the later date (about 1260 BC) are held by evangelical scholars."
+      }
+    ],
+    "b_sinai": [
+      {
+        "work": "merrill",
+        "says": "Merrill dates the Exodus to 1446 BC, Abraham to 2166 to 1991 BC, and Jacob's move to Egypt to 1876 BC."
+      },
+      {
+        "work": "kitchen",
+        "says": "Kitchen argues for an Exodus in the 1200s BC, about 1260 or 1250."
+      }
+    ],
+    "b_wilderness": [
+      {
+        "work": "merrill",
+        "says": "Merrill dates the Exodus to 1446 BC, Abraham to 2166 to 1991 BC, and Jacob's move to Egypt to 1876 BC."
+      },
+      {
+        "work": "kitchen",
+        "says": "Kitchen argues for an Exodus in the 1200s BC, about 1260 or 1250."
+      }
+    ],
+    "b_sermon": [
+      {
+        "work": "merrill",
+        "says": "Merrill dates the Exodus to 1446 BC, Abraham to 2166 to 1991 BC, and Jacob's move to Egypt to 1876 BC."
+      },
+      {
+        "work": "kitchen",
+        "says": "Kitchen argues for an Exodus in the 1200s BC, about 1260 or 1250."
+      }
+    ],
+    "b_moses_death": [
+      {
+        "work": "merrill",
+        "says": "Merrill dates the Exodus to 1446 BC, Abraham to 2166 to 1991 BC, and Jacob's move to Egypt to 1876 BC."
+      },
+      {
+        "work": "kitchen",
+        "says": "Kitchen argues for an Exodus in the 1200s BC, about 1260 or 1250."
+      }
+    ],
+    "b_david": [
+      {
+        "work": "thiele",
+        "says": "Dates the division of the kingdom to 931 or 930 BC, from which David's reign is counted back."
+      }
+    ],
+    "b_temple": [
+      {
+        "work": "thiele",
+        "says": "The years of the kings of Judah and Israel."
+      },
+      {
+        "work": "esvsb",
+        "at": "timeline notes",
+        "says": "Gives 967 or 966 BC for the fourth year of Solomon."
+      }
+    ],
+    "b_isaiah": [
+      {
+        "work": "thiele",
+        "says": "The years of the kings of Judah and Israel."
+      }
+    ],
+    "b_immanuel": [
+      {
+        "work": "thiele",
+        "says": "The years of the kings of Judah and Israel."
+      }
+    ],
+    "b_child": [
+      {
+        "work": "thiele",
+        "says": "The years of the kings of Judah and Israel."
+      }
+    ],
+    "b_micah": [
+      {
+        "work": "thiele",
+        "says": "The years of the kings of Judah and Israel."
+      }
+    ],
+    "b_birth": [
+      {
+        "work": "josephus_ant",
+        "at": "17",
+        "says": "The death of Herod the Great."
+      }
+    ],
+    "w_ur3": [
+      {
+        "work": "vdm",
+        "says": "Dates on the middle chronology."
+      }
+    ],
+    "w_egypt_mk": [
+      {
+        "work": "shaw",
+        "at": "chronology",
+        "says": "The dates of Egypt's kingdoms and pharaohs."
+      }
+    ],
+    "w_hammurabi": [
+      {
+        "work": "vdm",
+        "says": "Dates on the middle chronology."
+      },
+      {
+        "work": "hammurabi_stele"
+      }
+    ],
+    "w_hyksos": [
+      {
+        "work": "shaw",
+        "at": "chronology",
+        "says": "The dates of Egypt's kingdoms and pharaohs."
+      }
+    ],
+    "w_hittites": [
+      {
+        "work": "bryce"
+      }
+    ],
+    "w_egypt_nk": [
+      {
+        "work": "shaw",
+        "at": "chronology",
+        "says": "The dates of Egypt's kingdoms and pharaohs."
+      }
+    ],
+    "w_thutmose": [
+      {
+        "work": "shaw",
+        "at": "chronology",
+        "says": "The dates of Egypt's kingdoms and pharaohs."
+      }
+    ],
+    "w_ramesses": [
+      {
+        "work": "shaw",
+        "at": "chronology",
+        "says": "The dates of Egypt's kingdoms and pharaohs."
+      },
+      {
+        "work": "kitchen",
+        "says": "Kitchen argues for an Exodus in the 1200s BC, about 1260 or 1250."
+      }
+    ],
+    "w_merneptah": [
+      {
+        "work": "merneptah"
+      },
+      {
+        "work": "shaw",
+        "at": "chronology",
+        "says": "The dates of Egypt's kingdoms and pharaohs."
+      }
+    ],
+    "w_assyria": [
+      {
+        "work": "kuhrt"
+      }
+    ],
+    "w_rome_founded": [
+      {
+        "work": "ocd"
+      }
+    ],
+    "w_tiglath": [
+      {
+        "work": "kuhrt"
+      }
+    ],
+    "w_samaria": [
+      {
+        "work": "thiele",
+        "says": "Thiele places the fall of Samaria in the year from spring 723 to spring 722 BC, and argues for 723."
+      }
+    ],
+    "w_sennacherib": [
+      {
+        "work": "taylor_prism",
+        "says": "Sennacherib says he took forty-six of Hezekiah's fortified cities and shut him up in Jerusalem like a bird in a cage. He does not say he took Jerusalem."
+      }
+    ],
+    "w_babylon": [
+      {
+        "work": "kuhrt"
+      },
+      {
+        "work": "bab_chr"
+      }
+    ],
+    "w_nineveh": [
+      {
+        "work": "bab_chr"
+      }
+    ],
+    "w_jerusalem": [
+      {
+        "work": "thiele",
+        "says": "Dates the fall of Jerusalem to 586 BC."
+      }
+    ],
+    "w_persia": [
+      {
+        "work": "kuhrt"
+      }
+    ],
+    "w_cyrus": [
+      {
+        "work": "nabonidus_chr"
+      },
+      {
+        "work": "cyrus_cyl"
+      }
+    ],
+    "w_alexander": [
+      {
+        "work": "arrian"
+      },
+      {
+        "work": "ocd"
+      }
+    ],
+    "w_greek": [
+      {
+        "work": "josephus_ant",
+        "at": "12"
+      },
+      {
+        "work": "ocd"
+      }
+    ],
+    "w_maccabees": [
+      {
+        "work": "1macc",
+        "at": "1:1 to 4:61"
+      },
+      {
+        "work": "josephus_ant",
+        "at": "12 to 13"
+      }
+    ],
+    "w_pompey": [
+      {
+        "work": "josephus_ant",
+        "at": "14"
+      }
+    ],
+    "w_herod": [
+      {
+        "work": "josephus_ant",
+        "at": "14 to 17"
+      }
+    ],
+    "w_augustus": [
+      {
+        "work": "suetonius",
+        "at": "Life of Augustus"
+      },
+      {
+        "work": "ocd"
+      }
+    ],
+    "w_census": [
+      {
+        "work": "josephus_ant",
+        "at": "18"
+      }
+    ],
+    "w_tiberius": [
+      {
+        "work": "tacitus",
+        "at": "1 to 6"
+      }
+    ],
+    "w_pilate": [
+      {
+        "work": "josephus_ant",
+        "at": "18"
+      },
+      {
+        "work": "tacitus",
+        "at": "15.44"
+      },
+      {
+        "work": "pilate_stone"
+      }
+    ],
+    "w_nero": [
+      {
+        "work": "tacitus",
+        "at": "13 to 16"
+      },
+      {
+        "work": "eusebius_he",
+        "at": "2.25",
+        "says": "Paul and Peter were put to death at Rome under Nero."
+      }
+    ],
+    "w_temple70": [
+      {
+        "work": "josephus_war",
+        "at": "5 to 6"
+      }
+    ],
+    "bi_uzziah": [
+      {
+        "work": "thiele",
+        "says": "The years of the kings of Judah and Israel."
+      }
+    ],
+    "bi_hezekiah": [
+      {
+        "work": "taylor_prism",
+        "says": "Sennacherib says he took forty-six of Hezekiah's fortified cities and shut him up in Jerusalem like a bird in a cage. He does not say he took Jerusalem."
+      }
+    ],
+    "bi_later": [
+      {
+        "work": "young_who",
+        "says": "Argues that Isaiah the son of Amoz wrote the whole book."
+      },
+      {
+        "work": "motyer",
+        "at": "Introduction",
+        "says": "Treats the whole book as the work of Isaiah."
+      }
+    ],
+    "br_ezekiel1": [
+      {
+        "work": "bab_chr"
+      }
+    ],
+    "br_daniel7": [
+      {
+        "work": "nabonidus_chr"
+      },
+      {
+        "work": "young_daniel",
+        "at": "on Daniel 2 and 7",
+        "says": "Young takes the four kingdoms as Babylon, Medo-Persia, Greece, and Rome."
+      }
+    ],
+    "bi_1peter": [
+      {
+        "work": "eusebius_he",
+        "at": "2.25",
+        "says": "Paul and Peter were put to death at Rome under Nero."
+      },
+      {
+        "work": "esvsb",
+        "at": "Introduction to 1 Peter",
+        "says": "The likely date is AD 62 to 63."
+      }
+    ],
+    "br_patmos": [
+      {
+        "work": "irenaeus_ah",
+        "at": "5.30.3",
+        "says": "The vision was seen almost in our own day, toward the end of Domitian's reign."
+      },
+      {
+        "work": "eusebius_he",
+        "at": "3.18",
+        "says": "John was sent to Patmos under Domitian. Eusebius quotes Irenaeus for it."
+      },
+      {
+        "work": "beale_rev",
+        "at": "Introduction",
+        "says": "Beale judges a date under Domitian more probable, and a date under Nero possible."
+      },
+      {
+        "work": "esvsb",
+        "at": "Introduction to Revelation",
+        "says": "Most scholars date the book to the mid 90s. Some argue for a date under Nero, before AD 70."
+      }
+    ],
+    "w_domitian": [
+      {
+        "work": "suetonius",
+        "at": "Life of Domitian"
+      },
+      {
+        "work": "eusebius_he",
+        "at": "3.17 to 3.20"
+      },
+      {
+        "work": "ocd"
+      }
+    ],
+    "p_ur": [
+      {
+        "work": "woolley"
+      }
+    ],
+    "p_sinai": [
+      {
+        "work": "oba"
+      }
+    ],
+    "p_assyria": [
+      {
+        "work": "kuhrt"
+      }
+    ],
+    "p_babylon": [
+      {
+        "work": "kuhrt"
+      }
+    ],
+    "p_persia": [
+      {
+        "work": "kuhrt"
+      }
+    ],
+    "p_seven_churches": [
+      {
+        "work": "oba"
+      }
+    ],
+    "b_cross": [
+      {
+        "work": "esvsb",
+        "at": "article on the dates of Jesus' life",
+        "says": "The only likely years are AD 30 or 33."
+      }
+    ],
+    "b_peter": [
+      {
+        "work": "esvsb",
+        "at": "article on the dates of Jesus' life",
+        "says": "The only likely years for the cross are AD 30 or 33."
+      }
+    ],
+    "b_galatians": [
+      {
+        "work": "esvsb",
+        "at": "Introduction to Galatians",
+        "says": "About AD 48 is a plausible date."
+      }
+    ],
+    "b_romans": [
+      {
+        "work": "esvsb",
+        "at": "Introduction to Romans",
+        "says": "Paul probably wrote from Corinth, on his third missionary journey, in AD 57."
+      }
+    ]
+  }
+}

@@ -35,6 +35,7 @@
         <button type="button" id="tab-walk" role="tab" aria-selected="true" aria-controls="walk-view"><span class="tab-long">Walk a week</span><span class="tab-short">Walk</span></button>
         <button type="button" id="tab-explore" role="tab" aria-selected="false" aria-controls="explore-view" tabindex="-1"><span class="tab-long">See the map</span><span class="tab-short">Map</span></button>
         <button type="button" id="tab-requests" role="tab" aria-selected="false" aria-controls="requests-view" tabindex="-1"><span class="tab-long">Comments/Requests</span><span class="tab-short">Ask</span></button>
+        <button type="button" id="tab-sources" role="tab" aria-selected="false" aria-controls="sources-view" tabindex="-1"><span class="tab-long">Sources</span><span class="tab-short">Sources</span></button>
       </div>
       <button type="button" id="theme-toggle" class="icon-btn theme-toggle" aria-pressed="false" title="Dark mode">
         <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
@@ -174,12 +175,18 @@
       <h2 class="visually-hidden">Comments and requests</h2>
       <div id="requests-body"></div>
     </section>
+
+    <section id="sources-view" class="view sources wrap" role="tabpanel" aria-labelledby="tab-sources" tabindex="0" hidden>
+      <h2 class="visually-hidden">Sources and bibliography</h2>
+      <div id="sources-body"></div>
+    </section>
   </main>
 
   <footer class="site-footer wrap">
     <p>This Reformed reading presents the Bible as one story pointing to Jesus, in line with the Westminster Standards.</p>
     <p>Scripture quotations are short excerpts from the ESV Bible (The Holy Bible, English Standard Version), copyright 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
     <p>Confession and catechism quotations are the modern spelling text published by the Orthodox Presbyterian Church.</p>
+    <p><a href="#sources">Sources and bibliography</a>: every work cited on this site, with full publication details.</p>
     <p id="map-version">Map version 0.1.</p>
   </footer>
 
