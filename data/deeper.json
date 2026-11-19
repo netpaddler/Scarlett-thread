@@ -1472,6 +1472,2145 @@
         "What does Paul say the near word is?",
         "Where does the mouth and the heart turn up again a verse later?"
       ]
+    },
+    "is_opening": {
+      "context": [
+        "Isaiah 1:1 works like a title page. It names the prophet, his father Amoz, and the four kings of Judah he served under: Uzziah, Jotham, Ahaz, and Hezekiah. That covers roughly the second half of the 700s BC.",
+        "The first chapter reads like a court case. God calls heaven and earth as witnesses and says the children he raised have rebelled against him (1:2). The people are busy with sacrifices and feasts, and God says he is weary of them, because their hands are full of blood (1:11-15). What he asks for is plain: stop doing evil, learn to do good, seek justice (1:16-17).",
+        "Then comes the invitation. God offers to reason with them, and he promises that scarlet sins can be made white as snow. The chapter does not yet say how. The rest of the book does."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 1:3",
+          "text": "The ox knows its owner, and the donkey its master's crib, but Israel does not know, my people do not understand."
+        },
+        {
+          "ref": "Isaiah 1:18",
+          "text": "Come now, let us reason together, says the LORD: though your sins are like scarlet, they shall be as white as snow; though they are red like crimson, they shall become like wool."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 1:1-20",
+        "Isaiah 6:1",
+        "Romans 9:29"
+      ],
+      "connections": [
+        {
+          "other": "is_call",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The link is a king's name. Isaiah 1:1 lists Uzziah first among the kings Isaiah served under, and Isaiah 6:1 dates the vision of the throne to the year Uzziah died. The book does not say whether chapters 1 to 5 were preached before or after that vision, and readers differ on it."
+        }
+      ],
+      "nt": [
+        "Paul quotes Isaiah 1:9 in Romans 9:29, naming Isaiah: if the Lord had not left offspring, his people would have been like Sodom. This stop has no line to a New Testament stop on this map."
+      ],
+      "questions": [
+        "What is wrong with the worship God describes in this chapter?",
+        "What does God ask the people to do instead?",
+        "What does he promise about sins that are like scarlet?"
+      ]
+    },
+    "is_call": {
+      "context": [
+        "King Uzziah had reigned for about fifty years. In the year he died, Isaiah saw the true King. The Lord sits on a throne, and the train of his robe fills the temple. Seraphim call to one another that he is holy, holy, holy.",
+        "Isaiah's first word is woe. He is a man of unclean lips among a people of unclean lips, and he has seen the King (6:5). One of the seraphim touches his mouth with a burning coal from the altar and says his guilt is taken away and his sin atoned for (6:7). Only then does Isaiah hear the question, Whom shall I send?",
+        "The mission is hard. He is to preach to people whose hearts will grow dull as they hear him (6:9-10). When he asks how long, the answer is until the land is laid waste. Yet the chapter ends with a stump left standing, and it calls the holy seed its stump (6:13)."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 6:1",
+          "text": "In the year that King Uzziah died I saw the Lord sitting upon a throne, high and lifted up; and the train of his robe filled the temple."
+        },
+        {
+          "ref": "Isaiah 6:5",
+          "text": "And I said: “Woe is me! For I am lost; for I am a man of unclean lips, and I dwell in the midst of a people of unclean lips; for my eyes have seen the King, the LORD of hosts!”"
+        },
+        {
+          "ref": "Isaiah 6:8",
+          "text": "And I heard the voice of the Lord saying, “Whom shall I send, and who will go for us?” Then I said, “Here I am! Send me.”"
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 6:1-13",
+        "John 12:39-41",
+        "Matthew 13:14-15",
+        "Acts 28:25-27",
+        "Revelation 4:8"
+      ],
+      "connections": [
+        {
+          "other": "is_opening",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The link is a king's name. Isaiah 1:1 lists Uzziah first among the kings Isaiah served under, and Isaiah 6:1 dates the vision of the throne to the year Uzziah died. The book does not say whether chapters 1 to 5 were preached before or after that vision, and readers differ on it."
+        },
+        {
+          "other": "is_immanuel",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The book moves from one king to the next. Chapter 6 is dated to the death of Uzziah. Chapter 7 opens in the days of Ahaz and names him as the son of Jotham, son of Uzziah. Isaiah was told in chapter 6 that the people would not listen. In chapter 7 a king does not listen."
+        },
+        {
+          "other": "isn_jn12",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "John writes 'For again Isaiah said' and quotes Isaiah 6:10 (John 12:39-40). The wording differs. In Isaiah it is a command to the prophet: 'Make the heart of this people dull, and their ears heavy, and blind their eyes'. In John it is a statement: 'He has blinded their eyes and hardened their heart'. John leaves out the ears. Then John says Isaiah said these things because he saw his glory and spoke of him (12:41). In John's telling, the glory Isaiah saw in the temple was the glory of Christ. That claim is John's own, and he makes it openly."
+        }
+      ],
+      "nt": [
+        "Isaiah 6:9-10 is one of the Old Testament passages the New Testament quotes most often. Jesus quotes it to explain why he teaches in parables (Matthew 13:14-15). Paul quotes it to the Jewish leaders in Rome (Acts 28:25-27). John quotes it in John 12:40 and adds that Isaiah saw Christ's glory. In Revelation 4:8 the living creatures around the throne sing holy, holy, holy, as the seraphim do here."
+      ],
+      "questions": [
+        "What does Isaiah say about himself when he sees the Lord?",
+        "What has to happen before he is sent?",
+        "What is he told about how people will respond to his preaching?"
+      ]
+    },
+    "is_immanuel": {
+      "context": [
+        "The year is about 735 BC. The kings of Syria and of northern Israel have joined forces against Judah, and the heart of King Ahaz shakes like trees in the wind (7:2). Isaiah meets him by the water supply and tells him not to fear. These two kings are smoldering stumps of firebrands.",
+        "God offers Ahaz a sign, as deep as Sheol or as high as heaven. Ahaz answers that he will not put the LORD to the test. It sounds devout, but 2 Kings 16:7-9 shows he had another plan, which was to pay Assyria for protection. So the Lord himself gives a sign: the virgin will conceive and bear a son, and call his name Immanuel.",
+        "Isaiah ties the sign to the near future. Before the boy knows how to refuse the evil and choose the good, the land of the two kings Ahaz dreads will be deserted (7:16). Readers differ on whether a child born in Isaiah's day was a first stage of the sign. Matthew says plainly that the birth of Jesus fulfilled it."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 7:9",
+          "text": "If you are not firm in faith, you will not be firm at all."
+        },
+        {
+          "ref": "Isaiah 7:14",
+          "text": "Therefore the Lord himself will give you a sign. Behold, the virgin shall conceive and bear a son, and shall call his name Immanuel."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 7:1-17",
+        "Isaiah 8:8-10",
+        "2 Kings 16:5-9",
+        "Matthew 1:18-25"
+      ],
+      "connections": [
+        {
+          "other": "is_call",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The book moves from one king to the next. Chapter 6 is dated to the death of Uzziah. Chapter 7 opens in the days of Ahaz and names him as the son of Jotham, son of Uzziah. Isaiah was told in chapter 6 that the people would not listen. In chapter 7 a king does not listen."
+        },
+        {
+          "other": "is_child",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Chapters 7 to 9 are one stretch of the book, set in the same crisis. The name Immanuel comes back in Isaiah 8:8, and 8:10 says God is with us. Chapter 8 ends in gloom and darkness, and 9:1-2 answers with a great light. That much is in the text. Isaiah does not say in so many words that the child of 9:6 is the son called Immanuel in 7:14. Christian readers put them together, with good reason, but that step is a reading and not a quotation."
+        },
+        {
+          "other": "is_hezekiah",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The two scenes happen at the same spot. Isaiah meets Ahaz 'at the end of the conduit of the upper pool on the highway to the Washer's Field' (7:3). A generation later the Assyrian officer stands 'by the conduit of the upper pool on the highway to the Washer's Field' (36:2). The place is named in both. Many readers think the book wants the two kings compared, Ahaz who would not trust and Hezekiah who prayed. The comparison is a reading. The shared place is in the text."
+        },
+        {
+          "other": "isn_mt1",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Matthew writes that all this took place to fulfill what the Lord had spoken by the prophet, and then quotes Isaiah 7:14 (Matthew 1:22-23). The citation is explicit. Matthew reads 'they shall call his name Immanuel' where Isaiah reads 'shall call his name Immanuel', and Matthew adds the meaning of the name. In Isaiah 7 the sign is tied to a near event: before the boy knows how to refuse evil and choose good, the two kings Ahaz fears will be gone (7:16). Readers differ on whether a child in Isaiah's own day was a first stage of the sign. Matthew's claim about Jesus is plain either way."
+        }
+      ],
+      "nt": [
+        "Matthew 1:22-23 quotes Isaiah 7:14 and says the virgin birth of Jesus took place to fulfill it. Matthew also translates the name: God with us."
+      ],
+      "questions": [
+        "What is Ahaz afraid of, and what does Isaiah tell him?",
+        "Why does Ahaz refuse the sign, and what does God do then?",
+        "What does the name Immanuel mean, and who tells you?"
+      ]
+    },
+    "is_child": {
+      "context": [
+        "Chapter 8 ends in distress and thick darkness. Chapter 9 begins with but. The lands of Zebulun and Naphtali, in Galilee, were the first to be overrun by Assyria (2 Kings 15:29). Isaiah says those same lands will be made glorious, and the people who walked in darkness will see a great light.",
+        "The joy has a cause. The yoke is broken, the boots of war are burned, and a child is born. He carries the government on his shoulder. He has four names, and two of them, Mighty God and Everlasting Father, are more than any ordinary king could bear.",
+        "He reigns on the throne of David with justice and righteousness, from this time forth and forevermore. Isaiah adds who will make sure of it: the zeal of the LORD of hosts will do this (9:7)."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 9:2",
+          "text": "The people who walked in darkness have seen a great light; those who dwelt in a land of deep darkness, on them has light shone."
+        },
+        {
+          "ref": "Isaiah 9:6",
+          "text": "For to us a child is born, to us a son is given; and the government shall be upon his shoulder, and his name shall be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 9:1-7",
+        "2 Kings 15:29",
+        "Matthew 4:12-17",
+        "Luke 1:32-33"
+      ],
+      "connections": [
+        {
+          "other": "is_immanuel",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "Chapters 7 to 9 are one stretch of the book, set in the same crisis. The name Immanuel comes back in Isaiah 8:8, and 8:10 says God is with us. Chapter 8 ends in gloom and darkness, and 9:1-2 answers with a great light. That much is in the text. Isaiah does not say in so many words that the child of 9:6 is the son called Immanuel in 7:14. Christian readers put them together, with good reason, but that step is a reading and not a quotation."
+        },
+        {
+          "other": "is_shoot",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "This line is marked interpretive. Isaiah 9:7 puts the child on the throne of David. Isaiah 11:1 speaks of a shoot from the stump of Jesse, and Jesse was David's father. Both passages describe a just and lasting rule from David's family, and most readers take them as one king. Isaiah does not say so himself. The New Testament applies Isaiah 11:10 to Jesus (Romans 15:12) and gives him the throne of David (Luke 1:32-33)."
+        },
+        {
+          "other": "isn_mt4",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Matthew names the prophet Isaiah and quotes Isaiah 9:1-2 (Matthew 4:14-16). The wording shifts a little. Isaiah has 'The people who walked in darkness have seen a great light'. Matthew has 'the people dwelling in darkness have seen a great light'. Matthew quotes the light in Galilee. He does not quote the child of Isaiah 9:6-7. Christians read those verses of Jesus because of the quotation Matthew does make and because Gabriel promises Mary's son the throne of David (Luke 1:32-33)."
+        }
+      ],
+      "nt": [
+        "Matthew 4:14-16 quotes Isaiah 9:1-2 when Jesus settles in Capernaum. No New Testament writer quotes Isaiah 9:6-7 directly. Gabriel's words to Mary come close to its themes: her son will be given the throne of his father David, and of his kingdom there will be no end (Luke 1:32-33)."
+      ],
+      "questions": [
+        "Which part of the land sees the light first, and why does that matter?",
+        "What four names is the child given?",
+        "Who does Isaiah say will bring this about?"
+      ]
+    },
+    "is_shoot": {
+      "context": [
+        "Chapter 10 ends with the LORD cutting down a proud forest. Chapter 11 begins with one small shoot. The royal house of David will be brought so low that Isaiah calls it a stump, and he names it after Jesse, David's father, as if the family had gone back to its humble start.",
+        "The shoot is a king. The Spirit of the LORD rests on him with wisdom, understanding, counsel, might, knowledge, and the fear of the LORD. He does not judge by what his eyes see. He decides with equity for the meek of the earth.",
+        "His rule changes the world. The wolf dwells with the lamb, a little child leads them, and the earth is full of the knowledge of the LORD as the waters cover the sea. In that day the root of Jesse stands as a signal for the peoples, and the nations inquire of him (11:10)."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 11:1",
+          "text": "There shall come forth a shoot from the stump of Jesse, and a branch from his roots shall bear fruit."
+        },
+        {
+          "ref": "Isaiah 11:2",
+          "text": "And the Spirit of the LORD shall rest upon him, the Spirit of wisdom and understanding, the Spirit of counsel and might, the Spirit of knowledge and the fear of the LORD."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 11:1-10",
+        "Romans 15:12",
+        "Revelation 5:5",
+        "Revelation 22:16"
+      ],
+      "connections": [
+        {
+          "other": "is_child",
+          "direction": "from",
+          "confidence": "typology",
+          "text": "This line is marked interpretive. Isaiah 9:7 puts the child on the throne of David. Isaiah 11:1 speaks of a shoot from the stump of Jesse, and Jesse was David's father. Both passages describe a just and lasting rule from David's family, and most readers take them as one king. Isaiah does not say so himself. The New Testament applies Isaiah 11:10 to Jesus (Romans 15:12) and gives him the throne of David (Luke 1:32-33)."
+        }
+      ],
+      "nt": [
+        "Paul quotes Isaiah 11:10 in Romans 15:12, naming Isaiah, as proof that the Gentiles would hope in Christ. In Revelation Jesus is called the Root of David (Revelation 5:5, 22:16). This map has no New Testament stop for those texts, so the stop's only line is the interpretive one from the child of chapter 9."
+      ],
+      "questions": [
+        "Why does Isaiah speak of a stump?",
+        "What rests on this king, and how does he judge?",
+        "Who comes looking for the root of Jesse in verse 10?"
+      ]
+    },
+    "is_babylon": {
+      "context": [
+        "Chapters 13 to 23 are a run of messages about the nations. Babylon comes first. Isaiah 13 describes the day of the LORD falling on the city, and says God is stirring up the Medes against it (13:17). Babylon, the glory of kingdoms, will become a ruin where wild animals live.",
+        "Chapter 14 gives Israel a taunt to take up against the king of Babylon once God has given them rest. The king who said in his heart that he would ascend to heaven is brought down to Sheol. Isaiah 21:9 adds the short cry that Revelation repeats: fallen, fallen is Babylon.",
+        "Interpretation: Isaiah 14:12, 'How you are fallen from heaven, O Day Star, son of Dawn', is spoken to the king of Babylon (14:4). Some Christians have also read it as a picture of the fall of Satan. The passage itself does not say that, and many Reformed readers, John Calvin among them, take it of the king alone."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 13:19",
+          "text": "And Babylon, the glory of kingdoms, the splendor and pomp of the Chaldeans, will be like Sodom and Gomorrah when God overthrew them."
+        },
+        {
+          "ref": "Isaiah 14:4",
+          "text": "you will take up this taunt against the king of Babylon: “How the oppressor has ceased, the insolent fury ceased!"
+        },
+        {
+          "ref": "Isaiah 21:9",
+          "text": "Fallen, fallen is Babylon; and all the carved images of her gods he has shattered to the ground."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 13:1-22",
+        "Isaiah 14:3-23",
+        "Isaiah 21:1-10",
+        "Isaiah 39:5-7",
+        "Revelation 14:8",
+        "Revelation 18:2"
+      ],
+      "nt": [
+        "Revelation 14:8 and 18:2 take up the cry 'Fallen, fallen is Babylon the great'. Revelation does not cite Isaiah by name. No line on this map reaches this stop, because none of the New Testament stops here quotes these chapters. The Revelation map has the fall of Babylon as a stop of its own."
+      ],
+      "questions": [
+        "What did the king of Babylon say in his heart, and where does he end up?",
+        "Why would God's people need a song like this before Babylon had even risen?",
+        "What does this passage say about every proud power?"
+      ]
+    },
+    "is_hezekiah": {
+      "context": [
+        "It is 701 BC, the fourteenth year of King Hezekiah. Sennacherib of Assyria has taken the fortified towns of Judah. His officer, the Rabshakeh, stands outside Jerusalem and shouts in Hebrew so that everyone on the wall can hear. No god of any nation has saved his land from Assyria, he says. Why would the LORD save Jerusalem?",
+        "Hezekiah tears his clothes and sends to Isaiah. When a letter comes repeating the threat, he takes it into the house of the LORD and spreads it out before him. His prayer asks God to save for the sake of his own name.",
+        "Isaiah sends the answer. The king of Assyria will not shoot an arrow there. The angel of the LORD strikes down 185,000 in the Assyrian camp (37:36). Sennacherib goes back to Nineveh, where his own sons later kill him. Sennacherib's own record of the campaign survives. It lists the towns he took and says he shut Hezekiah up in Jerusalem like a bird in a cage. It does not claim he took the city."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 37:14",
+          "text": "Hezekiah received the letter from the hand of the messengers, and read it; and Hezekiah went up to the house of the LORD, and spread it before the LORD."
+        },
+        {
+          "ref": "Isaiah 37:20",
+          "text": "So now, O LORD our God, save us from his hand, that all the kingdoms of the earth may know that you alone are the LORD."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 36:1-22",
+        "Isaiah 37:1-38",
+        "2 Kings 18:13-37",
+        "2 Kings 19:1-37",
+        "2 Chronicles 32:1-23"
+      ],
+      "connections": [
+        {
+          "other": "is_immanuel",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The two scenes happen at the same spot. Isaiah meets Ahaz 'at the end of the conduit of the upper pool on the highway to the Washer's Field' (7:3). A generation later the Assyrian officer stands 'by the conduit of the upper pool on the highway to the Washer's Field' (36:2). The place is named in both. Many readers think the book wants the two kings compared, Ahaz who would not trust and Hezekiah who prayed. The comparison is a reading. The shared place is in the text."
+        },
+        {
+          "other": "is_comfort",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "This is the order of the book. The Hezekiah chapters end with Isaiah telling the king that everything in his house will be carried to Babylon (39:5-7). The very next words are 'Comfort, comfort my people' (40:1), spoken to a Jerusalem whose warfare is ended and whose iniquity is pardoned (40:2). Isaiah sets the warning and the comfort side by side. He does not add a sentence that joins them."
+        }
+      ],
+      "nt": [
+        "The New Testament does not quote these chapters. The same story is told in 2 Kings 18 to 19 and 2 Chronicles 32."
+      ],
+      "questions": [
+        "What argument does the Assyrian officer use against trusting the LORD?",
+        "What does Hezekiah do with the letter?",
+        "What reason does he give God for saving the city?"
+      ]
+    },
+    "is_comfort": {
+      "context": [
+        "From chapter 40 on, the book speaks to people who need comfort. Chapter 39 has just warned that Judah's treasures and sons will be carried to Babylon. Now God says comfort twice, and tells the speaker to say that Jerusalem's warfare is ended and her iniquity pardoned.",
+        "A voice cries out to prepare the way of the LORD in the wilderness. Valleys are to be lifted and mountains made low, because the glory of the LORD will be revealed and all flesh will see it together. Another voice says that people are like grass, but the word of our God will stand forever.",
+        "The good news to be shouted from a high mountain is short: behold your God. He comes with might, and he tends his flock like a shepherd and carries the lambs in his arms (40:9-11)."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 40:1",
+          "text": "Comfort, comfort my people, says your God."
+        },
+        {
+          "ref": "Isaiah 40:8",
+          "text": "The grass withers, the flower fades, but the word of our God will stand forever."
+        },
+        {
+          "ref": "Isaiah 40:11",
+          "text": "He will tend his flock like a shepherd; he will gather the lambs in his arms; he will carry them in his bosom, and gently lead those that are with young."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 40:1-11",
+        "Matthew 3:1-3",
+        "Mark 1:2-4",
+        "Luke 3:2-6",
+        "John 1:23",
+        "1 Peter 1:24-25"
+      ],
+      "connections": [
+        {
+          "other": "is_hezekiah",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "This is the order of the book. The Hezekiah chapters end with Isaiah telling the king that everything in his house will be carried to Babylon (39:5-7). The very next words are 'Comfort, comfort my people' (40:1), spoken to a Jerusalem whose warfare is ended and whose iniquity is pardoned (40:2). Isaiah sets the warning and the comfort side by side. He does not add a sentence that joins them."
+        },
+        {
+          "other": "is_cyrus",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Chapter 40 sends comfort to Jerusalem and the cities of Judah. Isaiah 44:26-28 says how the comfort will come: God says of Jerusalem that she shall be inhabited, of the cities of Judah that they shall be built, and of Cyrus that he is God's shepherd. The same cities are named in both places."
+        }
+      ],
+      "nt": [
+        "All four Gospels quote Isaiah 40:3 about John the Baptist (Matthew 3:3, Mark 1:3, Luke 3:4-6, John 1:23). The road is made ready for the LORD, and the one who comes down it is Jesus. Peter quotes Isaiah 40:6-8 and says this word is the good news that was preached to you (1 Peter 1:24-25). This map has no stop for those texts."
+      ],
+      "questions": [
+        "What is Jerusalem to be told in verse 2?",
+        "Who is the road being prepared for?",
+        "What lasts when people fade like grass?"
+      ]
+    },
+    "is_servant_chosen": {
+      "context": [
+        "God says behold, and presents his servant. He upholds him, delights in him, and has put his Spirit on him. The servant's task is very large: to bring forth justice to the nations.",
+        "His manner is the surprise. He will not cry aloud or lift up his voice in the street. A bruised reed he will not break, and a faintly burning wick he will not quench. He himself will not grow faint until justice is established on the earth (42:4).",
+        "God then speaks to the servant directly. He will give him as a covenant for the people and a light for the nations, to open blind eyes and bring prisoners out of the dungeon (42:6-7). Elsewhere in these chapters the nation Israel is called God's servant (41:8). Here the servant does for Israel and the nations what Israel could not do."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 42:1",
+          "text": "Behold my servant, whom I uphold, my chosen, in whom my soul delights; I have put my Spirit upon him; he will bring forth justice to the nations."
+        },
+        {
+          "ref": "Isaiah 42:3",
+          "text": "a bruised reed he will not break, and a faintly burning wick he will not quench; he will faithfully bring forth justice."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 42:1-9",
+        "Isaiah 41:8-10",
+        "Matthew 12:15-21",
+        "Matthew 3:16-17"
+      ],
+      "connections": [
+        {
+          "other": "is_servant_light",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "This line is marked interpretive. Both passages speak of God's servant and of a light for the nations (42:6 and 49:6). Reading them as two songs about one person is a very old and very common reading, but the grouping called the Servant Songs comes from later readers and not from Isaiah. Isaiah also calls the nation Israel God's servant (41:8), and 49:3 addresses the servant as Israel, while 49:5-6 gives him a mission to Israel. Readers work that out in different ways."
+        }
+      ],
+      "nt": [
+        "Matthew 12:17-21 quotes Isaiah 42:1-4 at length and says Jesus' quiet healing ministry fulfilled it. Many readers also hear this verse in the Father's words at Jesus' baptism, 'with whom I am well pleased' (Matthew 3:17). That second link is an echo that readers notice, not a marked quotation."
+      ],
+      "questions": [
+        "What has God put on his servant?",
+        "How does the servant treat the weak?",
+        "How far does his work reach?"
+      ]
+    },
+    "is_cyrus": {
+      "context": [
+        "In these chapters God argues against the idols. They cannot say what is coming. He can, and he gives a name: Cyrus. God calls him my shepherd, who will fulfill his purpose by saying that Jerusalem shall be built and the temple's foundation laid.",
+        "God even calls Cyrus his anointed (45:1). The word is the one from which we get messiah, and here it means a ruler God has appointed for a task. Cyrus is no worshiper of the LORD. God says twice, 'though you do not know me' (45:4-5). He does it for the sake of his servant Jacob, and so that people from east to west may know there is no other God.",
+        "Cyrus the Great of Persia took Babylon in 539 BC and let the exiles of Judah return (Ezra 1:1-4). Christians who hold that Isaiah wrote the whole book take this as a prophecy given about 150 years ahead, which is the very point God is making against the idols. Many modern scholars date these chapters to the time of Cyrus instead. The timeline gives both views."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 44:28",
+          "text": "who says of Cyrus, ‘He is my shepherd, and he shall fulfill all my purpose’; saying of Jerusalem, ‘She shall be built,’ and of the temple, ‘Your foundation shall be laid.’”"
+        },
+        {
+          "ref": "Isaiah 45:4",
+          "text": "For the sake of my servant Jacob, and Israel my chosen, I call you by your name, I name you, though you do not know me."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 44:24-28",
+        "Isaiah 45:1-7",
+        "Ezra 1:1-4",
+        "2 Chronicles 36:22-23"
+      ],
+      "connections": [
+        {
+          "other": "is_comfort",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "Chapter 40 sends comfort to Jerusalem and the cities of Judah. Isaiah 44:26-28 says how the comfort will come: God says of Jerusalem that she shall be inhabited, of the cities of Judah that they shall be built, and of Cyrus that he is God's shepherd. The same cities are named in both places."
+        }
+      ],
+      "nt": [
+        "The New Testament does not quote the Cyrus passage. Ezra 1:1-4 and 2 Chronicles 36:22-23 record his decree."
+      ],
+      "questions": [
+        "What two titles does God give Cyrus?",
+        "Does Cyrus know the LORD? What does that show about how God rules?",
+        "Why does God name what will happen ahead of time?"
+      ]
+    },
+    "is_servant_light": {
+      "context": [
+        "The servant calls the coastlands and distant peoples to listen. The LORD called him from the womb and made his mouth like a sharp sword. God says to him, 'You are my servant, Israel, in whom I will be glorified' (49:3).",
+        "Then the servant admits discouragement. He has labored in vain and spent his strength for nothing. Yet he leaves his case with the LORD.",
+        "God's answer widens the mission. Bringing back the tribes of Jacob is too light a thing. The servant will be a light for the nations, so that salvation reaches the end of the earth. He is called Israel in verse 3, and he is sent to restore Israel in verses 5 and 6. So he bears the nation's name and does what the nation needs done for it."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 49:4",
+          "text": "But I said, “I have labored in vain; I have spent my strength for nothing and vanity; yet surely my right is with the LORD, and my recompense with my God.”"
+        },
+        {
+          "ref": "Isaiah 49:6",
+          "text": "I will make you as a light for the nations, that my salvation may reach to the end of the earth."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 49:1-7",
+        "Acts 13:46-48",
+        "Luke 2:29-32",
+        "Acts 26:22-23"
+      ],
+      "connections": [
+        {
+          "other": "is_servant_chosen",
+          "direction": "from",
+          "confidence": "typology",
+          "text": "This line is marked interpretive. Both passages speak of God's servant and of a light for the nations (42:6 and 49:6). Reading them as two songs about one person is a very old and very common reading, but the grouping called the Servant Songs comes from later readers and not from Isaiah. Isaiah also calls the nation Israel God's servant (41:8), and 49:3 addresses the servant as Israel, while 49:5-6 gives him a mission to Israel. Readers work that out in different ways."
+        },
+        {
+          "other": "is_servant_obedient",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "This line is marked interpretive. In chapter 49 the servant says he has labored in vain. In chapter 50 a speaker tells of being struck and spat on, and 50:10 calls him the LORD's servant. Most readers hear the same voice in both. Isaiah does not label them as a series."
+        }
+      ],
+      "nt": [
+        "Paul and Barnabas quote Isaiah 49:6 in Acts 13:47 as the Lord's command to them when they turn to the Gentiles. The servant's mission is carried on through Christ's messengers. Simeon calls the child Jesus 'a light for revelation to the Gentiles' (Luke 2:32), words close to this verse. This map has no stop for those texts."
+      ],
+      "questions": [
+        "How does the servant feel about his work in verse 4?",
+        "What does God call too light a thing?",
+        "Who is the light for?"
+      ]
+    },
+    "is_servant_obedient": {
+      "context": [
+        "The speaker has the tongue of those who are taught, so that he can sustain the weary with a word. Morning by morning the Lord GOD wakens his ear. Unlike Israel, he says he was not rebellious and did not turn backward.",
+        "Obedience costs him. He gives his back to those who strike and his cheeks to those who pull out the beard. He does not hide his face from disgrace and spitting.",
+        "He is not crushed by it. The Lord GOD helps him, so he sets his face like a flint and knows he will not be put to shame. He who vindicates him is near. Verse 10 then asks who among the hearers fears the LORD and obeys the voice of his servant."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 50:6",
+          "text": "I gave my back to those who strike, and my cheeks to those who pull out the beard; I hid not my face from disgrace and spitting."
+        },
+        {
+          "ref": "Isaiah 50:7",
+          "text": "But the Lord GOD helps me; therefore I have not been disgraced; therefore I have set my face like a flint, and I know that I shall not be put to shame."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 50:4-11",
+        "Matthew 26:67",
+        "Matthew 27:26-30",
+        "Luke 9:51"
+      ],
+      "connections": [
+        {
+          "other": "is_servant_light",
+          "direction": "from",
+          "confidence": "typology",
+          "text": "This line is marked interpretive. In chapter 49 the servant says he has labored in vain. In chapter 50 a speaker tells of being struck and spat on, and 50:10 calls him the LORD's servant. Most readers hear the same voice in both. Isaiah does not label them as a series."
+        },
+        {
+          "other": "is_servant_suffering",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "This line is marked interpretive. The servant who gives his back to those who strike (50:6) is read as the same servant whose appearance is marred (52:14) and who does not open his mouth (53:7). The suffering grows from one passage to the next. The link between them is the word servant and the likeness of what is described. It is a reading, and a widely shared one."
+        }
+      ],
+      "nt": [
+        "No New Testament writer quotes this passage with a citation. The Gospels record that Jesus was struck, scourged, and spat on (Matthew 26:67, 27:26-30), and Luke says he set his face to go to Jerusalem (Luke 9:51). Christians have long read those scenes beside this passage. That is a likeness readers see, and the Gospels do not point it out themselves."
+      ],
+      "questions": [
+        "What does the servant do every morning?",
+        "What does he suffer, and does he resist?",
+        "Why is he sure he will not be put to shame?"
+      ]
+    },
+    "is_servant_suffering": {
+      "context": [
+        "The passage begins with God speaking: my servant shall be high and lifted up. Then it shows the road to that height. His appearance is marred. He grows up like a root out of dry ground, with no beauty that we should desire him. He is despised and rejected, a man of sorrows.",
+        "The center of the chapter explains why he suffers. The griefs he carries are ours. He is pierced for our transgressions and crushed for our iniquities, and the LORD lays on him the iniquity of us all. He is silent like a lamb led to the slaughter. He is cut off out of the land of the living and given a grave.",
+        "And then he lives. It was the will of the LORD to crush him, and when his soul makes an offering for guilt, he shall see his offspring and prolong his days (53:10). By his knowledge the righteous one, God's servant, makes many to be accounted righteous, and he bears their iniquities (53:11)."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 53:3",
+          "text": "He was despised and rejected by men, a man of sorrows and acquainted with grief; and as one from whom men hide their faces he was despised, and we esteemed him not."
+        },
+        {
+          "ref": "Isaiah 53:5",
+          "text": "But he was pierced for our transgressions; he was crushed for our iniquities; upon him was the chastisement that brought us peace, and with his wounds we are healed."
+        },
+        {
+          "ref": "Isaiah 53:7",
+          "text": "He was oppressed, and he was afflicted, yet he opened not his mouth; like a lamb that is led to the slaughter, and like a sheep that before its shearers is silent, so he opened not his mouth."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 52:13-15",
+        "Isaiah 53:1-12",
+        "Matthew 8:17",
+        "Luke 22:37",
+        "John 12:38",
+        "Acts 8:32-35",
+        "Romans 10:16",
+        "1 Peter 2:22-25"
+      ],
+      "connections": [
+        {
+          "other": "is_servant_obedient",
+          "direction": "from",
+          "confidence": "typology",
+          "text": "This line is marked interpretive. The servant who gives his back to those who strike (50:6) is read as the same servant whose appearance is marred (52:14) and who does not open his mouth (53:7). The suffering grows from one passage to the next. The link between them is the word servant and the likeness of what is described. It is a reading, and a widely shared one."
+        },
+        {
+          "other": "isn_jn12",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "John says the unbelief of the crowd happened so that the word spoken by the prophet Isaiah might be fulfilled, and he quotes Isaiah 53:1 (John 12:38). John's quotation begins with the word 'Lord', which is not in the ESV of Isaiah 53:1. Otherwise the two match closely."
+        },
+        {
+          "other": "isn_acts8",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Luke gives the passage the Ethiopian was reading, and it is Isaiah 53:7-8 (Acts 8:32-33). The wording differs from the ESV of Isaiah. Acts has 'Like a sheep he was led to the slaughter and like a lamb before its shearer is silent', where Isaiah has the lamb led to the slaughter and the sheep silent before its shearers. Acts has 'In his humiliation justice was denied him', where Isaiah has 'By oppression and judgment he was taken away'. The man asks who the prophet is speaking about. Philip begins with this Scripture and tells him the good news about Jesus (8:35). The identification is Philip's, and Luke records it as the answer."
+        },
+        {
+          "other": "isn_1pet2",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Peter uses the words of Isaiah 53 without any phrase such as it is written. The source is not in doubt. 1 Peter 2:22 reads 'He committed no sin, neither was deceit found in his mouth', where Isaiah 53:9 reads 'although he had done no violence, and there was no deceit in his mouth'. 1 Peter 2:24 reads 'By his wounds you have been healed', where Isaiah 53:5 reads 'with his wounds we are healed'. 1 Peter 2:25 says you were straying like sheep, and Isaiah 53:6 says all we like sheep have gone astray. Peter changes we to you because he is speaking to his readers."
+        }
+      ],
+      "nt": [
+        "The New Testament quotes this passage many times. Matthew 8:17 quotes 53:4 about Jesus' healings. Jesus quotes 53:12 about himself on the night of his arrest: 'And he was numbered with the transgressors' (Luke 22:37). John 12:38 and Romans 10:16 quote 53:1. Acts 8:32-33 quotes 53:7-8. Peter draws on verses 4, 5, 6, and 9 in 1 Peter 2:22-25. Three of those texts are stops on this map."
+      ],
+      "questions": [
+        "Whose sins does the servant suffer for?",
+        "How does he behave while he suffers?",
+        "What happens after his death in verses 10 to 12?"
+      ]
+    },
+    "is_invitation": {
+      "context": [
+        "After the servant's work comes an open invitation. Everyone who thirsts is called to the waters. The one with no money is told to buy wine and milk without money and without price. God asks why people spend their wages on what does not satisfy.",
+        "He promises an everlasting covenant, 'my steadfast, sure love for David' (55:3). The offer has a time on it: seek the LORD while he may be found. The wicked are to forsake their way and return, because God will abundantly pardon. His thoughts are higher than ours, as the heavens are higher than the earth.",
+        "The chapter closes with a promise about God's word. Like rain that waters the earth and does not return without making it sprout, his word will accomplish what he purposes."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 55:1",
+          "text": "Come, everyone who thirsts, come to the waters; and he who has no money, come, buy and eat! Come, buy wine and milk without money and without price."
+        },
+        {
+          "ref": "Isaiah 55:7",
+          "text": "let the wicked forsake his way, and the unrighteous man his thoughts; let him return to the LORD, that he may have compassion on him, and to our God, for he will abundantly pardon."
+        },
+        {
+          "ref": "Isaiah 55:11",
+          "text": "so shall my word be that goes out from my mouth; it shall not return to me empty, but it shall accomplish that which I purpose, and shall succeed in the thing for which I sent it."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 55:1-13",
+        "Acts 13:34",
+        "John 7:37",
+        "Revelation 22:17"
+      ],
+      "nt": [
+        "Paul quotes Isaiah 55:3 in Acts 13:34 and applies the sure blessings of David to the resurrection of Jesus. The invitation itself sounds again in John 7:37, where Jesus says that anyone who thirsts should come to him and drink, and in Revelation 22:17, where the one who is thirsty may take the water of life without price. Those two are echoes of the wording, not marked quotations. This map has no stop for these texts."
+      ],
+      "questions": [
+        "What does the invitation cost the one who comes?",
+        "What does God promise the wicked person who returns?",
+        "What does God say about his own word?"
+      ]
+    },
+    "is_anointed": {
+      "context": [
+        "Someone speaks in the first person. The Spirit of the Lord GOD is on him, because the LORD has anointed him. He is sent with a message, and the message is for the poor, the brokenhearted, the captives, and those who are bound.",
+        "He proclaims the year of the LORD's favor and the day of vengeance of our God, and he comforts all who mourn. The language of liberty recalls the year of jubilee in Leviticus 25:10, when debts were released and people went home.",
+        "Isaiah does not name the speaker. Earlier the Spirit rests on the shoot from Jesse (11:2) and on the servant (42:1), and many readers hear the same figure here. Jesus settled the question for his hearers in Nazareth by reading the passage and saying it was fulfilled that day."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 61:1",
+          "text": "The Spirit of the Lord GOD is upon me, because the LORD has anointed me to bring good news to the poor; he has sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to those who are bound;"
+        },
+        {
+          "ref": "Isaiah 61:2",
+          "text": "to proclaim the year of the LORD's favor, and the day of vengeance of our God; to comfort all who mourn;"
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 61:1-3",
+        "Isaiah 11:2",
+        "Isaiah 42:1",
+        "Leviticus 25:10",
+        "Luke 4:16-21",
+        "Luke 7:22"
+      ],
+      "connections": [
+        {
+          "other": "isn_lk4",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Luke says Jesus was given the scroll of the prophet Isaiah and found the place where this was written, and Jesus then says, 'Today this Scripture has been fulfilled in your hearing' (Luke 4:17-21). The citation is explicit. The wording in Luke is not identical to the ESV of Isaiah 61. Luke does not have 'to bind up the brokenhearted'. Luke has 'recovering of sight to the blind' where Isaiah has 'the opening of the prison to those who are bound'. Luke also has 'to set at liberty those who are oppressed', which is close to a line in Isaiah 58:6. And the reading stops at 'the year of the Lord's favor', before Isaiah's next words, 'the day of vengeance of our God'. Many readers think Jesus stopped there on purpose. Luke does not say why."
+        }
+      ],
+      "nt": [
+        "Luke 4:16-21 is the direct use of this passage. Jesus also answers John the Baptist's question with words that recall it: the poor have good news preached to them (Luke 7:22)."
+      ],
+      "questions": [
+        "Who is the good news for?",
+        "What two things does the speaker proclaim in verse 2?",
+        "Which of the two did Jesus read aloud in Nazareth, and where did he stop?"
+      ]
+    },
+    "is_new_creation": {
+      "context": [
+        "The book that began by calling heaven and earth as witnesses ends with new heavens and a new earth. God creates them, and he creates Jerusalem to be a joy. The sound of weeping is heard no more.",
+        "Isaiah paints the new world in pictures his hearers knew: long life, houses lived in by those who built them, vineyards enjoyed by those who planted them. The wolf and the lamb graze together, which repeats the peace of chapter 11. They shall not hurt or destroy in all God's holy mountain.",
+        "The last chapter says the new heavens and new earth will remain, and all flesh will come to worship before the LORD. Its final verse is a hard one. It shows the end of those who rebelled against him (66:24). Isaiah does not let the reader forget that there are two ends."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 65:17",
+          "text": "For behold, I create new heavens and a new earth, and the former things shall not be remembered or come into mind."
+        },
+        {
+          "ref": "Isaiah 65:25",
+          "text": "The wolf and the lamb shall graze together; the lion shall eat straw like the ox, and dust shall be the serpent's food. They shall not hurt or destroy in all my holy mountain,” says the LORD."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 65:17-25",
+        "Isaiah 66:22-24",
+        "Isaiah 25:6-8",
+        "2 Peter 3:13",
+        "Revelation 21:1-5",
+        "Mark 9:47-48"
+      ],
+      "connections": [
+        {
+          "other": "isn_rev21",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Revelation never introduces an Old Testament text with a phrase such as it is written. John sees 'a new heaven and a new earth' (Revelation 21:1), and Isaiah 65:17 promises 'new heavens and a new earth'. Revelation 21:4 says the former things have passed away, and Isaiah 65:17 says the former things shall not be remembered. Isaiah 65:19 promises an end to the sound of weeping, and Revelation 21:4 says God will wipe away every tear. 2 Peter 3:13 says Christians are waiting for new heavens and a new earth according to his promise, which points back to a promise like this one."
+        }
+      ],
+      "nt": [
+        "2 Peter 3:13 says we are waiting for new heavens and a new earth according to his promise. Revelation 21:1-5 shows them. Jesus uses the words of Isaiah 66:24 when he warns about hell (Mark 9:48). Interpretation: Isaiah 65:20 speaks of people dying at a great age, while Revelation 21:4 says death shall be no more. Many readers take Isaiah to be describing the world to come in the terms of his own day. Others, including some who expect a long age of blessing on earth before the end, take 65:20 as describing that earlier age. Faithful readers differ."
+      ],
+      "questions": [
+        "What will no longer be heard in the new Jerusalem?",
+        "Which picture from chapter 11 comes back here?",
+        "How does the last verse of Isaiah differ in tone from the promise?"
+      ]
+    },
+    "isn_mt1": {
+      "context": [
+        "Mary is betrothed to Joseph and is found to be with child from the Holy Spirit. Joseph plans to end the betrothal quietly. An angel tells him in a dream to take Mary as his wife and to name the child Jesus, for he will save his people from their sins.",
+        "Matthew then speaks to the reader. All this took place to fulfill what the Lord had spoken by the prophet. He quotes Isaiah 7:14 and gives the meaning of Immanuel.",
+        "This is the first of many places where Matthew says that something happened to fulfill the Scriptures. He does not name Isaiah here, though he does elsewhere."
+      ],
+      "passages": [
+        {
+          "ref": "Matthew 1:22",
+          "text": "All this took place to fulfill what the Lord had spoken by the prophet:"
+        },
+        {
+          "ref": "Matthew 1:23",
+          "text": "“Behold, the virgin shall conceive and bear a son, and they shall call his name Immanuel” (which means, God with us)."
+        }
+      ],
+      "cross_refs": [
+        "Matthew 1:18-25",
+        "Isaiah 7:14",
+        "Luke 1:26-38"
+      ],
+      "connections": [
+        {
+          "other": "is_immanuel",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "Matthew writes that all this took place to fulfill what the Lord had spoken by the prophet, and then quotes Isaiah 7:14 (Matthew 1:22-23). The citation is explicit. Matthew reads 'they shall call his name Immanuel' where Isaiah reads 'shall call his name Immanuel', and Matthew adds the meaning of the name. In Isaiah 7 the sign is tied to a near event: before the boy knows how to refuse evil and choose good, the two kings Ahaz fears will be gone (7:16). Readers differ on whether a child in Isaiah's own day was a first stage of the sign. Matthew's claim about Jesus is plain either way."
+        }
+      ],
+      "nt": [
+        "Matthew's Gospel ends the way it begins. The child called God with us says to his disciples, 'I am with you always, to the end of the age' (Matthew 28:20)."
+      ],
+      "questions": [
+        "Who does Matthew say was speaking through the prophet?",
+        "What word differs between Isaiah 7:14 and Matthew's quotation?",
+        "How does the name Immanuel fit what the angel says about the child?"
+      ]
+    },
+    "isn_mt4": {
+      "context": [
+        "John the Baptist has been arrested. Jesus withdraws to Galilee, leaves Nazareth, and makes his home in Capernaum by the Sea of Galilee. Matthew notes that this is the territory of Zebulun and Naphtali.",
+        "Those were the tribes Isaiah named. Matthew says Jesus' move fulfilled what was spoken by the prophet Isaiah, and he quotes the lines about Galilee of the Gentiles and the great light.",
+        "From that time Jesus begins to preach: repent, for the kingdom of heaven is at hand. The light Isaiah promised to the north arrives as a preacher."
+      ],
+      "passages": [
+        {
+          "ref": "Matthew 4:14",
+          "text": "so that what was spoken by the prophet Isaiah might be fulfilled:"
+        },
+        {
+          "ref": "Matthew 4:16",
+          "text": "the people dwelling in darkness have seen a great light, and for those dwelling in the region and shadow of death, on them a light has dawned."
+        }
+      ],
+      "cross_refs": [
+        "Matthew 4:12-17",
+        "Isaiah 9:1-2",
+        "John 8:12"
+      ],
+      "connections": [
+        {
+          "other": "is_child",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "Matthew names the prophet Isaiah and quotes Isaiah 9:1-2 (Matthew 4:14-16). The wording shifts a little. Isaiah has 'The people who walked in darkness have seen a great light'. Matthew has 'the people dwelling in darkness have seen a great light'. Matthew quotes the light in Galilee. He does not quote the child of Isaiah 9:6-7. Christians read those verses of Jesus because of the quotation Matthew does make and because Gabriel promises Mary's son the throne of David (Luke 1:32-33)."
+        }
+      ],
+      "nt": [
+        "Matthew quotes only the opening of Isaiah's prophecy here. Jesus later says of himself, 'I am the light of the world' (John 8:12)."
+      ],
+      "questions": [
+        "Where does Jesus go to live, and whose old tribal lands are these?",
+        "Which verses of Isaiah 9 does Matthew quote, and which does he not?",
+        "What does Jesus begin to preach?"
+      ]
+    },
+    "isn_lk4": {
+      "context": [
+        "Jesus comes to Nazareth, where he had been brought up, and goes to the synagogue on the Sabbath as his custom was. He stands up to read, and the scroll of the prophet Isaiah is given to him.",
+        "He finds the place and reads about the Spirit of the Lord, good news to the poor, liberty to the captives, and the year of the Lord's favor. He rolls up the scroll, gives it back, and sits down. Every eye is fixed on him.",
+        "His sermon begins with one sentence: today this Scripture has been fulfilled in your hearing. At first the people speak well of him. By the end of the visit they try to throw him off a cliff (4:28-30)."
+      ],
+      "passages": [
+        {
+          "ref": "Luke 4:18",
+          "text": "“The Spirit of the Lord is upon me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim liberty to the captives and recovering of sight to the blind, to set at liberty those who are oppressed,"
+        },
+        {
+          "ref": "Luke 4:19",
+          "text": "to proclaim the year of the Lord's favor.”"
+        },
+        {
+          "ref": "Luke 4:21",
+          "text": "And he began to say to them, “Today this Scripture has been fulfilled in your hearing.”"
+        }
+      ],
+      "cross_refs": [
+        "Luke 4:16-30",
+        "Isaiah 61:1-2",
+        "Isaiah 58:6",
+        "Luke 3:21-22"
+      ],
+      "connections": [
+        {
+          "other": "is_anointed",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "Luke says Jesus was given the scroll of the prophet Isaiah and found the place where this was written, and Jesus then says, 'Today this Scripture has been fulfilled in your hearing' (Luke 4:17-21). The citation is explicit. The wording in Luke is not identical to the ESV of Isaiah 61. Luke does not have 'to bind up the brokenhearted'. Luke has 'recovering of sight to the blind' where Isaiah has 'the opening of the prison to those who are bound'. Luke also has 'to set at liberty those who are oppressed', which is close to a line in Isaiah 58:6. And the reading stops at 'the year of the Lord's favor', before Isaiah's next words, 'the day of vengeance of our God'. Many readers think Jesus stopped there on purpose. Luke does not say why."
+        }
+      ],
+      "nt": [
+        "Luke has just told how the Holy Spirit came down on Jesus at his baptism (Luke 3:22) and how he returned to Galilee in the power of the Spirit (4:14). The reading in Nazareth explains what that anointing was for."
+      ],
+      "questions": [
+        "Which book is Jesus handed?",
+        "What does he say about the passage after he sits down?",
+        "Compare Luke 4:19 with Isaiah 61:2. Where does the reading stop?"
+      ]
+    },
+    "isn_jn12": {
+      "context": [
+        "John has reached the end of Jesus' public ministry. He sums it up sadly: though Jesus had done so many signs before them, they still did not believe in him.",
+        "John says this fulfilled Isaiah 53:1, the prophet's own complaint that his message was not believed. Then he goes further. They could not believe, he says, and he quotes Isaiah 6:10 about blinded eyes and a hardened heart.",
+        "Verse 41 ties the two quotations together. Isaiah said these things because he saw his glory and spoke of him. The nearest glory in view is the vision of Isaiah 6, the Lord high and lifted up. John is telling his readers that the one Isaiah saw on the throne is the one who went to the cross."
+      ],
+      "passages": [
+        {
+          "ref": "John 12:38",
+          "text": "so that the word spoken by the prophet Isaiah might be fulfilled: “Lord, who has believed what he heard from us, and to whom has the arm of the Lord been revealed?”"
+        },
+        {
+          "ref": "John 12:40",
+          "text": "“He has blinded their eyes and hardened their heart, lest they see with their eyes, and understand with their heart, and turn, and I would heal them.”"
+        },
+        {
+          "ref": "John 12:41",
+          "text": "Isaiah said these things because he saw his glory and spoke of him."
+        }
+      ],
+      "cross_refs": [
+        "John 12:37-43",
+        "Isaiah 53:1",
+        "Isaiah 6:1-10",
+        "Isaiah 52:13"
+      ],
+      "connections": [
+        {
+          "other": "is_call",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "John writes 'For again Isaiah said' and quotes Isaiah 6:10 (John 12:39-40). The wording differs. In Isaiah it is a command to the prophet: 'Make the heart of this people dull, and their ears heavy, and blind their eyes'. In John it is a statement: 'He has blinded their eyes and hardened their heart'. John leaves out the ears. Then John says Isaiah said these things because he saw his glory and spoke of him (12:41). In John's telling, the glory Isaiah saw in the temple was the glory of Christ. That claim is John's own, and he makes it openly."
+        },
+        {
+          "other": "is_servant_suffering",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "John says the unbelief of the crowd happened so that the word spoken by the prophet Isaiah might be fulfilled, and he quotes Isaiah 53:1 (John 12:38). John's quotation begins with the word 'Lord', which is not in the ESV of Isaiah 53:1. Otherwise the two match closely."
+        }
+      ],
+      "nt": [
+        "John's two quotations come from the two halves of Isaiah, chapter 6 and chapter 53, and he gives both to the one prophet Isaiah. Some readers also note that 'high and lifted up' describes both the Lord in Isaiah 6:1 and the servant in Isaiah 52:13, and that John speaks of Jesus being lifted up (John 12:32). John does not spell that link out, so it is an observation and not a claim of the text."
+      ],
+      "questions": [
+        "What had the crowd seen, and how did they respond?",
+        "Which two chapters of Isaiah does John quote?",
+        "Whose glory does John say Isaiah saw?"
+      ]
+    },
+    "isn_acts8": {
+      "context": [
+        "An angel sends Philip to the desert road from Jerusalem to Gaza. There he meets a court official of Candace, queen of the Ethiopians, who had come to Jerusalem to worship and is reading the prophet Isaiah in his chariot.",
+        "Philip asks whether he understands what he is reading. The man says he cannot unless someone guides him. The passage is Isaiah 53:7-8, the sheep led to the slaughter. His question is the right one: about whom does the prophet say this, about himself or about someone else?",
+        "Philip opens his mouth, and beginning with this Scripture he tells him the good news about Jesus. They come to water, the man asks to be baptized, and he goes on his way rejoicing."
+      ],
+      "passages": [
+        {
+          "ref": "Acts 8:32",
+          "text": "Now the passage of the Scripture that he was reading was this: “Like a sheep he was led to the slaughter and like a lamb before its shearer is silent, so he opens not his mouth."
+        },
+        {
+          "ref": "Acts 8:34",
+          "text": "And the eunuch said to Philip, “About whom, I ask you, does the prophet say this, about himself or about someone else?”"
+        },
+        {
+          "ref": "Acts 8:35",
+          "text": "Then Philip opened his mouth, and beginning with this Scripture he told him the good news about Jesus."
+        }
+      ],
+      "cross_refs": [
+        "Acts 8:26-40",
+        "Isaiah 53:7-8",
+        "Isaiah 56:3-5"
+      ],
+      "connections": [
+        {
+          "other": "is_servant_suffering",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "Luke gives the passage the Ethiopian was reading, and it is Isaiah 53:7-8 (Acts 8:32-33). The wording differs from the ESV of Isaiah. Acts has 'Like a sheep he was led to the slaughter and like a lamb before its shearer is silent', where Isaiah has the lamb led to the slaughter and the sheep silent before its shearers. Acts has 'In his humiliation justice was denied him', where Isaiah has 'By oppression and judgment he was taken away'. The man asks who the prophet is speaking about. Philip begins with this Scripture and tells him the good news about Jesus (8:35). The identification is Philip's, and Luke records it as the answer."
+        }
+      ],
+      "nt": [
+        "Isaiah 56:3-5 promises a name better than sons and daughters to eunuchs who hold fast to God's covenant. Acts does not quote that passage, but many readers notice that the first person Philip explains Isaiah to is a eunuch from a far country."
+      ],
+      "questions": [
+        "What is the official reading, and what does he ask?",
+        "Where does Philip begin his answer?",
+        "What does the man do when he believes?"
+      ]
+    },
+    "isn_1pet2": {
+      "context": [
+        "Peter is writing to Christians who suffer for doing good, and in this part of the letter he speaks to household servants with harsh masters. He points them to Christ, who suffered for them and left an example, so that they might follow in his steps.",
+        "The description of Christ is built from Isaiah 53. He committed no sin, and no deceit was found in his mouth. When he was reviled he did not revile in return. He bore our sins in his body on the tree. By his wounds you have been healed.",
+        "Peter ends with the sheep. You were straying like sheep, he says, but now you have returned to the Shepherd and Overseer of your souls. The servant who suffered in the sheep's place is also their shepherd."
+      ],
+      "passages": [
+        {
+          "ref": "1 Peter 2:22",
+          "text": "He committed no sin, neither was deceit found in his mouth."
+        },
+        {
+          "ref": "1 Peter 2:24",
+          "text": "He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness. By his wounds you have been healed."
+        },
+        {
+          "ref": "1 Peter 2:25",
+          "text": "For you were straying like sheep, but have now returned to the Shepherd and Overseer of your souls."
+        }
+      ],
+      "cross_refs": [
+        "1 Peter 2:18-25",
+        "Isaiah 53:4-6",
+        "Isaiah 53:9",
+        "Isaiah 53:12"
+      ],
+      "connections": [
+        {
+          "other": "is_servant_suffering",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "Peter uses the words of Isaiah 53 without any phrase such as it is written. The source is not in doubt. 1 Peter 2:22 reads 'He committed no sin, neither was deceit found in his mouth', where Isaiah 53:9 reads 'although he had done no violence, and there was no deceit in his mouth'. 1 Peter 2:24 reads 'By his wounds you have been healed', where Isaiah 53:5 reads 'with his wounds we are healed'. 1 Peter 2:25 says you were straying like sheep, and Isaiah 53:6 says all we like sheep have gone astray. Peter changes we to you because he is speaking to his readers."
+        }
+      ],
+      "nt": [
+        "Peter uses Isaiah 53 two ways at once. Christ's suffering is an example to follow, and it is a sacrifice no one else could make: he bore our sins. The second is the ground of the first."
+      ],
+      "questions": [
+        "Who is Peter writing to in this part of the letter?",
+        "Which phrases here come from Isaiah 53?",
+        "What does Peter say Christ's death was for?"
+      ]
+    },
+    "isn_rev21": {
+      "context": [
+        "After the last judgment John sees a new heaven and a new earth. The holy city, new Jerusalem, comes down out of heaven from God, prepared as a bride adorned for her husband.",
+        "A loud voice from the throne says that the dwelling place of God is with man. He will wipe away every tear from their eyes. Death, mourning, crying, and pain are gone, for the former things have passed away.",
+        "Then the one seated on the throne speaks: 'Behold, I am making all things new.' Isaiah heard God promise this. John sees it done."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 21:1",
+          "text": "Then I saw a new heaven and a new earth, for the first heaven and the first earth had passed away, and the sea was no more."
+        },
+        {
+          "ref": "Revelation 21:4",
+          "text": "He will wipe away every tear from their eyes, and death shall be no more, neither shall there be mourning, nor crying, nor pain anymore, for the former things have passed away."
+        },
+        {
+          "ref": "Revelation 21:5",
+          "text": "And he who was seated on the throne said, “Behold, I am making all things new.”"
+        }
+      ],
+      "cross_refs": [
+        "Revelation 21:1-5",
+        "Isaiah 65:17-19",
+        "Isaiah 25:8",
+        "2 Peter 3:13"
+      ],
+      "connections": [
+        {
+          "other": "is_new_creation",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Revelation never introduces an Old Testament text with a phrase such as it is written. John sees 'a new heaven and a new earth' (Revelation 21:1), and Isaiah 65:17 promises 'new heavens and a new earth'. Revelation 21:4 says the former things have passed away, and Isaiah 65:17 says the former things shall not be remembered. Isaiah 65:19 promises an end to the sound of weeping, and Revelation 21:4 says God will wipe away every tear. 2 Peter 3:13 says Christians are waiting for new heavens and a new earth according to his promise, which points back to a promise like this one."
+        }
+      ],
+      "nt": [
+        "Revelation is full of Old Testament wording but never introduces it with a citation. Besides Isaiah 65:17, this passage also echoes Isaiah 25:8, where the Lord GOD swallows up death forever and wipes away tears from all faces."
+      ],
+      "questions": [
+        "What does the voice from the throne say about where God lives?",
+        "What is gone from the new creation?",
+        "Which words here do you also find in Isaiah 65?"
+      ]
+    },
+    "rv_christ": {
+      "context": [
+        "The book calls itself the revelation of Jesus Christ, which God gave him to show his servants what must soon take place (1:1). John writes as a brother and partner in the tribulation, on the island of Patmos on account of the word of God and the testimony of Jesus (1:9).",
+        "What he sees first is Jesus. He wears a long robe and a golden sash. His eyes are like a flame of fire, his voice like the roar of many waters. He holds seven stars in his right hand, and a sharp two-edged sword comes from his mouth. He stands among seven lampstands, which he says are the seven churches. The risen Christ is in the middle of his churches.",
+        "Interpretation: the book says its message concerns what must soon take place and that the time is near (1:1, 1:3). Readers who think most of the book was fulfilled in the first century lean on those words. Others note that the book runs on to the last judgment and the new creation, and take soon to mean that the last days began with Christ's first coming. How the whole book is read turns partly on this."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 1:7",
+          "text": "Behold, he is coming with the clouds, and every eye will see him, even those who pierced him, and all tribes of the earth will wail on account of him. Even so. Amen."
+        },
+        {
+          "ref": "Revelation 1:17-18",
+          "text": "Fear not, I am the first and the last, and the living one. I died, and behold I am alive forevermore, and I have the keys of Death and Hades."
+        }
+      ],
+      "cross_refs": [
+        "Revelation 1:1-20",
+        "Daniel 7:9-14",
+        "Daniel 10:5-6",
+        "Zechariah 12:10",
+        "Matthew 26:64"
+      ],
+      "connections": [
+        {
+          "other": "rv_churches",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The risen Christ tells John to write what he sees in a book and send it to the seven churches, and he names them (1:11). He explains that the seven lampstands are the seven churches (1:20). The first letter then begins, 'To the angel of the church in Ephesus write' (2:1). The text itself carries the reader from the vision to the letters."
+        },
+        {
+          "other": "rvo_daniel7",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Revelation 1:7 says, 'Behold, he is coming with the clouds', and Daniel 7:13 has one like a son of man coming with the clouds of heaven. John sees 'one like a son of man' (1:13), the same phrase. There is a difference worth noticing. In Daniel it is the Ancient of Days whose hair is like pure wool (7:9). In Revelation the son of man has hair 'white, like white wool, like snow' (1:14). Jesus applied Daniel 7:13 to himself before the high priest (Matthew 26:64), so reading Daniel's son of man as Christ rests on his own words."
+        }
+      ],
+      "nt": [
+        "John had seen something of this glory before, on the mountain where Jesus was transfigured and his face shone like the sun (Matthew 17:2). Revelation 1:7 joins Daniel 7:13 with Zechariah 12:10, the one whom they have pierced. Jesus joined the same two passages in Matthew 24:30."
+      ],
+      "questions": [
+        "Why is John on Patmos?",
+        "Where is Jesus standing, and what do the lampstands stand for?",
+        "What does Jesus say about himself when John falls down?"
+      ]
+    },
+    "rv_churches": {
+      "context": [
+        "The seven churches were in real cities, and the list makes a rough circle on the map: Ephesus, Smyrna, Pergamum, Thyatira, Sardis, Philadelphia, and Laodicea. Each letter follows a pattern. Jesus describes himself, says 'I know', gives praise or blame, calls for a response, and makes a promise to the one who conquers.",
+        "The churches are a mixed group. Ephesus is sound in doctrine but has left its first love. Smyrna is poor and about to suffer, and receives no rebuke. Pergamum and Thyatira tolerate false teaching. Sardis has a name for being alive and is dead. Philadelphia has little power and has kept Christ's word. Laodicea is lukewarm and thinks it needs nothing.",
+        "Every letter ends with 'what the Spirit says to the churches', in the plural. Each church was meant to read the others' mail, and so are we. Interpretation: some have read the seven letters as seven periods of church history. Nothing in the text says so, and this map does not follow that reading."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 2:4",
+          "text": "But I have this against you, that you have abandoned the love you had at first."
+        },
+        {
+          "ref": "Revelation 2:10",
+          "text": "Be faithful unto death, and I will give you the crown of life."
+        },
+        {
+          "ref": "Revelation 3:20",
+          "text": "Behold, I stand at the door and knock. If anyone hears my voice and opens the door, I will come in to him and eat with him, and he with me."
+        }
+      ],
+      "cross_refs": [
+        "Revelation 2:1-29",
+        "Revelation 3:1-22",
+        "Acts 19:1-10",
+        "Colossians 4:13-16"
+      ],
+      "connections": [
+        {
+          "other": "rv_christ",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The risen Christ tells John to write what he sees in a book and send it to the seven churches, and he names them (1:11). He explains that the seven lampstands are the seven churches (1:20). The first letter then begins, 'To the angel of the church in Ephesus write' (2:1). The text itself carries the reader from the vision to the letters."
+        },
+        {
+          "other": "rv_throne",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "After the last letter John writes, 'After this I looked, and behold, a door standing open in heaven', and the voice says, 'Come up here, and I will show you what must take place after this' (4:1). That is the order of the visions. Readers differ on how the order of the visions relates to the order of events in history."
+        }
+      ],
+      "nt": [
+        "Several of these churches appear elsewhere in the New Testament. Paul taught in Ephesus for two years (Acts 19:10) and wrote of the church in Laodicea (Colossians 4:13-16). Lydia, the first believer in Philippi, came from Thyatira (Acts 16:14)."
+      ],
+      "questions": [
+        "What words does Jesus use at the start of his message to each church?",
+        "Which two churches receive no rebuke, and what are they like?",
+        "What is promised to the one who conquers?"
+      ]
+    },
+    "rv_throne": {
+      "context": [
+        "Chapter 4 is the first thing John is shown after the letters. He does not start with the dragon or the beast. He starts with a throne and one seated on it, who has the appearance of jasper and carnelian. The word throne comes up again and again in this chapter.",
+        "Around the throne are twenty-four elders on thrones, in white with golden crowns. Before it burn seven torches of fire. Four living creatures, full of eyes, say day and night that the Lord God Almighty is holy. The elders cast their crowns before the throne and say that God is worthy, because he created all things.",
+        "Interpretation: John does not explain the twenty-four elders. Many readers take them to stand for the whole people of God, twelve tribes and twelve apostles together, as on the gates and foundations of the city in 21:12-14. Others take them as an order of angels. The text does not say."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 4:2",
+          "text": "At once I was in the Spirit, and behold, a throne stood in heaven, with one seated on the throne."
+        },
+        {
+          "ref": "Revelation 4:8",
+          "text": "Holy, holy, holy, is the Lord God Almighty, who was and is and is to come!"
+        },
+        {
+          "ref": "Revelation 4:11",
+          "text": "Worthy are you, our Lord and God, to receive glory and honor and power, for you created all things, and by your will they existed and were created."
+        }
+      ],
+      "cross_refs": [
+        "Revelation 4:1-11",
+        "Ezekiel 1:4-28",
+        "Isaiah 6:1-4",
+        "Daniel 7:9-10"
+      ],
+      "connections": [
+        {
+          "other": "rv_churches",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "After the last letter John writes, 'After this I looked, and behold, a door standing open in heaven', and the voice says, 'Come up here, and I will show you what must take place after this' (4:1). That is the order of the visions. Readers differ on how the order of the visions relates to the order of events in history."
+        },
+        {
+          "other": "rv_lamb",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Chapters 4 and 5 are one scene. Chapter 5 begins, 'Then I saw in the right hand of him who was seated on the throne a scroll'. The Lamb appears beside the same throne and takes the scroll from the right hand of the one seated on it (5:6-7)."
+        },
+        {
+          "other": "rvo_ezekiel1",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Both prophets see a throne with four living creatures. The four faces are the same: a man, a lion, an ox, and an eagle (Ezekiel 1:10 and Revelation 4:7). Both see something like crystal near the throne (Ezekiel 1:22 and Revelation 4:6) and a brightness like a rainbow around it (Ezekiel 1:28 and Revelation 4:3). The differences are real too. In Ezekiel each creature has all four faces and four wings. In Revelation each creature has one of the faces and six wings, and they sing holy, holy, holy, which is like the seraphim of Isaiah 6:2-3. John's vision draws on both prophets."
+        }
+      ],
+      "nt": [
+        "The song of the living creatures echoes the song of the seraphim in Isaiah 6:3. John's vision of the throne gathers up what Isaiah, Ezekiel, and Daniel each saw."
+      ],
+      "questions": [
+        "What is the first thing John sees in heaven?",
+        "What do the living creatures say, and how often?",
+        "What reason do the elders give for worshiping God?"
+      ]
+    },
+    "rv_lamb": {
+      "context": [
+        "The one on the throne holds a scroll written on both sides and sealed with seven seals. A strong angel asks who is worthy to open it. No one in heaven or on earth or under the earth can, and John weeps loudly. The scroll is not explained in so many words. Most readers take it as God's purpose for judgment and salvation, which cannot go forward until someone worthy opens it.",
+        "One of the elders tells John to stop weeping. The Lion of the tribe of Judah, the Root of David, has conquered. John turns to look at the Lion and sees a Lamb, standing as though it had been slain. He hears of a Lion and sees a Lamb. The conquering was done by dying.",
+        "The Lamb takes the scroll, and worship spreads outward in rings. The living creatures and elders sing a new song. Then come countless angels, and then every creature in heaven and on earth. The Lamb receives the same worship as the one who sits on the throne."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 5:5",
+          "text": "And one of the elders said to me, “Weep no more; behold, the Lion of the tribe of Judah, the Root of David, has conquered, so that he can open the scroll and its seven seals.”"
+        },
+        {
+          "ref": "Revelation 5:6",
+          "text": "And between the throne and the four living creatures and among the elders I saw a Lamb standing, as though it had been slain, with seven horns and with seven eyes, which are the seven spirits of God sent out into all the earth."
+        },
+        {
+          "ref": "Revelation 5:12",
+          "text": "Worthy is the Lamb who was slain, to receive power and wealth and wisdom and might and honor and glory and blessing!"
+        }
+      ],
+      "cross_refs": [
+        "Revelation 5:1-14",
+        "Genesis 49:9-10",
+        "Isaiah 11:1",
+        "Isaiah 53:7",
+        "John 1:29",
+        "1 Peter 1:18-19"
+      ],
+      "connections": [
+        {
+          "other": "rv_throne",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "Chapters 4 and 5 are one scene. Chapter 5 begins, 'Then I saw in the right hand of him who was seated on the throne a scroll'. The Lamb appears beside the same throne and takes the scroll from the right hand of the one seated on it (5:6-7)."
+        },
+        {
+          "other": "rv_seals",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The Lamb is declared worthy to open the seals (5:9), and chapter 6 begins, 'Now I watched when the Lamb opened one of the seven seals'. The same scroll and the same Lamb link the two chapters."
+        },
+        {
+          "other": "rvo_passover",
+          "direction": "from",
+          "confidence": "typology",
+          "text": "This line is marked interpretive. Revelation 5 does not mention the Passover. It shows a Lamb that was slain, whose blood ransoms a people and makes them a kingdom and priests (5:9-10). That is the pattern of the exodus: a lamb's blood, a people set free, and then 'a kingdom of priests' (Exodus 19:6). That Christ is the Passover lamb is stated outright elsewhere in the New Testament: 'Christ, our Passover lamb, has been sacrificed' (1 Corinthians 5:7). So the link between the Passover and Christ is explicit in Paul. Reading the Lamb of Revelation 5 as the Passover lamb in particular is an inference. Many readers also hear Isaiah 53:7, the lamb led to the slaughter."
+        },
+        {
+          "other": "rvo_zechariah4",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Zechariah is told that the seven lamps 'are the eyes of the LORD, which range through the whole earth' (4:10). John sees the Lamb 'with seven eyes, which are the seven spirits of God sent out into all the earth' (5:6). Seven eyes that go through all the earth appear in both. In Zechariah they are the LORD's. In Revelation they belong to the Lamb."
+        }
+      ],
+      "nt": [
+        "John the Baptist called Jesus the Lamb of God, who takes away the sin of the world (John 1:29). Peter says believers were ransomed with the precious blood of Christ, like that of a lamb without blemish or spot (1 Peter 1:18-19). Revelation uses the name Lamb for Jesus far more than any other book."
+      ],
+      "questions": [
+        "Why does John weep?",
+        "What does he hear about, and what does he see?",
+        "What reason does the new song give for the Lamb being worthy?"
+      ]
+    },
+    "rv_seals": {
+      "context": [
+        "As the Lamb opens the first four seals, four horses ride out: white, red, black, and pale. Their riders bring conquest, the taking of peace from the earth, scarcity, and death. The fifth seal shows the souls of those killed for the word of God, under the altar, asking how long. They are given white robes and told to rest a little longer.",
+        "The sixth seal shakes the whole creation. The sun turns black, the stars fall, and the sky is rolled up like a scroll. Kings and slaves alike hide in caves and call on the mountains to hide them from the wrath of the Lamb. The seventh seal brings silence in heaven (8:1).",
+        "Interpretation: faithful readers place the seals differently. Some see the wars and famines that led up to the fall of Jerusalem in AD 70. Many Reformed readers see the troubles that mark the whole age between Christ's two comings, much as Jesus describes in Matthew 24:6-8, with the sixth seal bringing us to the last day. Others place them in a final period just before Christ returns. Readers also differ on the rider of the white horse. Some take him as Christ or the advance of the gospel, and others as conquest or a false christ. Whichever reading is right, the seals are opened by the Lamb. Nothing in them is outside his hand."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 6:10",
+          "text": "O Sovereign Lord, holy and true, how long before you will judge and avenge our blood on those who dwell on the earth?"
+        },
+        {
+          "ref": "Revelation 6:17",
+          "text": "for the great day of their wrath has come, and who can stand?"
+        }
+      ],
+      "cross_refs": [
+        "Revelation 6:1-17",
+        "Revelation 8:1",
+        "Zechariah 1:8-11",
+        "Zechariah 6:1-8",
+        "Matthew 24:6-8"
+      ],
+      "connections": [
+        {
+          "other": "rv_lamb",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The Lamb is declared worthy to open the seals (5:9), and chapter 6 begins, 'Now I watched when the Lamb opened one of the seven seals'. The same scroll and the same Lamb link the two chapters."
+        },
+        {
+          "other": "rv_multitude",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The sixth seal ends with a question, 'who can stand?' (6:17). Chapter 7 follows with 'After this I saw', and shows the servants of God sealed and a great multitude standing before the throne (7:9). The seventh seal is not opened until 8:1. The question and its answer sit next to each other in the text."
+        },
+        {
+          "other": "rv_trumpets",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "When the Lamb opens the seventh seal there is silence in heaven, and then John sees seven angels who are given seven trumpets (8:1-2). The trumpets come out of the last seal in John's telling. Interpretation: some readers take the trumpets as later events than the seals. Others take them as a second look at the same period, since both series end with the last day (6:12-17 and 11:15-18)."
+        }
+      ],
+      "nt": [
+        "Zechariah also saw horses of different colors sent out through the earth (Zechariah 1:8-11 and 6:1-8). That passage is in a different chapter from the lampstand stop on this map. The list of troubles is close to what Jesus foretold in Matthew 24:6-8: wars, famines, and earthquakes, which he calls the beginning of the birth pains."
+      ],
+      "questions": [
+        "Who opens each seal?",
+        "What do the martyrs ask, and what are they given?",
+        "What question ends the chapter?"
+      ]
+    },
+    "rv_multitude": {
+      "context": [
+        "Chapter 6 ended by asking who can stand on the day of wrath. Chapter 7 answers before the last seal is opened. Four angels hold back the winds until the servants of God are sealed on their foreheads. John hears the number: 144,000, twelve thousand from each of twelve tribes.",
+        "Then he looks and sees a great multitude that no one could number, from every nation, tribe, people, and language. They stand before the throne in white robes with palm branches, crying that salvation belongs to God and to the Lamb. An elder explains that they have come out of the great tribulation and have washed their robes in the blood of the Lamb.",
+        "Interpretation: many Reformed readers take the 144,000 and the great multitude as the same people seen two ways, the whole church counted and kept by God on earth and then safe before the throne. They note that John hears one thing and sees another, as he heard of a Lion and saw a Lamb in chapter 5. Other readers take the 144,000 as believers from the tribes of Israel and the multitude as believers from the nations. Readers also differ on whether the great tribulation is one final period or the suffering of the church through the whole age."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 7:9",
+          "text": "After this I looked, and behold, a great multitude that no one could number, from every nation, from all tribes and peoples and languages, standing before the throne and before the Lamb, clothed in white robes, with palm branches in their hands,"
+        },
+        {
+          "ref": "Revelation 7:14",
+          "text": "These are the ones coming out of the great tribulation. They have washed their robes and made them white in the blood of the Lamb."
+        },
+        {
+          "ref": "Revelation 7:17",
+          "text": "For the Lamb in the midst of the throne will be their shepherd, and he will guide them to springs of living water, and God will wipe away every tear from their eyes."
+        }
+      ],
+      "cross_refs": [
+        "Revelation 7:1-17",
+        "Isaiah 49:10",
+        "Isaiah 25:8",
+        "Genesis 22:17-18",
+        "Revelation 21:3-4"
+      ],
+      "connections": [
+        {
+          "other": "rv_seals",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The sixth seal ends with a question, 'who can stand?' (6:17). Chapter 7 follows with 'After this I saw', and shows the servants of God sealed and a great multitude standing before the throne (7:9). The seventh seal is not opened until 8:1. The question and its answer sit next to each other in the text."
+        }
+      ],
+      "nt": [
+        "The promises at the end of this chapter come back in chapter 21: God shelters his people, and every tear is wiped away. The words draw on Isaiah 49:10 and 25:8. A crowd no one can count, from every nation, also recalls God's promise to Abraham of offspring like the stars, in whom all nations would be blessed (Genesis 22:17-18)."
+      ],
+      "questions": [
+        "What question from chapter 6 does this chapter answer?",
+        "What does John hear, and what does he then see?",
+        "How did the robes become white?"
+      ]
+    },
+    "rv_trumpets": {
+      "context": [
+        "The prayers of the saints rise before God with incense, and then the trumpets begin. Hail and fire, the sea turned to blood, bitter waters, and darkness strike a third of the earth. They recall the plagues on Egypt (Exodus 7 to 10). They are warnings, and they are limited. The fifth and sixth trumpets are worse, and still the rest of mankind does not repent (9:20-21).",
+        "Before the seventh trumpet there is an interlude, as there was before the seventh seal. John eats a little scroll and is told to prophesy again. Two witnesses prophesy in sackcloth for 1,260 days. The beast kills them, the world celebrates, and after three and a half days God raises them and calls them up to heaven.",
+        "The seventh trumpet brings the end: the kingdom of the world has become the kingdom of our Lord and of his Christ, and the time has come for the dead to be judged (11:15-18). Interpretation: because this series reaches the last judgment in chapter 11, and the story then seems to start again in chapter 12, many Reformed readers think Revelation tells of the same period several times from different sides. William Hendriksen set this reading out in his book More Than Conquerors. Others read the seals, trumpets, and bowls as one sequence of events, each following the last."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 9:20",
+          "text": "The rest of mankind, who were not killed by these plagues, did not repent of the works of their hands nor give up worshiping demons and idols of gold and silver and bronze and stone and wood, which cannot see or hear or walk,"
+        },
+        {
+          "ref": "Revelation 11:4",
+          "text": "These are the two olive trees and the two lampstands that stand before the Lord of the earth."
+        },
+        {
+          "ref": "Revelation 11:15",
+          "text": "The kingdom of the world has become the kingdom of our Lord and of his Christ, and he shall reign forever and ever."
+        }
+      ],
+      "cross_refs": [
+        "Revelation 8:2-13",
+        "Revelation 9:1-21",
+        "Revelation 10:1-11",
+        "Revelation 11:1-19",
+        "Exodus 7:14 to 10:29",
+        "Zechariah 4:1-14"
+      ],
+      "connections": [
+        {
+          "other": "rv_seals",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "When the Lamb opens the seventh seal there is silence in heaven, and then John sees seven angels who are given seven trumpets (8:1-2). The trumpets come out of the last seal in John's telling. Interpretation: some readers take the trumpets as later events than the seals. Others take them as a second look at the same period, since both series end with the last day (6:12-17 and 11:15-18)."
+        },
+        {
+          "other": "rvo_zechariah4",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Of the two witnesses John is told, 'These are the two olive trees and the two lampstands that stand before the Lord of the earth' (11:4). Zechariah sees two olive trees beside the lampstand and is told, 'These are the two anointed ones who stand by the Lord of the whole earth' (4:14). In Zechariah there is one lampstand, and in Revelation there are two. Who the two witnesses are is a matter of interpretation. Many Reformed readers take them as the witnessing church. Others expect two individual prophets."
+        }
+      ],
+      "nt": [
+        "Paul also speaks of a trumpet at which the dead are raised, and in 1 Corinthians 15:52 he calls it the last trumpet (see also 1 Thessalonians 4:16). Whether that is the same as John's seventh trumpet is something readers discuss, and the text does not say."
+      ],
+      "questions": [
+        "How much of the earth do the first trumpets strike, and what does that suggest?",
+        "How do people respond to the warnings?",
+        "What is announced when the seventh trumpet sounds?"
+      ]
+    },
+    "rv_dragon": {
+      "context": [
+        "John calls this a great sign. A woman clothed with the sun, with the moon under her feet and a crown of twelve stars, cries out in birth pains. A great red dragon with seven heads and ten horns stands in front of her, to devour her child the moment he is born.",
+        "She gives birth to a male child who is to rule all the nations with a rod of iron, and the child is caught up to God and to his throne. The words about the rod of iron come from Psalm 2:9, a psalm about the LORD's anointed king. War breaks out in heaven. Michael and his angels fight the dragon, and the dragon is thrown down to the earth. A loud voice says that the accuser of the brothers has been thrown down, and that they have conquered him by the blood of the Lamb.",
+        "Interpretation: nearly all readers take the child as Christ, and the catching up as his ascension, with his whole earthly life passed over in a single line. The woman is most often taken as the people of God, from whom Christ came and who are then persecuted. Her sun, moon, and twelve stars recall Joseph's dream about the family of Israel (Genesis 37:9). Roman Catholic readers have often seen Mary here. The 1,260 days in the wilderness (12:6) are taken by some as an exact three and a half years near the end, and by others as a figure for the whole time of the church's trial. The dragon is not open to dispute. John names him in verse 9."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 12:5",
+          "text": "She gave birth to a male child, one who is to rule all the nations with a rod of iron, but her child was caught up to God and to his throne,"
+        },
+        {
+          "ref": "Revelation 12:11",
+          "text": "And they have conquered him by the blood of the Lamb and by the word of their testimony, for they loved not their lives even unto death."
+        }
+      ],
+      "cross_refs": [
+        "Revelation 12:1-17",
+        "Genesis 3:14-15",
+        "Genesis 37:9-10",
+        "Psalm 2:7-9",
+        "John 12:31",
+        "Romans 16:20"
+      ],
+      "connections": [
+        {
+          "other": "rv_beasts",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The dragon goes off to make war on the rest of the woman's offspring and stands on the sand of the sea (12:17). John then sees a beast rising out of the sea, and 'to it the dragon gave his power and his throne and great authority' (13:2). The text names the dragon as the power behind the beast."
+        },
+        {
+          "other": "rvo_seed",
+          "direction": "from",
+          "confidence": "typology",
+          "text": "This line is marked interpretive. Revelation 12:9 says in plain words that the dragon is 'that ancient serpent, who is called the devil and Satan'. So the text itself identifies the serpent. It also speaks of a woman, her child, and 'the rest of her offspring' (12:17), with the serpent at war against them, which is the shape of Genesis 3:15. But Revelation does not quote Genesis 3:15 or say that the promise is fulfilled here. Reading chapter 12 as the outworking of that promise is the common Reformed reading, and it is a reading. Paul echoes the same promise in Romans 16:20: the God of peace will soon crush Satan under your feet."
+        }
+      ],
+      "nt": [
+        "Jesus spoke of his death as the casting out of the ruler of this world (John 12:31), and he told the seventy-two that he saw Satan fall like lightning from heaven (Luke 10:18). The dragon is furious because he has lost, and he knows that his time is short (12:12)."
+      ],
+      "questions": [
+        "What does the dragon want to do, and does he succeed?",
+        "Who does John say the dragon is?",
+        "By what do the believers conquer him?"
+      ]
+    },
+    "rv_beasts": {
+      "context": [
+        "The first beast rises from the sea with ten horns and seven heads. It looks like a leopard, a bear, and a lion together, and the dragon gives it his power and throne. One of its heads seems to have a mortal wound that has healed. The whole earth marvels and worships it, asking who can fight against it. It is allowed to make war on the saints for forty-two months.",
+        "The second beast rises from the earth. It has two horns like a lamb and speaks like a dragon. It performs signs, makes the earth worship the first beast, and lets no one buy or sell without the mark of the beast's name or number. Later it is called the false prophet (19:20). John says the number is the number of a man, and the number is 666.",
+        "Interpretation: many readers take the first beast as the Roman empire, which demanded worship of its emperors in John's day, and the second as the local powers that enforced that worship in Asia. Many of the Reformers applied these pictures to the papacy of their own time. Others take the beasts as state power and false religion wherever they join against Christ's people, in every age. Others expect a last personal Antichrist and a false prophet shortly before Christ returns. Many readers hold more than one of these together. As for 666, a common suggestion is that it adds up the letters of Nero Caesar written in Hebrew. Another is that six, one short of seven, three times over, stands for what always falls short of God. No reading is certain. John's own application is plain: here is a call for the endurance and faith of the saints."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 13:2",
+          "text": "And the beast that I saw was like a leopard; its feet were like a bear's, and its mouth was like a lion's mouth. And to it the dragon gave his power and his throne and great authority."
+        },
+        {
+          "ref": "Revelation 13:10",
+          "text": "Here is a call for the endurance and faith of the saints."
+        }
+      ],
+      "cross_refs": [
+        "Revelation 13:1-18",
+        "Daniel 7:1-8",
+        "Daniel 7:19-25",
+        "2 Thessalonians 2:3-10",
+        "1 John 2:18"
+      ],
+      "connections": [
+        {
+          "other": "rv_dragon",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The dragon goes off to make war on the rest of the woman's offspring and stands on the sand of the sea (12:17). John then sees a beast rising out of the sea, and 'to it the dragon gave his power and his throne and great authority' (13:2). The text names the dragon as the power behind the beast."
+        },
+        {
+          "other": "rv_babylon",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The woman called Babylon is 'sitting on a scarlet beast that was full of blasphemous names, and it had seven heads and ten horns' (17:3). The beast from the sea in 13:1 has ten horns and seven heads and blasphemous names on its heads. John presents the same beast in both chapters."
+        },
+        {
+          "other": "rvo_daniel7",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Daniel sees four beasts come up out of the sea: one like a lion, one like a bear, one like a leopard, and a fourth with ten horns (7:3-7). John sees one beast rise out of the sea with ten horns, 'like a leopard; its feet were like a bear's, and its mouth was like a lion's mouth' (13:1-2). John's one beast carries the features of Daniel's four. In both books the beast has a mouth that speaks great things and makes war on the saints (Daniel 7:8, 21 and Revelation 13:5-7). Daniel is told that the four beasts are four kings (7:17). Which kingdoms they are, and what John's beast stands for, are matters of interpretation."
+        }
+      ],
+      "nt": [
+        "John's letters say that antichrist is coming and that many antichrists have already come (1 John 2:18). Paul writes of a man of lawlessness who exalts himself (2 Thessalonians 2:3-4). How those passages fit with the beasts of Revelation 13 is one of the questions on which readers differ."
+      ],
+      "questions": [
+        "Where does the first beast get its power?",
+        "What does the second beast make people do?",
+        "What does John call the saints to in verse 10?"
+      ]
+    },
+    "rv_babylon": {
+      "context": [
+        "One of the angels shows John the judgment of the great prostitute. She sits on a scarlet beast, dressed in purple and scarlet and gold, holding a golden cup. On her forehead is the name Babylon the great. She is drunk with the blood of the saints and the martyrs of Jesus.",
+        "Chapter 18 is her funeral song. An angel cries that Babylon the great has fallen. A voice calls God's people to come out of her. Kings, merchants, and sea captains stand far off and mourn, because in a single hour all her wealth is laid waste. The list of her cargo ends with slaves, that is, human souls (18:13).",
+        "Interpretation: the angel says the seven heads are seven mountains on which the woman sits, and that she is the great city that has dominion over the kings of the earth (17:9, 17:18). Most readers therefore see Rome, the city on seven hills. Some who date the book before AD 70 see Jerusalem. Many Reformed readers take Babylon as the world in its wealth, pride, and hostility to God, of which Rome was the form John's readers knew, and which reappears in every age. Many of the Reformers applied it to papal Rome. The name itself comes from the Old Testament city that carried Judah into exile."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 17:5",
+          "text": "And on her forehead was written a name of mystery: “Babylon the great, mother of prostitutes and of earth's abominations.”"
+        },
+        {
+          "ref": "Revelation 18:2",
+          "text": "Fallen, fallen is Babylon the great!"
+        },
+        {
+          "ref": "Revelation 18:4",
+          "text": "Come out of her, my people, lest you take part in her sins, lest you share in her plagues;"
+        }
+      ],
+      "cross_refs": [
+        "Revelation 17:1-18",
+        "Revelation 18:1-24",
+        "Isaiah 21:9",
+        "Isaiah 47:7-9",
+        "Jeremiah 51:6-9",
+        "Jeremiah 51:45",
+        "1 Peter 5:13"
+      ],
+      "connections": [
+        {
+          "other": "rv_beasts",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The woman called Babylon is 'sitting on a scarlet beast that was full of blasphemous names, and it had seven heads and ten horns' (17:3). The beast from the sea in 13:1 has ten horns and seven heads and blasphemous names on its heads. John presents the same beast in both chapters."
+        },
+        {
+          "other": "rv_supper",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Chapter 19 begins 'After this'. The crowd in heaven praises God because he has judged the great prostitute (19:2), and then announces that the marriage of the Lamb has come (19:7). The prostitute city and the Bride are set against each other on purpose."
+        }
+      ],
+      "nt": [
+        "The cry that Babylon has fallen is first heard in Isaiah 21:9, and the call to come out of her echoes Jeremiah 51:45. Peter sends greetings from a church he describes as 'at Babylon' (1 Peter 5:13), which most readers take as a name for Rome. That is one reason many identify John's Babylon with Rome."
+      ],
+      "questions": [
+        "How is the woman dressed, and what is she drunk with?",
+        "Who mourns when Babylon falls, and why?",
+        "What are God's people told to do?"
+      ]
+    },
+    "rv_supper": {
+      "context": [
+        "The word Hallelujah appears in the New Testament only in this chapter, four times. Heaven praises God because his judgments are true and just. He has judged the great prostitute and avenged the blood of his servants.",
+        "Then the praise turns from a funeral to a wedding. The marriage of the Lamb has come, and his Bride has made herself ready. It was granted her to clothe herself with fine linen, bright and pure, and John is told that the fine linen is the righteous deeds of the saints. Her clothing is something she wears and also something she was given.",
+        "John falls at the angel's feet to worship him and is stopped at once. The angel is a fellow servant. Worship God. The Bride is identified later in the book as the holy city, new Jerusalem, the wife of the Lamb (21:2, 21:9-10), which is the people of God."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 19:7",
+          "text": "Let us rejoice and exult and give him the glory, for the marriage of the Lamb has come, and his Bride has made herself ready;"
+        },
+        {
+          "ref": "Revelation 19:9",
+          "text": "Blessed are those who are invited to the marriage supper of the Lamb."
+        }
+      ],
+      "cross_refs": [
+        "Revelation 19:1-10",
+        "Isaiah 25:6-8",
+        "Isaiah 61:10",
+        "Matthew 22:1-14",
+        "Ephesians 5:25-32"
+      ],
+      "connections": [
+        {
+          "other": "rv_babylon",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "Chapter 19 begins 'After this'. The crowd in heaven praises God because he has judged the great prostitute (19:2), and then announces that the marriage of the Lamb has come (19:7). The prostitute city and the Bride are set against each other on purpose."
+        }
+      ],
+      "nt": [
+        "Jesus compared the kingdom of heaven to a wedding feast a king gave for his son (Matthew 22:1-14). Paul says Christ loved the church and gave himself up for her, to present her to himself in splendor, and he calls marriage a picture of Christ and the church (Ephesians 5:25-32). Isaiah 25:6-8 promises a feast for all peoples on the day God swallows up death."
+      ],
+      "questions": [
+        "Why does heaven say Hallelujah?",
+        "Who is the Bride, and what is she wearing?",
+        "What happens when John tries to worship the angel?"
+      ]
+    },
+    "rv_return": {
+      "context": [
+        "John sees heaven opened. A white horse appears, and its rider is called Faithful and True. His eyes are like a flame of fire, as in chapter 1, and on his head are many crowns. He wears a robe dipped in blood, and his name is The Word of God.",
+        "The armies of heaven follow him in fine linen. From his mouth comes a sharp sword with which to strike down the nations, and he will rule them with a rod of iron. He treads the winepress of the fury of the wrath of God the Almighty. The verses that follow show the beast and the false prophet captured and thrown into the lake of fire (19:19-20).",
+        "Interpretation: most readers, amillennial and premillennial alike, take this as the visible return of Christ at the end of the age. Some postmillennial readers take it as a picture of Christ conquering the nations through the preaching of his word in this present age, since his only weapon is the sword from his mouth. On either reading the rider is Jesus, and he wins."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 19:11",
+          "text": "Then I saw heaven opened, and behold, a white horse! The one sitting on it is called Faithful and True, and in righteousness he judges and makes war."
+        },
+        {
+          "ref": "Revelation 19:16",
+          "text": "On his robe and on his thigh he has a name written, King of kings and Lord of lords."
+        }
+      ],
+      "cross_refs": [
+        "Revelation 19:11-21",
+        "Psalm 2:8-9",
+        "Isaiah 11:4",
+        "Isaiah 63:1-3",
+        "John 1:1",
+        "2 Thessalonians 1:7-10"
+      ],
+      "connections": [
+        {
+          "other": "rv_millennium",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "This line is dashed because the join between chapter 19 and chapter 20 is the disputed point. Chapter 20 begins, 'Then I saw an angel coming down from heaven'. Historic premillennial readers take 'Then I saw' as the next event in time: Christ returns in chapter 19, and the thousand years follow. Amillennial and most postmillennial readers take it as the next vision, which goes back to the start of the gospel age, as chapter 12 went back to the birth of Christ. The words 'Then I saw' mark the order of the visions. They do not settle the order of the events."
+        }
+      ],
+      "nt": [
+        "The rod of iron comes from Psalm 2:9, and the winepress from Isaiah 63:3. The name The Word of God recalls the opening of John's Gospel: In the beginning was the Word (John 1:1). Paul describes the Lord Jesus being revealed from heaven with his mighty angels (2 Thessalonians 1:7)."
+      ],
+      "questions": [
+        "What names does the rider have?",
+        "What is his weapon, and where does it come from?",
+        "Which details match the vision of Jesus in chapter 1?"
+      ]
+    },
+    "rv_millennium": {
+      "context": [
+        "The passage is short, ten verses, and it is the only place in the Bible that speaks of a thousand years in this way. An angel seizes the dragon, binds him, and shuts him in the bottomless pit so that he may not deceive the nations any longer. John sees thrones, and the souls of those beheaded for the testimony of Jesus. They come to life and reign with Christ a thousand years. This is called the first resurrection. When the thousand years end, Satan is released, gathers the nations for battle, and is thrown into the lake of fire.",
+        "Interpretation, the amillennial view: the thousand years is a symbolic number for the whole time between Christ's first coming and his return. Satan was bound by Christ's death and resurrection in the sense the passage names, 'that he might not deceive the nations any longer' (20:3), so the gospel now goes to all peoples (compare Matthew 12:29 and John 12:31-32). The first resurrection is the life of believers who have died and now reign with Christ in heaven, or on another form of the view, the new birth. Chapter 20 goes back to the beginning of the age, as chapter 12 did. Christ returns once, and the resurrection of all, the last judgment, and the new creation come together. Augustine taught a form of this view, and it is widely held in Reformed churches.",
+        "Interpretation, the postmillennial view: this view also places Christ's return after the thousand years. It differs in what it expects before he comes. Through the preaching of the gospel and the work of the Holy Spirit, the nations will largely be brought to faith, and there will be a long age of peace and righteousness on earth. Many who hold it take the number as a figure for a long time. They point to promises such as Psalm 72, Isaiah 2:2-4, Matthew 13:31-33, and 1 Corinthians 15:25. Many Puritans held this hope, and so did Jonathan Edwards and Charles Hodge.",
+        "Interpretation, the historic premillennial view: chapters 19 and 20 are read in order. Christ returns (19:11-16), believers are raised bodily in the first resurrection, and Christ reigns on the earth for the thousand years, which may be an exact number or a long time. Afterward Satan is released, the rest of the dead are raised, and the last judgment follows. Those who hold it note that the martyrs 'came to life' (20:4) and that the rest of the dead 'did not come to life' until the thousand years were ended (20:5), and they argue that the words should mean bodily resurrection both times. Early Christian writers such as Justin Martyr and Irenaeus held a form of this view, and so have some Reformed teachers.",
+        "A note on a fourth view: dispensational premillennialism is widely held among evangelical Christians. It keeps Israel and the church as two peoples with separate plans and usually places a rapture of the church before a seven year tribulation. Reformed churches have generally not accepted it, because they confess one people of God in one covenant of grace, so this map does not lay out its timeline.",
+        "What all three Reformed views share: Christ reigns now at the Father's right hand. Satan's defeat is certain. Jesus will return bodily and visibly. The dead will be raised, all people will be judged, and God will make all things new. The Westminster Standards teach these things and do not use the word millennium. Ministers holding each of the three views have served in churches that confess the Standards."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 20:2",
+          "text": "And he seized the dragon, that ancient serpent, who is the devil and Satan, and bound him for a thousand years,"
+        },
+        {
+          "ref": "Revelation 20:4",
+          "text": "They came to life and reigned with Christ for a thousand years."
+        },
+        {
+          "ref": "Revelation 20:6",
+          "text": "Blessed and holy is the one who shares in the first resurrection! Over such the second death has no power, but they will be priests of God and of Christ, and they will reign with him for a thousand years."
+        }
+      ],
+      "cross_refs": [
+        "Revelation 20:1-10",
+        "Matthew 12:28-29",
+        "John 5:25-29",
+        "John 12:31-32",
+        "1 Corinthians 15:22-26",
+        "2 Peter 3:8-13"
+      ],
+      "connections": [
+        {
+          "other": "rv_return",
+          "direction": "from",
+          "confidence": "typology",
+          "text": "This line is dashed because the join between chapter 19 and chapter 20 is the disputed point. Chapter 20 begins, 'Then I saw an angel coming down from heaven'. Historic premillennial readers take 'Then I saw' as the next event in time: Christ returns in chapter 19, and the thousand years follow. Amillennial and most postmillennial readers take it as the next vision, which goes back to the start of the gospel age, as chapter 12 went back to the birth of Christ. The words 'Then I saw' mark the order of the visions. They do not settle the order of the events."
+        },
+        {
+          "other": "rv_judgment",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The text gives this order itself: 'when the thousand years are ended, Satan will be released' (20:7), he is defeated and thrown into the lake of fire (20:10), and 'Then I saw a great white throne' (20:11). All three millennial views agree that the last judgment comes after the thousand years."
+        }
+      ],
+      "nt": [
+        "Readers on every side bring other passages to this one. John 5:25-29 speaks of an hour that is now here, when the dead hear the voice of the Son of God and live, and of an hour that is coming, when all who are in the tombs come out. 1 Corinthians 15:22-26 speaks of Christ reigning until he has put all his enemies under his feet, the last of which is death. Each view reads these passages a little differently. It is wise to hold your own view with humility and to treat Christians who hold another one as brothers and sisters."
+      ],
+      "questions": [
+        "What is Satan prevented from doing while he is bound?",
+        "Who reigns with Christ, and what is said about the second death?",
+        "What do all three views agree will happen in the end?"
+      ]
+    },
+    "rv_judgment": {
+      "context": [
+        "John sees a great white throne and one seated on it. Earth and sky flee from his presence. All the dead stand before the throne, great and small. The sea gives up its dead, and so do Death and Hades. No one is missing.",
+        "Books are opened, and the dead are judged by what is written in them, according to what they have done. Another book is opened as well, the book of life. Death and Hades are thrown into the lake of fire, which is the second death, and so is anyone whose name is not found written in the book of life.",
+        "There are two kinds of books. The books of deeds show that God's judgment is just. The book of life, which Revelation elsewhere calls the book of life of the Lamb who was slain (13:8), shows that those who are saved are saved by him. All three millennial views place this judgment at the end."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 20:11",
+          "text": "Then I saw a great white throne and him who was seated on it. From his presence earth and sky fled away, and no place was found for them."
+        },
+        {
+          "ref": "Revelation 20:12",
+          "text": "And I saw the dead, great and small, standing before the throne, and books were opened. Then another book was opened, which is the book of life. And the dead were judged by what was written in the books, according to what they had done."
+        }
+      ],
+      "cross_refs": [
+        "Revelation 20:11-15",
+        "Daniel 7:9-10",
+        "Daniel 12:1-2",
+        "Matthew 25:31-46",
+        "John 5:28-29",
+        "2 Corinthians 5:10"
+      ],
+      "connections": [
+        {
+          "other": "rv_millennium",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The text gives this order itself: 'when the thousand years are ended, Satan will be released' (20:7), he is defeated and thrown into the lake of fire (20:10), and 'Then I saw a great white throne' (20:11). All three millennial views agree that the last judgment comes after the thousand years."
+        },
+        {
+          "other": "rv_new_creation",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "At the great white throne 'earth and sky fled away, and no place was found for them' (20:11). The next vision begins, 'Then I saw a new heaven and a new earth, for the first heaven and the first earth had passed away' (21:1). The second statement picks up the first."
+        },
+        {
+          "other": "rvo_daniel7",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. In Daniel thrones are placed, the Ancient of Days takes his seat, 'the court sat in judgment, and the books were opened' (7:9-10). In Revelation John sees a great white throne and the dead standing before it, 'and books were opened' (20:12). The scene and the phrase are the same."
+        }
+      ],
+      "nt": [
+        "Jesus says the Son of Man will sit on his glorious throne and separate all the nations as a shepherd separates sheep from goats (Matthew 25:31-32). Paul says we must all appear before the judgment seat of Christ (2 Corinthians 5:10)."
+      ],
+      "questions": [
+        "Who stands before the throne?",
+        "What two kinds of books are opened?",
+        "What makes the difference for those who are not thrown into the lake of fire?"
+      ]
+    },
+    "rv_new_creation": {
+      "context": [
+        "The first heaven and the first earth have passed away. John sees the holy city, new Jerusalem, coming down out of heaven from God. A loud voice from the throne says that the dwelling place of God is with man. This is the promise that runs through the whole Bible: they will be his people, and God himself will be with them.",
+        "Every tear is wiped away. Death, mourning, crying, and pain are no more. The one on the throne says he is making all things new, and that he will give to the thirsty from the spring of the water of life without payment.",
+        "An angel then shows John the city as the Bride, the wife of the Lamb. Its gates bear the names of the twelve tribes and its foundations the names of the twelve apostles. It has no temple and needs no sun, for the glory of God gives it light and its lamp is the Lamb. Interpretation: Reformed readers generally understand the new heaven and new earth as this creation set free and renewed, as Romans 8:21 says, and not as a different world replacing it. Peter's language of the heavens passing away with a roar (2 Peter 3:10) leads some to stress the break more than the continuity."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 21:1",
+          "text": "Then I saw a new heaven and a new earth, for the first heaven and the first earth had passed away, and the sea was no more."
+        },
+        {
+          "ref": "Revelation 21:3",
+          "text": "Behold, the dwelling place of God is with man. He will dwell with them, and they will be his people, and God himself will be with them as their God."
+        },
+        {
+          "ref": "Revelation 21:4",
+          "text": "He will wipe away every tear from their eyes, and death shall be no more, neither shall there be mourning, nor crying, nor pain anymore, for the former things have passed away."
+        }
+      ],
+      "cross_refs": [
+        "Revelation 21:1-27",
+        "Isaiah 65:17-19",
+        "Isaiah 25:8",
+        "Ezekiel 37:27",
+        "Romans 8:19-23",
+        "2 Peter 3:10-13"
+      ],
+      "connections": [
+        {
+          "other": "rv_judgment",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "At the great white throne 'earth and sky fled away, and no place was found for them' (20:11). The next vision begins, 'Then I saw a new heaven and a new earth, for the first heaven and the first earth had passed away' (21:1). The second statement picks up the first."
+        },
+        {
+          "other": "rv_river",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The angel who shows John the holy city (21:9-10) goes on to show him the river: 'Then the angel showed me the river of the water of life' (22:1). The river flows through the middle of the street of the city. It is one vision."
+        },
+        {
+          "other": "rvo_isaiah65",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Isaiah 65:17 promises 'new heavens and a new earth', and John sees 'a new heaven and a new earth' (21:1). Isaiah says the former things shall not be remembered, and Revelation 21:4 says the former things have passed away. Isaiah 65:19 promises an end to the sound of weeping, and Revelation 21:4 says God will wipe away every tear. 2 Peter 3:13 says Christians are waiting for new heavens and a new earth according to his promise."
+        }
+      ],
+      "nt": [
+        "Paul says the creation itself will be set free from its bondage to corruption (Romans 8:21). Peter says we are waiting for new heavens and a new earth in which righteousness dwells (2 Peter 3:13). The promise that God will dwell with his people and be their God runs from Leviticus 26:11-12 through Ezekiel 37:27 to this chapter."
+      ],
+      "questions": [
+        "What comes down out of heaven?",
+        "What does the voice from the throne say about God and his people?",
+        "Why does the city need no temple and no sun?"
+      ]
+    },
+    "rv_river": {
+      "context": [
+        "The Bible began in a garden with a river and the tree of life (Genesis 2:9-10). After the fall, the way to that tree was guarded (Genesis 3:24). At the end the tree is in the middle of a city, on both sides of a river that flows from the throne of God and of the Lamb, and its leaves are for the healing of the nations.",
+        "No longer will there be anything accursed. God's servants will worship him. They will see his face, and his name will be on their foreheads. There will be no night, and they will reign forever and ever.",
+        "The book closes with warnings and invitations. Jesus says three times that he is coming soon. The Spirit and the Bride say, Come. Whoever is thirsty may take the water of life without price. John's last prayer is the church's prayer: Amen. Come, Lord Jesus."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 22:1",
+          "text": "Then the angel showed me the river of the water of life, bright as crystal, flowing from the throne of God and of the Lamb"
+        },
+        {
+          "ref": "Revelation 22:3",
+          "text": "No longer will there be anything accursed, but the throne of God and of the Lamb will be in it, and his servants will worship him."
+        },
+        {
+          "ref": "Revelation 22:20",
+          "text": "He who testifies to these things says, “Surely I am coming soon.” Amen. Come, Lord Jesus!"
+        }
+      ],
+      "cross_refs": [
+        "Revelation 22:1-21",
+        "Genesis 2:8-10",
+        "Genesis 3:22-24",
+        "Ezekiel 47:1-12",
+        "Isaiah 55:1",
+        "John 7:37-38"
+      ],
+      "connections": [
+        {
+          "other": "rv_new_creation",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "The angel who shows John the holy city (21:9-10) goes on to show him the river: 'Then the angel showed me the river of the water of life' (22:1). The river flows through the middle of the street of the city. It is one vision."
+        },
+        {
+          "other": "rvo_ezekiel47",
+          "direction": "from",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Ezekiel sees water flowing from the temple, with trees on both sides of the river that bear fresh fruit every month, and 'their leaves for healing' (47:12). John sees the river of the water of life with the tree of life on either side, 'yielding its fruit each month', and he adds, 'The leaves of the tree were for the healing of the nations' (22:2). There are differences. In Ezekiel the water comes from the temple. In Revelation it comes from the throne of God and of the Lamb, and the city has no temple (21:22). Ezekiel sees many trees. John sees the tree of life, which goes back to Genesis 2:9. And John adds that the healing is for the nations."
+        }
+      ],
+      "nt": [
+        "Jesus said that whoever is thirsty should come to him and drink, and that rivers of living water would flow from the one who believes (John 7:37-38). The invitation in Revelation 22:17 to take the water of life without price sounds like Isaiah 55:1."
+      ],
+      "questions": [
+        "Where does the river come from?",
+        "What tree is here, and where did the Bible last show it?",
+        "What does Jesus promise at the end, and how does the church answer?"
+      ]
+    },
+    "rvo_daniel7": {
+      "context": [
+        "Daniel has this dream in the first year of Belshazzar, king of Babylon. The four winds stir up the great sea, and four beasts come out of it: one like a lion with eagle's wings, one like a bear, one like a leopard with four heads, and a fourth that is terrifying, with iron teeth and ten horns. A little horn comes up with a mouth speaking great things.",
+        "Then the scene changes to a courtroom. Thrones are placed, and the Ancient of Days takes his seat, his clothing white as snow. The court sits and the books are opened. The fourth beast is destroyed, and the others lose their dominion.",
+        "With the clouds of heaven comes one like a son of man. He is brought before the Ancient of Days and given dominion, glory, and a kingdom that all peoples will serve and that will never pass away. An angel explains that the four beasts are four kings, and that the saints of the Most High will receive the kingdom (7:17-18). Interpretation: the four kingdoms have most often been taken as Babylon, Medo-Persia, Greece, and Rome. Other readers count them differently."
+      ],
+      "passages": [
+        {
+          "ref": "Daniel 7:9",
+          "text": "As I looked, thrones were placed, and the Ancient of Days took his seat; his clothing was white as snow, and the hair of his head like pure wool; his throne was fiery flames; its wheels were burning fire."
+        },
+        {
+          "ref": "Daniel 7:13",
+          "text": "I saw in the night visions, and behold, with the clouds of heaven there came one like a son of man, and he came to the Ancient of Days and was presented before him."
+        },
+        {
+          "ref": "Daniel 7:14",
+          "text": "And to him was given dominion and glory and a kingdom, that all peoples, nations, and languages should serve him; his dominion is an everlasting dominion, which shall not pass away, and his kingdom one that shall not be destroyed."
+        }
+      ],
+      "cross_refs": [
+        "Daniel 7:1-28",
+        "Matthew 24:30",
+        "Matthew 26:64",
+        "Revelation 1:7",
+        "Revelation 1:13-14",
+        "Revelation 13:1-7",
+        "Revelation 20:11-12"
+      ],
+      "connections": [
+        {
+          "other": "rv_christ",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Revelation 1:7 says, 'Behold, he is coming with the clouds', and Daniel 7:13 has one like a son of man coming with the clouds of heaven. John sees 'one like a son of man' (1:13), the same phrase. There is a difference worth noticing. In Daniel it is the Ancient of Days whose hair is like pure wool (7:9). In Revelation the son of man has hair 'white, like white wool, like snow' (1:14). Jesus applied Daniel 7:13 to himself before the high priest (Matthew 26:64), so reading Daniel's son of man as Christ rests on his own words."
+        },
+        {
+          "other": "rv_beasts",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Daniel sees four beasts come up out of the sea: one like a lion, one like a bear, one like a leopard, and a fourth with ten horns (7:3-7). John sees one beast rise out of the sea with ten horns, 'like a leopard; its feet were like a bear's, and its mouth was like a lion's mouth' (13:1-2). John's one beast carries the features of Daniel's four. In both books the beast has a mouth that speaks great things and makes war on the saints (Daniel 7:8, 21 and Revelation 13:5-7). Daniel is told that the four beasts are four kings (7:17). Which kingdoms they are, and what John's beast stands for, are matters of interpretation."
+        },
+        {
+          "other": "rv_judgment",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. In Daniel thrones are placed, the Ancient of Days takes his seat, 'the court sat in judgment, and the books were opened' (7:9-10). In Revelation John sees a great white throne and the dead standing before it, 'and books were opened' (20:12). The scene and the phrase are the same."
+        }
+      ],
+      "nt": [
+        "Son of Man is the name Jesus used most often for himself. At his trial he told the high priest, 'you will see the Son of Man seated at the right hand of Power and coming on the clouds of heaven' (Matthew 26:64). That is Jesus applying Daniel 7:13 to himself."
+      ],
+      "questions": [
+        "Where do the beasts come from, and what are they?",
+        "What happens when the Ancient of Days takes his seat?",
+        "What is given to the one like a son of man, and for how long?"
+      ]
+    },
+    "rvo_ezekiel1": {
+      "context": [
+        "Ezekiel was a priest carried off to Babylonia with King Jehoiachin. In the fifth year of that exile, by the Chebar canal, the heavens were opened and he saw visions of God. Far from the temple, he might have thought God was far away too.",
+        "A stormy wind comes out of the north with flashing fire. In it are four living creatures, each with four faces and four wings, and beside each a wheel within a wheel, their rims full of eyes. They go wherever the spirit goes, without turning.",
+        "Over their heads is an expanse shining like crystal, and above it the likeness of a throne, and on the throne a likeness with a human appearance, bright as fire, with a brightness around him like a rainbow. Ezekiel piles up words such as likeness and appearance, because he is describing what cannot be described. When he sees it, he falls on his face."
+      ],
+      "passages": [
+        {
+          "ref": "Ezekiel 1:10",
+          "text": "As for the likeness of their faces, each had a human face. The four had the face of a lion on the right side, the four had the face of an ox on the left side, and the four had the face of an eagle."
+        },
+        {
+          "ref": "Ezekiel 1:28",
+          "text": "Like the appearance of the bow that is in the cloud on the day of rain, so was the appearance of the brightness all around. Such was the appearance of the likeness of the glory of the LORD. And when I saw it, I fell on my face, and I heard the voice of one speaking."
+        }
+      ],
+      "cross_refs": [
+        "Ezekiel 1:1-28",
+        "Ezekiel 10:1-22",
+        "Isaiah 6:1-4",
+        "Revelation 4:2-8"
+      ],
+      "connections": [
+        {
+          "other": "rv_throne",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Both prophets see a throne with four living creatures. The four faces are the same: a man, a lion, an ox, and an eagle (Ezekiel 1:10 and Revelation 4:7). Both see something like crystal near the throne (Ezekiel 1:22 and Revelation 4:6) and a brightness like a rainbow around it (Ezekiel 1:28 and Revelation 4:3). The differences are real too. In Ezekiel each creature has all four faces and four wings. In Revelation each creature has one of the faces and six wings, and they sing holy, holy, holy, which is like the seraphim of Isaiah 6:2-3. John's vision draws on both prophets."
+        }
+      ],
+      "nt": [
+        "John's throne vision in Revelation 4 uses Ezekiel's four living creatures, crystal, and rainbow. Like Ezekiel, John sees it while cut off from his people, on Patmos."
+      ],
+      "questions": [
+        "Where is Ezekiel when he sees this, and why does that matter?",
+        "What four faces do the creatures have?",
+        "What does Ezekiel do when he sees the glory?"
+      ]
+    },
+    "rvo_passover": {
+      "context": [
+        "Nine plagues had fallen on Egypt, and Pharaoh still would not let Israel go. God announced a tenth: the death of every firstborn in the land. For Israel he provided a way of safety.",
+        "Each household was to take a lamb without blemish, a male a year old, and kill it at twilight. They were to put some of its blood on the two doorposts and the lintel of the house, roast the lamb, and eat it in haste, dressed for travel. Not one of its bones was to be broken (12:46).",
+        "That night the LORD struck the firstborn of Egypt and passed over the houses marked with blood. Israel walked out free. God told them to keep the day as a memorial feast forever, and to tell their children what it meant."
+      ],
+      "passages": [
+        {
+          "ref": "Exodus 12:5",
+          "text": "Your lamb shall be without blemish, a male a year old. You may take it from the sheep or from the goats,"
+        },
+        {
+          "ref": "Exodus 12:13",
+          "text": "The blood shall be a sign for you, on the houses where you are. And when I see the blood, I will pass over you, and no plague will befall you to destroy you, when I strike the land of Egypt."
+        }
+      ],
+      "cross_refs": [
+        "Exodus 12:1-28",
+        "Exodus 12:46",
+        "Exodus 19:4-6",
+        "John 1:29",
+        "John 19:36",
+        "1 Corinthians 5:7",
+        "1 Peter 1:18-19"
+      ],
+      "connections": [
+        {
+          "other": "rv_lamb",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "This line is marked interpretive. Revelation 5 does not mention the Passover. It shows a Lamb that was slain, whose blood ransoms a people and makes them a kingdom and priests (5:9-10). That is the pattern of the exodus: a lamb's blood, a people set free, and then 'a kingdom of priests' (Exodus 19:6). That Christ is the Passover lamb is stated outright elsewhere in the New Testament: 'Christ, our Passover lamb, has been sacrificed' (1 Corinthians 5:7). So the link between the Passover and Christ is explicit in Paul. Reading the Lamb of Revelation 5 as the Passover lamb in particular is an inference. Many readers also hear Isaiah 53:7, the lamb led to the slaughter."
+        }
+      ],
+      "nt": [
+        "Jesus was crucified at Passover. Paul writes, 'Christ, our Passover lamb, has been sacrificed' (1 Corinthians 5:7). John notes that the soldiers did not break Jesus' legs and says this fulfilled the Scripture that not one of his bones will be broken (John 19:36), which matches the rule for the Passover lamb in Exodus 12:46. The Westminster Confession names the paschal lamb among the ordinances that pointed forward to Christ."
+      ],
+      "questions": [
+        "What kind of lamb was each household to choose?",
+        "What did God say he would do when he saw the blood?",
+        "Who in the New Testament calls Christ our Passover lamb?"
+      ]
+    },
+    "rvo_zechariah4": {
+      "context": [
+        "About twenty years after the first exiles came home from Babylon, the temple was still unfinished. Zerubbabel the governor and Joshua the high priest led a small and discouraged people. In one night Zechariah was given a series of visions to strengthen them.",
+        "In this one he sees a lampstand all of gold with seven lamps, and two olive trees beside it that supply it with oil. He asks what these are. The answer is a word for Zerubbabel: not by might, nor by power, but by my Spirit. The great mountain in front of him will become a plain, and his hands will finish the house.",
+        "Whoever has despised the day of small things will rejoice. The seven lamps are the eyes of the LORD, which range through the whole earth. The two olive trees are the two anointed ones who stand by the Lord of the whole earth. Most readers take these as Zerubbabel and Joshua, the ruler and the priest, though the text does not name them."
+      ],
+      "passages": [
+        {
+          "ref": "Zechariah 4:6",
+          "text": "Then he said to me, “This is the word of the LORD to Zerubbabel: Not by might, nor by power, but by my Spirit, says the LORD of hosts."
+        },
+        {
+          "ref": "Zechariah 4:10",
+          "text": "For whoever has despised the day of small things shall rejoice, and shall see the plumb line in the hand of Zerubbabel. “These seven are the eyes of the LORD, which range through the whole earth.”"
+        },
+        {
+          "ref": "Zechariah 4:14",
+          "text": "Then he said, “These are the two anointed ones who stand by the Lord of the whole earth.”"
+        }
+      ],
+      "cross_refs": [
+        "Zechariah 4:1-14",
+        "Ezra 5:1-2",
+        "Haggai 2:1-9",
+        "Revelation 1:12-13",
+        "Revelation 1:20",
+        "Revelation 5:6",
+        "Revelation 11:3-4"
+      ],
+      "connections": [
+        {
+          "other": "rv_lamb",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Zechariah is told that the seven lamps 'are the eyes of the LORD, which range through the whole earth' (4:10). John sees the Lamb 'with seven eyes, which are the seven spirits of God sent out into all the earth' (5:6). Seven eyes that go through all the earth appear in both. In Zechariah they are the LORD's. In Revelation they belong to the Lamb."
+        },
+        {
+          "other": "rv_trumpets",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Of the two witnesses John is told, 'These are the two olive trees and the two lampstands that stand before the Lord of the earth' (11:4). Zechariah sees two olive trees beside the lampstand and is told, 'These are the two anointed ones who stand by the Lord of the whole earth' (4:14). In Zechariah there is one lampstand, and in Revelation there are two. Who the two witnesses are is a matter of interpretation. Many Reformed readers take them as the witnessing church. Others expect two individual prophets."
+        }
+      ],
+      "nt": [
+        "Revelation uses this vision more than once. Christ walks among seven golden lampstands, which are the seven churches (1:12-13, 1:20). The Lamb has seven eyes sent out into all the earth (5:6). The two witnesses are called the two olive trees and the two lampstands (11:4). In Revelation the lampstands are the churches, and their light depends on the Spirit, as it did in Zechariah."
+      ],
+      "questions": [
+        "What is discouraging the people in Zechariah's day?",
+        "How does God say the work will be done?",
+        "What are the seven lamps said to be?"
+      ]
+    },
+    "rvo_seed": {
+      "context": [
+        "The serpent had tempted the woman, and she and her husband ate from the tree God had forbidden. When God comes to them, he questions the man and the woman, but he does not question the serpent. He curses it.",
+        "Within that curse is a promise. God himself will put enmity between the serpent and the woman, and between its offspring and hers. The conflict will end with a wound on each side: the serpent's head bruised, and the heel of the woman's offspring bruised.",
+        "Genesis does not say who the offspring is. Within Genesis the promise narrows, to Seth, to Abraham, and to Judah. Reformed teaching reads the verse as the first announcement of the gospel, and the Westminster Confession speaks of Christ as the seed of the woman who should bruise the serpent's head."
+      ],
+      "passages": [
+        {
+          "ref": "Genesis 3:15",
+          "text": "I will put enmity between you and the woman, and between your offspring and her offspring; he shall bruise your head, and you shall bruise his heel."
+        }
+      ],
+      "cross_refs": [
+        "Genesis 3:1-15",
+        "Romans 16:20",
+        "Galatians 4:4",
+        "Hebrews 2:14",
+        "1 John 3:8",
+        "Revelation 12:9",
+        "Revelation 20:2"
+      ],
+      "connections": [
+        {
+          "other": "rv_dragon",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "This line is marked interpretive. Revelation 12:9 says in plain words that the dragon is 'that ancient serpent, who is called the devil and Satan'. So the text itself identifies the serpent. It also speaks of a woman, her child, and 'the rest of her offspring' (12:17), with the serpent at war against them, which is the shape of Genesis 3:15. But Revelation does not quote Genesis 3:15 or say that the promise is fulfilled here. Reading chapter 12 as the outworking of that promise is the common Reformed reading, and it is a reading. Paul echoes the same promise in Romans 16:20: the God of peace will soon crush Satan under your feet."
+        }
+      ],
+      "nt": [
+        "The New Testament does not quote Genesis 3:15 directly. It does say that the Son of God appeared to destroy the works of the devil (1 John 3:8), that through death he destroyed the one who has the power of death (Hebrews 2:14), and that God will soon crush Satan under the feet of his people (Romans 16:20). Revelation twice calls the devil 'that ancient serpent' (12:9 and 20:2)."
+      ],
+      "questions": [
+        "Who puts the enmity between the serpent and the woman?",
+        "What happens to the serpent, and what happens to the woman's offspring?",
+        "What does Revelation 12:9 call the dragon?"
+      ]
+    },
+    "rvo_isaiah65": {
+      "context": [
+        "Isaiah's book ends with the largest promise in it. God says he creates new heavens and a new earth. The word create is the word used in Genesis 1:1.",
+        "The former things, the troubles Isaiah has spent sixty-four chapters describing, will not be remembered or come into mind. God will rejoice in Jerusalem and be glad in his people. No more will the sound of weeping be heard in it, or the cry of distress.",
+        "The Isaiah map has this passage as its last stop and follows the rest of the chapter. Here it stands as the root of John's last vision."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 65:17",
+          "text": "For behold, I create new heavens and a new earth, and the former things shall not be remembered or come into mind."
+        },
+        {
+          "ref": "Isaiah 65:19",
+          "text": "I will rejoice in Jerusalem and be glad in my people; no more shall be heard in it the sound of weeping and the cry of distress."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 65:17-25",
+        "Isaiah 66:22",
+        "Isaiah 25:8",
+        "2 Peter 3:13",
+        "Revelation 21:1-5"
+      ],
+      "connections": [
+        {
+          "other": "rv_new_creation",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Isaiah 65:17 promises 'new heavens and a new earth', and John sees 'a new heaven and a new earth' (21:1). Isaiah says the former things shall not be remembered, and Revelation 21:4 says the former things have passed away. Isaiah 65:19 promises an end to the sound of weeping, and Revelation 21:4 says God will wipe away every tear. 2 Peter 3:13 says Christians are waiting for new heavens and a new earth according to his promise."
+        }
+      ],
+      "nt": [
+        "Peter writes that according to his promise we are waiting for new heavens and a new earth in which righteousness dwells (2 Peter 3:13). The promise he has in mind is this one, or Isaiah 66:22, which repeats it."
+      ],
+      "questions": [
+        "What does God say he will create?",
+        "What will happen to the former things?",
+        "What sound will no longer be heard?"
+      ]
+    },
+    "rvo_ezekiel47": {
+      "context": [
+        "Ezekiel's last nine chapters are a vision of a new temple, given in the twenty-fifth year of the exile, when the first temple lay in ruins. In chapter 43 the glory of the LORD, which Ezekiel had seen leave, comes back to fill the house.",
+        "Then a guide brings him to the door of the temple, and water is coming out from under the threshold. A thousand cubits on it is ankle deep, then knee deep, then waist deep, and then a river that cannot be crossed. The text names no stream flowing into it. It grows as it goes.",
+        "It runs east and down into the Dead Sea, and the salt water becomes fresh. There are fish of every kind, and fishermen spread their nets. On both banks grow trees whose leaves do not wither and whose fruit does not fail, because the water for them flows from the sanctuary. Interpretation: readers differ on how Ezekiel's temple vision is to be fulfilled. Reformed readers generally take it as a picture, in the terms of Ezekiel's own day, of the life that flows from God's presence, which the New Testament finds in Christ and in the new creation. They do not expect a future building."
+      ],
+      "passages": [
+        {
+          "ref": "Ezekiel 47:9",
+          "text": "And wherever the river goes, every living creature that swarms will live, and there will be very many fish. For this water goes there, that the waters of the sea may become fresh; so everything will live where the river goes."
+        },
+        {
+          "ref": "Ezekiel 47:12",
+          "text": "And on the banks, on both sides of the river, there will grow all kinds of trees for food. Their leaves will not wither, nor their fruit fail, but they will bear fresh fruit every month, because the water for them flows from the sanctuary. Their fruit will be for food, and their leaves for healing."
+        }
+      ],
+      "cross_refs": [
+        "Ezekiel 47:1-12",
+        "Ezekiel 43:1-5",
+        "Genesis 2:10",
+        "Joel 3:18",
+        "Zechariah 14:8",
+        "John 7:37-39",
+        "Revelation 22:1-2"
+      ],
+      "connections": [
+        {
+          "other": "rv_river",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "This is shared wording and not a marked quotation. Ezekiel sees water flowing from the temple, with trees on both sides of the river that bear fresh fruit every month, and 'their leaves for healing' (47:12). John sees the river of the water of life with the tree of life on either side, 'yielding its fruit each month', and he adds, 'The leaves of the tree were for the healing of the nations' (22:2). There are differences. In Ezekiel the water comes from the temple. In Revelation it comes from the throne of God and of the Lamb, and the city has no temple (21:22). Ezekiel sees many trees. John sees the tree of life, which goes back to Genesis 2:9. And John adds that the healing is for the nations."
+        }
+      ],
+      "nt": [
+        "Jesus stood up at a feast in Jerusalem and said that rivers of living water would flow from the one who believes in him, and John explains that he said this about the Spirit (John 7:37-39). Revelation 22:1-2 shows the river itself, flowing from the throne."
+      ],
+      "questions": [
+        "Where does the water come from?",
+        "What happens to the Dead Sea when the river reaches it?",
+        "What are the fruit and the leaves of the trees for?"
+      ]
     }
   },
   "paths": {
@@ -1833,6 +3972,234 @@
         "What phrase marks a quotation in each of these passages?",
         "Which Deuteronomy chapter gets quoted the most, and by whom?",
         "Where does a word change between Deuteronomy and the writer quoting it, and does the meaning change with it?"
+      ]
+    },
+    "isaiah_through": {
+      "context": [
+        "This path reads Isaiah in the book's own order, sixteen stops from the opening charge to the new heavens and new earth. Isaiah preached in Jerusalem for about fifty years, under four kings, while the empire of Assyria swallowed the nations around Judah.",
+        "The first half of the path, through chapter 39, is set in those years. Isaiah sees the Lord, confronts King Ahaz, promises a royal child, and stands with King Hezekiah when the Assyrian army is at the wall. The second half, from chapter 40, speaks comfort to a people in exile in Babylon and beyond. It introduces the servant of the LORD, names Cyrus, and ends with a new creation.",
+        "Christians who hold that Isaiah wrote the whole book, as the New Testament's way of quoting it suggests, read the second half as prophecy given ahead of time. Many modern scholars assign chapters 40 to 66 to later writers. The timeline shows both views and says which one this map follows."
+      ],
+      "passages": [
+        {
+          "ref": "Isaiah 6:3",
+          "text": "Holy, holy, holy is the LORD of hosts; the whole earth is full of his glory!"
+        },
+        {
+          "ref": "Isaiah 40:1",
+          "text": "Comfort, comfort my people, says your God."
+        },
+        {
+          "ref": "Isaiah 53:5",
+          "text": "But he was pierced for our transgressions; he was crushed for our iniquities; upon him was the chastisement that brought us peace, and with his wounds we are healed."
+        }
+      ],
+      "cross_refs": [
+        "Isaiah 1:1",
+        "Isaiah 6:1-13",
+        "Isaiah 36:1 to 39:8",
+        "Isaiah 40:1-11",
+        "Isaiah 52:13 to 53:12",
+        "Isaiah 65:17-25"
+      ],
+      "connections": [
+        {
+          "other": "is_hezekiah",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The Immanuel sign and the Assyrian siege are joined by a place. Both scenes happen at the conduit of the upper pool."
+        },
+        {
+          "other": "is_comfort",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The comfort of chapter 40 follows straight after the warning about Babylon in chapter 39. That is the hinge of the book."
+        },
+        {
+          "other": "is_servant_suffering",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "The four servant passages are joined by dashed lines. Reading them as one figure is a common and old reading, but Isaiah does not number them or call them a set."
+        }
+      ],
+      "nt": [
+        "Most stops on this path are quoted somewhere in the New Testament, but only some of those New Testament passages are stops on this map. Where a stop is quoted in a text the map does not hold, its Go deeper says where."
+      ],
+      "questions": [
+        "What changes in the tone of the book at chapter 40?",
+        "Which stops are about a king, and which are about a servant?",
+        "How does the last stop answer the first?"
+      ]
+    },
+    "isaiah_nt": {
+      "context": [
+        "This path sets passages from Isaiah beside New Testament writers who use them. There are thirteen stops: Matthew twice, Luke, John, Acts, Peter, and Revelation.",
+        "Six of the seven New Testament stops make their use of Isaiah plain. Matthew says it was to fulfill what was spoken. Jesus says today this Scripture has been fulfilled. John says Isaiah said. Luke tells us which passage the Ethiopian was reading. Peter uses the words of Isaiah 53 with no formula at all, and the source is not in doubt. The last stop is different. Revelation 21 shares Isaiah's wording without citing him, and the map marks that line as an echo.",
+        "Watch the wording as you go. The New Testament writers often quote the Old Testament in a form that differs a little from the ESV of Isaiah. Each stop says where a word moves. The notes state the difference and do not guess at the cause."
+      ],
+      "passages": [
+        {
+          "ref": "Matthew 1:22",
+          "text": "All this took place to fulfill what the Lord had spoken by the prophet:"
+        },
+        {
+          "ref": "Luke 4:21",
+          "text": "And he began to say to them, “Today this Scripture has been fulfilled in your hearing.”"
+        },
+        {
+          "ref": "John 12:41",
+          "text": "Isaiah said these things because he saw his glory and spoke of him."
+        }
+      ],
+      "cross_refs": [
+        "Matthew 1:18-25",
+        "Matthew 4:12-17",
+        "Luke 4:16-21",
+        "John 12:37-41",
+        "Acts 8:26-40",
+        "1 Peter 2:21-25",
+        "Revelation 21:1-5"
+      ],
+      "connections": [
+        {
+          "other": "isn_jn12",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "John quotes two Isaiah passages, chapter 6 and chapter 53, so the path puts him between those two stops."
+        },
+        {
+          "other": "isn_acts8",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Isaiah 53 is used by three New Testament stops in a row: John, Philip in Acts, and Peter."
+        },
+        {
+          "other": "isn_rev21",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The last line is an echo and not a citation. Revelation shares Isaiah's words about a new heaven and a new earth without naming him."
+        }
+      ],
+      "nt": [
+        "The New Testament quotes Isaiah far more often than this path can show. Other well known places are Matthew 3:3 (Isaiah 40:3), Matthew 8:17 (Isaiah 53:4), Matthew 12:17-21 (Isaiah 42:1-4), Acts 13:47 (Isaiah 49:6), and Romans 15:12 (Isaiah 11:10)."
+      ],
+      "questions": [
+        "What phrase marks the quotation at each stop, where there is one?",
+        "Which chapter of Isaiah is used most on this path?",
+        "Where does a word change between Isaiah and the writer quoting him, and does the meaning change with it?"
+      ]
+    },
+    "rev_through": {
+      "context": [
+        "This path follows John's visions in the order he tells them, sixteen stops from the risen Christ on Patmos to the river of life. John wrote to seven churches under pressure, some from persecution and some from comfort and compromise. The book was meant to be read aloud to them, and it promises a blessing to those who hear and keep it (1:3).",
+        "Revelation speaks in pictures. Lampstands are churches, and John tells us so. A Lamb with seven horns and seven eyes is Jesus. Numbers such as seven, twelve, and a thousand carry meaning. Almost all of the pictures come from the Old Testament, which is the best guide to them.",
+        "Interpretation: faithful readers have read the book as a whole in four broad ways. Some see most of it fulfilled in the first century, in the fall of Jerusalem or the troubles of Rome (often called preterist). Some see a map of church history from John's day to the end, as many of the Reformers did (historicist). Some place most of chapters 4 to 22 shortly before Christ returns (futurist). Some see pictures of the conflict between Christ and evil that hold true in every age (idealist). Many Reformed readers combine these. They also differ on whether the visions run in one line or go over the same ground several times. This path keeps John's order and says at each stop where readers part ways."
+      ],
+      "passages": [
+        {
+          "ref": "Revelation 1:3",
+          "text": "Blessed is the one who reads aloud the words of this prophecy, and blessed are those who hear, and who keep what is written in it, for the time is near."
+        },
+        {
+          "ref": "Revelation 5:12",
+          "text": "Worthy is the Lamb who was slain, to receive power and wealth and wisdom and might and honor and glory and blessing!"
+        },
+        {
+          "ref": "Revelation 22:20",
+          "text": "He who testifies to these things says, “Surely I am coming soon.” Amen. Come, Lord Jesus!"
+        }
+      ],
+      "cross_refs": [
+        "Revelation 1:1-8",
+        "Revelation 4:1 to 5:14",
+        "Revelation 12:1-17",
+        "Revelation 19:1 to 22:21"
+      ],
+      "connections": [
+        {
+          "other": "rv_lamb",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Chapters 4 and 5 are the center the rest of the book is seen from. Everything that follows comes out of the scroll the Lamb opens."
+        },
+        {
+          "other": "rv_dragon",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "No line joins the seventh trumpet to the woman and the dragon. Chapter 11 reaches the last judgment, and chapter 12 goes back to the birth of Christ. Many readers think the book starts over here."
+        },
+        {
+          "other": "rv_millennium",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "The line into the thousand years is dashed. Whether chapter 20 follows chapter 19 in time is the point on which the three views differ."
+        }
+      ],
+      "nt": [
+        "Whatever view a reader takes of the details, the message of the book to the churches is plain, and it was plain to its first hearers. Jesus has died and is alive. He knows his churches. The powers that oppose him are real, and they lose. So hold fast, worship God alone, and wait for him."
+      ],
+      "questions": [
+        "What does John see first, before any vision of trouble?",
+        "Which stops on this path show worship in heaven?",
+        "How does the last stop answer the garden at the start of the Bible?"
+      ]
+    },
+    "rev_ot": {
+      "context": [
+        "This path sets visions from Revelation beside the Old Testament passages they draw on. There are sixteen stops. An Old Testament root comes first each time, followed by the vision or visions that use it.",
+        "Revelation never quotes the Old Testament with a phrase such as it is written. It does something different. It is soaked in Old Testament wording, and John expects his hearers to notice. So the lines on this path are mostly echoes: the same phrase or the same picture in both places. Each stop says exactly what is shared and what is different.",
+        "Two lines are dashed. Reading the Lamb of chapter 5 against the Passover, and reading the dragon's war of chapter 12 as the outworking of Genesis 3:15, are both common Reformed readings with good support elsewhere in the New Testament. But Revelation does not state either link in so many words, so the map marks them as interpretation."
+      ],
+      "passages": [
+        {
+          "ref": "Daniel 7:13",
+          "text": "I saw in the night visions, and behold, with the clouds of heaven there came one like a son of man, and he came to the Ancient of Days and was presented before him."
+        },
+        {
+          "ref": "Revelation 1:7",
+          "text": "Behold, he is coming with the clouds, and every eye will see him, even those who pierced him, and all tribes of the earth will wail on account of him. Even so. Amen."
+        },
+        {
+          "ref": "Revelation 22:2",
+          "text": "The leaves of the tree were for the healing of the nations."
+        }
+      ],
+      "cross_refs": [
+        "Daniel 7:1-28",
+        "Ezekiel 1:1-28",
+        "Exodus 12:1-28",
+        "Zechariah 4:1-14",
+        "Genesis 3:15",
+        "Isaiah 65:17-19",
+        "Ezekiel 47:1-12"
+      ],
+      "connections": [
+        {
+          "other": "rv_christ",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "Daniel 7 stands first because it reaches three stops: the son of man in chapter 1, the beast from the sea in chapter 13, and the opened books in chapter 20."
+        },
+        {
+          "other": "rv_lamb",
+          "direction": "to",
+          "confidence": "explicit",
+          "text": "The Lamb stands between two roots. The Passover is before him on the path, and Zechariah's seven eyes are after him."
+        },
+        {
+          "other": "rv_dragon",
+          "direction": "to",
+          "confidence": "typology",
+          "text": "The line from Genesis 3:15 to the dragon is dashed. John names the dragon as the ancient serpent. He does not quote the promise."
+        }
+      ],
+      "nt": [
+        "The path shows how the Bible holds together. The serpent of the first book is thrown down in the last. The Lamb who was slain is on the throne, and Paul calls Christ our Passover lamb. The river Ezekiel saw and the new earth Isaiah heard promised are where the story ends."
+      ],
+      "questions": [
+        "Which Old Testament book is used most on this path?",
+        "At each pair of stops, what wording is shared, and what is different?",
+        "Why are two of the lines dashed?"
       ]
     }
   }

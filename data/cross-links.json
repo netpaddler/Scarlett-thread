@@ -1,0 +1,325 @@
+{
+  "meta": {
+    "title": "Scarlet Thread: lines between the books",
+    "version": "0.1",
+    "translation": "ESV",
+    "notes": [
+      "Each link joins a stop in one book to a stop in another. from is the earlier text and to is the later one. Both ids must already exist in the graph files. Nothing here adds or changes a stop.",
+      "type is one of quotation, fulfillment, allusion, typology, same_passage.",
+      "quotation: the later writer quotes the earlier words and says so. fulfillment: the New Testament states that the earlier word came true. allusion: shared wording with no citation formula. The note gives the wording on both sides.",
+      "typology is interpretive. It is drawn dashed, the note says what Scripture does and does not state, and it is hidden by the same switch that hides the other interpretive lines.",
+      "same_passage: two books each have a stop on the same passage. It is not a claim about fulfillment.",
+      "Quotes are short ESV excerpts. Write ranges with the word to, never with a dash.",
+      "threads are guided paths across the books. They use existing stops only. Where two neighbouring stops have no line between them, the walk shows a dotted join."
+    ]
+  },
+  "types": {
+    "quotation": {
+      "label": "Quoted",
+      "gloss": "The later writer quotes the earlier words and says so."
+    },
+    "fulfillment": {
+      "label": "Fulfilled",
+      "gloss": "The New Testament says the earlier word came true."
+    },
+    "allusion": {
+      "label": "Echoed",
+      "gloss": "The later passage uses the earlier wording without saying it is quoting."
+    },
+    "typology": {
+      "label": "Interpretive picture",
+      "gloss": "An interpretive link. Christians who trust the Bible do not all see it the same way."
+    },
+    "same_passage": {
+      "label": "Same passage",
+      "gloss": "Both books have a stop on this passage."
+    }
+  },
+  "overview": {
+    "eyebrow": "All books",
+    "intro_title": "One story, from the first promise in Genesis to the last page of Revelation.",
+    "intro_text": "Open the map to see every book at once, with the lines that tie them together. Or pick a thread and walk it across the books, one stop at a time.",
+    "path_word": "thread",
+    "subtitle": "the books tied together",
+    "picker_label": "Threads across the books",
+    "graph_label": "Map of all the books, each in its own box, with the lines that join one book to another",
+    "tabs": { "walk_long": "Walk a thread", "walk_short": "Walk" },
+    "path_line_default": "Each thread follows one theme across the books to Jesus.",
+    "key_note": "A thread gathers stops from different books. Where two stops beside each other have no direct line, the join is dotted. Open a stop to see the lines it does have.",
+    "edge_labels": { "book_sequence": "Next in the book" }
+  },
+  "links": [
+    {
+      "id": "x_seed_same",
+      "from": "promise_seed",
+      "to": "rvo_seed",
+      "type": "same_passage",
+      "refs": ["Genesis 3:15"],
+      "note": "Both books have a stop on the first promise, that the woman's offspring will bruise the serpent's head. Advent follows it to the birth of Jesus. Revelation sets it beside the dragon of chapter 12."
+    },
+    {
+      "id": "x_abraham_acts3",
+      "from": "promise_abraham",
+      "to": "nt_acts3",
+      "type": "quotation",
+      "refs": ["Genesis 22:18", "Acts 3:25"],
+      "note": "In the same sermon where Peter quotes Moses about the prophet, he also quotes God's promise to Abraham: \"And in your offspring shall all the families of the earth be blessed.\" Peter says \"families\" where Genesis 22:18 says \"nations\". Genesis 12:3 has \"families\"."
+    },
+    {
+      "id": "x_abraham_gal3",
+      "from": "promise_abraham",
+      "to": "nt_gal3",
+      "type": "fulfillment",
+      "refs": ["Genesis 22:18", "Galatians 3:14", "Galatians 3:16"],
+      "note": "Paul says Christ became a curse for us \"so that in Christ Jesus the blessing of Abraham might come to the Gentiles\" (Galatians 3:14). Two verses later he says the offspring promised to Abraham is Christ (Galatians 3:16)."
+    },
+    {
+      "id": "x_judah_lion",
+      "from": "promise_judah",
+      "to": "rv_lamb",
+      "type": "allusion",
+      "refs": ["Genesis 49:9-10", "Revelation 5:5"],
+      "note": "Jacob calls Judah \"a lion's cub\" and says the scepter will not depart from him. In heaven an elder tells John, \"behold, the Lion of the tribe of Judah, the Root of David, has conquered\". Revelation does not quote Genesis, but the name comes from Jacob's blessing."
+    },
+    {
+      "id": "x_david_child",
+      "from": "covenant_david",
+      "to": "is_child",
+      "type": "allusion",
+      "refs": ["2 Samuel 7:12-13", "2 Samuel 7:16", "Isaiah 9:7"],
+      "note": "God promised David, \"Your throne shall be established forever.\" More than two and a half centuries later Isaiah says the child who is born will reign \"on the throne of David and over his kingdom\", with no end. Isaiah names David's throne. He does not quote 2 Samuel."
+    },
+    {
+      "id": "x_david_root",
+      "from": "covenant_david",
+      "to": "rv_river",
+      "type": "allusion",
+      "refs": ["2 Samuel 7:12-13", "Revelation 22:16"],
+      "note": "God promised David a son whose kingdom would last forever. On the last page of the Bible Jesus says, \"I am the root and the descendant of David, the bright morning star.\" He names himself as David's descendant. Revelation does not quote 2 Samuel, but the title points back to the line God promised David."
+    },
+    {
+      "id": "x_isaiah_call_same",
+      "from": "isaiah",
+      "to": "is_call",
+      "type": "same_passage",
+      "refs": ["Isaiah 6:1-13"],
+      "note": "The Advent stop on Isaiah the prophet includes his call in chapter 6. The Isaiah book has that vision as a stop of its own."
+    },
+    {
+      "id": "x_immanuel_same",
+      "from": "prophecy_immanuel",
+      "to": "is_immanuel",
+      "type": "same_passage",
+      "refs": ["Isaiah 7:14"],
+      "note": "Both books have a stop on the sign of Immanuel. Advent follows the verse to the birth of Jesus. The Isaiah book reads it where it sits, in the days of King Ahaz."
+    },
+    {
+      "id": "x_immanuel_birth",
+      "from": "is_immanuel",
+      "to": "jesus_birth",
+      "type": "fulfillment",
+      "refs": ["Isaiah 7:14", "Matthew 1:22-23"],
+      "note": "Isaiah said, \"Behold, the virgin shall conceive and bear a son, and shall call his name Immanuel.\" Matthew tells of the birth of Jesus and then says, \"All this took place to fulfill what the Lord had spoken by the prophet\", and quotes the verse. Matthew has \"they shall call\" where Isaiah has \"shall call\"."
+    },
+    {
+      "id": "x_child_same",
+      "from": "prophecy_child",
+      "to": "is_child",
+      "type": "same_passage",
+      "refs": ["Isaiah 9:1-7"],
+      "note": "Both books have a stop on the child who is born to sit on David's throne."
+    },
+    {
+      "id": "x_child_gabriel",
+      "from": "is_child",
+      "to": "annunciation",
+      "type": "allusion",
+      "refs": ["Isaiah 9:7", "Luke 1:32-33"],
+      "note": "Isaiah says of the child, \"Of the increase of his government and of peace there will be no end, on the throne of David and over his kingdom\". Gabriel tells Mary that God will give her son \"the throne of his father David\" and that \"of his kingdom there will be no end\". Gabriel does not name Isaiah, but the words are close."
+    },
+    {
+      "id": "x_shoot_same",
+      "from": "jesse_root",
+      "to": "is_shoot",
+      "type": "same_passage",
+      "refs": ["Isaiah 11:1", "Isaiah 11:10"],
+      "note": "Both books have a stop on the shoot from the stump of Jesse. Jesse was David's father."
+    },
+    {
+      "id": "x_shoot_root",
+      "from": "is_shoot",
+      "to": "rv_lamb",
+      "type": "allusion",
+      "refs": ["Isaiah 11:1", "Isaiah 11:10", "Revelation 5:5"],
+      "note": "Isaiah promises a king from Jesse's family and calls him \"the root of Jesse\". In Revelation 5:5 the one who can open the scroll is called \"the Root of David\". John sees him as a Lamb who was slain. Revelation does not quote Isaiah here, but the title is Isaiah's."
+    },
+    {
+      "id": "x_shoot_rider",
+      "from": "is_shoot",
+      "to": "rv_return",
+      "type": "allusion",
+      "refs": ["Isaiah 11:4", "Revelation 19:11", "Revelation 19:15"],
+      "note": "Isaiah says the king from Jesse's line will judge \"with righteousness\", \"and he shall strike the earth with the rod of his mouth\". John sees a rider who \"in righteousness\" judges, and \"From his mouth comes a sharp sword with which to strike down the nations\". The wording is shared. John does not say he is quoting. Readers differ on when and how the vision of the rider is fulfilled, and the Revelation stop explains the views."
+    },
+    {
+      "id": "x_call_throne",
+      "from": "is_call",
+      "to": "rv_throne",
+      "type": "allusion",
+      "refs": ["Isaiah 6:2-3", "Revelation 4:8"],
+      "note": "Isaiah sees seraphim with six wings calling, \"Holy, holy, holy is the LORD of hosts; the whole earth is full of his glory!\" John sees four living creatures with six wings who never stop saying, \"Holy, holy, holy, is the Lord God Almighty, who was and is and is to come!\" The two songs are very close. John does not name Isaiah."
+    },
+    {
+      "id": "x_babylon_fallen",
+      "from": "is_babylon",
+      "to": "rv_babylon",
+      "type": "allusion",
+      "refs": ["Isaiah 21:9", "Revelation 18:2"],
+      "note": "A watchman in Isaiah cries, \"Fallen, fallen is Babylon\". An angel in Revelation cries, \"Fallen, fallen is Babylon the great!\" The cry is the same. Isaiah spoke of the city on the Euphrates. Readers differ on what Babylon stands for in Revelation, and the Revelation stop explains the views."
+    },
+    {
+      "id": "x_comfort_recompense",
+      "from": "is_comfort",
+      "to": "rv_river",
+      "type": "allusion",
+      "refs": ["Isaiah 40:10", "Revelation 22:12"],
+      "note": "Isaiah says the Lord GOD comes with might: \"behold, his reward is with him, and his recompense before him\". At the end of Revelation Jesus says, \"Behold, I am coming soon, bringing my recompense with me\". Jesus speaks of his own coming in words Isaiah used of the coming of the LORD."
+    },
+    {
+      "id": "x_servant_prophet",
+      "from": "dt_prophet",
+      "to": "is_servant_chosen",
+      "type": "typology",
+      "refs": ["Deuteronomy 18:15", "Isaiah 42:1-4", "Acts 3:22", "Matthew 12:17-21"],
+      "note": "Moses promised a prophet like himself and said, \"it is to him you shall listen\". Isaiah's servant also brings God's word. God says, \"Behold my servant, whom I uphold, my chosen, in whom my soul delights; I have put my Spirit upon him\", and the coastlands wait for his law. Neither passage mentions the other. The New Testament applies both to Jesus: Peter quotes Deuteronomy 18 about him (Acts 3:22), and Matthew quotes Isaiah 42 about him (Matthew 12:17-21). Reading the prophet and the servant as one person is an interpretation, and this line is marked that way."
+    },
+    {
+      "id": "x_servant_sword",
+      "from": "is_servant_light",
+      "to": "rv_christ",
+      "type": "allusion",
+      "refs": ["Isaiah 49:2", "Revelation 1:16"],
+      "note": "The servant in Isaiah says of the LORD, \"He made my mouth like a sharp sword\". When John sees the risen Christ, \"from his mouth came a sharp two-edged sword\". The picture is shared. John does not say he is quoting."
+    },
+    {
+      "id": "x_servant_glorified",
+      "from": "is_servant_suffering",
+      "to": "nt_acts3",
+      "type": "allusion",
+      "refs": ["Isaiah 52:13", "Acts 3:13", "Acts 3:26"],
+      "note": "The song of the suffering servant opens, \"Behold, my servant shall act wisely; he shall be high and lifted up, and shall be exalted.\" In the temple Peter says that God \"glorified his servant Jesus\", and ends, \"God, having raised up his servant, sent him to you first\". In that same sermon he quotes Moses about the prophet. Peter does not name Isaiah here, so this is an echo and not a quotation."
+    },
+    {
+      "id": "x_servant_report",
+      "from": "is_servant_suffering",
+      "to": "nt_rom10",
+      "type": "quotation",
+      "refs": ["Isaiah 53:1", "Romans 10:16"],
+      "note": "Paul names the prophet and quotes him: \"For Isaiah says, 'Lord, who has believed what he has heard from us?'\" He is explaining why not everyone who heard the gospel believed it. Paul's quotation begins with \"Lord\", which the ESV of Isaiah 53:1 does not have."
+    },
+    {
+      "id": "x_servant_lamb",
+      "from": "is_servant_suffering",
+      "to": "rv_lamb",
+      "type": "typology",
+      "refs": ["Isaiah 53:7", "Revelation 5:6", "Revelation 5:9", "Acts 8:32-35"],
+      "note": "Isaiah says the servant was \"like a lamb that is led to the slaughter\". John sees \"a Lamb standing, as though it had been slain\", and heaven sings, \"for you were slain, and by your blood you ransomed people for God\". Revelation 5 does not quote Isaiah 53. Philip, starting from Isaiah 53:7, told the Ethiopian the good news about Jesus (Acts 8:32-35), so Scripture itself reads the servant as Jesus. Joining that verse to John's vision of the Lamb is an interpretation, and this line is marked that way."
+    },
+    {
+      "id": "x_thirst_water",
+      "from": "is_invitation",
+      "to": "rv_river",
+      "type": "allusion",
+      "refs": ["Isaiah 55:1", "Revelation 22:17"],
+      "note": "Isaiah calls, \"Come, everyone who thirsts, come to the waters; and he who has no money, come, buy and eat! Come, buy wine and milk without money and without price.\" The Bible's last invitation says, \"And let the one who is thirsty come; let the one who desires take the water of life without price.\" The offer and its words are the same: come, thirsty, without price."
+    },
+    {
+      "id": "x_new_creation",
+      "from": "is_new_creation",
+      "to": "rv_new_creation",
+      "type": "allusion",
+      "refs": ["Isaiah 65:17", "Revelation 21:1"],
+      "note": "God says through Isaiah, \"For behold, I create new heavens and a new earth\". John writes, \"Then I saw a new heaven and a new earth\". Isaiah heard the promise. John is shown the thing itself. John does not use a citation formula, so this is an echo."
+    },
+    {
+      "id": "x_isaiah65_same",
+      "from": "is_new_creation",
+      "to": "rvo_isaiah65",
+      "type": "same_passage",
+      "refs": ["Isaiah 65:17-19"],
+      "note": "The Revelation book has a stop on Isaiah 65 as one of the Old Testament roots of John's vision. The Isaiah book has the same promise as its last stop."
+    },
+    {
+      "id": "x_rev21_same",
+      "from": "isn_rev21",
+      "to": "rv_new_creation",
+      "type": "same_passage",
+      "refs": ["Revelation 21:1-5"],
+      "note": "The Isaiah book ends its New Testament path at John's vision of the new heaven and new earth. The Revelation book has that vision as a stop of its own."
+    },
+    {
+      "id": "x_mt1_same",
+      "from": "jesus_birth",
+      "to": "isn_mt1",
+      "type": "same_passage",
+      "refs": ["Matthew 1:18-25"],
+      "note": "Matthew's account of the birth of Jesus is a stop in both books. Advent reads it as the place the promises arrive. The Isaiah book reads it as the place Matthew quotes Isaiah 7:14."
+    },
+    {
+      "id": "x_manna_bread",
+      "from": "dt_wilderness_test",
+      "to": "bread_of_life",
+      "type": "typology",
+      "refs": ["Deuteronomy 8:3", "John 6:31-35", "John 6:49-51"],
+      "note": "Moses reminds Israel that God humbled them, let them hunger, \"and fed you with manna\", to teach them that man lives by every word that comes from the mouth of the LORD. In John 6 the crowd brings up the manna. Jesus answers, \"my Father gives you the true bread from heaven\", and then says, \"I am the bread of life\". Jesus himself sets the manna beside himself. John 6 does not quote Deuteronomy 8, so this line is marked as interpretive."
+    },
+    {
+      "id": "x_hanged_tree",
+      "from": "dt_hanged",
+      "to": "isn_1pet2",
+      "type": "allusion",
+      "refs": ["Deuteronomy 21:22-23", "1 Peter 2:24", "Acts 5:30", "Galatians 3:13"],
+      "note": "The law says, \"for a hanged man is cursed by God\", and speaks of hanging him on a tree. Peter writes of Jesus, \"He himself bore our sins in his body on the tree\", and in Acts he tells the council they killed Jesus \"by hanging him on a tree\" (Acts 5:30). Peter calls the cross a tree and does not quote Deuteronomy. Paul does quote it, in Galatians 3:13, which is a stop on the Deuteronomy map."
+    },
+    {
+      "id": "x_birth_child",
+      "from": "jesus_birth",
+      "to": "rv_dragon",
+      "type": "typology",
+      "refs": ["Luke 2:7", "Revelation 12:5", "Revelation 19:15"],
+      "note": "John sees a woman in heaven: \"She gave birth to a male child, one who is to rule all the nations with a rod of iron\". Revelation 19:15 says the same of the rider called The Word of God, so most readers take the child to be Jesus. The vision is a picture and not a retelling of the night in Bethlehem. It moves straight from the birth to the child being caught up to God's throne. Readers also differ on who the woman is. This line is marked as interpretive."
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread_first_last",
+      "title": "First promise to last page",
+      "line": "Start in the garden and end in the city: the promise, the birth, the dragon defeated, and all things made new.",
+      "nodes": ["promise_seed", "promise_abraham", "is_immanuel", "jesus_birth", "rv_dragon", "rv_new_creation", "rv_river"]
+    },
+    {
+      "id": "thread_lamb",
+      "title": "The Lamb",
+      "line": "Follow the lamb from the Passover in Egypt, through Isaiah's servant and the cross, to the throne in heaven.",
+      "nodes": ["rvo_passover", "is_servant_suffering", "isn_acts8", "isn_1pet2", "rv_lamb", "rv_supper"]
+    },
+    {
+      "id": "thread_king",
+      "title": "The King",
+      "line": "Follow the promised king from Judah's scepter and David's throne to the King of kings.",
+      "nodes": ["promise_judah", "covenant_david", "is_child", "is_shoot", "annunciation", "rv_lamb", "rv_return"]
+    },
+    {
+      "id": "thread_prophet_servant",
+      "title": "The Prophet and the Servant",
+      "line": "Moses promised a prophet. Isaiah saw a servant. Peter preaches Jesus as both.",
+      "nodes": ["dt_prophet", "is_servant_chosen", "is_servant_light", "is_servant_obedient", "is_servant_suffering", "nt_acts3"]
+    },
+    {
+      "id": "thread_curse_tree",
+      "title": "The Curse and the Tree",
+      "line": "The law puts a curse on the one hanged on a tree. Christ bore that curse on the cross, and the Bible ends with nothing accursed.",
+      "nodes": ["dt_hanged", "dt_curses", "nt_gal3", "isn_1pet2", "rv_river"]
+    }
+  ]
+}

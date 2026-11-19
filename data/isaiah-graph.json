@@ -1,0 +1,642 @@
+{
+  "meta": {
+    "title": "Scarlet Thread: Isaiah",
+    "version": "0.1",
+    "translation": "ESV",
+    "notes": "confidence 'explicit' = a direct textual or narrative connection; read the cited passages and note for the exact claim. 'typology' = interpretive; faithful readers differ. Quotes are short ESV excerpts. Where a New Testament writer's wording differs from the ESV of Isaiah, the note gives both wordings and does not say which Greek text the writer used. An 'ot_echo' edge marks shared wording with no citation formula. The Advent map already holds four Isaiah stops (isaiah, prophecy_immanuel, prophecy_child, jesse_root). They are unchanged, and the matching stops here point to them with see_also.",
+    "eyebrow": "Isaiah",
+    "intro_title": "Isaiah saw the King, the suffering servant, and a new creation. The apostles say he spoke of Jesus.",
+    "intro_text": "Pick a path and move one stop at a time. Or open the map and follow the lines.",
+    "path_word": "path",
+    "subtitle": "a walk through Isaiah",
+    "picker_label": "Isaiah paths",
+    "graph_label": "Isaiah map of texts in the book and the New Testament passages that quote them",
+    "tabs": {
+      "walk_long": "Walk a path",
+      "walk_short": "Walk"
+    },
+    "path_line_default": "Each path follows one thread to Jesus.",
+    "key_note": "A stop's line often runs to the New Testament text that quotes it, not to the stop beside it. That is why parts of a path are dotted. Open a stop to see the lines it does have.",
+    "edge_labels": {
+      "book_sequence": "Next in Isaiah"
+    }
+  },
+  "paths": [
+    {
+      "id": "isaiah_through",
+      "title": "Through the book",
+      "nodes": [
+        "is_opening",
+        "is_call",
+        "is_immanuel",
+        "is_child",
+        "is_shoot",
+        "is_babylon",
+        "is_hezekiah",
+        "is_comfort",
+        "is_servant_chosen",
+        "is_cyrus",
+        "is_servant_light",
+        "is_servant_obedient",
+        "is_servant_suffering",
+        "is_invitation",
+        "is_anointed",
+        "is_new_creation"
+      ]
+    },
+    {
+      "id": "isaiah_nt",
+      "title": "Isaiah in the New Testament",
+      "nodes": [
+        "is_immanuel",
+        "isn_mt1",
+        "is_child",
+        "isn_mt4",
+        "is_anointed",
+        "isn_lk4",
+        "is_call",
+        "isn_jn12",
+        "is_servant_suffering",
+        "isn_acts8",
+        "isn_1pet2",
+        "is_new_creation",
+        "isn_rev21"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "is_opening",
+      "label": "The Vision of Isaiah",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 1:1-20"
+      ],
+      "quote": {
+        "ref": "Isaiah 1:18",
+        "text": "Come now, let us reason together, says the LORD: though your sins are like scarlet, they shall be as white as snow; though they are red like crimson, they shall become like wool."
+      },
+      "summary": "The book opens by naming the prophet and the four kings of Judah he served under. Then God brings a charge against his own people. They keep up their worship, but they do not do what is right. Even so, he invites them to come back, and he offers to make scarlet sins white.",
+      "see_also": [
+        {
+          "id": "isaiah",
+          "text": "The Advent map has a stop for Isaiah himself."
+        }
+      ]
+    },
+    {
+      "id": "is_call",
+      "label": "Isaiah Sees the Lord",
+      "type": "event",
+      "refs": [
+        "Isaiah 6:1-13"
+      ],
+      "quote": {
+        "ref": "Isaiah 6:3",
+        "text": "Holy, holy, holy is the LORD of hosts; the whole earth is full of his glory!"
+      },
+      "summary": "In the year King Uzziah died, Isaiah saw the Lord sitting on a throne, high and lifted up. He knew at once that he was unclean. A burning coal touched his lips, his guilt was taken away, and he was sent to speak to a people who would not listen.",
+      "see_also": [
+        {
+          "id": "isaiah",
+          "text": "The Advent map has a stop for Isaiah himself."
+        },
+        {
+          "id": "rv_throne",
+          "text": "In Revelation, John hears a song very like this one around the throne."
+        }
+      ]
+    },
+    {
+      "id": "is_immanuel",
+      "label": "The Sign of Immanuel",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 7:1-17"
+      ],
+      "quote": {
+        "ref": "Isaiah 7:14",
+        "text": "Behold, the virgin shall conceive and bear a son, and shall call his name Immanuel."
+      },
+      "summary": "Two kings are marching on Jerusalem, and King Ahaz is afraid. Isaiah tells him to ask God for a sign. Ahaz refuses, and God gives one anyway: a virgin will bear a son and call him Immanuel. Matthew says this was fulfilled when Jesus was born, and he explains that the name means God with us.",
+      "see_also": [
+        {
+          "id": "prophecy_immanuel",
+          "text": "The Advent map follows this verse to the birth of Jesus."
+        }
+      ]
+    },
+    {
+      "id": "is_child",
+      "label": "A Child Is Born",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 9:1-7"
+      ],
+      "quote": {
+        "ref": "Isaiah 9:6",
+        "text": "For to us a child is born, to us a son is given; and the government shall be upon his shoulder, and his name shall be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace."
+      },
+      "summary": "Isaiah says a great light will shine on Galilee, a land in darkness. Then he gives the reason: a child is born who will sit on David's throne and rule in peace without end. Matthew quotes the opening lines about the light when Jesus begins to preach in Galilee.",
+      "see_also": [
+        {
+          "id": "prophecy_child",
+          "text": "The Advent map has this passage as a stop in Week 3."
+        }
+      ]
+    },
+    {
+      "id": "is_shoot",
+      "label": "A Shoot from Jesse's Stump",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 11:1-10"
+      ],
+      "quote": {
+        "ref": "Isaiah 11:1",
+        "text": "There shall come forth a shoot from the stump of Jesse, and a branch from his roots shall bear fruit."
+      },
+      "summary": "Isaiah pictures David's royal family as a tree cut down to a stump. A new shoot will grow from it. The Spirit of the LORD will rest on this king, he will judge the poor with righteousness, and the nations will seek him. Jesse was David's father. Paul quotes verse 10 about Jesus in Romans 15:12.",
+      "see_also": [
+        {
+          "id": "jesse_root",
+          "text": "The Advent map has this passage as a stop in Week 2."
+        }
+      ]
+    },
+    {
+      "id": "is_babylon",
+      "label": "The Fall of Babylon",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 13:1-22",
+        "Isaiah 14:3-23",
+        "Isaiah 21:9"
+      ],
+      "quote": {
+        "ref": "Isaiah 14:4",
+        "text": "How the oppressor has ceased, the insolent fury ceased!"
+      },
+      "summary": "Isaiah announces that proud Babylon will be overthrown, and he gives God's people a taunt to sing over its king. In Isaiah's own day Assyria was the great power, and Babylon's empire was still to come. Revelation later uses the name Babylon, and the cry that it has fallen, for the proud city that fights against God.",
+      "see_also": [
+        {
+          "id": "rv_babylon",
+          "text": "Revelation takes up the cry that Babylon has fallen."
+        }
+      ]
+    },
+    {
+      "id": "is_hezekiah",
+      "label": "Hezekiah and Sennacherib",
+      "type": "event",
+      "refs": [
+        "Isaiah 36:1-22",
+        "Isaiah 37:1-38"
+      ],
+      "quote": {
+        "ref": "Isaiah 37:20",
+        "text": "So now, O LORD our God, save us from his hand, that all the kingdoms of the earth may know that you alone are the LORD."
+      },
+      "summary": "The Assyrian king Sennacherib takes the towns of Judah and sends his officer to mock the God of Jerusalem. King Hezekiah spreads the threatening letter before the LORD and prays. Isaiah sends God's answer, and the angel of the LORD strikes the Assyrian camp. Sennacherib goes home."
+    },
+    {
+      "id": "is_comfort",
+      "label": "Comfort, Comfort My People",
+      "type": "promise",
+      "refs": [
+        "Isaiah 40:1-11"
+      ],
+      "quote": {
+        "ref": "Isaiah 40:1",
+        "text": "Comfort, comfort my people, says your God."
+      },
+      "summary": "The book turns from warning to comfort. God says to speak tenderly to Jerusalem and to tell her that her sin is pardoned. A voice calls for a road to be made ready for the LORD himself. All four Gospels apply that voice to John the Baptist."
+    },
+    {
+      "id": "is_servant_chosen",
+      "label": "The Servant God Upholds",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 42:1-9"
+      ],
+      "quote": {
+        "ref": "Isaiah 42:1",
+        "text": "Behold my servant, whom I uphold, my chosen, in whom my soul delights; I have put my Spirit upon him; he will bring forth justice to the nations."
+      },
+      "summary": "God introduces someone he calls my servant. God's Spirit is on him. He is gentle, he will not break a bruised reed, and he will bring justice to the nations. This is the first of four passages often called the Servant Songs. Matthew quotes it about Jesus in Matthew 12:17-21."
+    },
+    {
+      "id": "is_cyrus",
+      "label": "Cyrus, the LORD's Shepherd",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 44:24-28",
+        "Isaiah 45:1-7"
+      ],
+      "quote": {
+        "ref": "Isaiah 44:28",
+        "text": "who says of Cyrus, ‘He is my shepherd, and he shall fulfill all my purpose’"
+      },
+      "summary": "God names a foreign king, Cyrus, and calls him his shepherd and his anointed. Cyrus will order Jerusalem and the temple rebuilt, though he does not know the LORD. Cyrus of Persia took Babylon in 539 BC and sent the exiles home. God rules the kings of the earth, even the ones who do not know him."
+    },
+    {
+      "id": "is_servant_light",
+      "label": "A Light for the Nations",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 49:1-7"
+      ],
+      "quote": {
+        "ref": "Isaiah 49:6",
+        "text": "I will make you as a light for the nations, that my salvation may reach to the end of the earth."
+      },
+      "summary": "Now the servant speaks for himself. The LORD called him from the womb. His work looks wasted, yet God tells him that restoring Israel is too small a task. He will be a light for the nations. Paul and Barnabas quote this verse in Acts 13:47."
+    },
+    {
+      "id": "is_servant_obedient",
+      "label": "The Servant Who Listens",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 50:4-9"
+      ],
+      "quote": {
+        "ref": "Isaiah 50:6",
+        "text": "I gave my back to those who strike, and my cheeks to those who pull out the beard; I hid not my face from disgrace and spitting."
+      },
+      "summary": "The servant speaks again. Morning by morning God wakens his ear, and he does not turn back. He gives his back to those who strike him. He sets his face like a flint, sure that God will help him. The New Testament does not quote these verses. The Gospels do record that Jesus was struck and spat on (Matthew 26:67)."
+    },
+    {
+      "id": "is_servant_suffering",
+      "label": "The Suffering Servant",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 52:13-15",
+        "Isaiah 53:1-12"
+      ],
+      "quote": {
+        "ref": "Isaiah 53:5",
+        "text": "But he was pierced for our transgressions; he was crushed for our iniquities; upon him was the chastisement that brought us peace, and with his wounds we are healed."
+      },
+      "summary": "The servant is despised and rejected. He is pierced for the sins of others, goes silently to his death like a lamb, and is buried. Then he sees his offspring and makes many to be counted righteous. The New Testament quotes this chapter again and again when it explains the death of Jesus."
+    },
+    {
+      "id": "is_invitation",
+      "label": "Come, Everyone Who Thirsts",
+      "type": "promise",
+      "refs": [
+        "Isaiah 55:1-13"
+      ],
+      "quote": {
+        "ref": "Isaiah 55:1",
+        "text": "Come, everyone who thirsts, come to the waters; and he who has no money, come, buy and eat! Come, buy wine and milk without money and without price."
+      },
+      "summary": "God invites the thirsty and the poor to come and eat without paying. He promises an everlasting covenant, tied to his sure love for David. He calls the wicked to return, because he will abundantly pardon. His word will not return to him empty. Paul quotes verse 3 in Acts 13:34."
+    },
+    {
+      "id": "is_anointed",
+      "label": "The Spirit of the Lord Is upon Me",
+      "type": "prophecy",
+      "refs": [
+        "Isaiah 61:1-3"
+      ],
+      "quote": {
+        "ref": "Isaiah 61:1",
+        "text": "The Spirit of the Lord GOD is upon me, because the LORD has anointed me to bring good news to the poor"
+      },
+      "summary": "A speaker says the Spirit of the Lord GOD is on him. He is anointed to bring good news to the poor, to bind up the brokenhearted, and to proclaim liberty to the captives and the year of the LORD's favor. Jesus read these lines aloud in the synagogue at Nazareth and said they were fulfilled that day."
+    },
+    {
+      "id": "is_new_creation",
+      "label": "New Heavens and a New Earth",
+      "type": "promise",
+      "refs": [
+        "Isaiah 65:17-25",
+        "Isaiah 66:22-24"
+      ],
+      "quote": {
+        "ref": "Isaiah 65:17",
+        "text": "For behold, I create new heavens and a new earth, and the former things shall not be remembered or come into mind."
+      },
+      "summary": "Near the end of the book God promises to create new heavens and a new earth. Weeping will stop, and the wolf and the lamb will graze together. The last chapter adds that all flesh will come to worship, and it warns of judgment on those who rebel. Peter and John both take up the promise (2 Peter 3:13, Revelation 21:1).",
+      "see_also": [
+        {
+          "id": "rv_new_creation",
+          "text": "The Revelation map has John's vision of the new heaven and new earth."
+        }
+      ]
+    },
+    {
+      "id": "isn_mt1",
+      "label": "Matthew: God with Us",
+      "type": "event",
+      "refs": [
+        "Matthew 1:18-25"
+      ],
+      "quote": {
+        "ref": "Matthew 1:23",
+        "text": "“Behold, the virgin shall conceive and bear a son, and they shall call his name Immanuel” (which means, God with us)."
+      },
+      "summary": "Matthew tells how Jesus was conceived by the Holy Spirit and born of the virgin Mary. Then he stops to say that all this took place to fulfill what the Lord had spoken by the prophet, and he quotes Isaiah 7:14.",
+      "see_also": [
+        {
+          "id": "jesus_birth",
+          "text": "The Advent map has the birth of Jesus as its last stop."
+        }
+      ]
+    },
+    {
+      "id": "isn_mt4",
+      "label": "Matthew: A Light in Galilee",
+      "type": "event",
+      "refs": [
+        "Matthew 4:12-17"
+      ],
+      "quote": {
+        "ref": "Matthew 4:16",
+        "text": "the people dwelling in darkness have seen a great light, and for those dwelling in the region and shadow of death, on them a light has dawned."
+      },
+      "summary": "Jesus leaves Nazareth and lives in Capernaum by the sea, in the old lands of Zebulun and Naphtali. Matthew says this fulfilled what was spoken by the prophet Isaiah, and he quotes the light dawning on Galilee from Isaiah 9:1-2."
+    },
+    {
+      "id": "isn_lk4",
+      "label": "Jesus Reads Isaiah in Nazareth",
+      "type": "event",
+      "refs": [
+        "Luke 4:16-21"
+      ],
+      "quote": {
+        "ref": "Luke 4:21",
+        "text": "And he began to say to them, “Today this Scripture has been fulfilled in your hearing.”"
+      },
+      "summary": "In the synagogue at Nazareth Jesus is handed the scroll of Isaiah. He reads the lines about the Spirit and the good news for the poor, rolls up the scroll, and sits down. Then he tells them that this Scripture has been fulfilled that day in their hearing."
+    },
+    {
+      "id": "isn_jn12",
+      "label": "John: Isaiah Saw His Glory",
+      "type": "teaching",
+      "refs": [
+        "John 12:37-41"
+      ],
+      "quote": {
+        "ref": "John 12:41",
+        "text": "Isaiah said these things because he saw his glory and spoke of him."
+      },
+      "summary": "Many who saw Jesus' signs still did not believe. John explains this with two quotations from Isaiah, one from chapter 53 and one from chapter 6. Then he adds that Isaiah said these things because he saw Jesus' glory and spoke of him."
+    },
+    {
+      "id": "isn_acts8",
+      "label": "Philip and the Ethiopian",
+      "type": "event",
+      "refs": [
+        "Acts 8:26-40"
+      ],
+      "quote": {
+        "ref": "Acts 8:35",
+        "text": "Then Philip opened his mouth, and beginning with this Scripture he told him the good news about Jesus."
+      },
+      "summary": "An official from Ethiopia is riding home from Jerusalem, reading Isaiah 53 aloud. He asks Philip whether the prophet is speaking about himself or about someone else. Philip begins with that Scripture and tells him the good news about Jesus. The man asks to be baptized, and Philip baptizes him."
+    },
+    {
+      "id": "isn_1pet2",
+      "label": "Peter: By His Wounds",
+      "type": "teaching",
+      "refs": [
+        "1 Peter 2:21-25"
+      ],
+      "quote": {
+        "ref": "1 Peter 2:24",
+        "text": "He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness. By his wounds you have been healed."
+      },
+      "summary": "Peter tells suffering Christians to follow the example of Christ, who did not strike back. To describe him, Peter uses line after line from Isaiah 53: no deceit in his mouth, bearing our sins, healing by his wounds, sheep that had gone astray."
+    },
+    {
+      "id": "isn_rev21",
+      "label": "John Sees a New Heaven and a New Earth",
+      "type": "event",
+      "refs": [
+        "Revelation 21:1-5"
+      ],
+      "quote": {
+        "ref": "Revelation 21:1",
+        "text": "Then I saw a new heaven and a new earth, for the first heaven and the first earth had passed away, and the sea was no more."
+      },
+      "summary": "At the end of the Bible John sees a new heaven and a new earth. God lives with his people and wipes away every tear, and death is no more. The words echo Isaiah's promise, though John does not stop to name him.",
+      "see_also": [
+        {
+          "id": "rv_new_creation",
+          "text": "The Revelation map has this vision as a stop of its own."
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "is_opening",
+      "to": "is_call",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 1:1",
+        "Isaiah 6:1"
+      ],
+      "note": "The link is a king's name. Isaiah 1:1 lists Uzziah first among the kings Isaiah served under, and Isaiah 6:1 dates the vision of the throne to the year Uzziah died. The book does not say whether chapters 1 to 5 were preached before or after that vision, and readers differ on it."
+    },
+    {
+      "from": "is_call",
+      "to": "is_immanuel",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 6:1",
+        "Isaiah 7:1"
+      ],
+      "note": "The book moves from one king to the next. Chapter 6 is dated to the death of Uzziah. Chapter 7 opens in the days of Ahaz and names him as the son of Jotham, son of Uzziah. Isaiah was told in chapter 6 that the people would not listen. In chapter 7 a king does not listen."
+    },
+    {
+      "from": "is_immanuel",
+      "to": "is_child",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 8:8",
+        "Isaiah 8:10",
+        "Isaiah 8:22",
+        "Isaiah 9:1-2"
+      ],
+      "note": "Chapters 7 to 9 are one stretch of the book, set in the same crisis. The name Immanuel comes back in Isaiah 8:8, and 8:10 says God is with us. Chapter 8 ends in gloom and darkness, and 9:1-2 answers with a great light. That much is in the text. Isaiah does not say in so many words that the child of 9:6 is the son called Immanuel in 7:14. Christian readers put them together, with good reason, but that step is a reading and not a quotation."
+    },
+    {
+      "from": "is_child",
+      "to": "is_shoot",
+      "type": "promise_narrowing",
+      "confidence": "typology",
+      "refs": [
+        "Isaiah 9:7",
+        "Isaiah 11:1",
+        "Isaiah 11:10"
+      ],
+      "note": "This line is marked interpretive. Isaiah 9:7 puts the child on the throne of David. Isaiah 11:1 speaks of a shoot from the stump of Jesse, and Jesse was David's father. Both passages describe a just and lasting rule from David's family, and most readers take them as one king. Isaiah does not say so himself. The New Testament applies Isaiah 11:10 to Jesus (Romans 15:12) and gives him the throne of David (Luke 1:32-33)."
+    },
+    {
+      "from": "is_immanuel",
+      "to": "is_hezekiah",
+      "type": "place_link",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 7:3",
+        "Isaiah 36:2"
+      ],
+      "note": "The two scenes happen at the same spot. Isaiah meets Ahaz 'at the end of the conduit of the upper pool on the highway to the Washer's Field' (7:3). A generation later the Assyrian officer stands 'by the conduit of the upper pool on the highway to the Washer's Field' (36:2). The place is named in both. Many readers think the book wants the two kings compared, Ahaz who would not trust and Hezekiah who prayed. The comparison is a reading. The shared place is in the text."
+    },
+    {
+      "from": "is_hezekiah",
+      "to": "is_comfort",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 39:5-7",
+        "Isaiah 40:1-2"
+      ],
+      "note": "This is the order of the book. The Hezekiah chapters end with Isaiah telling the king that everything in his house will be carried to Babylon (39:5-7). The very next words are 'Comfort, comfort my people' (40:1), spoken to a Jerusalem whose warfare is ended and whose iniquity is pardoned (40:2). Isaiah sets the warning and the comfort side by side. He does not add a sentence that joins them."
+    },
+    {
+      "from": "is_comfort",
+      "to": "is_cyrus",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 40:1-2",
+        "Isaiah 40:9",
+        "Isaiah 44:26-28"
+      ],
+      "note": "Chapter 40 sends comfort to Jerusalem and the cities of Judah. Isaiah 44:26-28 says how the comfort will come: God says of Jerusalem that she shall be inhabited, of the cities of Judah that they shall be built, and of Cyrus that he is God's shepherd. The same cities are named in both places."
+    },
+    {
+      "from": "is_servant_chosen",
+      "to": "is_servant_light",
+      "type": "book_sequence",
+      "confidence": "typology",
+      "refs": [
+        "Isaiah 42:1",
+        "Isaiah 49:3",
+        "Isaiah 49:6"
+      ],
+      "note": "This line is marked interpretive. Both passages speak of God's servant and of a light for the nations (42:6 and 49:6). Reading them as two songs about one person is a very old and very common reading, but the grouping called the Servant Songs comes from later readers and not from Isaiah. Isaiah also calls the nation Israel God's servant (41:8), and 49:3 addresses the servant as Israel, while 49:5-6 gives him a mission to Israel. Readers work that out in different ways."
+    },
+    {
+      "from": "is_servant_light",
+      "to": "is_servant_obedient",
+      "type": "book_sequence",
+      "confidence": "typology",
+      "refs": [
+        "Isaiah 49:4",
+        "Isaiah 50:6",
+        "Isaiah 50:10"
+      ],
+      "note": "This line is marked interpretive. In chapter 49 the servant says he has labored in vain. In chapter 50 a speaker tells of being struck and spat on, and 50:10 calls him the LORD's servant. Most readers hear the same voice in both. Isaiah does not label them as a series."
+    },
+    {
+      "from": "is_servant_obedient",
+      "to": "is_servant_suffering",
+      "type": "book_sequence",
+      "confidence": "typology",
+      "refs": [
+        "Isaiah 50:6",
+        "Isaiah 52:13-14",
+        "Isaiah 53:7"
+      ],
+      "note": "This line is marked interpretive. The servant who gives his back to those who strike (50:6) is read as the same servant whose appearance is marred (52:14) and who does not open his mouth (53:7). The suffering grows from one passage to the next. The link between them is the word servant and the likeness of what is described. It is a reading, and a widely shared one."
+    },
+    {
+      "from": "is_immanuel",
+      "to": "isn_mt1",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 7:14",
+        "Matthew 1:22-23"
+      ],
+      "note": "Matthew writes that all this took place to fulfill what the Lord had spoken by the prophet, and then quotes Isaiah 7:14 (Matthew 1:22-23). The citation is explicit. Matthew reads 'they shall call his name Immanuel' where Isaiah reads 'shall call his name Immanuel', and Matthew adds the meaning of the name. In Isaiah 7 the sign is tied to a near event: before the boy knows how to refuse evil and choose good, the two kings Ahaz fears will be gone (7:16). Readers differ on whether a child in Isaiah's own day was a first stage of the sign. Matthew's claim about Jesus is plain either way."
+    },
+    {
+      "from": "is_child",
+      "to": "isn_mt4",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 9:1-2",
+        "Matthew 4:14-16"
+      ],
+      "note": "Matthew names the prophet Isaiah and quotes Isaiah 9:1-2 (Matthew 4:14-16). The wording shifts a little. Isaiah has 'The people who walked in darkness have seen a great light'. Matthew has 'the people dwelling in darkness have seen a great light'. Matthew quotes the light in Galilee. He does not quote the child of Isaiah 9:6-7. Christians read those verses of Jesus because of the quotation Matthew does make and because Gabriel promises Mary's son the throne of David (Luke 1:32-33)."
+    },
+    {
+      "from": "is_anointed",
+      "to": "isn_lk4",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 61:1-2",
+        "Luke 4:17-21"
+      ],
+      "note": "Luke says Jesus was given the scroll of the prophet Isaiah and found the place where this was written, and Jesus then says, 'Today this Scripture has been fulfilled in your hearing' (Luke 4:17-21). The citation is explicit. The wording in Luke is not identical to the ESV of Isaiah 61. Luke does not have 'to bind up the brokenhearted'. Luke has 'recovering of sight to the blind' where Isaiah has 'the opening of the prison to those who are bound'. Luke also has 'to set at liberty those who are oppressed', which is close to a line in Isaiah 58:6. And the reading stops at 'the year of the Lord's favor', before Isaiah's next words, 'the day of vengeance of our God'. Many readers think Jesus stopped there on purpose. Luke does not say why."
+    },
+    {
+      "from": "is_call",
+      "to": "isn_jn12",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 6:10",
+        "John 12:39-41"
+      ],
+      "note": "John writes 'For again Isaiah said' and quotes Isaiah 6:10 (John 12:39-40). The wording differs. In Isaiah it is a command to the prophet: 'Make the heart of this people dull, and their ears heavy, and blind their eyes'. In John it is a statement: 'He has blinded their eyes and hardened their heart'. John leaves out the ears. Then John says Isaiah said these things because he saw his glory and spoke of him (12:41). In John's telling, the glory Isaiah saw in the temple was the glory of Christ. That claim is John's own, and he makes it openly."
+    },
+    {
+      "from": "is_servant_suffering",
+      "to": "isn_jn12",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 53:1",
+        "John 12:38"
+      ],
+      "note": "John says the unbelief of the crowd happened so that the word spoken by the prophet Isaiah might be fulfilled, and he quotes Isaiah 53:1 (John 12:38). John's quotation begins with the word 'Lord', which is not in the ESV of Isaiah 53:1. Otherwise the two match closely."
+    },
+    {
+      "from": "is_servant_suffering",
+      "to": "isn_acts8",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 53:7-8",
+        "Acts 8:32-35"
+      ],
+      "note": "Luke gives the passage the Ethiopian was reading, and it is Isaiah 53:7-8 (Acts 8:32-33). The wording differs from the ESV of Isaiah. Acts has 'Like a sheep he was led to the slaughter and like a lamb before its shearer is silent', where Isaiah has the lamb led to the slaughter and the sheep silent before its shearers. Acts has 'In his humiliation justice was denied him', where Isaiah has 'By oppression and judgment he was taken away'. The man asks who the prophet is speaking about. Philip begins with this Scripture and tells him the good news about Jesus (8:35). The identification is Philip's, and Luke records it as the answer."
+    },
+    {
+      "from": "is_servant_suffering",
+      "to": "isn_1pet2",
+      "type": "quoted_by",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 53:4-6",
+        "Isaiah 53:9",
+        "1 Peter 2:22-25"
+      ],
+      "note": "Peter uses the words of Isaiah 53 without any phrase such as it is written. The source is not in doubt. 1 Peter 2:22 reads 'He committed no sin, neither was deceit found in his mouth', where Isaiah 53:9 reads 'although he had done no violence, and there was no deceit in his mouth'. 1 Peter 2:24 reads 'By his wounds you have been healed', where Isaiah 53:5 reads 'with his wounds we are healed'. 1 Peter 2:25 says you were straying like sheep, and Isaiah 53:6 says all we like sheep have gone astray. Peter changes we to you because he is speaking to his readers."
+    },
+    {
+      "from": "is_new_creation",
+      "to": "isn_rev21",
+      "type": "ot_echo",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 65:17",
+        "Isaiah 65:19",
+        "Revelation 21:1",
+        "Revelation 21:4"
+      ],
+      "note": "This is shared wording and not a marked quotation. Revelation never introduces an Old Testament text with a phrase such as it is written. John sees 'a new heaven and a new earth' (Revelation 21:1), and Isaiah 65:17 promises 'new heavens and a new earth'. Revelation 21:4 says the former things have passed away, and Isaiah 65:17 says the former things shall not be remembered. Isaiah 65:19 promises an end to the sound of weeping, and Revelation 21:4 says God will wipe away every tear. 2 Peter 3:13 says Christians are waiting for new heavens and a new earth according to his promise, which points back to a promise like this one."
+    }
+  ]
+}

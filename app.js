@@ -14,13 +14,34 @@
   var EDGE_LABELS = {
     prophecy_fulfillment: "Prophecy connection",
     quoted_by: "Quoted in the New Testament",
+    ot_echo: "Echo of the Old Testament",
     promise_narrowing: "Promises read together",
     family_line: "Family",
     book_sequence: "Next in Moses' sermon",
     event_sequence: "What happened next",
     place_link: "A place",
     prophet_voice: "Who spoke it",
-    type_to_christ: "Interpretive picture"
+    type_to_christ: "Interpretive picture",
+    same_passage: "The same passage in two books"
+  };
+
+  /* The All books view is not a file. It is put together from the books that
+     loaded and from data/cross-links.json. A cross link type is drawn with the
+     colour of the nearest line a single book already uses. */
+  var ALL_KEY = "all";
+  var CROSS_EDGE = {
+    quotation: { type: "quoted_by", confidence: "explicit" },
+    fulfillment: { type: "prophecy_fulfillment", confidence: "explicit" },
+    allusion: { type: "ot_echo", confidence: "explicit" },
+    typology: { type: "type_to_christ", confidence: "typology" },
+    same_passage: { type: "same_passage", confidence: "explicit" }
+  };
+  var CROSS_LABELS = {
+    quotation: "Quoted",
+    fulfillment: "Fulfilled",
+    allusion: "Echoed",
+    typology: "Interpretive picture",
+    same_passage: "Same passage"
   };
 
   var KIND_GLOSS = {
@@ -36,20 +57,26 @@
     week4_town: "The promised ruler comes from Bethlehem.",
     christmas: "The promise arrives. Jesus is born.",
     deut_book: "Read Moses' last sermon straight through, from the plains of Moab to his grave.",
-    deut_nt: "Follow the verses that Jesus and the apostles took out of Deuteronomy."
+    deut_nt: "Follow the verses that Jesus and the apostles took out of Deuteronomy.",
+    isaiah_through: "Read Isaiah in order, from the opening charge to the new heavens and the new earth.",
+    isaiah_nt: "Set Isaiah's words beside the New Testament writers who use them of Jesus.",
+    rev_through: "Follow John's visions in the order he tells them, from Patmos to the river of life.",
+    rev_ot: "Set John's visions beside the Old Testament passages they echo."
   };
 
   var KIND_ORDER = ["promise", "covenant", "prophecy", "person", "place", "event", "teaching"];
   var EDGE_ORDER = [
     "prophecy_fulfillment",
     "quoted_by",
+    "ot_echo",
     "promise_narrowing",
     "family_line",
     "book_sequence",
     "event_sequence",
     "place_link",
     "prophet_voice",
-    "type_to_christ"
+    "type_to_christ",
+    "same_passage"
   ];
 
   var WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -71,8 +98,12 @@
   /* Each book is one graph file. The first one is the default and keeps the
      plain "#explore" hash, so Advent links made before this change still work. */
   var BOOKS = [
-    { key: "advent", file: "data/advent-graph.json", label: "Advent" },
-    { key: "deuteronomy", file: "data/deuteronomy-graph.json", label: "Deuteronomy (pilot)" }
+    { key: "advent", file: "data/advent-graph.json", label: "Advent", name: "Advent" },
+    { key: "deuteronomy", file: "data/deuteronomy-graph.json", label: "Deuteronomy (pilot)", name: "Deuteronomy" },
+    /* Advent already has a stop with the id "isaiah", and "#explore/isaiah" must
+       keep opening it, so this book's key is not the bare name. */
+    { key: "isaiah_book", file: "data/isaiah-graph.json", label: "Isaiah", name: "Isaiah" },
+    { key: "revelation", file: "data/revelation-graph.json", label: "Revelation", name: "Revelation" }
   ];
 
   /* Advent's graph file carries none of these keys, so Advent falls back to the
@@ -100,6 +131,9 @@
   var bookKey = BOOKS[0].key;
   var data = null;
   var sermonsByBook = {};
+  var crossLinks = [];
+  var crossTypes = {};
+  var crossByNode = Object.create(null);
   var confessions = null;
   var deeper = null;
   var timeline = null;
@@ -177,12 +211,33 @@
     return null;
   }
 
+  function isAll() {
+    return bookKey === ALL_KEY;
+  }
+
+  /* The books that are files, in the order of the switcher. */
+  function realBooks() {
+    return BOOKS.filter(function (book) { return book.key !== ALL_KEY; });
+  }
+
+  function bookName(key) {
+    var book = bookByKey(key);
+    return book ? (book.name || book.label) : "";
+  }
+
+  function crossLabel(type) {
+    return (crossTypes[type] && crossTypes[type].label) || CROSS_LABELS[type] || String(type || "");
+  }
+
   function kindLabel(type) {
     return KIND_LABELS[type] || String(type || "").replace(/_/g, " ");
   }
 
+  /* A book can rename an edge type in its own meta, so "Next in Moses' sermon"
+     does not turn up in Isaiah. Advent and Deuteronomy carry no such key. */
   function edgeLabel(type) {
-    return EDGE_LABELS[type] || String(type || "").replace(/_/g, " ");
+    var own = data && data.meta && data.meta.edge_labels ? data.meta.edge_labels[type] : null;
+    return own || EDGE_LABELS[type] || String(type || "").replace(/_/g, " ");
   }
 
   function confidenceCopy(flag) {
@@ -235,7 +290,7 @@
   /* Sermons */
 
   function sermonsFor(nodeId) {
-    var bookSermons = sermonsByBook[bookKey] || {};
+    var bookSermons = sermonsByBook[nodeBook[nodeId] || bookKey] || {};
     var list = bookSermons[nodeId];
     return Array.isArray(list) ? list : [];
   }
@@ -530,7 +585,7 @@
 
   function appendConnections(parent, node) {
     var links = data.edges.filter(function (edge) {
-      return edge.from === node.id || edge.to === node.id;
+      return !edge.cross && (edge.from === node.id || edge.to === node.id);
     });
     if (!links.length) return;
     parent.append(h("h4", { class: "section-label", text: "Lines on the map" }));
@@ -557,6 +612,90 @@
     parent.append(list);
   }
 
+  /* A stop can point to a stop on another map with see_also. The link is a plain
+     hash, so the router switches books and Back comes home again. A target whose
+     book did not load is left out. */
+  function appendSeeAlso(parent, node) {
+    var covered = {};
+    (crossByNode[node.id] || []).forEach(function (item) { covered[item.otherId] = true; });
+    var items = (node.see_also || []).map(function (item) {
+      if (item && covered[item.id]) return null;
+      var key = item && nodeBook[item.id];
+      var book = key && key !== bookKey ? bookByKey(key) : null;
+      if (!book || !books[key]) return null;
+      var other = books[key].nodes.find(function (candidate) { return candidate.id === item.id; });
+      return other ? { book: book, node: other, text: item.text } : null;
+    }).filter(Boolean);
+    if (!items.length) return;
+    parent.append(h("h4", { class: "section-label", text: "On another map" }));
+    var list = h("ul", { class: "links see-also" });
+    items.forEach(function (item) {
+      var link = h("a", {
+        class: "link-chip",
+        href: "#explore/" + item.node.id,
+        "aria-label": item.node.label + ", on the " + item.book.label + " map. Open it."
+      });
+      link.append(
+        h("span", { class: "link-dir", "aria-hidden": "true", text: item.book.label }),
+        h("span", { class: "link-name", text: item.node.label })
+      );
+      var row = h("li", {}, [link]);
+      if (item.text) row.append(h("span", { class: "see-also-note", text: item.text }));
+      list.append(row);
+    });
+    parent.append(list);
+  }
+
+  /* Lines that leave this book. Each one comes from data/cross-links.json. In a
+     single book the link is a plain hash, so the router switches books and Back
+     comes home. In the All books view the other stop is on the same map, so the
+     link stays there. */
+  function appendCross(parent, node) {
+    var items = crossByNode[node.id] || [];
+    if (!items.length) return;
+    parent.append(h("h4", { class: "section-label", text: "In other books" }));
+    var list = h("ul", { class: "links see-also cross-links" });
+    items.forEach(function (item) {
+      var link = item.link;
+      var other = item.other;
+      var name = bookName(nodeBook[other.id]);
+      var kind = crossLabel(link.type);
+      var style = CROSS_EDGE[link.type];
+      var chip = h("a", {
+        class: "link-chip" + (style.confidence === "typology" ? " is-typology" : ""),
+        href: (isAll() ? "#explore/" + ALL_KEY + "/" : "#explore/") + other.id,
+        "aria-label": "Also in " + name + ": " + other.label + ". " + kind + ". Open it."
+      });
+      chip.append(
+        h("span", { class: "swatch", "data-edge": style.type, "aria-hidden": "true" }),
+        h("span", { class: "link-dir", "aria-hidden": "true", text: "Also in " + name + ":" }),
+        h("span", { class: "link-name", text: other.label })
+      );
+      var row = h("li", {}, [chip]);
+      var note = h("p", { class: "cross-note" });
+      note.append(h("strong", { text: kind + ". " }), document.createTextNode(link.note || ""));
+      row.append(note);
+      if (link.refs && link.refs.length) {
+        row.append(h("p", { class: "cross-refs", text: link.refs.join("; ") }));
+      }
+      list.append(row);
+    });
+    parent.append(list);
+  }
+
+  /* In the All books view a stop can be opened in its own book, where its
+     paths and its neighbours are. */
+  function appendHomeLink(parent, node) {
+    if (!isAll()) return;
+    var key = nodeBook[node.id];
+    if (!key || !books[key]) return;
+    parent.append(h("a", {
+      class: "text-btn home-link",
+      href: "#explore/" + node.id,
+      text: "Open this stop in the " + bookName(key) + " book"
+    }));
+  }
+
   function appendLayers(parent, node) {
     var deeperFold = fold("Go deeper", "The verses, the story, and how the lines connect", function (body) {
       appendRichDeeper(body, deeperEntry("nodes", node.id));
@@ -578,7 +717,7 @@
     var next;
     if (state.mode === "requests") next = "#requests";
     else if (state.mode === "explore") {
-      if (state.selectedId) next = "#explore/" + state.selectedId;
+      if (state.selectedId) next = (isAll() ? "#explore/" + ALL_KEY + "/" : "#explore/") + state.selectedId;
       else next = bookKey === BOOKS[0].key ? "#explore" : "#explore/" + bookKey;
     }
     else next = "#walk/" + currentPath().id + "/" + state.step;
@@ -610,7 +749,8 @@
       /* "#explore/deuteronomy" names a book, again with nothing selected. */
       if (bookByKey(target)) {
         setBook(target);
-        state.selectedId = null;
+        /* "#explore/all/rv_lamb" is a stop picked on the All books map. */
+        state.selectedId = target === ALL_KEY && parts[2] && nodesById.has(parts[2]) ? parts[2] : null;
         return;
       }
       /* Otherwise it is a stop, and the id says which book it belongs to. Only a
@@ -910,6 +1050,8 @@
     card.append(h("h3", { id: "step-title", class: "step-name", tabindex: "-1", text: node.label }));
     appendStart(card, node);
     appendConnections(card, node);
+    appendCross(card, node);
+    appendSeeAlso(card, node);
     appendLayers(card, node);
     appendSermons(card, node.id);
     card.append(h("button", {
@@ -918,6 +1060,7 @@
       text: "Find this on the map",
       onClick: function () { openOnMap(node.id); }
     }));
+    appendHomeLink(card, node);
   }
 
   function nextPath() {
@@ -957,7 +1100,7 @@
   function renderPathFrame() {
     var path = currentPath();
     var line = document.getElementById("path-line");
-    if (line) line.textContent = PATH_LINE[path.id] || bookMeta("path_line_default");
+    if (line) line.textContent = PATH_LINE[path.id] || path.line || bookMeta("path_line_default");
     var host = document.getElementById("path-deepest");
     if (!host) return;
     host.replaceChildren();
@@ -1066,7 +1209,11 @@
   }
 
   function edgeKey(edge) {
-    return edge.from + "__" + edge.to + "__" + edge.type;
+    return edge.id || (edge.from + "__" + edge.to + "__" + edge.type);
+  }
+
+  function clusterId(key) {
+    return "book:" + key;
   }
 
   function nodeSize(id) {
@@ -1083,15 +1230,18 @@
           etype: edge.type,
           confidence: edge.confidence
         },
-        classes: edge.confidence === "typology" ? "typology" : "explicit"
+        classes: (edge.confidence === "typology" ? "typology" : "explicit")
+          + (edge.cross ? " cross" : (isAll() ? " inner" : ""))
+          + (edge.type === "same_passage" ? " same" : "")
       };
     });
   }
 
   function nodeElements() {
-    return data.nodes.map(function (node) {
+    var all = isAll();
+    var stops = data.nodes.map(function (node) {
       var size = nodeSize(node.id);
-      return {
+      var item = {
         data: {
           id: node.id,
           label: node.label,
@@ -1101,33 +1251,107 @@
         },
         classes: FOCAL[node.id] ? "focal" : ""
       };
+      if (all) item.data.parent = clusterId(nodeBook[node.id]);
+      return item;
     });
+    if (!all) return stops;
+    /* In the All books view each book is a box around its own stops. */
+    var boxes = realBooks().map(function (book) {
+      return {
+        data: { id: clusterId(book.key), label: book.name || book.label, ntype: "event", w: 4000, h: 1 },
+        classes: "cluster",
+        selectable: false
+      };
+    });
+    return boxes.concat(stops);
+  }
+
+  function dagreFor(nodes, edges) {
+    var g = new dagre.graphlib.Graph({ multigraph: true });
+    g.setGraph({ rankdir: "LR", nodesep: 22, ranksep: 64, edgesep: 16, marginx: 0, marginy: 0 });
+    g.setDefaultEdgeLabel(function () { return {}; });
+    nodes.forEach(function (node) {
+      var size = nodeSize(node.id);
+      g.setNode(node.id, { width: size.w, height: size.h });
+    });
+    edges.forEach(function (edge) {
+      g.setEdge(edge.from, edge.to, {}, edgeKey(edge));
+    });
+    dagre.layout(g);
+    var positions = {};
+    nodes.forEach(function (node) {
+      var spot = g.node(node.id);
+      positions[node.id] = { x: spot.x, y: spot.y };
+    });
+    var points = {};
+    g.edges().forEach(function (ref) {
+      points[ref.name] = g.edge(ref).points || [];
+    });
+    var size = g.graph();
+    return { positions: positions, points: points, width: size.width || 0, height: size.height || 0 };
+  }
+
+  /* All books: each book is laid out on its own, exactly as on its own map, and
+     the books are then set in rows. The lines between books are left out of the
+     layout, so adding one never moves a stop. */
+  function allLayout() {
+    var gapX = 260;
+    var gapY = 250;
+    var parts = realBooks().map(function (book) {
+      var inside = visibleEdges().filter(function (edge) {
+        return !edge.cross && nodeBook[edge.from] === book.key && nodeBook[edge.to] === book.key;
+      });
+      return dagreFor(books[book.key].nodes, inside);
+    });
+    /* Try every way of cutting the row of books into rows, and keep the one
+       that fills the drawing area best: one long row on a wide screen, a stack
+       on a phone. */
+    var host = document.getElementById("graph");
+    var roomW = Math.max(200, host ? host.clientWidth : 0);
+    var roomH = Math.max(200, host ? host.clientHeight : 0);
+    var best = null;
+    for (var mask = 0; mask < (1 << Math.max(0, parts.length - 1)); mask += 1) {
+      var rows = [[]];
+      parts.forEach(function (part, index) {
+        if (index > 0 && (mask & (1 << (index - 1)))) rows.push([]);
+        rows[rows.length - 1].push(part);
+      });
+      var totalW = 0;
+      var totalH = 0;
+      rows.forEach(function (row, index) {
+        var w = row.reduce(function (sum, part) { return sum + part.width; }, 0) + gapX * (row.length - 1);
+        var hgt = row.reduce(function (max, part) { return Math.max(max, part.height); }, 0);
+        totalW = Math.max(totalW, w);
+        totalH += hgt + (index ? gapY : 0);
+      });
+      var score = Math.min(roomW / (totalW + 200), roomH / (totalH + 300));
+      if (!best || score > best.score) best = { score: score, rows: rows };
+    }
+    var positions = {};
+    var points = {};
+    var y = 0;
+    best.rows.forEach(function (row) {
+      var x = 0;
+      var rowHeight = 0;
+      row.forEach(function (part) {
+        Object.keys(part.positions).forEach(function (id) {
+          positions[id] = { x: part.positions[id].x + x, y: part.positions[id].y + y };
+        });
+        Object.keys(part.points).forEach(function (id) {
+          points[id] = part.points[id].map(function (p) { return { x: p.x + x, y: p.y + y }; });
+        });
+        x += part.width + gapX;
+        rowHeight = Math.max(rowHeight, part.height);
+      });
+      y += rowHeight + gapY;
+    });
+    return { positions: positions, points: points };
   }
 
   function dagreLayout() {
     if (typeof dagre === "undefined" || !dagre.graphlib) return null;
     try {
-      var g = new dagre.graphlib.Graph({ multigraph: true });
-      g.setGraph({ rankdir: "LR", nodesep: 22, ranksep: 64, edgesep: 16, marginx: 0, marginy: 0 });
-      g.setDefaultEdgeLabel(function () { return {}; });
-      data.nodes.forEach(function (node) {
-        var size = nodeSize(node.id);
-        g.setNode(node.id, { width: size.w, height: size.h });
-      });
-      visibleEdges().forEach(function (edge) {
-        g.setEdge(edge.from, edge.to, {}, edgeKey(edge));
-      });
-      dagre.layout(g);
-      var positions = {};
-      data.nodes.forEach(function (node) {
-        var spot = g.node(node.id);
-        positions[node.id] = { x: spot.x, y: spot.y };
-      });
-      var points = {};
-      g.edges().forEach(function (ref) {
-        points[ref.name] = g.edge(ref).points || [];
-      });
-      return { positions: positions, points: points };
+      return isAll() ? allLayout() : dagreFor(data.nodes, visibleEdges());
     } catch (err) {
       return null;
     }
@@ -1313,10 +1537,55 @@
         }
       },
       {
+        selector: "edge.inner",
+        style: {
+          width: 1.2,
+          opacity: 0.38
+        }
+      },
+      {
         selector: "edge.hover, edge.lit",
         style: {
           width: 2.25,
           opacity: 1
+        }
+      },
+      {
+        selector: "edge.cross",
+        style: {
+          width: 3.5,
+          opacity: 0.92,
+          "arrow-scale": 1,
+          "z-index": 20
+        }
+      },
+      {
+        selector: "edge.same",
+        style: {
+          "target-arrow-shape": "none"
+        }
+      },
+      {
+        selector: "node.cluster",
+        style: {
+          shape: "round-rectangle",
+          "corner-radius": 26,
+          label: "data(label)",
+          "text-valign": "top",
+          "text-halign": "center",
+          "text-margin-y": -14,
+          "text-wrap": "none",
+          "font-size": 84,
+          "font-weight": 600,
+          color: ink,
+          "background-color": paper,
+          "background-opacity": 0.55,
+          "border-width": 2,
+          "border-style": "dashed",
+          "border-color": token("--line"),
+          padding: 46,
+          "underlay-opacity": 0,
+          "z-index": 0
         }
       },
       {
@@ -1338,7 +1607,7 @@
       if (!id) return;
       var node = exploreCy.getElementById(id);
       if (!node || node.empty()) return;
-      exploreCy.elements().addClass("faded");
+      exploreCy.elements().not(".cluster").addClass("faded");
       node.removeClass("faded").addClass("picked");
       node.connectedEdges().removeClass("faded").addClass("lit");
       node.connectedEdges().connectedNodes().removeClass("faded");
@@ -1372,7 +1641,8 @@
     var availH = Math.max(80, h - inset.top - inset.bottom);
     var zoom = Math.min(availW / bb.w, availH / bb.h, 1.05);
     var pan;
-    if (zoom >= READABLE_ZOOM || whole) {
+    /* The All books map is an overview, so it always opens whole. */
+    if (zoom >= READABLE_ZOOM || whole || isAll()) {
       pan = {
         x: w / 2 - zoom * (bb.x1 + bb.w / 2),
         y: inset.top + availH / 2 - zoom * (bb.y1 + bb.h / 2)
@@ -1431,7 +1701,7 @@
         elements: nodeElements().concat(edgeElements()),
         layout: { name: "preset" },
         style: graphStylesheet(),
-        minZoom: 0.25,
+        minZoom: isAll() ? 0.04 : 0.25,
         maxZoom: 2.5,
         wheelSensitivity: 0.2,
         boxSelectionEnabled: false,
@@ -1450,7 +1720,7 @@
     document.getElementById("graph-loading").classList.add("is-done");
 
     exploreCy.on("tap", function (evt) {
-      if (evt.target === exploreCy) {
+      if (evt.target === exploreCy || (evt.target.hasClass && evt.target.hasClass("cluster"))) {
         if (state.selectedId) clearSelection();
         return;
       }
@@ -1463,12 +1733,14 @@
       }
     });
     exploreCy.on("mouseover", "node", function (evt) {
+      if (evt.target.hasClass("cluster")) return;
       evt.target.addClass("hover");
       evt.target.connectedEdges().addClass("hover");
       container.style.cursor = "pointer";
       tlHover(evt.target.id());
     });
     exploreCy.on("mouseout", "node", function (evt) {
+      if (evt.target.hasClass("cluster")) return;
       evt.target.removeClass("hover");
       evt.target.connectedEdges().removeClass("hover");
       container.style.cursor = "";
@@ -1552,7 +1824,45 @@
 
   /* Map: the reading sheet */
 
+  function nameButton(node) {
+    return h("button", {
+      type: "button",
+      class: "name-btn",
+      text: node.label,
+      onClick: function () { selectNode(node.id, { frame: true, focusPanel: true }); }
+    });
+  }
+
+  /* All books: the names are grouped by book, in the order each book lists
+     them, with a mark on the stops that have a line to another book. */
+  function renderBookNameList(host) {
+    var list = h("nav", { class: "names", "aria-label": "Every name on the map, by book" });
+    realBooks().forEach(function (book) {
+      var heading = h("h4", { class: "name-kind", text: book.name || book.label });
+      list.append(heading);
+      books[book.key].nodes.forEach(function (node) {
+        var button = nameButton(node);
+        var count = (crossByNode[node.id] || []).length;
+        if (count) {
+          button.classList.add("has-cross");
+          button.append(h("span", {
+            class: "cross-count",
+            text: String(count),
+            title: count === 1 ? "1 line to another book" : count + " lines to other books"
+          }));
+          button.append(h("span", { class: "visually-hidden", text: count === 1 ? ", 1 line to another book" : ", " + count + " lines to other books" }));
+        }
+        list.append(button);
+      });
+    });
+    host.append(list);
+  }
+
   function renderNameList(host) {
+    if (isAll()) {
+      renderBookNameList(host);
+      return;
+    }
     var seen = {};
     KIND_ORDER.forEach(function (kind) { seen[kind] = true; });
     var kinds = KIND_ORDER.slice();
@@ -1593,7 +1903,9 @@
         h("h3", { id: "panel-title", class: "step-name", tabindex: "-1", text: "Choose a name" }),
         h("p", {
           class: "lead",
-          text: "Tap a name. You will see the short story first. Go deeper for the verses and the lines. Go deepest for the Westminster Standards."
+          text: isAll()
+            ? "Each box is a book. The thick lines join one book to another. Tap a name to read it and to see where it leads in the other books."
+            : "Tap a name. You will see the short story first. Go deeper for the verses and the lines. Go deepest for the Westminster Standards."
         })
       );
       renderNameList(panel);
@@ -1616,8 +1928,11 @@
     );
     appendStart(panel, node);
     appendConnections(panel, node);
+    appendCross(panel, node);
+    appendSeeAlso(panel, node);
     appendLayers(panel, node);
     appendSermons(panel, node.id);
+    appendHomeLink(panel, node);
   }
 
   function revealSheet() {
@@ -1672,6 +1987,11 @@
     data.edges.forEach(function (edge) { usedEdges[edge.type] = true; });
     var usedKinds = {};
     data.nodes.forEach(function (node) { usedKinds[node.type] = true; });
+    if (isAll()) {
+      var thick = h("li");
+      thick.append(h("span", { class: "swatch is-thick", "aria-hidden": "true" }), document.createTextNode("A thick line joins two books"));
+      edges.append(thick);
+    }
     EDGE_ORDER.filter(function (key) { return usedEdges[key]; }).forEach(function (key) {
       var item = h("li");
       item.append(h("span", { class: "swatch", "data-edge": key, "aria-hidden": "true" }), document.createTextNode(edgeLabel(key)));
@@ -1745,7 +2065,7 @@
   };
 
   function tlInBook(entry) {
-    return !Array.isArray(entry.books) || entry.books.indexOf(bookKey) >= 0;
+    return isAll() || !Array.isArray(entry.books) || entry.books.indexOf(bookKey) >= 0;
   }
 
   function tlNodes(entry) {
@@ -2581,6 +2901,61 @@
     ]).catch(function () { return null; });
   }
 
+  /* Keep only the links whose two stops both loaded and sit in different
+     books, then build the All books view out of the books and those links. */
+  function buildAllBooks(json) {
+    if (!json || !Array.isArray(json.links) || BOOKS.length < 2) return;
+    crossTypes = json.types && typeof json.types === "object" ? json.types : {};
+    var find = function (id) {
+      var key = nodeBook[id];
+      if (!key) return null;
+      return books[key].nodes.find(function (node) { return node.id === id; }) || null;
+    };
+    crossLinks = json.links.filter(function (link) {
+      return link && link.id && CROSS_EDGE[link.type] && find(link.from) && find(link.to)
+        && nodeBook[link.from] !== nodeBook[link.to];
+    });
+    crossLinks.forEach(function (link) {
+      var from = find(link.from);
+      var to = find(link.to);
+      (crossByNode[from.id] = crossByNode[from.id] || []).push({ link: link, other: to, otherId: to.id });
+      (crossByNode[to.id] = crossByNode[to.id] || []).push({ link: link, other: from, otherId: from.id });
+    });
+    if (!crossLinks.length) return;
+    var nodes = [];
+    var edges = [];
+    BOOKS.forEach(function (book) {
+      nodes = nodes.concat(books[book.key].nodes);
+      edges = edges.concat(books[book.key].edges);
+    });
+    crossLinks.forEach(function (link) {
+      var style = CROSS_EDGE[link.type];
+      edges.push({
+        id: link.id,
+        from: link.from,
+        to: link.to,
+        type: style.type,
+        confidence: style.confidence,
+        refs: link.refs || [],
+        note: link.note || "",
+        cross: true
+      });
+    });
+    var known = {};
+    nodes.forEach(function (node) { known[node.id] = true; });
+    var paths = (Array.isArray(json.threads) ? json.threads : []).filter(function (path) {
+      return path && path.id && path.title && !pathBook[path.id] && Array.isArray(path.nodes) && path.nodes.length > 0
+        && path.nodes.every(function (id) { return known[id]; });
+    });
+    /* Without a thread to walk there is nothing for the Walk tab to show. */
+    if (!paths.length) return;
+    var meta = json.overview && typeof json.overview === "object" ? Object.assign({}, json.overview) : {};
+    meta.version = json.meta && json.meta.version;
+    books[ALL_KEY] = { meta: meta, nodes: nodes, edges: edges, paths: paths };
+    paths.forEach(function (path) { pathBook[path.id] = ALL_KEY; });
+    BOOKS.push({ key: ALL_KEY, label: "All books", name: "All books" });
+  }
+
   function validGraph(json) {
     return !!json && Array.isArray(json.nodes) && Array.isArray(json.edges) && Array.isArray(json.paths)
       && json.nodes.length > 0 && json.paths.length > 0
@@ -2597,7 +2972,10 @@
     loadJson("data/confessions.json").catch(function () { return null; }),
     loadJson("data/deeper.json").catch(function () { return null; }),
     /* The timeline is an extra. Without it the map reads as it did before. */
-    loadJson("data/timeline.json").catch(function () { return null; })
+    loadJson("data/timeline.json").catch(function () { return null; }),
+    /* The lines between books are an extra too. Without the file each book
+       reads as it did before and there is no All books view. */
+    loadJson("data/cross-links.json").catch(function () { return null; })
   ])
     .then(function (files) {
       var graphs = files[0];
@@ -2620,6 +2998,7 @@
       confessions = files[3] && files[3].sections ? files[3] : null;
       deeper = files[4] && files[4].nodes ? files[4] : null;
       timeline = validTimeline(files[5]) ? files[5] : null;
+      buildAllBooks(files[6]);
       start();
     })
     .catch(function () {

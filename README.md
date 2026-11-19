@@ -4,7 +4,7 @@ Scarlet Thread tells Bible stories as one connected graph that points to Jesus C
 
 The perspective is Reformed and Christ-centered, in the line of the Westminster Standards. The wording is meant for a new believer. Scripture quotations are short excerpts from the ESV.
 
-This first version is an Advent map for 2026. It has 17 nodes, 21 edges, and five guided paths: the four Advent Sundays, then Christmas Day. A second book, a pilot through Deuteronomy, sits beside it and is described below.
+This first version is an Advent map for 2026. It has 17 nodes, 21 edges, and five guided paths: the four Advent Sundays, then Christmas Day. Three more books sit beside it and are described below: a pilot through Deuteronomy, Isaiah, and Revelation.
 
 ## How to read it
 
@@ -82,15 +82,47 @@ Two edge types are new. `quoted_by` is a New Testament writer quoting Deuteronom
 
 Where a quotation differs in wording from the ESV of Deuteronomy, the edge note gives both wordings. It does not say which Greek text the writer was using. No source available here could settle that, so the notes state the difference and leave the cause alone.
 
-Node ids and path ids are unique across both books, so a link names the book as well as the stop. `#walk/deut_nt/5` and `#explore/dt_prophet` both open Deuteronomy. `#explore/deuteronomy` opens its map with nothing selected. Advent links are unchanged, including the plain `#explore`.
+Node ids and path ids are unique across all the books, so a link names the book as well as the stop. `#walk/deut_nt/5` and `#explore/dt_prophet` both open Deuteronomy. `#explore/deuteronomy` opens its map with nothing selected. Advent links are unchanged, including the plain `#explore`.
 
 `data/deeper.json` and `data/confessions.json` are shared between the books, and the Deuteronomy ids were added to both. Advent keeps its existing sermon data in `data/sermons.json`. Deuteronomy sermons live separately in `data/deuteronomy-sermons.json`, so adding the second book does not alter Advent's entries.
 
 Go deepest on the Deuteronomy stops reuses Westminster sections already in `data/confessions.json`, whose text and proofs were checked against the OPC editions in the earlier audit. No new section was added. The OPC proof-text PDFs are page scans with no text layer, so a new section's proofs could not be verified, and the rule is to leave a section out rather than guess at it.
 
+## The Isaiah and Revelation books
+
+Two more books follow the Deuteronomy pattern: `data/isaiah-graph.json`, labeled "Isaiah", and `data/revelation-graph.json`, labeled "Revelation". Each has 23 nodes and two paths, and each uses the same schema and the same `meta` keys as Deuteronomy. Their Go deeper and Go deepest text is in the shared `data/deeper.json` and `data/confessions.json`. Neither has sermon links yet. None were invented.
+
+The Isaiah map has 18 edges. "Through the book" reads sixteen stops in the book's own order, from the opening vision to the new heavens and new earth. "Isaiah in the New Testament" sets Isaiah's words beside the New Testament writers who use them, thirteen stops. The Advent map already has four Isaiah stops (`isaiah`, `prophecy_immanuel`, `prophecy_child`, `jesse_root`). They are unchanged.
+
+The Revelation map has 23 edges. "Through the book" follows John's visions in the order he tells them, sixteen stops. "Revelation and the Old Testament" puts each Old Testament root before the vision that draws on it, sixteen stops.
+
+Three things are new in these two files.
+
+- `ot_echo` is an edge type for shared wording with no citation formula. Revelation never says "it is written", so its Old Testament lines are echoes, and each note says what is shared and what differs. An echo marked `explicit` is one where the same phrase stands in both texts. Looser links are marked `typology` and drawn dashed.
+- `meta.edge_labels` lets a book rename an edge type for the reader. `book_sequence` reads "Next in Isaiah" in one book and "Next in the vision" in the other. Advent and Deuteronomy have no such key and read as before.
+- `see_also` on a node points to a stop on another map. It is a list of `id` and `text`. The app shows it under "On another map" as a link, and the browser Back button returns. This is how the Isaiah stops reach the Advent stops for the same verses, and how Isaiah and Revelation reach each other. A target on a book that failed to load is left out.
+
+The Isaiah book's key is `isaiah_book`, not `isaiah`, because the Advent map already has a stop with the id `isaiah` and `#explore/isaiah` must keep opening it. So `#explore/isaiah_book` and `#explore/revelation` open those maps with nothing selected, and `#walk/isaiah_nt/3` or `#explore/rv_lamb` open a stop.
+
+### Disputed passages
+
+Where faithful Reformed readers differ, the stop describes the main views, labels them "Interpretation", and does not choose. On Revelation 20 the amillennial, postmillennial, and historic premillennial views are each described, with what all three share. Dispensational timelines are named and not laid out. The same rule covers the seals, the 144,000, the two witnesses, the woman of chapter 12, the beasts and 666, Babylon, the rider of 19:11, the four broad approaches to the book, and its date. In Isaiah it covers the near meaning of the Immanuel sign, the Servant Songs as one figure, Isaiah 14:12, Isaiah 65:20, and the date of chapters 40 to 66. In the visions, a `book_sequence` edge is the order John tells them in. The join between chapters 19 and 20 is drawn dashed because that order is the disputed point.
+
+## Lines between the books and the All books view
+
+`data/cross-links.json` ties the books together. It adds no stops and changes none. It has three parts.
+
+- `links`: one line from a stop in one book to a stop in another. Each has an `id`, `from` (the earlier text), `to` (the later one), a `type`, `refs`, and a `note` in plain words. The types are `quotation` (the later writer quotes the earlier words and says so), `fulfillment` (the New Testament states the earlier word came true), `allusion` (shared wording with no citation formula), `typology` (interpretive, drawn dashed, and the note says what Scripture does and does not state), and `same_passage` (two books each have a stop on the same passage). Only add a link the text supports, and quote the ESV exactly.
+- `threads`: guided paths across the books, such as "The Lamb". A thread is a list of existing stop ids. Where two neighbouring stops have no line between them the walk shows a dotted join.
+- `overview`: the wording for the All books view.
+
+In the app a stop with links shows them under "In other books", as "Also in Isaiah: ..." with the kind of link, the note, and the references. The chip is a plain hash, so it opens the stop in the other book and Back returns. A `see_also` entry that a link already covers is not shown twice.
+
+"All books" is the last button in the book switcher. It is not a file. The app builds it from the books that loaded plus the links. Each book is a box on the map, laid out as on its own map, and the thick lines are the links between books. The Walk tab walks the threads, and the timeline shows every entry from every book. Its hashes are `#explore/all`, `#explore/all/<stop id>`, and `#walk/<thread id>/<step>`. If `cross-links.json` fails to load, the four books read as before and the All books button is not shown.
+
 ## The timeline
 
-A band above the map sets the map's stops beside world history. It is on both maps. The top track holds the Bible dates for the stops of the book that is open. The bottom track holds world history: Egypt's kingdoms and pharaohs, Hammurabi, the Hittites, Assyria and the fall of Samaria, Babylon and the fall of Jerusalem, Cyrus and Persia, Alexander, the Maccabees, Rome, Augustus, Herod, Pilate, and the destruction of the temple. A row of chips under the tracks gives the modern name of each place, such as Ur in southern Iraq.
+A band above the map sets the map's stops beside world history. It is on every map. The top track holds the Bible dates for the stops of the book that is open. The bottom track holds world history: Egypt's kingdoms and pharaohs, Hammurabi, the Hittites, Assyria and the fall of Samaria, Babylon and the fall of Jerusalem, Cyrus and Persia, Alexander, the Maccabees, Rome, Augustus, Herod, Pilate, and the destruction of the temple. A row of chips under the tracks gives the modern name of each place, such as Ur in southern Iraq.
 
 Hover or choose a stop on the map and its dates light up on the timeline, and the timeline scrolls to them. Tap a date and its note opens over a corner of the map, with the matching stop chosen and framed where there is one. The plus and minus buttons stretch and squeeze the band, and it scrolls sideways. The Timeline button folds it away. On a phone it starts folded.
 
@@ -112,7 +144,7 @@ Everything on the band comes from `data/timeline.json`. No date lives in the cod
 - `certainty`: `firm`, `approximate`, `disputed`, `traditional`, or `undated`. The file's top level `certainty` object holds the sentence the reader sees for each.
 - `alternatives`: optional. The other view on a disputed date. Each has `display` and `note`. One that also has `start` is drawn on the band as its own dashed marker.
 - `nodes`: the map stops the entry belongs to. This is the link between the band and the map.
-- `books`: optional. Limits an entry to one map, `advent` or `deuteronomy`. Without it the entry shows on both.
+- `books`: optional. Limits an entry to the maps it names: `advent`, `deuteronomy`, `isaiah_book`, or `revelation`. Without it the entry shows on every map.
 
 ### Timeline rules
 
@@ -122,6 +154,8 @@ Everything on the band comes from `data/timeline.json`. No date lives in the cod
 - Where scholars differ, keep one primary date and put the other view under `alternatives`. Do not pick silently. A `disputed` entry must have an alternative.
 - The early date of the Exodus (c. 1446 BC, from 1 Kings 6:1) is primary. The late date (c. 1260s BC) is always shown beside it. The dates for Abraham, Jacob, Sinai, the wilderness, and Deuteronomy are counted from the early date and say so.
 - The Bible does not name the pharaoh of the Exodus, so the notes on Thutmose III and Ramesses II call the link a suggestion.
+- Revelation is dated c. AD 95, under Domitian, following Irenaeus. The date before AD 70 is shown beside it as a minority view. Isaiah 40 to 66 and Daniel 7 keep the books' own dating as primary and show the later critical dates beside them.
+- Every stop on every map has at least one dated entry.
 - The world history dates were written from the standard references named in each entry. They have not yet had the line by line check against sources that the rest of the site has had in `AUDIT.md`.
 
 ## Comments and requests
@@ -145,7 +179,7 @@ Issues created this way are public, and so are the names people type. The form s
 
 ## Run it locally
 
-The app is static. It has no build step and no server of its own. The browser loads `data/advent-graph.json` and `data/deuteronomy-graph.json`.
+The app is static. It has no build step and no server of its own. The browser loads the four graph files in `data/`.
 
 From the project folder:
 
@@ -188,6 +222,8 @@ The ESV excerpts and references were independently checked against esv.org in No
 - `index.html`, `styles.css`, `app.js`: the site.
 - `data/advent-graph.json`: the Advent map.
 - `data/deuteronomy-graph.json`: the Deuteronomy map.
+- `data/isaiah-graph.json`: the Isaiah map.
+- `data/revelation-graph.json`: the Revelation map.
 - `data/sermons.json`: Faith Presbyterian sermon links for Advent nodes.
 - `data/deuteronomy-sermons.json`: Faith Presbyterian sermon links for Deuteronomy nodes.
 - `data/confessions.json`: Westminster Confession and Catechism quotations for each stop.

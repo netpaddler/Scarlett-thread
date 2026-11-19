@@ -370,6 +370,86 @@
         "explain": "The paragraph says the ordinances under the gospel are fewer and simpler but hold the same covenant forth more fully, and that there are not two covenants of grace differing in substance but one and the same under various dispensations. Romans 10:6-10 is among the Scripture proofs printed with it. That is why a Reformed reader is unsurprised to find Paul taking words Moses spoke about the commandment and applying them to the gospel.",
         "relevant_proofs": "Romans 10:6-10; 2 Corinthians 3:9-11; Hebrews 4:2"
       }
+    ],
+    "is_child": [
+      {
+        "section": "wsc-23",
+        "line": "The catechism prints this passage among its proofs for the offices of Christ.",
+        "explain": "The answer says that Christ, as our redeemer, executes the offices of a prophet, a priest, and a king. Isaiah 9:6-7, the child with the government on his shoulder and the throne of David, is one of the Scripture proofs listed with it, beside Luke 1:32-33.",
+        "relevant_proofs": "Isaiah 9:6-7; Luke 1:32-33; 1 Corinthians 15:25"
+      }
+    ],
+    "is_servant_chosen": [
+      {
+        "section": "wcf-8-1",
+        "line": "The confession begins its chapter on Christ the Mediator with God choosing him, and this verse is its first proof.",
+        "explain": "The paragraph says it pleased God, in his eternal purpose, to choose and ordain the Lord Jesus to be the Mediator between God and man. Isaiah 42:1, 'Behold my servant, whom I uphold, my chosen', is the first Scripture proof printed with it.",
+        "relevant_proofs": "Isaiah 42:1; 1 Peter 1:19-20; 1 Timothy 2:5"
+      }
+    ],
+    "is_servant_suffering": [
+      {
+        "section": "wsc-27",
+        "line": "Two verses from this chapter are among the proofs printed with the catechism's answer on Christ's humiliation.",
+        "explain": "The answer lists what Christ's humiliation consisted in: the miseries of this life, the wrath of God, and the cursed death of the cross. Isaiah 53:3, the man of sorrows, and Isaiah 53:10, the LORD's will to crush him, are both among its Scripture proofs.",
+        "relevant_proofs": "Isaiah 53:3; Isaiah 53:10; Galatians 3:13"
+      }
+    ],
+    "is_anointed": [
+      {
+        "section": "wlc-42",
+        "line": "The catechism explains the name Christ by his anointing with the Holy Spirit, and it cites the scene where Jesus reads this passage.",
+        "explain": "The answer says our mediator was called Christ because he was anointed with the Holy Ghost above measure, and so set apart to be prophet, priest, and king. Luke 4:18 and 21, where Jesus reads Isaiah 61 and says it is fulfilled, are among the proofs printed with it. Isaiah 61 itself is not in the list. The proof is Luke's account of Jesus reading it.",
+        "relevant_proofs": "Luke 4:18, 21; Acts 10:37-38; John 3:34"
+      }
+    ],
+    "isn_lk4": [
+      {
+        "section": "wlc-42",
+        "line": "The verses at this stop are among the proofs printed with the catechism's answer on why the mediator is called Christ.",
+        "explain": "The answer says he was anointed with the Holy Ghost above measure and fully furnished to execute the offices of prophet, priest, and king. Luke 4:18 and 21 are listed with it. Jesus reads that the Spirit of the Lord is upon him and says the Scripture is fulfilled.",
+        "relevant_proofs": "Luke 4:18, 21; Acts 10:37-38; John 3:34"
+      }
+    ],
+    "isn_mt1": [
+      {
+        "section": "wsc-21",
+        "line": "The verse Matthew quotes here is among the proofs printed with the catechism's answer on who the redeemer is.",
+        "explain": "The answer says the only redeemer of God's elect is the Lord Jesus Christ, who, being the eternal Son of God, became man. Matthew 1:23, Immanuel, God with us, is one of the Scripture proofs listed with it.",
+        "relevant_proofs": "Matthew 1:23; Isaiah 9:6; John 1:14"
+      }
+    ],
+    "rvo_seed": [
+      {
+        "section": "wcf-8-6",
+        "line": "The confession calls Christ the seed of the woman who should bruise the serpent's head.",
+        "explain": "This paragraph says that the benefits of Christ's redemption were communicated to the elect in all ages from the beginning of the world, in and by the promises, types, and sacrifices in which he was revealed and signified to be the seed of the woman. Genesis 3:15 is printed among its Scripture proofs. So is Revelation 13:8, the Lamb who was slain.",
+        "relevant_proofs": "Genesis 3:15; Revelation 13:8; Hebrews 13:8"
+      }
+    ],
+    "rvo_passover": [
+      {
+        "section": "wcf-7-5",
+        "line": "The confession names the paschal lamb among the things that pointed forward to Christ.",
+        "explain": "This paragraph says the covenant of grace was administered under the law by promises, prophecies, sacrifices, circumcision, the paschal lamb, and other types and ordinances, all foresignifying Christ to come. Paschal means of the Passover. 1 Corinthians 5:7, where Paul calls Christ our Passover lamb, is among the proofs printed with it.",
+        "relevant_proofs": "1 Corinthians 5:7; Hebrews 8-10; 1 Corinthians 10:1-4"
+      }
+    ],
+    "rv_dragon": [
+      {
+        "section": "wcf-8-6",
+        "line": "The confession speaks of the seed of the woman who should bruise the serpent's head, and of the Lamb slain from the beginning of the world.",
+        "explain": "The paragraph teaches that Christ's work, though done in time, has saved God's people in every age. Its Scripture proofs include Genesis 3:15 and Revelation 13:8. Revelation 12 shows the serpent, the woman's child, and the victory won by the blood of the Lamb. The confession does not cite Revelation 12 itself.",
+        "relevant_proofs": "Genesis 3:15; Revelation 13:8; Galatians 4:4-5"
+      }
+    ],
+    "rv_river": [
+      {
+        "section": "wcf-7-3",
+        "line": "A verse from this chapter is among the proofs printed with the confession's paragraph on the covenant of grace.",
+        "explain": "The paragraph says that in the covenant of grace God freely offers to sinners life and salvation by Jesus Christ. Revelation 22:17, the invitation to take the water of life without price, is one of the Scripture proofs listed with it.",
+        "relevant_proofs": "Revelation 22:17; John 3:16; Isaiah 42:6"
+      }
     ]
   },
   "paths": {
@@ -434,6 +514,30 @@
         "explain": "The paragraph ends by saying that there are not two covenants of grace differing in substance, but one and the same under various dispensations. Romans 10:6-10, one of the stops on this path, is printed among its proofs. That one covenant is the reason an apostle can take a line from Deuteronomy and address it to readers in Rome or Galatia without arguing that the verse has changed meaning.",
         "relevant_proofs": "Romans 10:6-10; Galatians 3:8-9, 14, 16; Hebrews 4:2"
       }
+    ],
+    "isaiah_through": [
+      {
+        "section": "wcf-7-5",
+        "line": "The confession says that before Christ came, the covenant of grace was administered by promises and prophecies that pointed to him.",
+        "explain": "This paragraph is the frame a Reformed reader brings to Isaiah. Under the law the covenant of grace was administered by promises, prophecies, sacrifices, and other types and ordinances, all foresignifying Christ to come, and these were sufficient for that time to build up the elect in faith in the promised Messiah. Isaiah's hearers were saved by trusting the God who made these promises.",
+        "relevant_proofs": "Hebrews 11:13; John 8:56; 1 Corinthians 10:1-4"
+      }
+    ],
+    "isaiah_nt": [
+      {
+        "section": "wcf-8-1",
+        "line": "The confession's first paragraph on Christ the Mediator leans on Isaiah three times in its proofs.",
+        "explain": "The paragraph says God chose and ordained the Lord Jesus to be the Mediator, the Prophet, Priest, and King. Among the Scripture proofs printed with it are Isaiah 42:1, Isaiah 53:10, and Isaiah 55:4-5. The Standards read Isaiah the way the New Testament stops on this path do, as speaking of Christ.",
+        "relevant_proofs": "Isaiah 42:1; Isaiah 53:10; Isaiah 55:4-5"
+      }
+    ],
+    "rev_ot": [
+      {
+        "section": "wcf-7-5",
+        "line": "The confession says the promises, sacrifices, and types of the Old Testament all pointed forward to Christ.",
+        "explain": "This paragraph is why a Reformed reader expects to find the Old Testament in Revelation. The covenant of grace was administered under the law by promises, prophecies, sacrifices, the paschal lamb, and other types and ordinances, all foresignifying Christ to come. John sees the things those pictures pointed to.",
+        "relevant_proofs": "1 Corinthians 5:7; 1 Corinthians 10:1-4; Hebrews 11:13"
+      }
     ]
   },
   "theology": {
@@ -469,7 +573,53 @@
       "nt_greatest": "That Jesus answers with Deuteronomy 6:5 is the warrant for the Reformed treatment of the moral law as a summary of love to God and neighbor. The Standards arrange the commandments under those two heads for exactly this reason. Jesus is not replacing the law with a principle. He is naming what the law was always asking for.",
       "nt_acts3": "Peter's sermon is one of the places the Reformed tradition grounds the prophetic office of Christ, and the Larger Catechism prints it among the proofs. What Reformed readers notice is the shape of the argument. Peter does not invent a meaning for Deuteronomy 18. He quotes it to people who knew it and then says who the prophet is, which is how the apostles read the Old Testament generally.",
       "nt_gal3": "This passage carries a great deal of Reformed doctrine. The law pronounces a curse on everyone who fails to keep it, Christ took that curse in his death, and the blessing promised to Abraham therefore reaches the nations by faith. The Standards follow Paul in naming the cursed death of the cross as part of Christ's humiliation. The tradition also notes that Paul joins two separate Deuteronomy texts to say it, and that the joining is his argument.",
-      "nt_rom10": "Reformed readers take Romans 10 as the clearest statement of how the word works: near, preached, heard, believed, confessed. It also shows an apostle handling the Old Testament with freedom and with care at once, reapplying Moses' words about the commandment to the message about Christ. The Confession's teaching that there is one covenant of grace under two administrations is what makes that move intelligible rather than arbitrary, and Romans 10:6-10 is printed among its proofs."
+      "nt_rom10": "Reformed readers take Romans 10 as the clearest statement of how the word works: near, preached, heard, believed, confessed. It also shows an apostle handling the Old Testament with freedom and with care at once, reapplying Moses' words about the commandment to the message about Christ. The Confession's teaching that there is one covenant of grace under two administrations is what makes that move intelligible rather than arbitrary, and Romans 10:6-10 is printed among its proofs.",
+      "is_opening": "Reformed teaching begins where this chapter begins, with sin as rebellion against the God who made and raised his people. Outward worship does not cover it. The cleansing God offers here is his own gift, and the rest of Isaiah shows that it comes through the servant who bears iniquity.",
+      "is_call": "The Reformed tradition returns often to this chapter for the holiness of God. Isaiah's guilt is removed by something done to him from the altar, before he does anything for God. Pardon comes first and service follows. John 12:41 leads Christians to say that the glory Isaiah saw was the glory of Christ.",
+      "is_immanuel": "The Standards confess that the eternal Son of God became man, conceived by the power of the Holy Spirit in the womb of the virgin Mary. Matthew 1:23, which quotes this verse, is printed among the proofs of Shorter Catechism 21. Reformed readers take Matthew's use of the verse as settling its final meaning.",
+      "is_child": "Shorter Catechism 23 lists Isaiah 9:6-7 among its proofs for the offices of Christ. On the Reformed reading the child on David's throne is Christ the king, and the names Mighty God and Everlasting Father speak of his deity. No New Testament writer quotes verses 6 and 7, so this rests on reading the whole passage together with Matthew 4 and Luke 1.",
+      "is_shoot": "The Spirit resting on the shoot from Jesse fits the Larger Catechism's account of why the mediator is called Christ: he was anointed with the Holy Spirit above measure. Paul's quotation of verse 10 in Romans 15:12 is the New Testament warrant for reading this king as Jesus.",
+      "is_babylon": "Reformed readers take the fall of Babylon as a lasting pattern as well as a single event. God brings down every power that exalts itself against him, and his people are taught to expect it and to sing about it beforehand. Revelation's use of the name supports reading it that way.",
+      "is_hezekiah": "The Shorter Catechism says Christ as king rules and defends his people and restrains and conquers all his and their enemies. Reformed preachers have long used Hezekiah's prayer as a picture of faith under threat: he spreads the matter before the LORD and asks God to act for his own name.",
+      "is_comfort": "The comfort announced here rests on pardon. Jerusalem's iniquity is pardoned before any road is built. Reformed theology hears the gospel in that order, and it notes that the way is prepared for the LORD himself, which the Gospels apply to the coming of Jesus.",
+      "is_servant_chosen": "Confession 8.1 says it pleased God to choose and ordain the Lord Jesus to be the Mediator, and Isaiah 42:1 is the first Scripture proof printed with it. The Reformed tradition reads God's chosen servant here as Christ, on the authority of Matthew 12:17-21.",
+      "is_cyrus": "This passage is a standard text for the Reformed doctrine of providence. God governs all his creatures and all their actions, including a pagan emperor who does not know him. Cyrus acts freely for his own reasons, and God's purpose for his people is carried out through him.",
+      "is_servant_light": "Reformed readers see here that God's saving purpose was never limited to one nation. The servant is given as a light for the nations, and Acts 13:47 shows the apostles treating that mission as their marching order. The church's preaching to the world is the servant's own work continued.",
+      "is_servant_obedient": "Reformed theology speaks of Christ's willing obedience in his suffering. He was not overpowered. He gave his back. The New Testament does not cite this passage, so the tradition reads it of Christ by its place among the servant passages and by its likeness to the passion accounts.",
+      "is_servant_suffering": "This chapter stands at the center of the Reformed doctrine of the atonement. The servant suffers in the place of others, bears their iniquities, and makes many to be accounted righteous. The Shorter Catechism's answer on Christ's humiliation prints Isaiah 53:3 and 53:10 among its proofs.",
+      "is_invitation": "Reformed theology calls this the free offer of the gospel. God sincerely invites all who hear to come and receive what they cannot buy. The tradition holds this together with its teaching that God's word accomplishes what he purposes, as the same chapter says.",
+      "is_anointed": "The Larger Catechism explains the name Christ by his anointing with the Holy Spirit to be prophet, priest, and king, and it prints Luke 4:18 and 21, where Jesus reads this passage, among its proofs. Here the anointed one speaks mostly as a prophet, bringing good news.",
+      "is_new_creation": "The Reformed hope is larger than souls going to heaven. It is the resurrection of the body and a renewed creation where God lives with his people. The Standards teach the return of Christ, the resurrection, and the last judgment, and they leave room for different views on the order of events before the end.",
+      "isn_mt1": "This is the incarnation. The Standards confess that the Son of God became man by being conceived by the power of the Holy Spirit in the womb of the virgin Mary, and Matthew 1:23 is among the proofs printed with Shorter Catechism 21.",
+      "isn_mt4": "Reformed readers notice how Matthew reads the prophet. He does not hunt for hidden meanings. He sees Jesus go to the very region Isaiah named and says the promise has come true there. The light is a person who preaches repentance and the kingdom.",
+      "isn_lk4": "The Larger Catechism cites this scene for the meaning of the title Christ. Jesus is the one anointed with the Spirit, and his first recorded sermon claims that anointing for himself. Reformed theology treats his prophetic office as beginning in his own preaching and continuing through his word.",
+      "isn_jn12": "John teaches two things the Reformed tradition holds together. People are responsible for their unbelief, and God is sovereign over who sees. John also says Isaiah saw Christ's glory, which supports reading the Old Testament's visions of the LORD in the light of the Son.",
+      "isn_acts8": "Reformed readers value this scene as a picture of how Scripture is understood. The Ethiopian has the text and needs a guide. Philip does not bring a different message. He begins with the passage in front of the man and preaches Jesus from it. Faith and baptism follow.",
+      "isn_1pet2": "Peter holds together what the Reformed tradition insists on keeping together. Christ bore our sins as a substitute, and Christ is our example in suffering. The first is the ground of salvation. The second is the shape of the Christian life that flows from it.",
+      "isn_rev21": "The Standards teach that Christ will return, the dead will be raised, and God will judge the world. This vision shows what lies beyond that day for his people: God dwelling with them in a creation made new. Reformed readers generally understand it as this creation renewed and not simply replaced, though the text does not settle every detail.",
+      "rv_christ": "The Standards speak of Christ's exaltation: he rose from the dead, ascended into heaven, sits at the right hand of God the Father, and will come to judge the world at the last day. This vision shows that exalted Christ, and it shows him among his churches. He is not absent while they wait for him.",
+      "rv_churches": "Reformed teaching holds that Christ is the only head of the church and that he rules it by his word and Spirit. The seven letters show him doing so. He examines real congregations, with their mixture of truth and error, and calls them to repent. The tradition has always said that the purest churches on earth are subject to both mixture and error.",
+      "rv_throne": "The Shorter Catechism says God's works of providence are his most holy, wise, and powerful preserving and governing all his creatures and all their actions. Revelation 4 shows that in a picture. Reformed readers treat the throne as the fixed point of the whole book. Whatever follows happens under it.",
+      "rv_lamb": "This chapter holds together Christ's two estates, humiliation and exaltation. He conquered by being slain, and he is now worshiped with the Father. The ransom is for people from every tribe and nation, and it does what it sets out to do: it makes them a kingdom and priests.",
+      "rv_seals": "However the seals are placed in time, Reformed readers draw the same doctrine from them: war, scarcity, and death are not outside Christ's rule. The Lamb opens every seal. The martyrs' cry also teaches that God's justice is something his people may pray for and wait for.",
+      "rv_multitude": "The Reformed doctrine of perseverance says that those whom God has called and sealed by his Spirit can never finally fall away. This chapter shows it. God's servants are sealed before the winds blow, and the same people stand before the throne at the end, their robes made white by the Lamb's blood and not by their own strength.",
+      "rv_trumpets": "The trumpets are warnings, and they show both God's patience and the hardness of the human heart, which does not repent under judgment alone. Reformed theology concludes that repentance is a gift of God. The seventh trumpet states the confidence of the Standards, that Christ as king will conquer all his and our enemies.",
+      "rv_dragon": "Confession 8.6 speaks of Christ as the seed of the woman who should bruise the serpent's head. Reformed readers see that promise worked out here. The decisive battle is already won by the blood of the Lamb, and the church's present suffering is the anger of a defeated enemy.",
+      "rv_beasts": "Reformed readers have applied this chapter in different ways. The lasting lesson is that when any earthly power demands the worship or final loyalty that belongs to God, Christians must refuse. The names of those who do not bow are written in the book of life of the Lamb who was slain (13:8), which is the ground of their endurance.",
+      "rv_babylon": "Reformed readers take from this vision a warning against loving the world. Babylon is attractive and rich, and God's people are told to come out of her. However the city is identified, the Standards' teaching that Christ will judge the world in righteousness is pictured here ahead of time.",
+      "rv_supper": "Reformed theology speaks of the union of Christ and his church, and Scripture's own picture of it is marriage. The Bride's linen is given to her, and it is also the righteous deeds of the saints. The tradition explains that the good works of believers are real and are also the fruit of grace. The Lord's Supper looks ahead to this meal.",
+      "rv_return": "The Standards teach that Christ will come again at the last day in great power to judge the world. Most Reformed readers see that day here. Those who take the passage as Christ's conquest by the gospel in this age confess the same bodily return on the basis of other texts.",
+      "rv_millennium": "The Westminster Standards teach a general resurrection of the just and the unjust and a last judgment at Christ's return, and they do not set out a doctrine of the thousand years. Reformed and Presbyterian churches have had amillennial, postmillennial, and historic premillennial ministers. The Standards' stress on one people of God in one covenant of grace is why dispensational schemes have generally not been received.",
+      "rv_judgment": "The Confession's last chapter is on the last judgment. God has appointed a day in which he will judge the world in righteousness by Jesus Christ, and all persons who have lived on earth will appear before him. Reformed theology adds what the book of life shows: those who are acquitted are acquitted in Christ, and their works are evidence, not payment.",
+      "rv_new_creation": "The Reformed hope is the resurrection of the body and life with God in a creation made new. The heart of it is the covenant promise that runs through all of Scripture, I will be their God and they shall be my people, here kept in full.",
+      "rv_river": "Reformed theology reads the Bible as one story from the garden to the city. The tree of life, lost through Adam's sin, is given back through Christ, and the curse is removed. The closing invitation to take the water of life without price is among the Scripture proofs the Confession prints for the free offer of life in the covenant of grace.",
+      "rvo_daniel7": "Daniel 7 is a main source for the Reformed doctrine of Christ's kingly office. The kingdom is given to the Son of Man by the Ancient of Days, it embraces all peoples, and it cannot be destroyed. Earthly empires are real and beastly, and they are temporary.",
+      "rvo_ezekiel1": "Reformed readers take from Ezekiel 1 that God is present with and sovereign over his people wherever they are. The exiles had lost the temple. They had not lost God. His throne has wheels.",
+      "rvo_passover": "Confession 7.5 names the paschal lamb among the types and ordinances by which the covenant of grace was administered under the law, all foresignifying Christ to come. It also teaches that these were sufficient for that time to build up the elect in faith in the promised Messiah. The Passover was a real deliverance and a real means of grace as well as a picture of things to come.",
+      "rvo_zechariah4": "This vision is a standard text for the Reformed conviction that the church is built by the Spirit of God through ordinary and unimpressive means. The day of small things is not to be despised. In Revelation the lampstands are congregations.",
+      "rvo_seed": "In Reformed theology, Genesis 3:15 is the first gospel promise. Confession 8.6 identifies Christ as the seed of the woman who should bruise the serpent's head, and says the benefits of his redemption were given to the elect in all ages from the beginning of the world.",
+      "rvo_isaiah65": "Reformed teaching holds that God's purpose in redemption is as wide as creation. The God who created the heavens and the earth will create them new. Grace does not abandon the world God made. It restores it.",
+      "rvo_ezekiel47": "Reformed readers generally take Ezekiel's temple and river as prophecy in the forms of the old covenant, fulfilled in Christ and his Spirit and finally in the new creation, and not as a building still to be put up. Life flows from where God dwells, and in the end he dwells with his people."
     },
     "paths": {
       "week1_seed": "This week follows promises that Reformed theology reads within the one covenant of grace. Christ is their substance and fulfillment.",
@@ -478,7 +628,11 @@
       "week4_town": "This week follows the promised ruler to the humble circumstances of his birth. The town's name is not itself a prophecy.",
       "christmas": "Christmas is the incarnation and birth of the only redeemer, truly God and truly man in one person.",
       "deut_book": "Walking Deuteronomy straight through puts a Reformed reader in front of the law as covenant preaching. God rescued a people, bound himself to them, told them how to live, and set blessing and curse in front of them. The Confession treats that whole arrangement as one administration of the covenant of grace, sufficient for its time and pointing to Christ. The book ends without the prophet it promised, which is where the second path begins.",
-      "deut_nt": "This path shows the apostles and Jesus himself reading Deuteronomy as a word that still speaks. Reformed theology accounts for that with one covenant under two administrations, which is the Confession's own language. The quotations are not proof texts pulled loose from their setting. Each one is used for something the Deuteronomy passage was already saying, with the one addition that the apostles make openly: that the promise and the curse and the near word all come to rest on Christ."
+      "deut_nt": "This path shows the apostles and Jesus himself reading Deuteronomy as a word that still speaks. Reformed theology accounts for that with one covenant under two administrations, which is the Confession's own language. The quotations are not proof texts pulled loose from their setting. Each one is used for something the Deuteronomy passage was already saying, with the one addition that the apostles make openly: that the promise and the curse and the near word all come to rest on Christ.",
+      "isaiah_through": "Read straight through, Isaiah moves from the holiness of God and the guilt of his people to a servant who bears that guilt and a creation made new. Reformed theology finds its main themes here in order: sin, judgment, a remnant kept by grace, a substitute, a free invitation, and a final renewal. The Confession says the covenant of grace was administered before Christ by promises and prophecies that pointed to him, and Isaiah is the fullest example.",
+      "isaiah_nt": "This path shows the apostles, and Jesus himself, reading Isaiah as a word about Christ. Reformed theology explains that with one covenant of grace under two administrations. The quotations are not pulled loose from their setting. Each uses Isaiah for something Isaiah was already saying, and adds what the apostles state openly, that it has come true in Jesus.",
+      "rev_through": "Reformed readers come to Revelation with humility about its details and confidence about its center. The Standards confess what the book shows most plainly: Christ is exalted and reigns, he will return to judge, the dead will be raised, and God will dwell with his people forever. On the questions the Standards leave open, such as the thousand years, Reformed churches have allowed differing views.",
+      "rev_ot": "This path shows why Reformed theology speaks of one covenant of grace and one story. John describes the end in words taken from Moses, Isaiah, Ezekiel, Daniel, and Zechariah, because the God who made those promises is the one who keeps them in Christ. The path also takes care over the difference between what the text states and what readers infer."
     }
   }
 }

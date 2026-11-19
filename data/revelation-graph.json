@@ -1,0 +1,688 @@
+{
+  "meta": {
+    "title": "Scarlet Thread: Revelation",
+    "version": "0.1",
+    "translation": "ESV",
+    "notes": "confidence 'explicit' = a direct textual or narrative connection; read the cited passages and note for the exact claim. 'typology' = interpretive; faithful readers differ. Quotes are short ESV excerpts. Revelation never introduces an Old Testament text with a citation formula, so its Old Testament lines are 'ot_echo' edges: shared wording, with the differences stated. A 'book_sequence' edge is the order of the visions as John tells them, which is not always agreed to be the order of events. Where faithful Reformed readers differ (the thousand years, the seals, the beasts, Babylon, the date of the book), the stop describes the main views, labels them as interpretation, and does not choose. Dispensational timelines are not laid out.",
+    "eyebrow": "Revelation",
+    "intro_title": "John saw the Lamb who was slain, alive and reigning. The Bible ends with God living among his people.",
+    "intro_text": "Pick a path and move one stop at a time. Or open the map and follow the lines. Where faithful readers differ, the stop says so.",
+    "path_word": "path",
+    "subtitle": "a walk through Revelation",
+    "picker_label": "Revelation paths",
+    "graph_label": "Revelation map of John's visions and the Old Testament passages they echo",
+    "tabs": {
+      "walk_long": "Walk a path",
+      "walk_short": "Walk"
+    },
+    "path_line_default": "Each path follows the Lamb to the end of the story.",
+    "key_note": "The visions are told in the order John saw them. Readers differ on whether that is always the order in which things happen, so some lines are dashed and some stops have no line between them. Open a stop to see the lines it does have.",
+    "edge_labels": {
+      "book_sequence": "Next in the vision"
+    }
+  },
+  "paths": [
+    {
+      "id": "rev_through",
+      "title": "Through the book",
+      "nodes": [
+        "rv_christ",
+        "rv_churches",
+        "rv_throne",
+        "rv_lamb",
+        "rv_seals",
+        "rv_multitude",
+        "rv_trumpets",
+        "rv_dragon",
+        "rv_beasts",
+        "rv_babylon",
+        "rv_supper",
+        "rv_return",
+        "rv_millennium",
+        "rv_judgment",
+        "rv_new_creation",
+        "rv_river"
+      ]
+    },
+    {
+      "id": "rev_ot",
+      "title": "Revelation and the Old Testament",
+      "nodes": [
+        "rvo_daniel7",
+        "rv_christ",
+        "rvo_ezekiel1",
+        "rv_throne",
+        "rvo_passover",
+        "rv_lamb",
+        "rvo_zechariah4",
+        "rv_trumpets",
+        "rvo_seed",
+        "rv_dragon",
+        "rv_beasts",
+        "rv_judgment",
+        "rvo_isaiah65",
+        "rv_new_creation",
+        "rvo_ezekiel47",
+        "rv_river"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "rv_christ",
+      "label": "John Sees the Risen Christ",
+      "type": "event",
+      "refs": [
+        "Revelation 1:1-20"
+      ],
+      "quote": {
+        "ref": "Revelation 1:17-18",
+        "text": "Fear not, I am the first and the last, and the living one. I died, and behold I am alive forevermore, and I have the keys of Death and Hades."
+      },
+      "summary": "John is on the island of Patmos because of his witness to Jesus. On the Lord's day he hears a voice like a trumpet and turns to see one like a son of man, standing among seven golden lampstands, his face shining like the sun. John falls down as though dead. Jesus lays his hand on him and tells him not to fear."
+    },
+    {
+      "id": "rv_churches",
+      "label": "Letters to the Seven Churches",
+      "type": "teaching",
+      "refs": [
+        "Revelation 2:1-29",
+        "Revelation 3:1-22"
+      ],
+      "quote": {
+        "ref": "Revelation 2:7",
+        "text": "He who has an ear, let him hear what the Spirit says to the churches."
+      },
+      "summary": "Jesus sends a message to each of seven real churches in the Roman province of Asia, now western Turkey. He knows each one. He praises what is faithful, names what is wrong, calls for repentance, and promises a reward to the one who conquers. Every letter ends by telling all the churches to listen."
+    },
+    {
+      "id": "rv_throne",
+      "label": "The Throne in Heaven",
+      "type": "event",
+      "refs": [
+        "Revelation 4:1-11"
+      ],
+      "quote": {
+        "ref": "Revelation 4:8",
+        "text": "Holy, holy, holy, is the Lord God Almighty, who was and is and is to come!"
+      },
+      "summary": "A door stands open in heaven, and John is shown a throne with one seated on it. Around it are a rainbow, twenty-four elders, seven torches of fire, and four living creatures who never stop saying that God is holy. Before anything is said about the troubles on earth, John sees who is in charge.",
+      "see_also": [
+        {
+          "id": "is_call",
+          "text": "The Isaiah map has the vision where Isaiah heard this song."
+        }
+      ]
+    },
+    {
+      "id": "rv_lamb",
+      "label": "The Lamb Who Was Slain",
+      "type": "event",
+      "refs": [
+        "Revelation 5:1-14"
+      ],
+      "quote": {
+        "ref": "Revelation 5:9",
+        "text": "Worthy are you to take the scroll and to open its seals, for you were slain, and by your blood you ransomed people for God from every tribe and language and people and nation"
+      },
+      "summary": "The one on the throne holds a sealed scroll, and no one is found worthy to open it. John weeps. He is told that the Lion of the tribe of Judah has conquered. He looks and sees a Lamb standing as though it had been slain. The Lamb takes the scroll, and all heaven worships him.",
+      "see_also": [
+        {
+          "id": "promise_judah",
+          "text": "The Advent map follows the promise to Judah to this verse about the Lion."
+        }
+      ]
+    },
+    {
+      "id": "rv_seals",
+      "label": "The Seven Seals",
+      "type": "event",
+      "refs": [
+        "Revelation 6:1-17",
+        "Revelation 8:1"
+      ],
+      "quote": {
+        "ref": "Revelation 6:10",
+        "text": "O Sovereign Lord, holy and true, how long before you will judge and avenge our blood on those who dwell on the earth?"
+      },
+      "summary": "The Lamb opens the seals one at a time. Four riders bring conquest, war, famine, and death. The souls of the martyrs ask how long. The sky is shaken, and people hide from the wrath of the Lamb. Interpretation: readers differ on whether these are troubles of the first century, of the whole age between Christ's two comings, or of a last period before he returns."
+    },
+    {
+      "id": "rv_multitude",
+      "label": "The Great Multitude",
+      "type": "event",
+      "refs": [
+        "Revelation 7:1-17"
+      ],
+      "quote": {
+        "ref": "Revelation 7:17",
+        "text": "For the Lamb in the midst of the throne will be their shepherd, and he will guide them to springs of living water, and God will wipe away every tear from their eyes."
+      },
+      "summary": "Between the sixth seal and the seventh, John is shown who can stand. He hears the number of those sealed as God's servants. Then he sees a crowd no one can count, from every nation, in white robes before the throne. They have come out of the great tribulation, and the Lamb is their shepherd."
+    },
+    {
+      "id": "rv_trumpets",
+      "label": "The Seven Trumpets",
+      "type": "event",
+      "refs": [
+        "Revelation 8:2-13",
+        "Revelation 9:1-21",
+        "Revelation 11:1-19"
+      ],
+      "quote": {
+        "ref": "Revelation 11:15",
+        "text": "The kingdom of the world has become the kingdom of our Lord and of his Christ, and he shall reign forever and ever."
+      },
+      "summary": "Seven angels blow seven trumpets. The first four strike a third of the earth, sea, rivers, and sky, much like the plagues on Egypt. The fifth and sixth are worse, and still people do not repent. Two witnesses prophesy, are killed, and are raised. At the seventh trumpet loud voices in heaven announce that the kingdom of the world has become Christ's kingdom."
+    },
+    {
+      "id": "rv_dragon",
+      "label": "The Woman, the Child, and the Dragon",
+      "type": "event",
+      "refs": [
+        "Revelation 12:1-17"
+      ],
+      "quote": {
+        "ref": "Revelation 12:11",
+        "text": "And they have conquered him by the blood of the Lamb and by the word of their testimony, for they loved not their lives even unto death."
+      },
+      "summary": "A woman crowned with twelve stars gives birth to a son who is to rule all the nations. A great red dragon waits to devour the child, but the child is caught up to God. The dragon is thrown down from heaven and makes war on the woman's other children. John tells us who the dragon is: that ancient serpent, the devil and Satan."
+    },
+    {
+      "id": "rv_beasts",
+      "label": "The Two Beasts",
+      "type": "event",
+      "refs": [
+        "Revelation 13:1-18"
+      ],
+      "quote": {
+        "ref": "Revelation 13:10",
+        "text": "Here is a call for the endurance and faith of the saints."
+      },
+      "summary": "The dragon gives his power to a beast from the sea, which makes war on the saints and is worshiped by the world. A second beast from the earth makes people worship the first and marks them with its number, 666. Interpretation: readers differ on whether the beasts are the Roman empire of John's day, powers that arise all through history, or a last enemy still to come."
+    },
+    {
+      "id": "rv_babylon",
+      "label": "The Fall of Babylon",
+      "type": "event",
+      "refs": [
+        "Revelation 17:1-18",
+        "Revelation 18:1-24"
+      ],
+      "quote": {
+        "ref": "Revelation 18:2",
+        "text": "Fallen, fallen is Babylon the great!"
+      },
+      "summary": "John sees a woman in purple and scarlet sitting on the beast. Her name is Babylon the great, and she is drunk with the blood of the saints. Then an angel announces her fall. Kings and merchants weep over their lost trade, and heaven is told to rejoice. Interpretation: readers differ on whether Babylon is Rome, Jerusalem, or the proud world city in every age.",
+      "see_also": [
+        {
+          "id": "is_babylon",
+          "text": "The Isaiah map has the taunt over Babylon where this cry is first heard."
+        }
+      ]
+    },
+    {
+      "id": "rv_supper",
+      "label": "The Marriage Supper of the Lamb",
+      "type": "event",
+      "refs": [
+        "Revelation 19:1-10"
+      ],
+      "quote": {
+        "ref": "Revelation 19:9",
+        "text": "Blessed are those who are invited to the marriage supper of the Lamb."
+      },
+      "summary": "After Babylon falls, a great crowd in heaven shouts Hallelujah. The marriage of the Lamb has come, and his Bride has made herself ready. She is given fine linen to wear, bright and pure. An angel tells John to write that those invited to the marriage supper of the Lamb are blessed."
+    },
+    {
+      "id": "rv_return",
+      "label": "The Rider on the White Horse",
+      "type": "event",
+      "refs": [
+        "Revelation 19:11-16"
+      ],
+      "quote": {
+        "ref": "Revelation 19:16",
+        "text": "On his robe and on his thigh he has a name written, King of kings and Lord of lords."
+      },
+      "summary": "Heaven opens, and John sees a white horse. Its rider is called Faithful and True, and The Word of God. He judges and makes war in righteousness, and the armies of heaven follow him. Most readers take this as the return of Christ in glory. Interpretation: some take it as Christ's victory through the gospel during this age."
+    },
+    {
+      "id": "rv_millennium",
+      "label": "The Thousand Years",
+      "type": "event",
+      "refs": [
+        "Revelation 20:1-10"
+      ],
+      "quote": {
+        "ref": "Revelation 20:6",
+        "text": "Blessed and holy is the one who shares in the first resurrection! Over such the second death has no power, but they will be priests of God and of Christ, and they will reign with him for a thousand years."
+      },
+      "summary": "An angel binds Satan for a thousand years so that he cannot deceive the nations. Those who died for their witness to Jesus come to life and reign with Christ. Afterward Satan is released, makes a last war, and is thrown into the lake of fire. Interpretation: faithful readers differ on this passage. Amillennial readers take the thousand years as a picture of the whole time between Christ's first and second coming. Postmillennial readers expect a long age of gospel blessing on earth before Christ returns. Historic premillennial readers expect Christ to return first and then reign on earth for the thousand years. This map does not choose among them. All three confess that Christ reigns, that Satan is a beaten enemy, and that Jesus will come again to judge."
+    },
+    {
+      "id": "rv_judgment",
+      "label": "The Great White Throne",
+      "type": "event",
+      "refs": [
+        "Revelation 20:11-15"
+      ],
+      "quote": {
+        "ref": "Revelation 20:12",
+        "text": "And I saw the dead, great and small, standing before the throne, and books were opened. Then another book was opened, which is the book of life. And the dead were judged by what was written in the books, according to what they had done."
+      },
+      "summary": "John sees a great white throne, and earth and sky flee from the one who sits on it. The dead, great and small, stand before the throne. Books are opened, and another book, the book of life. Death and Hades are thrown into the lake of fire, along with anyone whose name is not found in the book of life."
+    },
+    {
+      "id": "rv_new_creation",
+      "label": "A New Heaven and a New Earth",
+      "type": "event",
+      "refs": [
+        "Revelation 21:1-27"
+      ],
+      "quote": {
+        "ref": "Revelation 21:3",
+        "text": "Behold, the dwelling place of God is with man. He will dwell with them, and they will be his people, and God himself will be with them as their God."
+      },
+      "summary": "John sees a new heaven and a new earth. The holy city, new Jerusalem, comes down from God like a bride dressed for her husband. God himself lives with his people. He wipes away every tear, and death is no more. The city has no temple, because the Lord God the Almighty and the Lamb are its temple.",
+      "see_also": [
+        {
+          "id": "is_new_creation",
+          "text": "The Isaiah map has the promise of new heavens and a new earth."
+        }
+      ]
+    },
+    {
+      "id": "rv_river",
+      "label": "The River and the Tree of Life",
+      "type": "event",
+      "refs": [
+        "Revelation 22:1-21"
+      ],
+      "quote": {
+        "ref": "Revelation 22:2",
+        "text": "The leaves of the tree were for the healing of the nations."
+      },
+      "summary": "An angel shows John the river of the water of life, flowing from the throne of God and of the Lamb. On either side stands the tree of life, last seen in the garden of Eden. The curse is gone, and God's servants see his face. The book ends with a promise and a prayer: Jesus says he is coming soon, and the church answers, Come, Lord Jesus."
+    },
+    {
+      "id": "rvo_daniel7",
+      "label": "Daniel: One like a Son of Man",
+      "type": "prophecy",
+      "refs": [
+        "Daniel 7:1-28"
+      ],
+      "quote": {
+        "ref": "Daniel 7:13",
+        "text": "I saw in the night visions, and behold, with the clouds of heaven there came one like a son of man, and he came to the Ancient of Days and was presented before him."
+      },
+      "summary": "Daniel dreams of four great beasts coming up out of the sea. Then thrones are set, the Ancient of Days takes his seat, and the books are opened. The beasts lose their power, and one like a son of man comes with the clouds of heaven and is given a kingdom that will never be destroyed. Jesus took the name Son of Man for himself."
+    },
+    {
+      "id": "rvo_ezekiel1",
+      "label": "Ezekiel: The Glory and the Living Creatures",
+      "type": "event",
+      "refs": [
+        "Ezekiel 1:1-28"
+      ],
+      "quote": {
+        "ref": "Ezekiel 1:28",
+        "text": "Such was the appearance of the likeness of the glory of the LORD."
+      },
+      "summary": "Ezekiel is among the exiles in Babylonia when the heavens open. He sees a storm cloud, four living creatures with the faces of a man, a lion, an ox, and an eagle, wheels full of eyes, and above them a throne with a rainbow brightness around it. He falls on his face. God's throne is not tied to Jerusalem."
+    },
+    {
+      "id": "rvo_passover",
+      "label": "The Passover Lamb",
+      "type": "event",
+      "refs": [
+        "Exodus 12:1-28"
+      ],
+      "quote": {
+        "ref": "Exodus 12:13",
+        "text": "And when I see the blood, I will pass over you, and no plague will befall you to destroy you, when I strike the land of Egypt."
+      },
+      "summary": "On the night God brought Israel out of Egypt, each household killed a lamb without blemish and put its blood on the doorposts. Where God saw the blood, he passed over, and the firstborn lived. Paul calls Christ our Passover lamb (1 Corinthians 5:7). Revelation's Lamb, who ransoms people by his blood, is often read against this night."
+    },
+    {
+      "id": "rvo_zechariah4",
+      "label": "Zechariah: The Lampstand and the Olive Trees",
+      "type": "prophecy",
+      "refs": [
+        "Zechariah 4:1-14"
+      ],
+      "quote": {
+        "ref": "Zechariah 4:6",
+        "text": "Not by might, nor by power, but by my Spirit, says the LORD of hosts."
+      },
+      "summary": "The exiles are home and the temple is half built. Zechariah sees a golden lampstand with seven lamps and an olive tree on each side of it. The message for Zerubbabel, the governor, is that the work will be finished by God's Spirit and not by human strength. The seven lamps are the eyes of the LORD, which range through the whole earth."
+    },
+    {
+      "id": "rvo_seed",
+      "label": "The First Gospel Promise",
+      "type": "promise",
+      "refs": [
+        "Genesis 3:14-15"
+      ],
+      "quote": {
+        "ref": "Genesis 3:15",
+        "text": "he shall bruise your head, and you shall bruise his heel."
+      },
+      "summary": "In the garden, after the man and the woman have sinned, God speaks to the serpent. He will put enmity between the serpent and the woman, and between its offspring and hers. Her offspring will bruise the serpent's head. In the Reformed reading used here, this is the first promise of Christ.",
+      "see_also": [
+        {
+          "id": "promise_seed",
+          "text": "The Advent map begins with this promise."
+        }
+      ]
+    },
+    {
+      "id": "rvo_isaiah65",
+      "label": "Isaiah: New Heavens and a New Earth",
+      "type": "promise",
+      "refs": [
+        "Isaiah 65:17-19"
+      ],
+      "quote": {
+        "ref": "Isaiah 65:17",
+        "text": "For behold, I create new heavens and a new earth, and the former things shall not be remembered or come into mind."
+      },
+      "summary": "Near the end of his book, Isaiah hears God promise to create new heavens and a new earth. The former things will not be remembered. Jerusalem will be a joy, and the sound of weeping will be heard in it no more.",
+      "see_also": [
+        {
+          "id": "is_new_creation",
+          "text": "The Isaiah map has this promise as its last stop."
+        }
+      ]
+    },
+    {
+      "id": "rvo_ezekiel47",
+      "label": "Ezekiel: The River from the Temple",
+      "type": "prophecy",
+      "refs": [
+        "Ezekiel 47:1-12"
+      ],
+      "quote": {
+        "ref": "Ezekiel 47:12",
+        "text": "Their fruit will be for food, and their leaves for healing."
+      },
+      "summary": "In a vision of a new temple, Ezekiel sees water trickling out from under its threshold. It becomes a river too deep to cross. It flows down to the Dead Sea and makes the salt water fresh, and everything lives where the river goes. Trees grow on both banks, bearing fruit every month."
+    }
+  ],
+  "edges": [
+    {
+      "from": "rv_christ",
+      "to": "rv_churches",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 1:11",
+        "Revelation 1:19-20",
+        "Revelation 2:1"
+      ],
+      "note": "The risen Christ tells John to write what he sees in a book and send it to the seven churches, and he names them (1:11). He explains that the seven lampstands are the seven churches (1:20). The first letter then begins, 'To the angel of the church in Ephesus write' (2:1). The text itself carries the reader from the vision to the letters."
+    },
+    {
+      "from": "rv_churches",
+      "to": "rv_throne",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 3:22",
+        "Revelation 4:1"
+      ],
+      "note": "After the last letter John writes, 'After this I looked, and behold, a door standing open in heaven', and the voice says, 'Come up here, and I will show you what must take place after this' (4:1). That is the order of the visions. Readers differ on how the order of the visions relates to the order of events in history."
+    },
+    {
+      "from": "rv_throne",
+      "to": "rv_lamb",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 4:2",
+        "Revelation 5:1",
+        "Revelation 5:6-7"
+      ],
+      "note": "Chapters 4 and 5 are one scene. Chapter 5 begins, 'Then I saw in the right hand of him who was seated on the throne a scroll'. The Lamb appears beside the same throne and takes the scroll from the right hand of the one seated on it (5:6-7)."
+    },
+    {
+      "from": "rv_lamb",
+      "to": "rv_seals",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 5:9",
+        "Revelation 6:1"
+      ],
+      "note": "The Lamb is declared worthy to open the seals (5:9), and chapter 6 begins, 'Now I watched when the Lamb opened one of the seven seals'. The same scroll and the same Lamb link the two chapters."
+    },
+    {
+      "from": "rv_seals",
+      "to": "rv_multitude",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 6:17",
+        "Revelation 7:1",
+        "Revelation 7:9"
+      ],
+      "note": "The sixth seal ends with a question, 'who can stand?' (6:17). Chapter 7 follows with 'After this I saw', and shows the servants of God sealed and a great multitude standing before the throne (7:9). The seventh seal is not opened until 8:1. The question and its answer sit next to each other in the text."
+    },
+    {
+      "from": "rv_seals",
+      "to": "rv_trumpets",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 8:1-2",
+        "Revelation 8:6"
+      ],
+      "note": "When the Lamb opens the seventh seal there is silence in heaven, and then John sees seven angels who are given seven trumpets (8:1-2). The trumpets come out of the last seal in John's telling. Interpretation: some readers take the trumpets as later events than the seals. Others take them as a second look at the same period, since both series end with the last day (6:12-17 and 11:15-18)."
+    },
+    {
+      "from": "rv_dragon",
+      "to": "rv_beasts",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 12:17",
+        "Revelation 13:1-2"
+      ],
+      "note": "The dragon goes off to make war on the rest of the woman's offspring and stands on the sand of the sea (12:17). John then sees a beast rising out of the sea, and 'to it the dragon gave his power and his throne and great authority' (13:2). The text names the dragon as the power behind the beast."
+    },
+    {
+      "from": "rv_beasts",
+      "to": "rv_babylon",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 13:1",
+        "Revelation 17:3",
+        "Revelation 17:7"
+      ],
+      "note": "The woman called Babylon is 'sitting on a scarlet beast that was full of blasphemous names, and it had seven heads and ten horns' (17:3). The beast from the sea in 13:1 has ten horns and seven heads and blasphemous names on its heads. John presents the same beast in both chapters."
+    },
+    {
+      "from": "rv_babylon",
+      "to": "rv_supper",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 19:1-2",
+        "Revelation 19:6-7"
+      ],
+      "note": "Chapter 19 begins 'After this'. The crowd in heaven praises God because he has judged the great prostitute (19:2), and then announces that the marriage of the Lamb has come (19:7). The prostitute city and the Bride are set against each other on purpose."
+    },
+    {
+      "from": "rv_return",
+      "to": "rv_millennium",
+      "type": "book_sequence",
+      "confidence": "typology",
+      "refs": [
+        "Revelation 19:11",
+        "Revelation 20:1",
+        "Revelation 20:4"
+      ],
+      "note": "This line is dashed because the join between chapter 19 and chapter 20 is the disputed point. Chapter 20 begins, 'Then I saw an angel coming down from heaven'. Historic premillennial readers take 'Then I saw' as the next event in time: Christ returns in chapter 19, and the thousand years follow. Amillennial and most postmillennial readers take it as the next vision, which goes back to the start of the gospel age, as chapter 12 went back to the birth of Christ. The words 'Then I saw' mark the order of the visions. They do not settle the order of the events."
+    },
+    {
+      "from": "rv_millennium",
+      "to": "rv_judgment",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 20:7",
+        "Revelation 20:10-11"
+      ],
+      "note": "The text gives this order itself: 'when the thousand years are ended, Satan will be released' (20:7), he is defeated and thrown into the lake of fire (20:10), and 'Then I saw a great white throne' (20:11). All three millennial views agree that the last judgment comes after the thousand years."
+    },
+    {
+      "from": "rv_judgment",
+      "to": "rv_new_creation",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 20:11",
+        "Revelation 21:1"
+      ],
+      "note": "At the great white throne 'earth and sky fled away, and no place was found for them' (20:11). The next vision begins, 'Then I saw a new heaven and a new earth, for the first heaven and the first earth had passed away' (21:1). The second statement picks up the first."
+    },
+    {
+      "from": "rv_new_creation",
+      "to": "rv_river",
+      "type": "book_sequence",
+      "confidence": "explicit",
+      "refs": [
+        "Revelation 21:9-10",
+        "Revelation 22:1-2"
+      ],
+      "note": "The angel who shows John the holy city (21:9-10) goes on to show him the river: 'Then the angel showed me the river of the water of life' (22:1). The river flows through the middle of the street of the city. It is one vision."
+    },
+    {
+      "from": "rvo_daniel7",
+      "to": "rv_christ",
+      "type": "ot_echo",
+      "confidence": "explicit",
+      "refs": [
+        "Daniel 7:9",
+        "Daniel 7:13",
+        "Revelation 1:7",
+        "Revelation 1:13-14"
+      ],
+      "note": "This is shared wording and not a marked quotation. Revelation 1:7 says, 'Behold, he is coming with the clouds', and Daniel 7:13 has one like a son of man coming with the clouds of heaven. John sees 'one like a son of man' (1:13), the same phrase. There is a difference worth noticing. In Daniel it is the Ancient of Days whose hair is like pure wool (7:9). In Revelation the son of man has hair 'white, like white wool, like snow' (1:14). Jesus applied Daniel 7:13 to himself before the high priest (Matthew 26:64), so reading Daniel's son of man as Christ rests on his own words."
+    },
+    {
+      "from": "rvo_daniel7",
+      "to": "rv_beasts",
+      "type": "ot_echo",
+      "confidence": "explicit",
+      "refs": [
+        "Daniel 7:3-8",
+        "Daniel 7:21",
+        "Daniel 7:25",
+        "Revelation 13:1-7"
+      ],
+      "note": "This is shared wording and not a marked quotation. Daniel sees four beasts come up out of the sea: one like a lion, one like a bear, one like a leopard, and a fourth with ten horns (7:3-7). John sees one beast rise out of the sea with ten horns, 'like a leopard; its feet were like a bear's, and its mouth was like a lion's mouth' (13:1-2). John's one beast carries the features of Daniel's four. In both books the beast has a mouth that speaks great things and makes war on the saints (Daniel 7:8, 21 and Revelation 13:5-7). Daniel is told that the four beasts are four kings (7:17). Which kingdoms they are, and what John's beast stands for, are matters of interpretation."
+    },
+    {
+      "from": "rvo_daniel7",
+      "to": "rv_judgment",
+      "type": "ot_echo",
+      "confidence": "explicit",
+      "refs": [
+        "Daniel 7:9-10",
+        "Revelation 20:11-12"
+      ],
+      "note": "This is shared wording and not a marked quotation. In Daniel thrones are placed, the Ancient of Days takes his seat, 'the court sat in judgment, and the books were opened' (7:9-10). In Revelation John sees a great white throne and the dead standing before it, 'and books were opened' (20:12). The scene and the phrase are the same."
+    },
+    {
+      "from": "rvo_ezekiel1",
+      "to": "rv_throne",
+      "type": "ot_echo",
+      "confidence": "explicit",
+      "refs": [
+        "Ezekiel 1:5-10",
+        "Ezekiel 1:22",
+        "Ezekiel 1:26-28",
+        "Revelation 4:2-8"
+      ],
+      "note": "This is shared wording and not a marked quotation. Both prophets see a throne with four living creatures. The four faces are the same: a man, a lion, an ox, and an eagle (Ezekiel 1:10 and Revelation 4:7). Both see something like crystal near the throne (Ezekiel 1:22 and Revelation 4:6) and a brightness like a rainbow around it (Ezekiel 1:28 and Revelation 4:3). The differences are real too. In Ezekiel each creature has all four faces and four wings. In Revelation each creature has one of the faces and six wings, and they sing holy, holy, holy, which is like the seraphim of Isaiah 6:2-3. John's vision draws on both prophets."
+    },
+    {
+      "from": "rvo_passover",
+      "to": "rv_lamb",
+      "type": "type_to_christ",
+      "confidence": "typology",
+      "refs": [
+        "Exodus 12:5-13",
+        "1 Corinthians 5:7",
+        "Revelation 5:6",
+        "Revelation 5:9-10"
+      ],
+      "note": "This line is marked interpretive. Revelation 5 does not mention the Passover. It shows a Lamb that was slain, whose blood ransoms a people and makes them a kingdom and priests (5:9-10). That is the pattern of the exodus: a lamb's blood, a people set free, and then 'a kingdom of priests' (Exodus 19:6). That Christ is the Passover lamb is stated outright elsewhere in the New Testament: 'Christ, our Passover lamb, has been sacrificed' (1 Corinthians 5:7). So the link between the Passover and Christ is explicit in Paul. Reading the Lamb of Revelation 5 as the Passover lamb in particular is an inference. Many readers also hear Isaiah 53:7, the lamb led to the slaughter."
+    },
+    {
+      "from": "rvo_zechariah4",
+      "to": "rv_lamb",
+      "type": "ot_echo",
+      "confidence": "explicit",
+      "refs": [
+        "Zechariah 4:2",
+        "Zechariah 4:10",
+        "Revelation 4:5",
+        "Revelation 5:6"
+      ],
+      "note": "This is shared wording and not a marked quotation. Zechariah is told that the seven lamps 'are the eyes of the LORD, which range through the whole earth' (4:10). John sees the Lamb 'with seven eyes, which are the seven spirits of God sent out into all the earth' (5:6). Seven eyes that go through all the earth appear in both. In Zechariah they are the LORD's. In Revelation they belong to the Lamb."
+    },
+    {
+      "from": "rvo_zechariah4",
+      "to": "rv_trumpets",
+      "type": "ot_echo",
+      "confidence": "explicit",
+      "refs": [
+        "Zechariah 4:3",
+        "Zechariah 4:11-14",
+        "Revelation 11:3-4"
+      ],
+      "note": "This is shared wording and not a marked quotation. Of the two witnesses John is told, 'These are the two olive trees and the two lampstands that stand before the Lord of the earth' (11:4). Zechariah sees two olive trees beside the lampstand and is told, 'These are the two anointed ones who stand by the Lord of the whole earth' (4:14). In Zechariah there is one lampstand, and in Revelation there are two. Who the two witnesses are is a matter of interpretation. Many Reformed readers take them as the witnessing church. Others expect two individual prophets."
+    },
+    {
+      "from": "rvo_seed",
+      "to": "rv_dragon",
+      "type": "prophecy_fulfillment",
+      "confidence": "typology",
+      "refs": [
+        "Genesis 3:15",
+        "Revelation 12:9",
+        "Revelation 12:17",
+        "Romans 16:20"
+      ],
+      "note": "This line is marked interpretive. Revelation 12:9 says in plain words that the dragon is 'that ancient serpent, who is called the devil and Satan'. So the text itself identifies the serpent. It also speaks of a woman, her child, and 'the rest of her offspring' (12:17), with the serpent at war against them, which is the shape of Genesis 3:15. But Revelation does not quote Genesis 3:15 or say that the promise is fulfilled here. Reading chapter 12 as the outworking of that promise is the common Reformed reading, and it is a reading. Paul echoes the same promise in Romans 16:20: the God of peace will soon crush Satan under your feet."
+    },
+    {
+      "from": "rvo_isaiah65",
+      "to": "rv_new_creation",
+      "type": "ot_echo",
+      "confidence": "explicit",
+      "refs": [
+        "Isaiah 65:17",
+        "Isaiah 65:19",
+        "Revelation 21:1",
+        "Revelation 21:4"
+      ],
+      "note": "This is shared wording and not a marked quotation. Isaiah 65:17 promises 'new heavens and a new earth', and John sees 'a new heaven and a new earth' (21:1). Isaiah says the former things shall not be remembered, and Revelation 21:4 says the former things have passed away. Isaiah 65:19 promises an end to the sound of weeping, and Revelation 21:4 says God will wipe away every tear. 2 Peter 3:13 says Christians are waiting for new heavens and a new earth according to his promise."
+    },
+    {
+      "from": "rvo_ezekiel47",
+      "to": "rv_river",
+      "type": "ot_echo",
+      "confidence": "explicit",
+      "refs": [
+        "Ezekiel 47:1",
+        "Ezekiel 47:12",
+        "Revelation 22:1-2"
+      ],
+      "note": "This is shared wording and not a marked quotation. Ezekiel sees water flowing from the temple, with trees on both sides of the river that bear fresh fruit every month, and 'their leaves for healing' (47:12). John sees the river of the water of life with the tree of life on either side, 'yielding its fruit each month', and he adds, 'The leaves of the tree were for the healing of the nations' (22:2). There are differences. In Ezekiel the water comes from the temple. In Revelation it comes from the throne of God and of the Lamb, and the city has no temple (21:22). Ezekiel sees many trees. John sees the tree of life, which goes back to Genesis 2:9. And John adds that the healing is for the nations."
+    }
+  ]
+}
